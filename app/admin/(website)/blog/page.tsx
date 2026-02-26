@@ -80,7 +80,7 @@ const Page = () => {
               <div className="col-span-1 flex justify-center gap-3">
 
                 <button
-                  onClick={() => router.push(`/admin/blog/${blog._id}`)}
+                  onClick={() => router.push(`/admin/blog/${blog.slug}`)}
                   className="p-2 bg-blue-100 hover:bg-blue-200 text-blue-600 rounded-full transition active:scale-90"
                 >
                   <MdEdit size={20} />

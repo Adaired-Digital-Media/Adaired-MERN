@@ -6,7 +6,7 @@ import Editor from "@/app/components/Editor";
 import SelectField from "@/app/components/UI/SelectField";
 import ImageUpload from "@/app/components/UI/ImageUpload";
 import axios from "axios";
-import { BaseURL } from "@/app/baseUrl";
+import { BaseURL, BaseURL2 } from "@/app/baseUrl";
 import { useParams, useRouter } from "next/navigation";
 interface CategoryType {
   label: string;
@@ -16,7 +16,8 @@ interface CategoryType {
 const CreateBlog = ({ refresh }: any) => {
   const router = useRouter()
   const params = useParams();
-  const blogId = params?.id;
+  const blogId = params?.slug;
+  console.log(blogId,"blogId>>>>>>>")
   const isEditMode = blogId !== "create";
   const [categoryOptions, setCategoryOptions] = useState<CategoryType[]>([]);
   const [content, setContent] = useState("");

@@ -49,9 +49,11 @@ export const createBlog = async (req: Request, res: Response) => {
 
 export const updateBlog = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
+    const { slug } = req.params;
 
-    const existingBlog = await Blog.findById(id);
+    // 🔥 Find by slug instead of ID
+    const existingBlog = await Blog.findOne({ slug });
+
     if (!existingBlog) {
       return res.status(404).json({
         success: false,
@@ -62,7 +64,7 @@ export const updateBlog = async (req: Request, res: Response) => {
     const updateData: any = {};
 
     /* =========================
-       Normal Fields (Safe Update)
+       Normal Fields
     ========================== */
     if (req.body.postTitle)
       updateData.postTitle = req.body.postTitle;
@@ -98,10 +100,9 @@ export const updateBlog = async (req: Request, res: Response) => {
       `https://adaired.com/blog/${finalSlug}`;
 
     /* =========================
-       Image Handling (IMPORTANT FIX)
+       Image Handling
     ========================== */
     if (req.file) {
-      // delete old image
       if (existingBlog.image?.public_id) {
         await cloudinary.uploader.destroy(existingBlog.image.public_id);
       }
@@ -111,12 +112,12 @@ export const updateBlog = async (req: Request, res: Response) => {
         public_id: req.file.filename || req.file.originalname,
       };
     } else {
-      // ✅ keep old image
       updateData.image = existingBlog.image;
     }
 
+    // 🔥 Update using _id internally
     const updatedBlog = await Blog.findByIdAndUpdate(
-      id,
+      existingBlog._id,
       updateData,
       { new: true }
     );
@@ -170,6 +171,40 @@ export const getBlogById = async (req: Request, res: Response) => {
   }
 };
 
+
+export const getBlogBySlug = async (req: Request, res: Response) => {
+  try {
+    const { slug } = req.params;
+
+    if (!slug) {
+      return res.status(400).json({
+        success: false,
+        message: "Slug is required",
+      });
+    }
+
+    const blog = await Blog.findOne({ slug });
+
+    if (!blog) {
+      return res.status(404).json({
+        success: false,
+        message: "Blog not found",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      data: blog,
+    });
+  } catch (error) {
+    console.error("Get Blog By Slug Error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};
 
 export const deleteBlog = async (req: Request, res: Response) => {
   try {
