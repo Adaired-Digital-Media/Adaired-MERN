@@ -5,7 +5,7 @@ import { connectDB } from "./backend/config/db";
 import blogRoutes from "./backend/routes/blogRoutes";
 import blogCategoryRoutes from './backend/routes/blogCategory.routes'
 import authRoutes from './backend/routes/auth.routes'
-
+import cors from "cors";
 dotenv.config();
 
 const dev = process.env.NODE_ENV !== "production";
@@ -16,6 +16,19 @@ app.prepare().then(async () => {
     const server = express();
 
     await connectDB();
+
+    /* ✅ CORS MUST BE BEFORE ROUTES */
+    server.use(
+        cors({
+            origin: [
+                "http://localhost:8000",
+                "https://adaired-dem2.vercel.app/",
+                "https://adaired.com/", // change this
+            ],
+            credentials: true,
+        })
+    );
+
 
     server.use(express.json());
 
