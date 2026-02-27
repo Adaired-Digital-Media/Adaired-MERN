@@ -18,8 +18,11 @@ export default function Editor({ content, setContent }: EditorProps) {
           levels: [1, 2, 3],
         },
       }),
-      Link.configure({
-        openOnClick: false,
+        Link.configure({
+        openOnClick: false,          // ❌ Prevent redirect
+        enableClickSelection: true,  // ✅ Select link on click
+        autolink: true,
+        linkOnPaste: true,
       }),
     ],
 
@@ -46,13 +49,17 @@ export default function Editor({ content, setContent }: EditorProps) {
   if (!editor) return null;
 
   const setLink = () => {
+    if (editor.isActive("link")) {
+      editor.chain().focus().unsetLink().run();
+      return;
+    }
+
     const url = prompt("Enter URL");
 
     if (!url) return;
 
     editor.chain().focus().setLink({ href: url }).run();
   };
-
   return (
     <div className="mx-auto bg-white shadow-lg border border-gray-200 rounded-2xl p-8 space-y-6">
 
@@ -142,22 +149,13 @@ export default function Editor({ content, setContent }: EditorProps) {
           1. List
         </button>
 
-        {/* ✅ Blockquote */}
-        <button
-          type="button"
-          onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          className={`px-3 py-1 rounded-md text-sm font-medium transition ${editor.isActive("blockquote")
-            ? "bg-black text-white"
-            : "bg-gray-100 hover:bg-gray-200"
-            }`}
-        >
-          Quote
-        </button>
-
         <button
           type="button"
           onClick={setLink}
-          className="px-3 py-1 rounded-md text-sm font-medium bg-gray-100 hover:bg-gray-200"
+          className={`px-3 py-1 rounded-md text-sm font-medium transition ${editor.isActive("link")
+              ? "bg-black text-white"
+              : "bg-gray-100 hover:bg-gray-200"
+            }`}
         >
           Link
         </button>
