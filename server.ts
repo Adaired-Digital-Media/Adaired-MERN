@@ -5,6 +5,8 @@ import { connectDB } from "./backend/config/db";
 import blogRoutes from "./backend/routes/blogRoutes";
 import blogCategoryRoutes from './backend/routes/blogCategory.routes'
 import authRoutes from './backend/routes/auth.routes'
+import mailRoutes from './backend/routes/mail.routes'
+
 import cors from "cors";
 dotenv.config();
 
@@ -36,6 +38,7 @@ app.prepare().then(async () => {
     server.use("/api/auth", authRoutes);
     server.use("/api/blog", blogRoutes);
     server.use("/api/blog-category", blogCategoryRoutes);
+    server.use("/api/mail", mailRoutes);
 
     // Next.js handles frontend
     server.use((req, res) => {
