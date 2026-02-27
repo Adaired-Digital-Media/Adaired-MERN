@@ -1,5 +1,6 @@
 import { Poppins, Outfit, Montserrat, Mr_Dafoe } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 /* =========================
    FONT CONFIGURATION
@@ -50,6 +51,7 @@ export default function RootLayout({
     >
       <body className="antialiased">
         {children}
+        <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
   );

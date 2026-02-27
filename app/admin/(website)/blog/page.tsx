@@ -7,10 +7,13 @@ import SaveAndCancel from '@/app/components/common/SaveAndCancel';
 import { useRouter } from 'next/navigation';
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
+import Loading from '@/app/components/Loading';
+import toast from "react-hot-toast";
 
 const Page = () => {
   const router = useRouter()
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 10;
@@ -22,6 +25,7 @@ const Page = () => {
 
   const getBlogs = async () => {
     try {
+      setLoading(true);
       const res = await axios.get(`${BaseURL}/blog/get`)
 
       if (res?.status === 200) {
@@ -30,6 +34,7 @@ const Page = () => {
           : res.data?.data || [];
 
         setData(blogsArray);
+        setLoading(false);
       }
     }
     catch (err) {
@@ -43,10 +48,13 @@ const Page = () => {
 
   const deleteBlog = async (id: string) => {
     try {
+      setLoading(true)
       const res = await axios.delete(`${BaseURL}/blog/delete/${id}`)
 
       if (res?.status === 200) {
         setData((prev: any) => prev.filter((blog: any) => blog._id !== id))
+        toast.success("Blog deleted successfully")
+        setLoading(false)
       }
     } catch (err) {
       console.log(err)
@@ -63,8 +71,7 @@ const Page = () => {
           handleClick={() => router.push("/admin/blog/create")}
         />
       </div>
-
-      <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+      {loading ? <Loading /> : <div className="bg-white rounded-2xl shadow-md overflow-hidden">
 
         <div className="grid grid-cols-12 bg-blue-900 p-4 font-semibold text-white text-sm uppercase">
           <div className="col-span-11">Title</div>
@@ -91,14 +98,7 @@ const Page = () => {
                 </button>
 
                 <button
-                  onClick={() => {
-                    const confirmDelete = window.confirm(
-                      "Are you sure you want to delete this blog?"
-                    );
-                    if (confirmDelete) {
-                      deleteBlog(blog._id);
-                    }
-                  }}
+                  onClick={() => deleteBlog(blog._id)}
                   className="p-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-full transition active:scale-90"
                 >
                   <MdDelete size={20} />
@@ -145,11 +145,11 @@ const Page = () => {
               >
                 Next
               </button>
-
             </div>
           </div>
         )}
-      </div>
+      </div>}
+
     </div>
   );
 }

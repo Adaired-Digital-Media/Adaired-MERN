@@ -8,12 +8,15 @@ import ImageUpload from "@/app/components/UI/ImageUpload";
 import axios from "axios";
 import { BaseURL, BaseURL2 } from "@/app/baseUrl";
 import { useParams, useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+
 interface CategoryType {
   label: string;
   value: string;
 }
 
 const CreateBlog = ({ refresh }: any) => {
+  const [loading, setLoading] = useState(false);
   const router = useRouter()
   const params = useParams();
   const blogId = params?.slug;
@@ -22,7 +25,6 @@ const CreateBlog = ({ refresh }: any) => {
   const [content, setContent] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [blog, setBlog] = useState<any>(null);
-  console.log(categoryOptions, "categoryOptions")
   const [inputVal, setInputVal] = useState({
     postTitle: "",
     slug: "",
@@ -35,7 +37,6 @@ const CreateBlog = ({ refresh }: any) => {
     },
   });
 
-  console.log(inputVal.category, "inputVal.category")
 
 
   /* =============================
@@ -96,7 +97,24 @@ const CreateBlog = ({ refresh }: any) => {
      Submit Blog
   ============================== */
   const handleSubmit = async () => {
+    const { postTitle, slug, category, seo } = inputVal;
+
+    // ✅ Required validation
+    if (
+      !postTitle.trim() ||
+      !slug.trim() ||
+      !category ||
+      !content.trim() ||
+      !seo.metaTitle.trim() ||
+      !seo.metaDescription.trim() ||
+      !seo.keywords.trim() ||
+      !seo.focusKeyword.trim()
+    ) {
+      toast.error("All fields are required");
+      return;
+    }
     try {
+      setLoading(true)
       const formData = new FormData();
 
       formData.append("postTitle", inputVal.postTitle);
@@ -111,11 +129,14 @@ const CreateBlog = ({ refresh }: any) => {
 
       if (isEditMode) {
         await axios.patch(`${BaseURL}/blog/update/${blogId}`, formData);
-        alert("Blog Updated Successfully ✅");
+        toast.success("Blog updated successfully")
+        setLoading(false)
         router.push("/admin/blog")
+
       } else {
         await axios.post(`${BaseURL}/blog`, formData);
-        alert("Blog Created Successfully ✅");
+        toast.success("Blog created successfully")
+        setLoading(false)
         router.push("/admin/blog")
       }
     } catch (err: any) {
@@ -185,6 +206,7 @@ const CreateBlog = ({ refresh }: any) => {
             placeholder="Enter Heading"
             value={inputVal.postTitle}
             handleChange={handleTitleChange}
+            required={true}
           />
 
           <div className="grid grid-cols-2 gap-4">
@@ -193,6 +215,7 @@ const CreateBlog = ({ refresh }: any) => {
               placeholder="Enter Slug"
               value={inputVal.slug}
               handleChange={handleChange}
+              required={true}
             />
 
             <SelectField
@@ -200,6 +223,7 @@ const CreateBlog = ({ refresh }: any) => {
               value={inputVal.category}
               handleChange={handleChange}
               options={categoryOptions}
+              required={true}
             />
           </div>
         </div>
@@ -225,6 +249,7 @@ const CreateBlog = ({ refresh }: any) => {
             placeholder="Enter SEO Title"
             value={inputVal.seo.metaTitle}
             handleChange={handleChange}
+            required={true}
           />
 
           <InputField
@@ -232,6 +257,7 @@ const CreateBlog = ({ refresh }: any) => {
             placeholder="Enter Keywords"
             value={inputVal.seo.keywords}
             handleChange={handleChange}
+            required={true}
           />
         </div>
 
@@ -240,6 +266,7 @@ const CreateBlog = ({ refresh }: any) => {
           placeholder="Enter Focus Keyword"
           value={inputVal.seo.focusKeyword}
           handleChange={handleChange}
+          required={true}
         />
 
         <InputField
@@ -247,6 +274,7 @@ const CreateBlog = ({ refresh }: any) => {
           placeholder="Enter Description"
           value={inputVal.seo.metaDescription}
           handleChange={handleChange}
+          required={true}
         />
       </div>
 
