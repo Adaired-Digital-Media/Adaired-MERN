@@ -17,7 +17,7 @@ const Page = () => {
 
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const currentBlogs = data.slice(indexOfFirstBlog, indexOfLastBlog);
+  const currentBlogs = data?.slice(indexOfFirstBlog, indexOfLastBlog);
   const totalPages = Math.ceil(data.length / blogsPerPage);
 
   const getBlogs = async () => {
@@ -25,7 +25,11 @@ const Page = () => {
       const res = await axios.get(`${BaseURL}/blog/get`)
 
       if (res?.status === 200) {
-        setData(res?.data)
+        const blogsArray = Array.isArray(res.data)
+          ? res.data
+          : res.data?.data || [];
+
+        setData(blogsArray);
       }
     }
     catch (err) {
@@ -124,8 +128,8 @@ const Page = () => {
                 onClick={() => setCurrentPage((prev) => prev - 1)}
                 disabled={currentPage === 1}
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition active:scale-90 ${currentPage === 1
-                    ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    : "bg-[#FB9100]/90 text-white hover:bg-[#FB9100] cursor-pointer"
+                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : "bg-[#FB9100]/90 text-white hover:bg-[#FB9100] cursor-pointer"
                   }`}
               >
                 Previous
@@ -135,8 +139,8 @@ const Page = () => {
                 onClick={() => setCurrentPage((prev) => prev + 1)}
                 disabled={currentPage === totalPages}
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition active:scale-90 ${currentPage === totalPages
-                    ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
+                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
                   }`}
               >
                 Next
