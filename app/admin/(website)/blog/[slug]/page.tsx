@@ -17,13 +17,12 @@ const CreateBlog = ({ refresh }: any) => {
   const router = useRouter()
   const params = useParams();
   const blogId = params?.slug;
-  console.log(blogId,"blogId>>>>>>>")
   const isEditMode = blogId !== "create";
   const [categoryOptions, setCategoryOptions] = useState<CategoryType[]>([]);
   const [content, setContent] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [blog, setBlog] = useState<any>(null);
-
+  console.log(categoryOptions, "categoryOptions")
   const [inputVal, setInputVal] = useState({
     postTitle: "",
     slug: "",
@@ -35,6 +34,9 @@ const CreateBlog = ({ refresh }: any) => {
       focusKeyword: "",
     },
   });
+
+  console.log(inputVal.category, "inputVal.category")
+
 
   /* =============================
      Handle Normal + Nested Fields
@@ -99,7 +101,7 @@ const CreateBlog = ({ refresh }: any) => {
 
       formData.append("postTitle", inputVal.postTitle);
       formData.append("slug", inputVal.slug);
-      formData.append("category", inputVal.category);
+      formData.append("category", inputVal?.category || "699ecc40a530b0d473ebe68b");
       formData.append("postDescription", content);
       formData.append("seo", JSON.stringify(inputVal.seo));
 
@@ -174,7 +176,7 @@ const CreateBlog = ({ refresh }: any) => {
 
   return (
     <div className="space-y-6">
-      <h3>Create Blog</h3>
+      <h3>{isEditMode ? "Update" : "Create"} Blog</h3>
 
       <div className="grid grid-cols-4 gap-6">
         <div className="col-span-3 space-y-4">
@@ -204,7 +206,7 @@ const CreateBlog = ({ refresh }: any) => {
 
         {/* <ImageUpload onUpload={handleImageUpload} /> */}
         <ImageUpload
-          existingImage={blog?.image?.url}
+          existingImage={blog?.featuredImage ?? blog?.seo?.openGraph?.image}
           onUpload={handleImageUpload}
         />
       </div>
@@ -253,7 +255,7 @@ const CreateBlog = ({ refresh }: any) => {
           onClick={handleSubmit}
           className="bg-black text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
         >
-          Create Blog
+          {isEditMode ? "Update" : "Create"}
         </button>
       </div>
     </div>

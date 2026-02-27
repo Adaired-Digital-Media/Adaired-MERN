@@ -4,43 +4,108 @@ import cloudinary from "../config/cloudinary";
 import mongoose from "mongoose";
 
 export const getBlogs = async (req: Request, res: Response) => {
-  const blogs = await Blog.find().sort({ createdAt: -1 });
-  res.json(blogs);
+  try {
+    const blogs = await Blog.find()
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const formattedBlogs = blogs.map((blog) => {
+      const { image, ...rest } = blog;
+
+      return {
+        ...rest,
+        featuredImage: image?.url || null,
+      };
+    });
+
+    return res.status(200).json({
+      success: true,
+      data: formattedBlogs,
+    });
+  } catch (error) {
+    console.error("Get Blogs Error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
 };
+
+// export const createBlog = async (req: Request, res: Response) => {
+//   try {
+//     const blogData: any = { ...req.body };
+
+//     // Parse SEO JSON
+//     if (req.body.seo) {
+//       blogData.seo = JSON.parse(req.body.seo);
+//     }
+
+//     // ✅ Generate Canonical Link Automatically
+//     if (!blogData.seo) {
+//       blogData.seo = {};
+//     }
+
+//     blogData.seo.canonicalLink = `https://adaired.com/blog/${blogData.slug}`;
+
+//     // Cloudinary image
+//     if (req.file) {
+//       blogData.image = {
+//         url: req.file.path,
+//         public_id: req.file.filename || req.file.originalname,
+//       };
+//     }
+
+//     const blog = await Blog.create(blogData);
+
+//     res.status(201).json({
+//       success: true,
+//       message: "Blog created successfully",
+//       data: blog,
+//     });
+//   } catch (error: any) {
+//     res.status(500).json({
+//       success: false,
+//       message: error.message,
+//     });
+//   }
+// };
 
 export const createBlog = async (req: Request, res: Response) => {
   try {
     const blogData: any = { ...req.body };
 
-    // Parse SEO JSON
+    // ✅ Parse SEO JSON safely
     if (req.body.seo) {
       blogData.seo = JSON.parse(req.body.seo);
     }
 
-    // ✅ Generate Canonical Link Automatically
+    // ✅ Ensure SEO object exists
     if (!blogData.seo) {
       blogData.seo = {};
     }
 
+    // ✅ Generate Canonical Link
     blogData.seo.canonicalLink = `https://adaired.com/blog/${blogData.slug}`;
 
-    // Cloudinary image
+    // ✅ Cloudinary Image
     if (req.file) {
       blogData.image = {
-        url: req.file.path,
-        public_id: req.file.filename || req.file.originalname,
+        url: req.file.path,        // clean Cloudinary URL
+        public_id: req.file.filename, // auto-generated public_id
       };
     }
 
     const blog = await Blog.create(blogData);
 
-    res.status(201).json({
+    return res.status(201).json({
       success: true,
       message: "Blog created successfully",
       data: blog,
     });
   } catch (error: any) {
-    res.status(500).json({
+    console.error("Create Blog Error:", error);
+
+    return res.status(500).json({
       success: false,
       message: error.message,
     });
@@ -183,7 +248,7 @@ export const getBlogBySlug = async (req: Request, res: Response) => {
       });
     }
 
-    const blog = await Blog.findOne({ slug });
+    const blog = await Blog.findOne({ slug }).lean();
 
     if (!blog) {
       return res.status(404).json({
@@ -192,9 +257,14 @@ export const getBlogBySlug = async (req: Request, res: Response) => {
       });
     }
 
+    const { image, ...rest } = blog;
+
     return res.status(200).json({
       success: true,
-      data: blog,
+      data: {
+        ...rest,
+        featuredImage: image?.url || null,
+      },
     });
   } catch (error) {
     console.error("Get Blog By Slug Error:", error);

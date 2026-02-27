@@ -23,16 +23,33 @@
 // export default upload;
 
 
+// import multer from "multer";
+// import { CloudinaryStorage } from "multer-storage-cloudinary";
+// import cloudinary from "./cloudinary"; // import Cloudinary config
+
+// const storage = new CloudinaryStorage({
+//   cloudinary: cloudinary,
+//   params: (req, file) => ({
+//     folder: `blog_${Date.now()}`,              // random folder
+//     allowed_formats: ["jpg", "jpeg", "png"],   // allowed formats
+//     public_id: `${Date.now()}-${file.originalname}`,
+//   }),
+// });
+
+// const upload = multer({ storage });
+
+// export default upload;
+
+
 import multer from "multer";
 import { CloudinaryStorage } from "multer-storage-cloudinary";
-import cloudinary from "./cloudinary"; // import Cloudinary config
+import cloudinary from "./cloudinary";
 
 const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: (req, file) => ({
-    folder: `blog_${Date.now()}`,              // random folder
-    allowed_formats: ["jpg", "jpeg", "png"],   // allowed formats
-    public_id: `${Date.now()}-${file.originalname}`,
+  cloudinary,
+  params: async (req, file) => ({
+    resource_type: "image", // ✅ now TS accepts it
+    allowed_formats: ["jpg", "jpeg", "png", "webp"],
   }),
 });
 
