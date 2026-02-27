@@ -48,7 +48,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${outfit.variable} ${montserrat.variable} ${mrDafoe.variable}`}
       suppressHydrationWarning
     >
-      <body className="antialiased bg-gray-50 font-sans">
+      <body className="antialiased">
         {children}
       </body>
     </html>

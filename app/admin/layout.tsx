@@ -19,17 +19,17 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
 
       {/* Header */}
       <header className="fixed top-0 left-0 w-full h-16 bg-[#FB9100] flex items-center px-6 z-50 shadow-sm">
-        <h2 className="!text-white">Adaired Admin</h2>
+        <h2 className="!text-white">Adaired</h2>
       </header>
 
       <div className="flex pt-16">
 
         {/* Sidebar */}
-        <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-blue-100 p-4">
+        <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-slate-100 p-4">
           {menuData.map((menu, idx) => (
             <Link
               key={idx}
