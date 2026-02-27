@@ -24,6 +24,9 @@ app.prepare().then(async () => {
         cors({
             origin: [
                 "http://localhost:8000",
+                "http://localhost:3000",
+                "http://localhost:3001",
+                "http://localhost:3002",
                 "https://adaired-dem2.vercel.app/",
                 "https://adaired.com/", // change this
             ],
