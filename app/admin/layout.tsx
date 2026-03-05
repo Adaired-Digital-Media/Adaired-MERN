@@ -11,7 +11,7 @@ import { RiDashboardFill } from "react-icons/ri";
 import { FaBlog } from "react-icons/fa";
 import { MdCategory, MdLogout } from "react-icons/md";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 // export const metadata: Metadata = {
 //   title: "Admin Panel",
@@ -32,6 +32,7 @@ export default function AdminLayout({
 
   const [isOpen, setIsOpen] = useState(true);
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -57,21 +58,29 @@ export default function AdminLayout({
         {/* Sidebar */}
         <aside className={`fixed top-16 left-0 flex flex-col justify-between transition-all duration-300 ease-in-out  ${isOpen ? "w-64" : "w-24"} h-[calc(100vh-4rem)] bg-slate-100 p-4`}>
           <div>
-            {menuData.map((menu, idx) => (
-              <Link
-                key={idx}
-                href={menu.path}
-                className={`block rounded-md hover:bg-blue-100 transition active:scale-95 ${isOpen ? "py-3 px-3" : "py-3 flex justify-center"}`}
-              >
-                <div className={`flex items-center ${isOpen ? "gap-3" : "justify-center"}`}>
-                  <span className="shrink-0">
-                    {menu.icon}
-                  </span>
+            {menuData.map((menu, idx) => {
+              const isActive = pathname === menu.path;
+              return (
+                <Link
+                  key={idx}
+                  href={menu.path}
+                  className={`block rounded-md hover:bg-blue-100 transition active:scale-95 
+                    ${isOpen ? "py-3 px-3" : "py-3 flex justify-center"}
+                    ${isActive
+                      ? "bg-blue-900 text-white"
+                      : "hover:bg-blue-100"
+                    }`}
+                >
+                  <div className={`flex items-center ${isOpen ? "gap-3" : "justify-center"} `}>
+                    <span className="shrink-0">
+                      {menu.icon}
+                    </span>
 
-                  {isOpen && menu.label}
-                </div>
-              </Link>
-            ))}
+                    {isOpen && menu.label}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           <button
