@@ -214,9 +214,9 @@ const Page = () => {
         }`}
       >
         <div className="p-6">
-          <h2 className="text-xl font-semibold mb-6">
-            Create Blog Category
-          </h2>
+          <h4 className="text-xl font-semibold mb-6">
+            Create Category
+          </h4>
           <div className="flex flex-col gap-4">
             <input
               type="text"

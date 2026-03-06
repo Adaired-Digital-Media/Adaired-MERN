@@ -158,7 +158,7 @@ const Page = () => {
           {filteredData.length > blogsPerPage && (
             <div className="flex justify-between items-center px-6 py-4 border-t bg-blue-50">
               <div className="flex items-center gap-4">
-                <p className="text-sm text-gray-600">
+                <p className="">
                   Showing {indexOfFirstBlog + 1} -{" "}
                   {Math.min(indexOfLastBlog, filteredData.length)} of {filteredData.length} blogs
                 </p>
@@ -169,7 +169,7 @@ const Page = () => {
                     setBlogsPerPage(Number(e.target.value));
                     setCurrentPage(1);
                   }}
-                  className="border border-gray-600 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-900"
+                  className="border border-gray-600 rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-900"
                 >
                   <option value={10}>10</option>
                   <option value={25}>25</option>
@@ -181,23 +181,23 @@ const Page = () => {
                 <button
                   onClick={() => setCurrentPage((prev) => prev - 1)}
                   disabled={currentPage === 1}
-                  className={`p-4 rounded-lg text-sm font-semibold transition active:scale-90 ${currentPage === 1
+                  className={`p-3 rounded-lg text-xs font-semibold transition active:scale-90 ${currentPage === 1
                     ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                     : "bg-blue-900 text-white hover:bg-[#FB9100] cursor-pointer"
                     }`}
                 >
-                  <IoIosArrowBack size={18} />
+                  <IoIosArrowBack size={14} />
                 </button>
 
                 <button
                   onClick={() => setCurrentPage((prev) => prev + 1)}
                   disabled={currentPage === totalPages}
-                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition active:scale-90 ${currentPage === totalPages
+                  className={`p-3 rounded-lg text-xs font-semibold transition active:scale-90 ${currentPage === totalPages
                     ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                     : "bg-blue-900 text-white hover:bg-[#FB9100] cursor-pointer"
                     }`}
                 >
-                  <IoIosArrowForward size={18} />
+                  <IoIosArrowForward size={14} />
                 </button>
               </div>
             </div>
