@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 const CaseStudy = () => {
   const router = useRouter();
-  const { image, subTitle, title, span, description } = CaseStudySectionData;
+  const { image, subTitle, headingParts, span, description } = CaseStudySectionData;
   const [caseStudies, setCaseStudies] = useState<any[]>([]);
 
   const studies = [
@@ -71,7 +71,8 @@ const CaseStudy = () => {
           <Heading
             isLabel={true}
             subTitle={subTitle}
-            title={title}
+            headingParts={headingParts}
+            textColor='#000000'
             span={span}
             isDecVarticle={true}
             description={description}
