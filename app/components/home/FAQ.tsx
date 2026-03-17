@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import MaxWidthWrapper from '../layout/MaxWidthWrapper';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading from '../common/Heading';
 import { FAQSSectionData } from '@/@core/data/website/Homepage';
 import { MdAdd } from 'react-icons/md';
@@ -29,7 +29,7 @@ const FAQ = ({ faqs }: any) => {
   };
 
   return (
-    <div ref={ref} className="overflow-visible py-[3rem] lg:py-[4rem]">
+    <div ref={ref} className={`overflow-visible py-[3rem] lg:py-[4rem] ${faqs?.bgColor || 'bg-white'}`}>
       <MaxWidthWrapper className="space-y-[1rem] overflow-visible">
         {/* Heading */}
         <div
@@ -40,11 +40,9 @@ const FAQ = ({ faqs }: any) => {
             breakIndex={6}
             isLabel
             subTitle={subTitle}
-            title={faqs?.title}
-            span=""
-            description={faqs?.description}
-            isBgWhite
-            isInCenter
+            textColor={faqs?.textColor}
+            headingParts={faqs?.headingParts}
+            description={faqs?.description}            isInCenter
             className="w-full lg:w-[90%]"
           />
         </div>
@@ -86,18 +84,18 @@ const FAQ = ({ faqs }: any) => {
                   )} */}
 
 
-                  {isOpen && (
+                  {/* {isOpen && ( */}
+                  <div
+                    className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}
+                  >
                     <div className="space-y-3">
-
                       {Array.isArray(faq.description) ? (
                         faq.description.map((desc: any, index: number) => {
-
                           if (typeof desc === "string") {
                             return (
                               <p key={index}>{desc}</p>
                             );
                           }
-
                           if (typeof desc === "object" && desc?.list) {
                             return (
                               <div key={index} className="space-y-2">
@@ -117,7 +115,8 @@ const FAQ = ({ faqs }: any) => {
                       )}
 
                     </div>
-                  )}
+                    {/* )} */}
+                  </div>
                 </div>
 
                 {/* Toggle Icon */}

@@ -1,8 +1,7 @@
 "use client";
 import React from 'react';
-import MaxWidthWrapper from '../layout/MaxWidthWrapper';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading from '../common/Heading';
-
 import client_1 from '../../../public/assets/images/client/client_1.png';
 import client_2 from '../../../public/assets/images/client/client_2.png';
 import client_3 from '../../../public/assets/images/client/client_3.png';
@@ -80,9 +79,9 @@ const Clients = () => {
             breakIndex={7}
             isLabel={true}
             subTitle={'Our ClientS'}
-            title={'A Decade Of Turning Strategies into Results'}
+            headingParts={[{text:'A Decade Of Turning Strategies into Results', color:"#000000", weight:700}]}
+            textColor='#000000'
             isInCenter={true}
-            isBgWhite={true}
           />
         </div>
 
