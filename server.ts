@@ -9,7 +9,7 @@ import blogCategoryRoutes from "./backend/routes/blogCategory.routes";
 import authRoutes from "./backend/routes/auth.routes";
 import mailRoutes from "./backend/routes/mail.routes";
 import productRoutes from "./backend/routes/product.route";
-
+import formRoutes from "./backend/routes/form.routes";
 import cors from "cors";
 dotenv.config();
 
@@ -46,6 +46,7 @@ app.prepare().then(async () => {
   server.use("/api/case-study", caseStudyRoutes);
   server.use("/api/blog-category", blogCategoryRoutes);
   server.use("/api/products", productRoutes);
+  server.use("/api/form", formRoutes);
 
   server.use("/api/mail", mailRoutes);
 
