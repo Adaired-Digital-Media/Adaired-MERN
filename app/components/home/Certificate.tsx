@@ -6,7 +6,7 @@
   import certificate_4 from '../../../public/assets/images/ai/ai_4.svg';
   import certificate_5 from '../../../public/assets/images/ai/ai_5.svg';
   import certificate_6 from '../../../public/assets/images/ai/ai_6.svg';
-  import MaxWidthWrapper from '../layout/MaxWidthWrapper';
+  import MaxWidthWrapper from '../MaxWidthWrapper';
   import Heading from '../common/Heading';
   import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
 
@@ -39,12 +39,12 @@
               isLabel={true}
               breakIndex={5}
               subTitle={'AI Growth Catalyst'}
-              title={'Propelling Businesses into the Spotlight through Intelligent AI'}
+              headingParts={[{text:'Propelling Businesses into the Spotlight through Intelligent AI', color:"#000000", weight:700}]}
+              textColor='#000000'
               description={
                 'Ensuring businesses gain visibility in AI responses, increasing brand mentions, trustworthiness, and discoverability across modern large language models.'
               }
               isInCenter={true}
-              isBgWhite={true}
             />
           </div>
 

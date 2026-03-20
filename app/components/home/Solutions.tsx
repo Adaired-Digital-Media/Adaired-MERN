@@ -1,16 +1,10 @@
 'use client';
-import { SolutionsSectionData } from '@/@core/data/website/Homepage';
 import React, { useState } from 'react';
-import MaxWidthWrapper from '../layout/MaxWidthWrapper';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading from '../common/Heading';
 import Image from 'next/image';
 import img from '../../../public/assets/images/home/solutions.png';
 import Mask from '../../../public/assets/images/home/Mask group.png';
-
-import {
-  useImageReveal,
-  useZoomOnView,
-} from '@/@core/hooks/useScrollAnimations';
 import SaveAndCancel from '../common/SaveAndCancel';
 import GetQuoteModal from '../popup/GetQuoteModal';
 import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
@@ -22,19 +16,7 @@ export interface ISolution {
 }
 const Solutions = ({ data }: any) => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
-
   const [open, setOpen] = useState(false);
-  const { subTitle, title, points, description, cursive } =
-    SolutionsSectionData;
-  const { ref: imageRef, className: imageClass } = useImageReveal({
-    direction: 'left',
-    delay: 350,
-  });
-
-  const { ref: zoomRef, className: zoomClass } = useZoomOnView({
-    delay: 200,
-    once: true,
-  });
 
   return (
     <section className="">
@@ -89,7 +71,7 @@ const Solutions = ({ data }: any) => {
             <Heading
               isLabel={data?.subTitle && true}
               subTitle={data?.subTitle}
-              title={data?.title}
+              headingParts={data?.headingParts}
               span=""
               description={data?.description}
             />

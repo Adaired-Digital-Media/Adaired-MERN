@@ -1,15 +1,15 @@
 "use client";
 import { ContactSectionData } from '@/@core/data/website/Homepage';
-import MaxWidthWrapper from '../layout/MaxWidthWrapper';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading from '../common/Heading';
 import Image from 'next/image';
-// import reachout from '@/assets/700_650.png';
-// import ContactForm from '../forms/ContactForm';
+import reachout from '../../../public/assets/700_650.png';
+import ContactForm from '../form/ContactForm';
 import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
 
 const Contact = () => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
-  const { image, subTitle, title, span, description } = ContactSectionData;
+  const { image, subTitle, headingParts, textColor, span, description } = ContactSectionData;
 
   return (
     <section ref={ref} className="">
@@ -21,11 +21,11 @@ const Contact = () => {
             breakIndex={5}
             isLabel={true}
             subTitle={subTitle}
-            title={title}
+            textColor={textColor}
+            headingParts={headingParts}
             span={span}
             description={description}
             isInCenter={true}
-            isBgWhite={true}
           />
         </div>
 
@@ -33,17 +33,17 @@ const Contact = () => {
           <div
             className={`relative overflow-hidden transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'} `}
           >
-            {/* <Image
+            <Image
               src={reachout}
               fill
               alt="About Image"
               className="rounded-3xl border-[#e3e3e3] object-cover p-1"
-            /> */}
+            />
           </div>
           <div
             className={`transition-all delay-200 duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'} `}
           >
-            {/* <ContactForm /> */}
+            <ContactForm />
           </div>
         </div>
       </MaxWidthWrapper>

@@ -1,7 +1,7 @@
 "use client";
 import { AboutSectionData } from '@/@core/data/website/Homepage';
 import React from 'react';
-import MaxWidthWrapper from '../layout/MaxWidthWrapper';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading from '../common/Heading';
 import Image from 'next/image';
 import img from '../../../public/assets/images/home/aboutus.png';
@@ -15,7 +15,7 @@ import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
 
 const About = () => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
-  const { subTitle, title, points, description, cursive } = AboutSectionData;
+  const { subTitle, headingParts, points, description, cursive } = AboutSectionData;
 
   return (
     <section className="">
@@ -123,7 +123,7 @@ const About = () => {
             <Heading
               isLabel={true}
               subTitle={subTitle}
-              title={title}
+              headingParts={headingParts}
               span=""
               description={description}
               isPara2={true}

@@ -70,6 +70,7 @@ h6 {
 }
 
 h1 {
+  font-family: var(--font-poppins), sans-serif;
   font-weight: 700;
   font-size: clamp(1.8rem, 3vw, 3.75rem);
   line-height: clamp(2.5rem, 3.65vw, 4.65rem);
@@ -105,14 +106,16 @@ h6 {
 }
 
 p {
+  font-family: var(--font-montserrat), sans-serif;
   font-weight: 500;
   font-size: clamp(0.875rem, 1.1vw, 1.125rem);
   line-height: clamp(1.6rem, 1.813vw, 1.813rem);
 }
 
 span {
-  font-weight: 500;
-  font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+  font-family: var(--font-montserrat), sans-serif;
+  /* font-weight: 500;
+  font-size: clamp(0.6rem, 0.8vw, 0.75rem); */
 }
 
 /* =========================

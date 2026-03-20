@@ -1,27 +1,27 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import MaxWidthWrapper from './layout/MaxWidthWrapper';
-import user from '../../public/assets/review/Ellipse 30.png';
-import user_2 from '../../public/assets/review/Ellipse 31.png';
-import user_3 from '../../public/assets/review/Ellipse 32.png';
-import user_4 from '../../public/assets/review/Ellipse 33.png';
-import user_5 from '../../public/assets/review/Ellipse 34.png';
-import Image from 'next/image';
-import { MdStarRate } from 'react-icons/md';
-import SaveAndCancel from './common/SaveAndCancel';
-import banner_img_1 from '../../public/assets/graph/Graph 1.svg';
-import banner_img_2 from '../../public/assets/graph/Graph 2.svg';
-import banner_img_3 from '../../public/assets/graph/Graph 3.svg';
-import hero_banner from '../../public/assets/images/home/hero_banner-bg.png';
-import { useRouter } from 'next/navigation';
-import { FaUser } from 'react-icons/fa';
-import { FiArrowUpRight } from 'react-icons/fi';
-import { PiDotsThree } from 'react-icons/pi';
-import google from '../../public/assets/images/partner/google.svg';
-import upwork from '../../public/assets/images/partner/upwork.svg';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
-import star from '../../public/assets/icons/star.png';
-import useIsMobile from '@/@core/hooks/useIsMobile';
+"use client";
+import React, { useEffect, useState } from "react";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import user from "../../public/assets/review/Ellipse 30.png";
+import user_2 from "../../public/assets/review/Ellipse 31.png";
+import user_3 from "../../public/assets/review/Ellipse 32.png";
+import user_4 from "../../public/assets/review/Ellipse 33.png";
+import user_5 from "../../public/assets/review/Ellipse 34.png";
+import Image from "next/image";
+import { MdStarRate } from "react-icons/md";
+import SaveAndCancel from "./common/SaveAndCancel";
+import banner_img_1 from "../../public/assets/graph/Graph 1.svg";
+import banner_img_2 from "../../public/assets/graph/Graph 2.svg";
+import banner_img_3 from "../../public/assets/graph/Graph 3.svg";
+import hero_banner from "../../public/assets/images/home/hero_banner-bg.png";
+import { useRouter } from "next/navigation";
+import { FaUser } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
+import { PiDotsThree } from "react-icons/pi";
+import google from "../../public/assets/images/partner/google.svg";
+import upwork from "../../public/assets/images/partner/upwork.svg";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
+import star from "../../public/assets/icons/star.png";
+import useIsMobile from "@/@core/hooks/useIsMobile";
 
 const Banner = () => {
   const isMobile = useIsMobile();
@@ -32,62 +32,62 @@ const Banner = () => {
     {
       icon: <FaUser size={10} />,
       id: 0,
-      lebal: 'Monthly Users',
-      number: '23.6K',
+      lebal: "Monthly Users",
+      number: "23.6K",
       griphNumber: `10`,
       griph: <FiArrowUpRight size={10} />,
-      color: '#FF5A65',
+      color: "#FF5A65",
     },
     {
       id: 1,
       icon: <FaUser size={10} />,
-      lebal: 'Monthly Users',
-      number: '23.6K',
+      lebal: "Monthly Users",
+      number: "23.6K",
       griphNumber: `102`,
       griph: <FiArrowUpRight size={10} />,
-      color: '#14CA74',
+      color: "#14CA74",
     },
     ,
     {
       id: 2,
       icon: <FaUser size={10} />,
-      lebal: 'New Users',
-      number: '10.6K',
+      lebal: "New Users",
+      number: "10.6K",
       griphNumber: `102`,
       griph: <FiArrowUpRight size={10} />,
-      color: '#14CA74',
+      color: "#14CA74",
     },
     {
       id: 3,
       icon: <FaUser size={10} />,
-      lebal: 'Subscribes',
-      number: '21.6K',
+      lebal: "Subscribes",
+      number: "21.6K",
       griphNumber: `102`,
       griph: <FiArrowUpRight size={10} />,
-      color: '#14CA74',
+      color: "#14CA74",
     },
   ];
 
-  const [active, setActive] = useState<null | 'img3' | 'img2' | 'img1'>(null);
+  const [active, setActive] = useState<null | "img3" | "img2" | "img1">(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       // 1️⃣ IMG 3
-      setActive('img2');
+      setActive("img2");
 
       setTimeout(() => {
         setActive(null);
 
         // 2️⃣ IMG 2
         setTimeout(() => {
-          setActive('img3');
+          setActive("img3");
 
           setTimeout(() => {
             setActive(null);
 
             // 3️⃣ IMG 1
             setTimeout(() => {
-              setActive('img1');
+              setActive("img1");
 
               setTimeout(() => {
                 setActive(null);
@@ -101,10 +101,10 @@ const Banner = () => {
     return () => clearInterval(interval);
   }, []);
   const scrollToServices = () => {
-    const section = document.getElementById('services');
+    const section = document.getElementById("services");
     section?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
   };
 
@@ -120,9 +120,10 @@ const Banner = () => {
         priority
         className="pointer-events-none object-fill lg:object-cover"
       />
+
       <MaxWidthWrapper className="relative z-10 block items-center justify-between py-[6rem] lg:flex lg:py-[4rem]">
         <div
-          className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[45%] xl:w-[42%] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}
+          className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[45%] xl:w-[42%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
         >
           <div className="mx-auto flex w-fit gap-3 rounded-full border-[0.71px] border-[#000000]/20 px-[1rem] py-[0.25rem] lg:mx-0 lg:mr-auto">
             <Image
@@ -154,7 +155,7 @@ const Banner = () => {
                     return (
                       <div
                         key={index}
-                        className={`relative ${index !== 0 ? '-ml-4' : ''}`}
+                        className={`relative ${index !== 0 ? "-ml-4" : ""}`}
                         // style={{ zIndex: users.length - index }}
                         style={{ zIndex: index + 1 }}
                       >
@@ -164,7 +165,7 @@ const Banner = () => {
                           height={50}
                           alt="user"
                           className={`${
-                            isLast ? 'animate-zoomPulse' : ''
+                            isLast ? "animate-zoomPulse" : ""
                           } h-[50px] w-[50px] rounded-full border-2 border-white object-cover`}
                         />
                       </div>
@@ -229,13 +230,13 @@ const Banner = () => {
             effectively expands across digital channels.
           </p>
           <SaveAndCancel
-            name={'Get a Quote'}
-            button2Name={'Explore Services'}
+            name={"Get a Quote"}
+            button2Name={"Explore Services"}
             is2ndButton={true}
             isIcon={true}
             is2BgWhite={true}
             className="lg:pt-[1rem]"
-            handleClick={() => router.push('/contact')}
+            handleClick={() => router.push("/contact")}
             handleClick2={scrollToServices}
           />
         </div>
@@ -324,13 +325,27 @@ const Banner = () => {
         </div> */}
         <div
           className={`relative mt-[5rem] w-[100%] transition-all delay-200 duration-1000 lg:mt-0 lg:w-[50%] lg:pt-0 ${
-            isVisible ? 'translate-x-0 opacity-100' : 'translate-x-16 opacity-0'
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
           }`}
         >
           <div className="my-auto h-full space-y-4">
             <div className="flex w-[100%] justify-center">
               <div className="relative flex justify-end">
-                <Image
+                <div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full rounded-2xl w-full"
+                  >
+                    <source
+                      src="/assets/videos/Graph animation_4.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                {/* <Image
                   src={banner_img_1}
                   width={599}
                   height={483}
@@ -342,55 +357,12 @@ const Banner = () => {
                         ? 'opacity-40'
                         : 'opacity-100'
                   }`}
-                />
+                /> */}
 
-                <div className="absolute right-0 top-[103%] hidden w-[100%] grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-2 md:grid">
+                {/* <div className="absolute right-0 top-[103%] hidden w-[100%] grid-cols-[repeat(auto-fit,minmax(90px,1fr))] gap-2 md:grid">
                   {griphData?.map((item, idx) => {
                     return (
-                      // <div
-                      //   className={`min-h-[3.5rem] rounded-[0.25rem] border border-black/20 bg-white/80 px-2 pb-2 ${
-                      //     idx == 1 && 'animate-step1'
-                      //   } ${idx == 2 && 'animate-step2'} ${
-                      //     idx == 3 && 'animate-step3'
-                      //   } ${idx == 4 && 'animate-step4'}`}
-                      // >
-                      //   <div className="flex justify-between">
-                      //     <div className="my-auto flex gap-1">
-                      //       <span className="my-auto">{item?.icon}</span>
-                      //       <p className="mb-auto text-[6px] xl:text-[6px]">
-                      //         {item?.lebal}
-                      //       </p>
-                      //     </div>
-                      //     <PiDotsThree size={12} />
-                      //   </div>
-
-                      //   <div className="-mt-1 flex h-fit w-[100%] gap-2">
-                      //     <p className="my-auto text-[10px] font-bold xl:text-[12px]">
-                      //       {item?.number}
-                      //     </p>
-
-                      //     <div
-                      //       className={`my-auto flex h-[16px] w-fit gap-1 rounded-[0.25rem] border-[0.49px] bg-[#000000]/10 px-[0.5rem] opacity-40 ${
-                      //         item?.griphNumber == '10'
-                      //           ? 'border-[#FF5A65]/20 text-[#FF5A65]'
-                      //           : 'border-[#14CA74]/20 text-[#14CA74]'
-                      //       }`}
-                      //     >
-                      //       <p
-                      //         className={`mt-[-0.25rem] text-[6px] font-semibold xl:text-[6px] ${
-                      //           item?.griphNumber == '10'
-                      //             ? 'text-[#FF5A65]'
-                      //             : 'text-[#14CA74]'
-                      //         }`}
-                      //       >
-                      //         {item?.griphNumber}
-                      //       </p>
-                      //       <span className="my-auto">{item?.griph}</span>
-                      //     </div>
-                      //   </div>
-                      // </div>
                       <div
-                      key={idx}
                         className={`min-h-[3.5rem] rounded-[0.25rem] border border-black/20 bg-white/80 px-2 py-2 ${
                           idx == 1 && 'animate-step1'
                         } ${idx == 2 && 'animate-step2'} ${
@@ -436,12 +408,12 @@ const Banner = () => {
                       </div>
                     );
                   })}
-                </div>
+                </div> */}
               </div>
             </div>
 
             {/* Image 3 */}
-            <Image
+            {/* <Image
               src={banner_img_3}
               width={302}
               height={186}
@@ -453,10 +425,10 @@ const Banner = () => {
                     ? 'z-10 translate-x-0 translate-y-0 scale-100 opacity-40'
                     : 'z-10 translate-x-0 translate-y-0 scale-100 opacity-100'
               }`}
-            />
+            /> */}
 
             {/* Image 2 */}
-            <Image
+            {/* <Image
               src={banner_img_2}
               width={388}
               height={244}
@@ -468,7 +440,7 @@ const Banner = () => {
                     ? 'z-10 translate-x-0 translate-y-0 scale-100 opacity-40'
                     : 'z-10 translate-x-0 translate-y-0 scale-100 opacity-100'
               }`}
-            />
+            /> */}
           </div>
         </div>
       </MaxWidthWrapper>

@@ -1,7 +1,7 @@
 'use client';
 import { BlogSectionData } from '@/@core/data/website/Homepage';
 import Image from 'next/image';
-import MaxWidthWrapper from '../layout/MaxWidthWrapper';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 import Heading from '../common/Heading';
 import { useRouter } from 'next/navigation';
 import { IoArrowForwardSharp } from 'react-icons/io5';
@@ -11,7 +11,7 @@ import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
 const Blogs = () => {
   const router = useRouter();
   const charLimit = useBreakpointCharLimit();
-  const { subTitle, title, description, blogs, span } = BlogSectionData;
+  const { subTitle, headingParts, textColor, description, blogs, span } = BlogSectionData;
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
 
   return (
@@ -27,11 +27,11 @@ const Blogs = () => {
             breakIndex={5}
             isLabel={true}
             subTitle={subTitle}
-            title={title}
+            textColor={textColor}
+            headingParts={headingParts}
             span={span}
             description={description}
             isInCenter
-            isBgWhite
             className="w-full lg:w-[70%]"
           />
         </div>
