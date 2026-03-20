@@ -21,11 +21,8 @@ import { useRouter, usePathname } from "next/navigation";
 const menuData = [
   { label: "Dashboard", path: "/admin", icon: <RiDashboardFill size={20} /> },
   { label: "Blog", path: "/admin/blog", icon: <FaBlog size={20} /> },
-  {
-    label: "Blog Category",
-    path: "/admin/blog-category",
-    icon: <MdCategory size={20} />,
-  },
+  { label: "Blog Category", path: "/admin/blog-category", icon: <MdCategory size={20} /> },
+  { label: "Case Study", path: "/admin/case-study", icon: <FaBlog size={20} /> },
 ];
 
 export default function AdminLayout({
@@ -45,7 +42,7 @@ export default function AdminLayout({
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full py-[1rem] bg-slate-50 flex items-center px-6 z-50 shadow-sm">
+      <header className="fixed top-0 left-0 w-full py-4 bg-slate-50 flex items-center px-6 z-50 shadow-sm">
         <Image src={MainLogo} alt="Logo" width={140} height={50} className="" />
       </header>
 
@@ -63,8 +60,7 @@ export default function AdminLayout({
                   href={menu.path}
                   className={`block rounded-md hover:bg-blue-100 transition active:scale-95 
                     ${isOpen ? "py-3 px-3" : "py-3 flex justify-center"}
-                    ${
-                      isActive ? "bg-blue-900 text-white" : "hover:bg-blue-100"
+                    ${isActive ? "bg-blue-900 text-white" : "hover:bg-blue-100"
                     }`}
                 >
                   <div
@@ -81,7 +77,7 @@ export default function AdminLayout({
 
           <button
             onClick={handleLogout}
-            className="block mb-[1rem] py-3 px-3 rounded-md bg-blue-100 hover:bg-red-100 hover:text-red-600 font-semibold transition"
+            className="block mb-4 py-3 px-3 rounded-md bg-blue-100 hover:bg-red-100 hover:text-red-600 font-semibold transition"
           >
             <div className="flex gap-3 items-center">
               <MdLogout size={20} />
