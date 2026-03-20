@@ -105,7 +105,7 @@ const Page = () => {
         </div>
 
         <SaveAndCancel
-          name={"Create Blog"}
+          name={"Create"}
           isIcon={true}
           handleClick={() => router.push("/admin/blog/create")}
         />
@@ -117,7 +117,7 @@ const Page = () => {
         <div className="pt-36 text-center">
           {search
             ? "No blogs found matching your search."
-            : 'No blogs found. Click "Create Blog" to add one.'}
+            : 'No blogs found. Click "Add Blog" to add one.'}
         </div>
       ) : (
         <div className="bg-white rounded-2xl shadow-md overflow-hidden">

@@ -103,7 +103,7 @@ export const createBlog = async (req: Request, res: Response) => {
       data: blog,
     });
   } catch (error: any) {
-    console.error("Create Blog Error:", error);
+    console.error("Add Blog Error:", error);
 
     return res.status(500).json({
       success: false,

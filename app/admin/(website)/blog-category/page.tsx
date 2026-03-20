@@ -118,7 +118,7 @@ const Page = () => {
         </div>
 
         <SaveAndCancel
-          name={"Create Blog Category"}
+          name={"Create"}
           isIcon={true}
           handleClick={() => setOpenModal(true)}
         />
