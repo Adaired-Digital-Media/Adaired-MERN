@@ -11,12 +11,16 @@
 
   --muted: 220 14.3% 95.9%;
   --muted-foreground: 220 8.9% 46.1%;
+  --primary: #1b5a96;
+  --secondary: #fb9100;
 }
 
 /* Tailwind v4 Theme Mapping */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 
   /* CONNECT NEXT/FONT VARIABLES */
   --font-sans: var(--font-montserrat);

@@ -26,6 +26,7 @@ const ImportantToBussiness = ({ importantToBussiness }: any) => {
             <div
               className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"} `}
             >
+              <p>hello</p>
               <Heading
                 isDecVarticle
                 isInCenter={importantToBussiness?.isInCenter}
