@@ -6,8 +6,7 @@ import get_a_Quote from '../../../../public/assets/images/get_a_Quote.png';
 import Image from 'next/image';
 import MessageField from '../../UI/MessageField/MessageField';
 import SaveAndCancel from '../../common/SaveAndCancel';
-// import { Icons } from '@web-components/Icons';
-
+import { Icons } from '../../UI/Icons';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -124,7 +123,7 @@ const GetQuoteModal = ({ isOpen, onClose }: GetQuoteModalProps) => {
       />
 
       {/* Modal */}
-      <div className="relative z-50 rounded-2xl bg-[#FFFFFF] p-6 shadow-xl md:w-[w-95%] lg:w-[95%] 1600:w-[70%] 3xl:w-[60%]">
+      <div className="relative z-50 rounded-2xl bg-[#FFFFFF] p-6 shadow-xl md:w-[w-95%] lg:w-[60%]">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -135,7 +134,7 @@ const GetQuoteModal = ({ isOpen, onClose }: GetQuoteModalProps) => {
 
         {/* Modal Content */}
         <div className="flex justify-between gap-3">
-          <div className="relative w-[40%]">
+          <div className="relative lg:w-[40%] hidden lg:block">
             <Image
               src={get_a_Quote}
               alt="get_a_Quote"
@@ -148,36 +147,40 @@ const GetQuoteModal = ({ isOpen, onClose }: GetQuoteModalProps) => {
               <div className="mt-4 flex gap-2">
                 <Link
                   href={process.env.NEXT_PUBLIC_TWITTER_URL || '/'}
+                  target="_blank"
                   className="group/x hover:bg-theme-orange rounded-full bg-white p-2"
                 >
-                  {/* <Icons.Twitter className="text-[#1B5A96] group-hover/x:text-[#FB9100]" /> */}
+                  <Icons.Twitter className="text-[#1B5A96] group-hover/x:text-[#FB9100]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
                 </Link>
                 <Link
                   href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || '/'}
+                  target="_blank"
                   className="group/insta hover:bg-theme-orange rounded-full bg-white p-2"
                 >
-                  {/* <Icons.Instagram className="text-[#1B5A96] group-hover/insta:text-[#FB9100]" /> */}
+                  <Icons.Instagram className="text-[#1B5A96] group-hover/insta:text-[#FB9100]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
                 </Link>
                 <Link
                   href={process.env.NEXT_PUBLIC_FACEBOOK_URL || '/'}
+                  target="_blank"
                   className="group/fb hover:bg-theme-orange rounded-full bg-white p-2"
                 >
-                  {/* <Icons.Facebook className="text-[#1B5A96] group-hover/fb:text-[#FB9100]" /> */}
+                  <Icons.Facebook className="text-[#1B5A96] group-hover/fb:text-[#FB9100]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
                 </Link>
                 <Link
                   href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '/'}
+                  target="_blank"
                   className="group/in hover:bg-theme-orange rounded-full bg-white p-2"
                 >
-                  {/* <Icons.LinkedIn className="text-[#1B5A96] group-hover/in:text-[#FB9100]" /> */}
+                  <Icons.LinkedIn className="text-[#1B5A96] group-hover/in:text-[#FB9100]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
@@ -185,14 +188,15 @@ const GetQuoteModal = ({ isOpen, onClose }: GetQuoteModalProps) => {
               </div>
             </div>
           </div>
-          <div className="w-[60%] p-[2rem]">
+
+          <div className="w-full lg:w-[60%] p-[2rem]">
             <h3>See How Your Website Performs</h3>
             <p className="text-[15px] font-medium text-[#323232]">
               Find performance gaps limiting your website’s visibility and
               effectiveness.
             </p>
             <div className="py-[2rem]">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                 <InputField
                   placeholder="First name"
                   name={'firstName'}
@@ -254,5 +258,4 @@ const GetQuoteModal = ({ isOpen, onClose }: GetQuoteModalProps) => {
     </div>
   );
 };
-
 export default GetQuoteModal;

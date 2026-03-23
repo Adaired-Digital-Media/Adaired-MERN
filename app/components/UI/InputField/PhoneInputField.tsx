@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import CountryList from 'country-list-with-dial-code-and-flag';
-import Flag from '../Flag';
-import { MdArrowDropDown } from 'react-icons/md';
+import React, { useState } from "react";
+import CountryList from "country-list-with-dial-code-and-flag";
+import Flag from "../Flag";
+import { MdArrowDropDown } from "react-icons/md";
 
 interface InputFieldProps {
   name: string;
@@ -27,7 +27,7 @@ const PhoneInputField = ({
   required,
 }: InputFieldProps) => {
   const countries = CountryList.getAll();
-  const defaultUSA = countries.find((c) => c.code === 'US') || countries[0];
+  const defaultUSA = countries.find((c) => c.code === "US") || countries[0];
 
   const [selected, setSelected] = useState(defaultUSA);
   const [open, setOpen] = useState(false);
@@ -43,15 +43,15 @@ const PhoneInputField = ({
           >
             <Flag emoji={selected.flag} />
             <MdArrowDropDown
-              className={`transition ${open ? 'rotate-180' : ''}`}
+              className={`transition ${open ? "rotate-180" : ""}`}
             />
           </div>
 
           {open && (
             <div className="absolute z-20 mt-2 max-h-60 w-[18rem] overflow-auto rounded-md bg-[#FFFFFF] shadow">
-              {countries.map((c) => (
+              {countries.map((c, idx: number) => (
                 <div
-                  key={c.code}
+                  key={idx}
                   onClick={() => {
                     setSelected(c);
                     setOpen(false);
@@ -77,7 +77,7 @@ const PhoneInputField = ({
           // Remove dial code before sending to parent
           const phoneOnly = e.target.value.replace(
             `${selected.dial_code} `,
-            ''
+            "",
           );
 
           // Allow only digits

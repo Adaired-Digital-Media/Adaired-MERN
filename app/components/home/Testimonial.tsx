@@ -17,13 +17,12 @@ const Testimonial = () => {
   // const VISIBLE_CARDS = isMobile ? 1 : 3;
   const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
   const VISIBLE_CARDS = isDesktop ? 3 : 1;
-
+  const [visibleCards, setVisibleCards] = useState(1);
   const total = testimonials.length;
-  const slides = [...testimonials, ...testimonials.slice(0, VISIBLE_CARDS)];
+  const slides = [...testimonials, ...testimonials.slice(0, visibleCards)];
   const [index, setIndex] = useState(0);
   const [enableTransition, setEnableTransition] = useState(true);
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
-  const [visibleCards, setVisibleCards] = useState(1);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -74,6 +73,7 @@ const Testimonial = () => {
             >
               {slides.map((testimonial: any, idx: number) => (
                 <div
+                  key={idx}
                   // className={`relative shrink-0 px-[rem] transition-all duration-700 lg:px-[0.5rem] xl:px-[1rem] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} basis-full lg:basis-1/3 `}
                   className={`relative shrink-0 basis-full px-2 transition-all duration-700 lg:basis-1/3 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   style={{

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdminAuthGuard from "./AdminAuthGuard";
 import Image from "next/image";
-import MainLogo from "../../public/assets/brand_logo.svg";
+import MainLogo from "../../public/Layer_1.svg";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";

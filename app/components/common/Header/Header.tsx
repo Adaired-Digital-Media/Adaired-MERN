@@ -1,22 +1,27 @@
-"use client";
-import Image from "next/image";
-import React, { useRef, useState } from "react";
-import logo from "../../../../public/Layer_1.svg";
-import MaxWidthWrapper from "../../MaxWidthWrapper";
-import { routes } from "@/@core/config/routes";
+'use client';
+import Image from 'next/image';
+import React, { useRef, useState } from 'react';
+import logo from '../../../../public/Layer_1.svg';
+import MaxWidthWrapper from '../../MaxWidthWrapper';
+import { routes } from '../../../../@core/config/routes';
 import {
   MdKeyboardArrowDown,
   MdOutlineKeyboardArrowRight,
-} from "react-icons/md";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { IoReorderThreeOutline } from "react-icons/io5";
-import { IoClose } from "react-icons/io5";
-import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import SaveAndCancel from "../SaveAndCancel";
-import { GoArrowUpRight } from "react-icons/go";
-import { MdArrowOutward } from "react-icons/md";
-import contactus from "../../../../public/assets/header/Group 1000006721.svg";
+} from 'react-icons/md';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { IoReorderThreeOutline } from 'react-icons/io5';
+import { IoClose } from 'react-icons/io5';
+import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
+import SaveAndCancel from '../SaveAndCancel';
+import { GoArrowUpRight } from 'react-icons/go';
+import { MdArrowOutward } from 'react-icons/md';
+import contactus from '../../../../public/assets/header/Group 1000006721.svg';
+import { TiMediaRecordOutline } from 'react-icons/ti';
+import { VscDebugBreakpointLogUnverified } from 'react-icons/vsc';
+import { TbPointFilled } from 'react-icons/tb';
+import { MdOutlineArrowRight } from 'react-icons/md';
+import { MdOutlineKeyboardDoubleArrowRight } from 'react-icons/md';
 
 const Header = () => {
   const router = useRouter();
@@ -31,14 +36,17 @@ const Header = () => {
   const [level, setLevel] = useState<0 | 1 | 2>(0);
   const [activeMenu, setActiveMenu] = useState<any>(null);
   const [activeGroup, setActiveGroup] = useState<any>(null);
-
+  const handleMenuClose = () => {
+    setHover(null);
+    setActiveMenuTab(null);
+  };
   return (
     <div className="">
       <MaxWidthWrapper>
         <div className="flex w-[100%] items-center rounded-full border-b-[1px] border-[#0000001A] bg-[#FFFFFF]">
           <div className="relative flex w-full justify-between p-[1rem] lg:p-[1%]">
             <div
-              onClick={() => router.push("/")}
+              onClick={() => router.push('/')}
               className="cursor-pointer pl-3"
             >
               <Image
@@ -55,18 +63,18 @@ const Header = () => {
 
                 // Helper
                 const isPathActive = (href: string) => {
-                  return pathname === href || pathname.startsWith(href + "/");
+                  return pathname === href || pathname.startsWith(href + '/');
                 };
 
                 // Check parent + sub + child active
                 const isActive =
-                  (menu.href !== "#" && isPathActive(menu.href)) ||
+                  (menu.href !== '#' && isPathActive(menu.href)) ||
                   menu.subItems?.some(
                     (sub: any) =>
                       isPathActive(sub.href) ||
                       sub.subItems?.some((child: any) =>
-                        isPathActive(child.href),
-                      ),
+                        isPathActive(child.href)
+                      )
                   );
 
                 return (
@@ -78,10 +86,10 @@ const Header = () => {
                     {/* ===================== MAIN MENU ===================== */}
                     <Link
                       href={menu.href}
-                      className={`font-Outfit flex text-[18px] items-center rounded-full px-5 py-2 transition ${
+                      className={`font-Outfit flex items-center rounded-full px-5 py-2 transition ${
                         isActive || isHover
-                          ? "bg-[#FB9100] text-white"
-                          : "text-black"
+                          ? 'bg-[#FB9100] text-white'
+                          : 'text-black'
                       }`}
                     >
                       {menu.label}
@@ -93,18 +101,18 @@ const Header = () => {
                       <div
                         className={`absolute left-0 right-0 top-[76%] z-50 transition-all duration-300 ease-out ${
                           isHover
-                            ? "pointer-events-auto translate-y-0 opacity-100"
-                            : "pointer-events-none -translate-y-3 opacity-0"
+                            ? 'pointer-events-auto translate-y-0 opacity-100'
+                            : 'pointer-events-none -translate-y-3 opacity-0'
                         }`}
                       >
                         {/* ===================== RESOURCES / WHITE LABEL ===================== */}
-                        {menu.label === "Resources" ||
-                        menu.label === "White Label" ? (
+                        {menu.label === 'Resources' ||
+                        menu.label === 'White Label' ? (
                           <div
                             className={`${
-                              menu.label === "White Label"
-                                ? "ml-[39%]"
-                                : "ml-[52%]"
+                              menu.label === 'White Label'
+                                ? 'ml-[38%]'
+                                : 'ml-[48.06%]'
                             } mx-auto w-fit rounded-xl bg-white p-4 shadow-lg`}
                           >
                             <ul className="space-y-2">
@@ -115,10 +123,11 @@ const Header = () => {
                                   <li key={i}>
                                     <Link
                                       href={item.href}
+                                      onClick={handleMenuClose}
                                       className={`group flex items-center gap-2 text-xs transition ${
                                         isItemActive
-                                          ? "text-[#FB9100]"
-                                          : "text-gray-600 hover:text-[#FB9100]"
+                                          ? 'text-[#FB9100]'
+                                          : 'text-gray-600 hover:text-[#FB9100]'
                                       }`}
                                     >
                                       {item.name}
@@ -156,8 +165,8 @@ const Header = () => {
                                             className={`relative rounded-[1rem] border-r px-[1rem] ${
                                               activeMenuTab === index ||
                                               isCardActive(sub)
-                                                ? "bg-"
-                                                : ""
+                                                ? 'bg-'
+                                                : ''
                                             }`}
                                           >
                                             <span>
@@ -166,25 +175,27 @@ const Header = () => {
                                                 width={43}
                                                 height={43}
                                                 alt={sub?.icon}
-                                                className={`rounded-[5px] border border-[#FB91001A]/10 p-2 ${activeMenuTab === index || isCardActive(sub) ? "bg-[#FFFFFF]" : ""}`}
+                                                className={`rounded-[5px] border border-[#FB91001A]/10 p-2 ${activeMenuTab === index || isCardActive(sub) ? 'bg-[#FFFFFF]' : ''}`}
                                               />
                                             </span>
 
                                             <Link
                                               href={sub.href}
-                                              className={`group flex items-center gap-2 transition hover:text-[#FB9100]`}
+                                              onClick={handleMenuClose}
+                                              className={`group flex items-center gap-0.5 transition hover:text-[#FB9100]`}
                                             >
+                                              {/* <TiMediaRecordOutline/> */}
                                               <span
-                                                className={`my-[0.65rem] block text-[15px] font-semibold transition ${pathname === sub?.href && "text-[#FB9100]"}`}
+                                                className={`my-[0.65rem] block text-[15px] font-semibold transition ${pathname === sub?.href && 'text-[#FB9100]'}`}
                                               >
                                                 {sub.name}
                                               </span>
 
                                               <GoArrowUpRight
-                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${
+                                                className={`transition-all duration-200 ${pathname === sub?.href && 'font-bold text-[#FB9100]'} ${
                                                   pathname === sub?.href
-                                                    ? "opacity-100"
-                                                    : "opacity-0 group-hover:opacity-100"
+                                                    ? 'opacity-100'
+                                                    : 'opacity-0 group-hover:opacity-100'
                                                 }`}
                                               />
                                             </Link>
@@ -192,31 +203,33 @@ const Header = () => {
                                               {sub.subItems?.map(
                                                 (item: any, j: number) => {
                                                   const isActive = isPathActive(
-                                                    item.href,
+                                                    item.href
                                                   );
 
                                                   return (
                                                     <Link
                                                       key={j}
                                                       href={item.href}
-                                                      className={`group flex items-center gap-2 transition hover:text-[#FB9100]`}
+                                                      onClick={handleMenuClose}
+                                                      className={`group flex items-center gap-2 py-0.5 transition hover:text-[#FB9100]`}
                                                     >
+                                                      {/* <MdOutlineKeyboardDoubleArrowRight /> */}
                                                       <span
-                                                        className={`text-[15px] ${isActive && "font-bold text-[#FB9100]"}`}
+                                                        className={`text-[15px] ${isActive && 'font-bold text-[#FB9100]'}`}
                                                       >
                                                         {item.name}
                                                       </span>
 
                                                       <GoArrowUpRight
-                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${
+                                                        className={`transition-all duration-200 ${isActive && 'font-bold text-[#FB9100]'} ${
                                                           isActive
-                                                            ? "opacity-100"
-                                                            : "opacity-0 group-hover:opacity-100"
+                                                            ? 'opacity-100'
+                                                            : 'opacity-0 group-hover:opacity-100'
                                                         }`}
                                                       />
                                                     </Link>
                                                   );
-                                                },
+                                                }
                                               )}
                                             </div>
                                           </div>
@@ -224,7 +237,7 @@ const Header = () => {
                                       })}
                                   </div>
 
-                                  <div className="my-[0.5rem] grid grid-cols-3 gap-2">
+                                  <div className="my-[1rem] grid grid-cols-3 gap-2">
                                     {menu?.subItems
                                       ?.slice(3, 6)
                                       .map((sub: any, i: number) => {
@@ -242,8 +255,8 @@ const Header = () => {
                                             className={`relative my-[0.65rem] rounded-[1rem] border-r px-[1rem] ${
                                               activeMenuTab === index ||
                                               isCardActive(sub)
-                                                ? "bg-"
-                                                : ""
+                                                ? 'bg-'
+                                                : ''
                                             }`}
                                           >
                                             <span>
@@ -252,25 +265,26 @@ const Header = () => {
                                                 width={43}
                                                 height={43}
                                                 alt={sub?.icon}
-                                                className={`rounded-[5px] border border-[#FB91001A]/10 p-2 ${activeMenuTab === index || isCardActive(sub) ? "bg-[]" : ""}`}
+                                                className={`rounded-[5px] border border-[#FB91001A]/10 p-2 ${activeMenuTab === index || isCardActive(sub) ? 'bg-[]' : ''}`}
                                               />
                                             </span>
 
                                             <Link
                                               href={sub.href}
+                                              onClick={handleMenuClose}
                                               className={`group flex items-center gap-2 transition hover:text-[#FB9100]`}
                                             >
                                               <span
-                                                className={`my-[0.65rem] block text-[15px] font-semibold transition ${pathname === sub?.href && "text-[#FB9100]"}`}
+                                                className={`my-[0.65rem] block text-[15px] font-semibold transition ${pathname === sub?.href && 'text-[#FB9100]'}`}
                                               >
                                                 {sub.name}
                                               </span>
 
                                               <GoArrowUpRight
-                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${
+                                                className={`transition-all duration-200 ${pathname === sub?.href && 'font-bold text-[#FB9100]'} ${
                                                   pathname === sub?.href
-                                                    ? "opacity-100"
-                                                    : "opacity-0 group-hover:opacity-100"
+                                                    ? 'opacity-100'
+                                                    : 'opacity-0 group-hover:opacity-100'
                                                 }`}
                                               />
                                             </Link>
@@ -278,31 +292,34 @@ const Header = () => {
                                               {sub.subItems?.map(
                                                 (item: any, j: number) => {
                                                   const isActive = isPathActive(
-                                                    item.href,
+                                                    item.href
                                                   );
 
                                                   return (
                                                     <Link
                                                       key={j}
                                                       href={item.href}
-                                                      className={`group flex items-center gap-2 transition hover:text-[#FB9100]`}
+                                                      onClick={handleMenuClose}
+                                                      className={`group flex items-center gap-2 py-0.5 transition hover:text-[#FB9100]`}
                                                     >
+                                                      {/* <MdOutlineKeyboardDoubleArrowRight /> */}
+
                                                       <span
-                                                        className={`text-[15px] ${isActive && "font-bold text-[#FB9100]"}`}
+                                                        className={`text-[15px] ${isActive && 'font-bold text-[#FB9100]'}`}
                                                       >
                                                         {item.name}
                                                       </span>
 
                                                       <GoArrowUpRight
-                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${
+                                                        className={`transition-all duration-200 ${isActive && 'font-bold text-[#FB9100]'} ${
                                                           isActive
-                                                            ? "opacity-100"
-                                                            : "opacity-0 group-hover:opacity-100"
+                                                            ? 'opacity-100'
+                                                            : 'opacity-0 group-hover:opacity-100'
                                                         }`}
                                                       />
                                                     </Link>
                                                   );
-                                                },
+                                                }
                                               )}
                                             </div>
                                           </div>
@@ -333,25 +350,26 @@ const Header = () => {
                                                 width={43}
                                                 height={43}
                                                 alt={sub?.icon}
-                                                className={`rounded-[5px] border border-[#FB91001A]/10 p-2 ${activeMenuTab === index || isCardActive(sub) ? "bg-[#FFFFFF]" : ""}`}
+                                                className={`rounded-[5px] border border-[#FB91001A]/10 p-2 ${activeMenuTab === index || isCardActive(sub) ? 'bg-[#FFFFFF]' : ''}`}
                                               />
                                             </span>
 
                                             <Link
                                               href={sub.href}
+                                              onClick={handleMenuClose}
                                               className={`group flex items-center gap-2 transition hover:text-[#FB9100]`}
                                             >
                                               <span
-                                                className={`my-[0.65rem] block text-[15px] font-semibold transition ${pathname === sub?.href && "text-[#FB9100]"}`}
+                                                className={`my-[0.65rem] block text-[15px] font-semibold transition ${pathname === sub?.href && 'text-[#FB9100]'}`}
                                               >
                                                 {sub.name}
                                               </span>
 
                                               <GoArrowUpRight
-                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${
+                                                className={`transition-all duration-200 ${pathname === sub?.href && 'font-bold text-[#FB9100]'} ${
                                                   pathname === sub?.href
-                                                    ? "opacity-100"
-                                                    : "opacity-0 group-hover:opacity-100"
+                                                    ? 'opacity-100'
+                                                    : 'opacity-0 group-hover:opacity-100'
                                                 }`}
                                               />
                                             </Link>
@@ -359,31 +377,34 @@ const Header = () => {
                                               {sub.subItems?.map(
                                                 (item: any, j: number) => {
                                                   const isActive = isPathActive(
-                                                    item.href,
+                                                    item.href
                                                   );
 
                                                   return (
                                                     <Link
                                                       key={j}
                                                       href={item.href}
-                                                      className={`group flex items-center gap-2 transition hover:text-[#FB9100]`}
+                                                      onClick={handleMenuClose}
+                                                      className={`group flex items-center gap-2 py-0.5 transition hover:text-[#FB9100]`}
                                                     >
+                                                      {/* <MdOutlineKeyboardDoubleArrowRight /> */}
+
                                                       <span
-                                                        className={`text-[15px] ${isActive && "font-bold text-[#FB9100]"}`}
+                                                        className={`text-[15px] ${isActive && 'font-bold text-[#FB9100]'}`}
                                                       >
                                                         {item.name}
                                                       </span>
 
                                                       <GoArrowUpRight
-                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${
+                                                        className={`transition-all duration-200 ${isActive && 'font-bold text-[#FB9100]'} ${
                                                           isActive
-                                                            ? "opacity-100"
-                                                            : "opacity-0 group-hover:opacity-100"
+                                                            ? 'opacity-100'
+                                                            : 'opacity-0 group-hover:opacity-100'
                                                         }`}
                                                       />
                                                     </Link>
                                                   );
-                                                },
+                                                }
                                               )}
                                             </div>
                                           </div>
@@ -436,13 +457,13 @@ const Header = () => {
             <div className="z-50 my-auto hidden gap-2 lg:flex">
               <SaveAndCancel
                 isBorder={true}
-                handleClick={() => router.push("/contact")}
+                handleClick={() => router.push('/contact')}
                 isBgWhite={true}
-                buttonWidth={"!w-[10rem]"}
-                name={"Book A Call"}
+                buttonWidth={'!w-[10rem]'}
+                name={'Book A Call'}
               />
               <span
-                onClick={() => router.push("/contact")}
+                onClick={() => router.push('/contact')}
                 className="mt-1 inline-block animate-zoomPulse"
               >
                 <GoArrowUpRight
@@ -475,7 +496,7 @@ const Header = () => {
 
           {/* DRAWER */}
           <div
-            className={`absolute right-0 top-0 h-full w-full transform bg-white p-5 transition-transform duration-300 ease-in-out md:w-[80%] ${show ? "translate-x-0" : "translate-x-full"} `}
+            className={`absolute right-0 top-0 h-full w-full transform bg-white p-5 transition-transform duration-300 ease-in-out md:w-[80%] ${show ? 'translate-x-0' : 'translate-x-full'} `}
           >
             {/* HEADER */}
             <div className="mb-6 flex items-center justify-between">
@@ -515,7 +536,7 @@ const Header = () => {
             <div className="relative h-full overflow-hidden">
               {/* ================= LEVEL 0 – MAIN MENU ================= */}
               <div
-                className={`absolute inset-0 transition-transform duration-300 ease-in-out ${level === 0 ? "translate-x-0" : "-translate-x-full"} `}
+                className={`absolute inset-0 transition-transform duration-300 ease-in-out ${level === 0 ? 'translate-x-0' : '-translate-x-full'} `}
               >
                 <nav className="space-y-4">
                   {websiteNav.map((menu) => (
@@ -553,7 +574,7 @@ const Header = () => {
 
               {/* ================= LEVEL 1 – SERVICES / RESOURCES ================= */}
               <div
-                className={`absolute inset-0 transition-transform duration-300 ease-in-out ${level === 1 ? "translate-x-0" : "translate-x-full"} `}
+                className={`absolute inset-0 transition-transform duration-300 ease-in-out ${level === 1 ? 'translate-x-0' : 'translate-x-full'} `}
               >
                 <nav className="space-y-4">
                   {activeMenu?.subItems?.map((group: any, i: number) => (
@@ -585,7 +606,7 @@ const Header = () => {
 
               {/* ================= LEVEL 2 – FINAL LINKS ================= */}
               <div
-                className={`absolute inset-0 transition-transform duration-300 ease-in-out ${level === 2 ? "translate-x-0" : "translate-x-full"} `}
+                className={`absolute inset-0 transition-transform duration-300 ease-in-out ${level === 2 ? 'translate-x-0' : 'translate-x-full'} `}
               >
                 <nav className="space-y-3">
                   <h4 className="mb-3 text-sm font-semibold">

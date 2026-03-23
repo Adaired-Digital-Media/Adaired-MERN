@@ -1,3 +1,14 @@
+import icon_1 from '../../public/assets/icons/header/Group 1000006700.svg';
+import icon_2 from '../../public/assets/icons/header/Group 1000006727.svg';
+import icon_3 from '../../public/assets/icons/header/Group 1000006729.svg';
+import icon_4 from '../../public/assets/icons/header/Group 1000006731.svg';
+import icon_5 from '../../public/assets/icons/header/Group 1000006730.svg';
+import icon_6 from '../../public/assets/icons/header/Group 1000006732.svg';
+import icon_7 from '../../public/assets/icons/header/Group 1000006733.svg';
+import icon_8 from '../../public/assets/icons/header/ai-technology 1.svg';
+import icon_9 from '../../public/assets/icons/header/Group 1000006735.svg';
+import icon_10 from '../../public/assets/icons/header/Group 1000006736.svg';
+
 /* ======================================
    NAV TYPES
 ====================================== */
@@ -8,6 +19,7 @@ export type NavLeaf = {
 };
 
 export type NavGroup = {
+  icon: string;
   name: string;
   href: string;
   subItems: NavLeaf[];
@@ -91,198 +103,234 @@ export const routes: {
   },
 
   websiteNav: [
-    {
-      label: 'About Us',
-      value: 'about',
-      href: '/about',
-    },
+    // {
+    //   label: 'About Us',
+    //   value: 'about',
+    //   href: '/about-us',
+    // },
     {
       label: 'Services',
       value: 'services',
       href: '#',
       subItems: [
+        // {
+        //   icon: icon_1,
+        //   name: 'White Label (For Agencies)',
+        //   href: '/services/white-label-agency-india',
+        //   subItems: [
+        //     {
+        //       name: 'White Label SEO',
+        //       href: '/services/seo-outsourcing-india',
+        //     },
+        //     {
+        //       name: 'White Label Social Media',
+        //       href: '/services/social-media-outsourcing-india',
+        //     },
+        //     {
+        //       name: 'White Label Paid Ads',
+        //       href: '/services/white-label-paid-ads-india',
+        //     },
+        //     {
+        //       name: 'White Label Link Building',
+        //       href: '/services/white-label-link-building-india',
+        //     },
+        //   ],
+        // },
         {
+          icon: icon_5,
+          name: 'Search Engine Optimization',
+          href: '/services/search-engine-optimization',
+          subItems: [
+            // {
+            //   name: 'SEO',
+            //   href: '/services/seo-company-india',
+            // },
+            {
+              name: 'SAAS SEO',
+              href: '/services/saas-seo-agency',
+            },
+            {
+              name: 'ECommerce SEO',
+              href: '/services/ecommerce-seo-agency',
+            },
+          ],
+        },
+        {
+          icon: icon_8,
+          name: 'AI SEO',
+          href: '/services/ai-seo-agency',
+          subItems: [
+            // {
+            //   name: 'AI SEO',
+            //   href: '/services/ai-seo-india',
+            // },
+            {
+              name: 'LMM SEO/LLMO',
+              href: '/services/llm-seo-agency',
+            },
+            {
+              name: 'GEO',
+              href: '/services/generative-engine-optimization',
+            },
+            {
+              name: 'AEO',
+              href: '/services/answer-engine-optimization',
+            },
+          ],
+        },
+        {
+          icon: icon_6,
+          name: 'Local SEO',
+          href: '/services/local-seo-company',
+          subItems: [
+            {
+              name: 'GBP Only',
+              href: '/services/google-my-business-optimization',
+            },
+            {
+              name: 'GBP + Website',
+              href: '/services/gmb-website-seo',
+            },
+          ],
+        },
+        {
+          icon: icon_2,
+          name: 'Link Building',
+          href: '/services/link-building-agency',
+          subItems: [
+            {
+              name: 'High Authority Link Building',
+              href: '#',
+            },
+            {
+              name: 'Guest Post Links',
+              href: '#',
+            },
+            {
+              name: 'Niche Edits',
+              href: '#',
+            },
+            {
+              name: 'Press Releases',
+              href: '#',
+            },
+          ],
+        },
+        {
+          icon: icon_9,
+          name: 'Pay Per Click',
+          href: '/services/ppc-management-company',
+          subItems: [
+            {
+              name: 'Google Ads',
+              href: '/services/google-ads-management-company',
+            },
+            {
+              name: 'Meta Ads',
+              href: '#',
+              // href: '/services/meta-ads-agency',
+            },
+            {
+              name: 'Linkedin Ads',
+              href: '#',
+              // href: '/services/linkedIn-marketing-agency',
+            },
+            {
+              name: 'TikTok Ads',
+              href: '#',
+              // href: '/services/tiktok-ads-agency',
+            },
+          ],
+        },
+        {
+          icon: icon_3,
+          name: 'Social Media Management',
+          href: '/services/social-media-management',
+          subItems: [
+            {
+              name: 'Port Creation',
+              href: '#',
+            },
+            {
+              name: 'Content Calendar',
+              href: '#',
+            },
+            {
+              name: 'Reel Editing',
+              href: '#',
+            },
+            {
+              name: 'Creatives',
+              href: '#',
+            },
+          ],
+        },
+        {
+          icon: icon_7,
           name: 'Web Design & Development',
           href: '/services/web-design-development-company',
           subItems: [
             {
-              name: 'WordPress Development',
-              href: '/services/wordpress-development',
+              name: 'Wordpress Development',
+              href: '/services/wordpress-development-company',
             },
-            {
-              name: 'Custom web development',
-              href: '/services/custom-web-development',
-            },
-            { name: 'WooCommerce', href: '/services/woocommerce' },
             {
               name: 'Shopify Development',
-              href: '/services/shopify-development',
-            },
-            { name: 'PHP Development', href: '/services/php-development' },
-            {
-              name: 'Laravel Development',
-              href: '/services/laravel-development',
+              href: '/services/shopify-development-company',
             },
             {
-              name: 'Web Development Company USA',
-              href: '/services/web-development-company-usa',
+              name: 'ECommerce Development',
+              href: '/services/ecommerce-development-company',
+            },
+            {
+              name: 'Custom Web Development',
+              href: '/services/custom-web-development-company',
             },
           ],
         },
-
         {
-          name: 'Search Engine Optimization (SEO)',
-          href: '/services/seo-company-india',
+          icon: icon_10,
+          name: 'Mobile App Development',
+          href: '/services/mobile-app-development-company',
           subItems: [
             {
-              name: 'Technical SEO Analysis',
-              href: '/services/technical-seo-analysis',
+              name: 'IOS Development',
+              href: '/services/ios-app-development-company',
             },
             {
-              name: 'Online Reputation Management',
-              href: '/services/online-reputation-management',
+              name: 'Android Development',
+              href: '/services/android-app-development-company',
             },
             {
-              name: 'Competitor Backlink Outreach',
-              href: '/services/competitor-backlink-outreach',
+              name: 'Cross-Platform',
+              href: '/services/cross-platform-app-development',
             },
             {
-              name: 'Guest Post Outreach',
-              href: '/services/guest-post-outreach',
-            },
-            {
-              name: 'On-Page and Off-Page Optimization',
-              href: '/services/on-page-and-off-page-optimization',
-            },
-            { name: 'Local SEO (GBP)', href: '/services/local-seo' },
-            { name: 'SEO Company USA', href: '/services/seo-company-usa' },
-          ],
-        },
-
-        {
-          name: 'Strategic Social Media Management',
-          href: '/services/strategic-social-media-management',
-          subItems: [
-            {
-              name: 'Social Media Optimization',
-              href: '/services/social-media-optimization',
-            },
-            {
-              name: 'Social Media Marketing',
-              href: '/services/social-media-marketing',
+              name: 'Wearables',
+              href: '/services/wearables-app-development',
             },
           ],
         },
-
         {
-          name: 'Graphic Design',
-          href: '/services/digital-creative-and-logo-design',
-          subItems: [
-            {
-              name: 'Website Graphics',
-              href: '/services/digital-creative-and-logo-design',
-            },
-            {
-              name: 'Website Logo',
-              href: '/services/digital-creative-and-logo-design',
-            },
-            {
-              name: 'Digital Broucher',
-              href: '/services/digital-creative-and-logo-design',
-            },
-            {
-              name: 'Email Marketing Graphics',
-              href: '/services/digital-creative-and-logo-design',
-            },
-            {
-              name: 'Business card, Letterhead etc.',
-              href: '/services/digital-creative-and-logo-design',
-            },
-            {
-              name: 'Poster, Banner, Flyer and Signage',
-              href: '/services/digital-creative-and-logo-design',
-            },
-            {
-              name: 'Social Media Graphics',
-              href: '/services/digital-creative-and-logo-design',
-            },
-          ],
-        },
-
-        {
-          name: 'Paid Media & Advertising',
-          href: '/services/paid-media-and-advertising',
-          subItems: [
-            {
-              name: 'AdWords Audit',
-              href: '/services/paid-media-and-advertising',
-            },
-            {
-              name: 'Keyword Research',
-              href: '/services/paid-media-and-advertising',
-            },
-            {
-              name: 'Campaign Optimization',
-              href: '/services/paid-media-and-advertising',
-            },
-            {
-              name: 'CPC Bid Management',
-              href: '/services/paid-media-and-advertising',
-            },
-            {
-              name: 'Customized Ad Extensions',
-              href: '/services/paid-media-and-advertising',
-            },
-            {
-              name: 'Creative Display Ads',
-              href: '/services/paid-media-and-advertising',
-            },
-            {
-              name: 'Local Targeting Strategies',
-              href: '/services/paid-media-and-advertising',
-            },
-            {
-              name: 'Conversion Tracking',
-              href: '/services/paid-media-and-advertising',
-            },
-          ],
-        },
-
-        {
-          name: 'Content Marketing',
+          icon: icon_4,
+          name: 'Content Writing & Marketing',
           href: '/services/expert-content-solutions',
           subItems: [
             {
-              name: 'Content Audit',
-              href: '/services/expert-content-solutions',
+              name: 'Article Writing',
+              href: '#',
             },
             {
-              name: 'Blogs & Articles',
-              href: '/services/expert-content-solutions',
+              name: 'Blog Writing',
+              href: '#',
             },
             {
-              name: 'Social Media Posts',
-              href: '/services/expert-content-solutions',
+              name: 'Web Content',
+              href: '#',
             },
             {
-              name: 'Infographics',
-              href: '/services/expert-content-solutions',
-            },
-            {
-              name: 'Email Marketing Draft',
-              href: '/services/expert-content-solutions',
-            },
-            {
-              name: 'Website Copies',
-              href: '/services/expert-content-solutions',
-            },
-            {
-              name: 'Guest Posting',
-              href: '/services/expert-content-solutions',
-            },
-            {
-              name: 'Google Business Profile Posts',
-              href: '/services/expert-content-solutions',
+              name: 'ECommerce Content',
+              href: '#',
             },
           ],
         },
@@ -300,11 +348,11 @@ export const routes: {
         },
         {
           name: 'White Label Paid Ads',
-          href: '/services/white-label-paid-ads',
+          href: '/services/white-label-paid-ads-india',
         },
         {
           name: 'White Label Link Building',
-          href: '/services/white-label-link-building',
+          href: '/services/white-label-link-building-india',
         },
       ],
     },
@@ -313,9 +361,10 @@ export const routes: {
       value: 'resources',
       href: '#',
       subItems: [
-        { name: 'Career', href: '/career' },
+        { name: 'About Us', href: '/about-us' },
         { name: 'Case Studies', href: '/case-studies' },
         { name: 'Blog', href: '/blog' },
+        { name: 'Career', href: '/career' },
       ],
     },
 
@@ -352,20 +401,20 @@ export const routes: {
   ],
 
   eCommerce: {
-    home: '/expert-content-solutions',
-    products: '/expert-content-solutions/#products',
-    shop: '/expert-content-solutions/#products',
-    cart: '/expert-content-solutions/cart',
+    home: '/services/expert-content-solutions',
+    products: '/services/expert-content-solutions/#products',
+    shop: '/services/expert-content-solutions/#products',
+    cart: '/services/expert-content-solutions/cart',
     contentProductForm: (slug: string) =>
-      `/expert-content-solutions/products/${slug}/form`,
-    orders: '/expert-content-solutions/orders',
+      `/services/expert-content-solutions/products/${slug}/form`,
+    orders: '/services/expert-content-solutions/orders',
     orderDetails: (id: string) =>
       `/dashboard/shop/orders/order-details?orderNumber=${id}`,
-    thankyouPage: '/expert-content-solutions/thankyou',
+    thankyouPage: '/services/expert-content-solutions/thankyou',
   },
 
   userDashboard: {
-    website: '/expert-content-solutions',
+    website: '/services/expert-content-solutions',
     dashboard: '/dashboard',
     accountSettings: '/dashboard/user/profile-settings',
     passwordSettings: '/dashboard/user/profile-settings/password',

@@ -1,8 +1,8 @@
 //
 
-import Image, { StaticImageData } from "next/image";
-import React from "react";
-import star from "../../../../public/assets/icons/star.png";
+import Image, { StaticImageData } from 'next/image';
+import React from 'react';
+import star from '../../../../public/assets/icons/star.png';
 
 export interface IHeading {
   subTitle?: String;
@@ -24,6 +24,7 @@ export interface IHeading {
   spanBreakIndex?: number;
   isCapitalize?: boolean;
   headingParts?: any;
+  isLastParaBold?: boolean;
 }
 
 const Heading = ({
@@ -41,18 +42,17 @@ const Heading = ({
   isPara2,
   headingWidth,
   breakIndex,
-  spanBreakIndex,
+  isLastParaBold,
   isVarticle,
   isLabel,
   isCapitalize,
   headingParts,
 }: IHeading) => {
-  const safeTitle = title ?? "";
-  const safeSpan = span ?? "";
+  const safeTitle = title ?? '';
+  const safeSpan = span ?? '';
 
-  const words = safeTitle.split(" ");
-  const spans = safeSpan.split(" ");
-
+  const words = safeTitle.split(' ');
+  const spans = safeSpan.split(' ');
   return (
     <div className={className}>
       {isVarticle ? (
@@ -64,8 +64,8 @@ const Heading = ({
                   <div
                     className={`flex w-fit justify-center gap-3 rounded-full border-[0.71px] px-[1rem] py-[0.25rem]`}
                     style={{
-                      backgroundColor: textColor || "#000000",
-                      border: textColor || "#000000",
+                      backgroundColor: textColor || '#000000',
+                      border: textColor || '#000000',
                     }}
                   >
                     <Image
@@ -77,7 +77,7 @@ const Heading = ({
                     />
                     <span
                       className={`my-auto uppercase`}
-                      style={{ color: textColor || "#000000" }}
+                      style={{ color: textColor || '#000000' }}
                     >
                       {subTitle}
                     </span>
@@ -88,11 +88,11 @@ const Heading = ({
                     <h1 className={`text-center capitalize`}>
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -103,7 +103,7 @@ const Heading = ({
                             }}
                             className="text-[clamp(1.8rem,3vw,3.75rem)] leading-[clamp(2.5rem,3.65vw,4.65rem)]"
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -114,11 +114,11 @@ const Heading = ({
                     <h2 className={`text-center capitalize`}>
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -129,7 +129,7 @@ const Heading = ({
                             }}
                             className="text-[clamp(1.6rem,2.188vw,2.188rem)] leading-[clamp(2rem,3.125vw,3.125rem)]"
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -151,7 +151,7 @@ const Heading = ({
                     <p
                       key={index}
                       className={`py-4 text-center`}
-                      style={{ color: textColor || "#000000" }}
+                      style={{ color: textColor || '#000000' }}
                     >
                       {item}
                     </p>
@@ -159,7 +159,7 @@ const Heading = ({
                 ) : (
                   <p
                     className={`py-4 text-center`}
-                    style={{ color: textColor || "#000000" }}
+                    style={{ color: textColor || '#000000' }}
                   >
                     {description}
                   </p>
@@ -167,7 +167,7 @@ const Heading = ({
               </div>
             </div>
           ) : (
-            <div className={`${""}`}>
+            <div className={`${''}`}>
               <div className="flex gap-[2rem]">
                 <div className="flex h-fit gap-2">
                   <Image
@@ -180,8 +180,8 @@ const Heading = ({
                   <span
                     className={`my-auto uppercase xl:text-[14px]`}
                     style={{
-                      color: textColor || "#000000",
-                      border: textColor || "#000000",
+                      color: textColor || '#000000',
+                      border: textColor || '#000000',
                     }}
                   >
                     {subTitle}
@@ -193,11 +193,11 @@ const Heading = ({
                     <h1 className={`capitalize`}>
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -208,7 +208,7 @@ const Heading = ({
                             }}
                             className="text-[clamp(1.8rem,3vw,3.75rem)] leading-[clamp(2.5rem,3.65vw,4.65rem)]"
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -219,11 +219,11 @@ const Heading = ({
                     <h2 className={`capitalize`}>
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -234,7 +234,7 @@ const Heading = ({
                             }}
                             className="text-[clamp(1.6rem,2.188vw,2.188rem)] leading-[clamp(2rem,3.125vw,3.125rem)]"
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -244,7 +244,7 @@ const Heading = ({
                   )}
                 </div>
               </div>
-              <div className={`${isDecVarticle && "pt-[1rem]"}`}>
+              <div className={`${isDecVarticle && 'pt-[1rem]'}`}>
                 {/* <p className="pt-4" style={{ color: textColor || '#000000' }}>
                   {description}
                 </p> */}
@@ -253,7 +253,7 @@ const Heading = ({
                     <p
                       key={index}
                       className={`py-4 text-center`}
-                      style={{ color: textColor || "#000000" }}
+                      style={{ color: textColor || '#000000' }}
                     >
                       {item}
                     </p>
@@ -261,7 +261,7 @@ const Heading = ({
                 ) : (
                   <p
                     className={`py-4 text-center`}
-                    style={{ color: textColor || "#000000" }}
+                    style={{ color: textColor || '#000000' }}
                   >
                     {description}
                   </p>
@@ -279,7 +279,7 @@ const Heading = ({
                   <div className="flex justify-center">
                     <div
                       className={`flex w-fit justify-center gap-3 rounded-full border-[0.71px] px-[1rem] py-[0.25rem]`}
-                      style={{ color: textColor || "#000000" }}
+                      style={{ color: textColor || '#000000' }}
                     >
                       <Image
                         src={star}
@@ -291,8 +291,8 @@ const Heading = ({
                       <span
                         className={`my-auto uppercase`}
                         style={{
-                          color: textColor || "#000000",
-                          border: textColor || "#000000",
+                          color: textColor || '#000000',
+                          border: textColor || '#000000',
                         }}
                       >
                         {subTitle}
@@ -303,14 +303,13 @@ const Heading = ({
                 <div className="">
                   {isH1 ? (
                     <h1 className={`text-center capitalize`}>
-                      dfgfd
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -321,7 +320,7 @@ const Heading = ({
                             }}
                             className="text-[clamp(1.8rem,3vw,3.75rem)] leading-[clamp(2.5rem,3.65vw,4.65rem)]"
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -332,11 +331,11 @@ const Heading = ({
                     <h2 className={`text-center capitalize`}>
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -347,7 +346,7 @@ const Heading = ({
                             }}
                             className="text-[clamp(1.6rem,2.188vw,2.188rem)] leading-[clamp(2rem,3.125vw,3.125rem)]"
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -359,26 +358,23 @@ const Heading = ({
               </div>
               {description && (
                 <div className="px-0 lg:px-[15%]">
-                  {/* <p
-                    className={`mx-auto w-[100%] py-4 text-center lg:w-[80%]`}
-                    style={{ color: textColor || '#000000' }}
-                  >
-                    {description}
-                  </p> */}
                   {Array.isArray(description) ? (
-                    description.map((item: string, index: number) => (
-                      <p
-                        key={index}
-                        className={`mx-auto w-[100%] py-4 text-center lg:w-[80%]`}
-                        style={{ color: textColor || "#000000" }}
-                      >
-                        {item}
-                      </p>
-                    ))
+                    description.map((item: string, index: number) => {
+                      const isLast = description.length - 1 === index;
+                      return (
+                        <p
+                          key={index}
+                          className={`mx-auto w-[100%] py-4 text-center lg:w-[80%] ${isLast && isLastParaBold && 'font-bold'}`}
+                          style={{ color: textColor || '#000000' }}
+                        >
+                          {item}
+                        </p>
+                      );
+                    })
                   ) : (
                     <p
                       className={`mx-auto w-[100%] py-4 text-center lg:w-[80%]`}
-                      style={{ color: textColor || "#000000" }}
+                      style={{ color: textColor || '#000000' }}
                     >
                       {description}
                     </p>
@@ -388,7 +384,7 @@ const Heading = ({
             </div>
           ) : (
             <div
-              className={`${isDecVarticle && "grid grid-cols-1 lg:grid-cols-2 lg:gap-[10rem]"}`}
+              className={`${isDecVarticle && 'grid grid-cols-1 lg:grid-cols-2 lg:gap-[10rem]'}`}
             >
               <div className="md:flex` block w-full justify-center justify-items-center gap-3 md:justify-center md:justify-items-center lg:w-fit lg:justify-start lg:justify-items-start">
                 {isLabel && (
@@ -403,8 +399,8 @@ const Heading = ({
                     <span
                       className="my-auto uppercase"
                       style={{
-                        color: textColor || "#000000",
-                        border: textColor || "#000000",
+                        color: textColor || '#000000',
+                        border: textColor || '#000000',
                       }}
                     >
                       {subTitle}
@@ -416,11 +412,11 @@ const Heading = ({
                     <h1 className={``}>
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -429,9 +425,9 @@ const Heading = ({
                               color: item.color,
                               fontWeight: item.weight,
                             }}
-                            className={`text-center text-[clamp(1.8rem,3vw,3.75rem)] leading-[clamp(2.5rem,3.65vw,4.65rem)] ${isCapitalize && "capitalize"} lg:text-left`}
+                            className={`text-center text-[clamp(1.8rem,3vw,3.75rem)] leading-[clamp(2.5rem,3.65vw,4.65rem)] ${isCapitalize && 'capitalize'} lg:text-left`}
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -442,11 +438,11 @@ const Heading = ({
                     <h2 className={`text-center capitalize lg:text-left`}>
                       {headingParts
                         ?.flatMap((part: any) =>
-                          part.text.split(" ").map((word: string) => ({
+                          part.text.split(' ').map((word: string) => ({
                             word,
                             color: part.color,
                             weight: part.weight,
-                          })),
+                          }))
                         )
                         .map((item: any, i: number) => (
                           <span
@@ -455,9 +451,9 @@ const Heading = ({
                               color: item.color,
                               fontWeight: item.weight,
                             }}
-                            className={`text-center text-[clamp(1.6rem,2.188vw,2.188rem)] leading-[clamp(2rem,3.125vw,3.125rem)] ${isCapitalize && "capitalize"} lg:text-left`}
+                            className={`text-center text-[clamp(1.6rem,2.188vw,2.188rem)] leading-[clamp(2rem,3.125vw,3.125rem)] ${isCapitalize && 'capitalize'} lg:text-left`}
                           >
-                            {item.word}{" "}
+                            {item.word}{' '}
                             {breakIndex === i + 1 && (
                               <br className="hidden md:block" />
                             )}
@@ -467,21 +463,25 @@ const Heading = ({
                   )}
                 </div>
               </div>
-              <div className={`${isDecVarticle && "pt-[0rem]"}`}>
+              <div className={`${isDecVarticle && 'pt-[0rem]'}`}>
                 {Array.isArray(description) ? (
-                  description.map((item: string, index: number) => (
-                    <p
-                      key={index}
-                      className={`pt-4 text-center lg:text-left`}
-                      style={{ color: textColor || "#000000" }}
-                    >
-                      {item}
-                    </p>
-                  ))
+                  description.map((item: string, index: number) => {
+                    const isLast = description.length - 1 === index;
+                    return (
+                      <p
+                        key={index}
+                        className={`pt-4 text-center lg:text-left ${isLast && isLastParaBold && 'font-bold'}`}
+                        style={{ color: textColor || '#000000' }}
+                      >
+                        {item}
+                      </p>
+                    );
+
+                  })
                 ) : (
                   <p
                     className={`pt-4 text-center lg:text-left`}
-                    style={{ color: textColor || "#000000" }}
+                    style={{ color: textColor || '#000000' }}
                   >
                     {description}
                   </p>
