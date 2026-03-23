@@ -15023,6 +15023,7 @@ export const SERVICES_DATA = {
       breakIndex: 2,
       isVariant: '01',
       cardColor: '#F9F9F9',
+      borderColor:"#323232",
       headingParts: [
         {
           text: 'Where Your Customers Are Asking Questions',

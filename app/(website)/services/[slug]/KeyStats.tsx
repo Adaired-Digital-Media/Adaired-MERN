@@ -135,7 +135,7 @@ const KeyStats = ({ keyStats }: any) => {
                   {keyStats?.list?.slice(0, 3).map((item: any, idx: number) => {
                     return (
                       <div
-                      key={idx}
+                        key={idx}
                         className={`flex flex-col items-center rounded-[1rem] border border-[#323232]/10 bg-[#F9F9F9] p-[2rem] transition-all duration-700 lg:items-start ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                         style={{
                           transitionDelay: `${idx * 280}ms`, // 👈 stagger here
@@ -156,7 +156,7 @@ const KeyStats = ({ keyStats }: any) => {
                   {keyStats?.list?.slice(3, 9).map((item: any, idx: number) => {
                     return (
                       <div
-                      key={idx}
+                        key={idx}
                         className={`flex flex-col items-center rounded-[1rem] border border-[#323232]/10 bg-[#F9F9F9] p-[2rem] transition-all duration-700 lg:items-start ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} `}
                         style={{
                           transitionDelay: `${idx * 280}ms`, // 👈 stagger here
@@ -241,14 +241,12 @@ const KeyStats = ({ keyStats }: any) => {
 
                     <div className="flex flex-col items-center gap-8 py-4 md:flex-row lg:flex-row lg:gap-16">
                       <div className="mx-2.5 flex w-[50px] justify-center">
-                        <span className="text-4xl font-normal text-[#FB9100] md:text-4xl">
+                        <h1 className="font-normal text-[#FB9100]">
                           {String(index + 1).padStart(2, "0")}
-                        </span>
+                        </h1>
                       </div>
 
-                      <p className="text-sm md:text-base">
-                        {item.desctioption}
-                      </p>
+                      <p className="">{item.desctioption}</p>
                     </div>
                   </div>
                 ))}

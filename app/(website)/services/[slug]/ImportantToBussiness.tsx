@@ -43,7 +43,7 @@ const ImportantToBussiness = ({ importantToBussiness }: any) => {
                 return (
                   <div
                     key={idx}
-                    className={`relative my-[1rem] rounded-[1rem] border border-[${importantToBussiness?.borderColor}] bg-[${importantToBussiness?.cardColor || "#FFFFFF"}] p-[2rem] px-[2rem] ${item?.button ? "pb-[4rem]" : "pb-[2rem]"} pt-[2rem] transition-all duration-700 lg:my-0 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`relative my-[1rem] rounded-[1rem] border border-[${importantToBussiness?.borderColor}]/10 bg-[${importantToBussiness?.cardColor || "#FFFFFF"}] p-[2rem] px-[2rem] ${item?.button ? "pb-[4rem]" : "pb-[2rem]"} pt-[2rem] transition-all duration-700 lg:my-0 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                     style={{
                       transitionDelay: `${idx * 280}ms`, // 👈 stagger here
                     }}
@@ -58,7 +58,11 @@ const ImportantToBussiness = ({ importantToBussiness }: any) => {
                         />
                       </div>
 
-                      <h1 className="ml-auto text-[4rem] text-[#F1F1F1]">
+                      {/* <h1
+                        className={`ml-auto text-[6rem]`}
+                        style={{ color: "#F1F1F1" }}
+                      > */}
+                      <h1 className="ml-auto text-[6rem] text-[#F1F1F1]">
                         0{idx + 1}
                       </h1>
                     </div>
