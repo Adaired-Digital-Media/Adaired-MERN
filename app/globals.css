@@ -1,28 +1,20 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* =========================
-   THEME VARIABLES
-========================= */
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
   --muted: 220 14.3% 95.9%;
   --muted-foreground: 220 8.9% 46.1%;
   --primary: #1b5a96;
   --secondary: #fb9100;
 }
 
-/* Tailwind v4 Theme Mapping */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
-
-  /* CONNECT NEXT/FONT VARIABLES */
   --font-sans: var(--font-montserrat);
   --font-heading: var(--font-poppins);
   --font-ui: var(--font-outfit);
@@ -35,14 +27,6 @@
     --foreground: #ededed;
   }
 }
-
-/* =========================
-   BASE STYLES
-========================= */
-
-/* =========================
-   TYPOGRAPHY GLOBAL
-========================= */
 
 @layer base {
   h1,
@@ -104,10 +88,6 @@
   }
 }
 
-/* =========================
-   EXTRA FONT UTILITIES
-========================= */
-
 .font-outfit {
   font-family: var(--font-outfit), sans-serif;
 }
@@ -115,10 +95,6 @@
 .font-dafoe {
   font-family: var(--font-dafoe), cursive;
 }
-
-/* =========================
-   TIPTAP EDITOR STYLING
-========================= */
 
 .ProseMirror {
   outline: none;
@@ -178,10 +154,6 @@
   margin: 1rem 0;
 }
 
-/* =========================
-   CUSTOM UTILITIES
-========================= */
-
 .fill-opacity-10 {
   fill-opacity: 0.1;
 }
@@ -192,22 +164,106 @@
     0px 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+.animated-border {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 999px;
+}
 
-/* @keyframes borderMove {
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--secondary),
+    #ffffff,
+    var(--secondary)
+  );
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderFlow 6s linear infinite;
+}
+
+@keyframes borderFlow {
   0% {
-    background-position: 0% 0%, 0% 0%;
+    background-position: 0% 50%;
   }
   100% {
-    background-position: 0% 0%, 300% 0%;
+    background-position: 300% 50%;
   }
 }
 
-.animate-borderMove {
-  background-size: 300% 300%, 300% 300%;
-  animation: borderMove 3s linear infinite;
+.animated-bg {
+  background: linear-gradient(
+    135deg,
+    var(--secondary),
+    #ffb347,
+    var(--secondary)
+  );
+}
+
+.animated-border:hover::before {
+  animation-duration: 4s;
+}
+
+/* .demo-btn {
+  position: relative;
+  background: #ffffff;
+  border-radius: 999px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.demo-btn:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
 } */
 
-/* Hide scrollbar */
+/* Inner soft gradient glow */
+.demo-btn {
+  position: relative;
+  background: radial-gradient(
+    circle at center,
+    rgba(251, 145, 0, 0.08) 0%,
+    rgba(251, 145, 0, 0.03) 40%,
+    #ffffff 80%
+  );
+  border-radius: 999px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.demo-btn:hover {
+  background: radial-gradient(
+    circle at center,
+    rgba(251, 145, 0, 0.12) 0%,
+    rgba(251, 145, 0, 0.05) 40%,
+    #ffffff 80%
+  );
+  transform: translateY(-1px);
+}
+
+@keyframes borderDraw {
+  0% {
+    stroke-dashoffset: -0.3;
+  }
+  100% {
+    stroke-dashoffset: -1.3; /* -0.3 - 1 full loop */
+  }
+}
+
+.animate-border-draw {
+  animation: borderDraw 10s linear infinite;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
