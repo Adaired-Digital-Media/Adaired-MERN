@@ -2,16 +2,19 @@
 
 import { IoClose } from 'react-icons/io5';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import validators from '@/@core/utils/validators';
 import axios from 'axios';
-import { BaseURL } from '@/app/baseUrl';
 import Heading from '../../common/Heading';
 import { GiCheckMark } from "react-icons/gi";
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { GoPlus } from "react-icons/go";
+import { CgAsterisk } from "react-icons/cg";
 import BottomPerson from '../../../../public/assets/popup/bottom-person.png';
+import InputField from '../../UI/InputField';
+import { BaseURL } from '@/app/baseUrl';
+import SelectField from '../../UI/SelectField';
 
 interface GetEnquiryModalProps {
   isOpen: boolean;
@@ -23,52 +26,77 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
   const [isHover, setIsHover] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [agreed, setAgreed] = useState(false);
+
+  const [servicesList, setServicesList] = useState<any[]>([]);
 
   const [file, setFile] = useState<File | null>(null);
-  const [selected, setSelected] = useState<string[]>([]);
+  const [fileUrl, setFileUrl] = useState('');
+  const [uploading, setUploading] = useState(false);
 
-  const labelClass = "text-[16px] text-black font-semibold mb-2 uppercase";
+  const [errors, setErrors] = useState<any>({});
+
+  const handleFileUpload = async (e: any) => {
+    const selectedFile = e.target.files?.[0];
+    if (!selectedFile) return;
+
+    setUploading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+      formData.append('upload_preset', 'YOUR_UPLOAD_PRESET');
+
+      const res = await axios.post(
+        'https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/auto/upload',
+        formData
+      );
+
+      const url = res.data.secure_url;
+
+      setInputValue((prev) => ({
+        ...prev,
+        additionDetails: {
+          ...prev.additionDetails,
+          attachments: url,
+        },
+      }));
+
+      setFileUrl(url);
+
+    } catch (error) {
+      console.error('Cloudinary upload failed', error);
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const fields = [
     { name: 'name', label: 'Name' },
     { name: 'email', label: 'Email' },
     { name: 'phone', label: 'Phone Number' },
     { name: 'website', label: 'Website Url' },
-  ]
-
-  const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    website: '',
-    message: '',
-    range: '',
-    referral: '',
-    startDate: '',
-    services: '',
-    file: '',
-    agreed: '',
-  });
+  ];
 
   const [inputValue, setInputValue] = useState({
     name: '',
     email: '',
     phone: '',
     website: '',
-    message: '',
-    range: '',
-    referral: '',
-    startDate: '',
-    services: '',
-    file: '',
-    agreed: '',
+    services: [] as { id: string }[],
+    description: '',
+    additionDetails: {
+      budget: '',
+      source: '',
+      startFrom: '',
+      attachments: '',
+    },
+    termsAndCondition: false,
   });
+  console.log(inputValue, "inputValue>>>");
 
-  if (!isOpen) return null;
-
-  const servicesList = [
-    "Search Engine Optimization",
-    "Frontend & Backend Development",
+  const serviceOrder = [
+    "SEO",
+    "Frontend and Backend Development",
     "E-Commerce",
     "Social Media Management",
     "Mobile App Development",
@@ -78,6 +106,27 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
     "CMS",
     "AI SEO",
   ];
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+
+        const res = await axios.get(`${BaseURL}/serviceCategory`);
+        // const sortedServices = res.data?.data.sort(
+        //   (a: any, b: any) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+        // );
+        // setServicesList(sortedServices);
+
+        setServicesList(res.data?.data || []);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  if (!isOpen) return null;
 
   const handleChange = (e: any) => {
     const { name, value, files } = e.target;
@@ -89,117 +138,74 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
       return;
     }
 
-    setInputValue((prev) => ({
+    setInputValue((prev: any) => ({
       ...prev,
       [name]: value,
     }));
 
-    if (validators[name as keyof typeof validators]) {
-      setErrors((prev) => ({
+    if ((validators as any)[name]) {
+      setErrors((prev: any) => ({
         ...prev,
-        [name]: validators[name as keyof typeof validators](value),
+        [name]: (validators as any)[name](value),
       }));
     }
   };
 
-  const toggleService = (service: string) => {
-    setSelected((prev) =>
-      prev.includes(service)
-        ? prev.filter((item) => item !== service)
-        : [...prev, service]
-    );
+  const toggleService = (id: string) => {
+    setInputValue((prev) => {
+      const exists = prev.services.find((s) => s.id === id);
+
+      return {
+        ...prev,
+        services: exists
+          ? prev.services.filter((s) => s.id !== id)
+          : [...prev.services, { id }],
+      };
+    });
+  };
+
+  const handleAdditionalChange = (e: any) => {
+    const { name, value } = e.target;
+
+    setInputValue((prev) => ({
+      ...prev,
+      additionDetails: {
+        ...prev.additionDetails,
+        [name]: value,
+      },
+    }));
   };
 
   const validateForm = () => {
-    const newErrors = {
-      name: inputValue.name ? '' : 'Name is required',
-      email: validators.email(inputValue.email),
-      phone: validators.phone(inputValue.phone),
-      website: inputValue.website ? '' : 'Enter a valid website URL',
-      message: inputValue.message ? '' : 'Message is required',
-      range: inputValue.range ? '' : 'Please select budget',
-      referral: inputValue.referral ? '' : 'Please select referral',
-      startDate: inputValue.startDate ? '' : 'Select start date',
-      services: selected.length > 0 ? '' : 'Select at least one service',
-      file: file ? '' : 'Please upload a file',
-      agreed: agreed ? '' : 'You must accept privacy policy',
+    const newErrors: any = {
+      description: inputValue.description ? '' : 'Description is required',
+      budget: inputValue.additionDetails.budget ? '' : 'Select budget',
+      source: inputValue.additionDetails.source ? '' : 'Select source',
+      services: inputValue.services.length > 0 ? '' : 'Select at least one service',
+      agreed: inputValue.termsAndCondition ? '' : 'Accept terms',
+      startFrom: inputValue.additionDetails.startFrom ? '' : 'Select start date',
+      file: inputValue.additionDetails.attachments ? '' : 'Upload file',
     };
 
     setErrors(newErrors);
-
     return Object.values(newErrors).every((err) => err === '');
   };
 
   const handleClick = async () => {
     if (loading) return;
 
-
     if (!validateForm()) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
     setLoading(true);
 
     try {
+      console.log(inputValue, "FINAL PAYLOAD");
 
-      // const payload = {
-      //   name: inputValue.name,
-      //   email: inputValue.email,
-      //   phone: inputValue.phone,
-      //   website: inputValue.website,
-      //   message: inputValue.message,
-      //   range: inputValue.range,
-      //   referral: inputValue.referral,
-      //   startDate: inputValue.startDate,
-      //   gRecaptchaToken: token,
-      // };
-
-      const formData = new FormData();
-
-      Object.entries(inputValue).forEach(([key, value]) => {
-        formData.append(key, value as string);
-      });
-
-      formData.append('services', JSON.stringify(selected));
-
-      if (file) formData.append('file', file);
-
-      const response = await fetch('/api/zoho/leadRegister', {
-        method: 'POST',
-        // headers: { 'Content-Type': 'application/json' },
-        // body: JSON.stringify(payload),
-        body: formData,
-      });
-
-      if (!response.ok) throw new Error('Submission failed');
-
-      await axios.post(`${BaseURL}/mail/send`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-
-      setInputValue({
-        name: '',
-        email: '',
-        phone: '',
-        website: '',
-        message: '',
-        range: '',
-        referral: '',
-        startDate: '',
-        services: '',
-        file: '',
-        agreed: '',
-      });
-
-      setSelected([]);
-      setFile(null);
-      setAgreed(false);
+      await axios.post(`${BaseURL}/enquiry/send`, inputValue);
 
       router.push('/thankyou');
-
     } catch (error) {
       console.error(error);
       alert('Failed to submit form. Please try again.');
@@ -210,214 +216,211 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* Overlay */}
-      <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
-      {/* Modal */}
       <div className="relative z-50 rounded-3xl bg-white shadow-xl md:w-[95%] lg:w-[70%] max-h-[90vh] overflow-y-auto no-scrollbar">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 text-gray-500 hover:text-black"
-        >
+
+        <button onClick={onClose} className="absolute right-4 top-4 text-gray-500 hover:text-black">
           <IoClose size={22} />
         </button>
 
-        {/* Modal Content */}
         <div className="relative flex justify-center gap-3 px-[10rem] pt-[4rem] pb-[0.5rem] -z-10">
           <div className="w-full">
+
             <Heading
               headingParts={[
-                {
-                  text: 'Let’s Talk',
-                  color: '#000000',
-                  weight: 700,
-                },
-                {
-                  text: 'About Your Goals',
-                  color: '#FB9100',
-                  weight: 700,
-                },
+                { text: 'Let’s Talk', color: '#000000', weight: 700 },
+                { text: 'About Your Goals', color: '#FB9100', weight: 700 },
               ]}
               isInCenter={true}
             />
+
             <p className="text-center text-[15px] font-medium text-[#323232]">
               Find performance gaps limiting your website’s visibility and effectiveness.
             </p>
 
-            {/* Inputs */}
-            < div className='bg-[#F9F9F9] p-[4rem] rounded-3xl my-[4rem]' >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mb-8">
+            <div className='bg-[#F9F9F9] p-[4rem] rounded-3xl my-[4rem]'>
+
+              {/* Inputs */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {fields.map((field) => (
-                  <div key={field.name} className="flex flex-col">
-                    <label className={labelClass}>
-                      {field.label} *
-                    </label>
-                    <input
-                      name={field.name}
-                      value={(inputValue as any)[field.name]}
-                      onChange={handleChange}
-                      placeholder={`Enter your ${field.label.toLowerCase()}...`}
-                      className="bg-white border border-gray-300 p-3 mb-2 rounded-[6px]"
-                      required
-                    />
-                    {['name', 'email', 'phone', 'website'].includes(field.name) &&
-                      errors[field.name as keyof typeof errors] && (
-                        <p className="text-red-500 text-xs">
-                          {errors[field.name as keyof typeof errors]}
-                        </p>
-                      )}
-                  </div>
+                  <InputField
+                    label={field.label}
+                    name={field.name}
+                    value={(inputValue as any)[field.name]}
+                    handleChange={handleChange}
+                    placeholder={`Enter your ${field.label.toLowerCase()}...`}
+                    className="bg-white border border-gray-300 p-3 mb-2 rounded-[6px]"
+                    error={errors[field.name]}
+                  />
                 ))}
               </div>
 
               {/* Services */}
               <div className="space-y-4 mb-8">
-                <p className='uppercase font-semibold my-4'>Services Required *</p>
+                <p className='flex uppercase font-semibold my-4'>Services Required <CgAsterisk color='red' /></p>
                 <div className="flex flex-wrap gap-3">
                   {servicesList.map((service) => {
-                    const isSelected = selected.includes(service);
+                    const isSelected = inputValue.services.some((s) => s.id === service._id);
                     return (
                       <div
-                        key={service}
-                        onClick={() => toggleService(service)}
+                        key={service._id}
+                        onClick={() => toggleService(service._id)}
                         className={`flex items-center justify-between gap-[3rem] px-4 py-2 rounded-[6px] cursor-pointer border transition-all
-                            ${isSelected
-                            ? "bg-[#FB9100] text-white border-[#FB9100]"
-                            : "bg-white text-black border-gray-300"
-                          }`}
+                          ${isSelected ? "bg-[#FB9100] text-white border-[#FB9100]" : "bg-white text-black border-gray-300"}`}
                       >
                         <p className={`text-[14px] ${isSelected ? 'text-white' : 'text-black'}`}>
-                          {service}
+                          {service.name}
                         </p>
-
-                        {isSelected ? (
-                          <GiCheckMark size={16} />
-                        ) : (
-                          <GoPlus size={16} />
-                        )}
+                        {isSelected ? <GiCheckMark size={16} /> : <GoPlus size={16} />}
                       </div>
                     );
                   })}
-                  {errors.services && (
-                    <p className="text-red-500 text-xs mt-2">{errors.services}</p>
-                  )}
+                  {errors.services && <p className="text-red-500 text-xs mt-2">{errors.services}</p>}
                 </div>
               </div>
 
               {/* Message */}
-              <p className='uppercase font-semibold my-4'>Project Details *</p>
+              <p className='flex uppercase font-semibold my-4'>Project Details <CgAsterisk color='red' /></p>
               <textarea
-                name={'message'}
-                value={inputValue.message}
-                rows={6}
+                placeholder='Tell us about your Project goals , timeline , and any specific requirements...'
+                name="description"
+                value={inputValue.description}
                 onChange={handleChange}
-                placeholder="Tell us about your Project goals , timeline , and any specific requirements..."
+                rows={6}
                 className="bg-white border border-gray-300 w-full rounded-[6px] p-4 mb-4"
               />
-              {errors.message && (
-                <p className="text-red-500 text-xs">{errors.message}</p>
-              )}
+              {errors.description && <p className="text-red-500 text-xs mt-2">{errors.description}</p>}
 
-              {/* Selects */}
-              <p className='uppercase font-semibold my-4'>Additional Details *</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-6 border border-gray-300 rounded-[6px] bg-white mb-4">
+              <p className='flex uppercase font-semibold my-4'>Additional Details <CgAsterisk color='red' /></p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 border border-gray-300 rounded-[6px] bg-white mb-4">
 
+                {/* Budget */}
                 <div className="flex flex-col">
-                  <label className="text-[16px] text-black font-semibold mb-2 uppercase">Select your budget range *</label>
-                  <select
-                    name="range"
-                    value={inputValue.range}
-                    onChange={handleChange}
-                    required
+                  <SelectField
+                    label={'Select your budget range'}
+                    name="budget"
+                    value={inputValue.additionDetails.budget}
+                    handleChange={handleAdditionalChange}
                     className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
-                  >
-                    <option value="">Select Range</option>
-                    <option value="0-10k">0 - 10k</option>
-                    <option value="10k-50k">10k - 50k</option>
-                    <option value="50k+">50k+</option>
-                  </select>
-                  {errors.range && (
-                    <p className="text-red-500 text-xs">{errors.range}</p>
-                  )}
-                </div>
-
-                <div className="flex flex-col">
-                  <label className="text-[16px] text-black font-semibold mb-2 uppercase">How did you hear about us? *</label>
-                  <select
-                    name="referral"
-                    value={inputValue.referral}
-                    onChange={handleChange}
                     required
-                    className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
-                  >
-                    <option value="">How did you hear about us?</option>
-                    <option value="google">Google</option>
-                    <option value="social">Social Media</option>
-                    <option value="friend">Friend / Referral</option>
-                    <option value="ads">Ads</option>
-                  </select>
-                  {errors.referral && (
-                    <p className="text-red-500 text-xs">{errors.referral}</p>
-                  )}
-                </div>
-
-                <div className="flex flex-col">
-                  <label className="text-[16px] text-black font-semibold mb-2 uppercase">When do you want to get started? *</label>
-                  <input
-                    type="date"
-                    name="startDate"
-                    value={inputValue.startDate}
-                    onChange={handleChange}
-                    required
-                    className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
+                    options={[
+                      {
+                        label: 'Select Range',
+                        value: '',
+                      },
+                      {
+                        label: '10000',
+                        value: '10000'
+                      },
+                      {
+                        label: '0 - 10k',
+                        value: '0 - 10k',
+                      },
+                      {
+                        label: '10k - 50k',
+                        value: '10k - 50k',
+                      },
+                      {
+                        label: '50k+',
+                        value: '50k+',
+                      },
+                    ]}
                   />
-                  {errors.startDate && (
-                    <p className="text-red-500 text-xs">{errors.startDate}</p>
-                  )}
+                  {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
                 </div>
 
+                {/* Source */}
                 <div className="flex flex-col">
-                  <label className="text-[16px] text-black font-semibold mb-2 uppercase">Attachments *</label>
-                  <input
-                    type="file"
-                    name="file"
-                    onChange={handleChange}
-                    required
+                  <SelectField
+                    label={'How did you hear about us?'}
+                    name="source"
+                    value={inputValue.additionDetails.source}
+                    handleChange={handleAdditionalChange}
                     className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
+                    options={[
+                      {
+                        label: 'How did you hear about us?',
+                        value: '',
+                      },
+                      {
+                        label: 'Google',
+                        value: 'google'
+                      },
+                      {
+                        label: 'Social Media',
+                        value: 'social',
+                      },
+                      {
+                        label: 'Friend / Referral',
+                        value: 'friend',
+                      },
+                      {
+                        label: 'Ads',
+                        value: 'ads',
+                      },
+                    ]}
                   />
-                  {errors.file && (
-                    <p className="text-red-500 text-xs">{errors.file}</p>
-                  )}
+                  {errors.source && <p className="text-red-500 text-xs">{errors.source}</p>}
                 </div>
+
+                {/* Start Date */}
+                <InputField
+                  label={'When do you want to get started?'}
+                  type="date"
+                  name="startFrom"
+                  value={inputValue.additionDetails.startFrom}
+                  handleChange={handleAdditionalChange}
+                  className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
+                  error={errors.startFrom}
+                />
+
+                {/* File */}
+                <InputField
+                  label={'Attachments'}
+                  type="file"
+                  name="file"
+                  handleChange={handleFileUpload}
+                  className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
+                  error={errors.file}
+                />
+
+
+                {/* Upload file design */}
+                {/* <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-xl">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="size-4"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                  </svg>
+
+                  <span className="w-full text-xxs font-normal text-[#000000] focus:border-[#000000] xl:text-xs">
+                    Click to upload file
+                  </span>
+                </div> */}
+
               </div>
 
               {/* Checkbox */}
               <div className='flex items-center gap-2 mt-[3rem]'>
                 <input
                   type="checkbox"
-                  checked={agreed}
-                  onChange={() => {
-                    setAgreed(prev => {
-                      setErrors(prevErr => ({ ...prevErr, agreed: '' }));
-                      return !prev;
-                    });
-                  }}
-                  className="w-4 h-4 cursor-pointer"
+                  checked={inputValue.termsAndCondition}
+                  onChange={() =>
+                    setInputValue((prev) => ({
+                      ...prev,
+                      termsAndCondition: !prev.termsAndCondition,
+                    }))
+                  }
                 />
-                <p className='text-[14px]'>
-                  I agree to the processing of personal data according to the Privacy Policy.
-                </p>
+                <p className='text-[14px]'>I agree to the processing of personal data according to the Privacy Policy.</p>
               </div>
+              {errors.agreed && <p className="text-red-500 text-xs mt-2">{errors.agreed}</p>}
 
-              {errors.agreed && (
-                <p className="text-red-500 text-xs ml-6">{errors.agreed}</p>
-              )}
-
-              {/* Submit */}
+              {/* Button */}
               <div className={`flex gap-2 lg:gap-4 mt-[7rem]`}>
                 <button
                   disabled={loading}
@@ -434,20 +437,16 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                   />
                 </button>
               </div>
+
             </div>
           </div>
 
           <div className='absolute right-0 bottom-0'>
-            <Image
-              src={BottomPerson}
-              alt='Person Image'
-              width={336}
-              height={431}
-            />
+            <Image src={BottomPerson} alt='Person Image' width={336} height={431} />
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 
