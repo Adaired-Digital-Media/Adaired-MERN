@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import BlogCategory from "../models/blogCategory.model";
+import BlogCategory from "../models/blog_category.model";
 
 /* ============================
    Generate Slug

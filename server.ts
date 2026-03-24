@@ -5,7 +5,7 @@ import { connectDB } from "./backend/config/db";
 import serviceRoutes from "./backend/routes/service.routes";
 import blogRoutes from "./backend/routes/blogRoutes";
 import caseStudyRoutes from "./backend/routes/case-study.routes";
-import blogCategoryRoutes from "./backend/routes/blogCategory.routes";
+import blogCategoryRoutes from "./backend/routes/blog_category.routes";
 import authRoutes from "./backend/routes/auth.routes";
 import mailRoutes from "./backend/routes/mail.routes";
 import productRoutes from "./backend/routes/product.route";
