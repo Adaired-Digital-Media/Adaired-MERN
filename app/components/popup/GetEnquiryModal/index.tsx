@@ -218,13 +218,13 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
-      <div className="relative z-50 rounded-3xl bg-white shadow-xl md:w-[95%] lg:w-[65%] max-h-[90vh] overflow-y-auto no-scrollbar">
+      <div className="relative z-50 rounded-3xl bg-white shadow-xl md:w-[95%] lg:w-[70%] max-h-[90vh] overflow-y-auto no-scrollbar">
 
         <button onClick={onClose} className="absolute right-4 top-4 text-gray-500 hover:text-black">
           <IoClose size={22} />
         </button>
 
-        <div className="relative flex justify-center gap-3 px-[8rem] pt-[4rem] pb-[0.5rem] -z-10">
+        <div className="relative flex justify-center gap-3 px-[10rem] pt-[4rem] pb-[0.5rem] -z-10">
           <div className="w-full">
 
             <Heading
@@ -258,7 +258,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
               {/* Services */}
               <div className="space-y-4 mb-8">
-                <p className='flex text-[16px] uppercase font-semibold my-4'>Services Required <CgAsterisk color='red' /></p>
+                <p className='flex uppercase font-semibold my-4'>Services Required <CgAsterisk color='red' /></p>
                 <div className="flex flex-wrap gap-3">
                   {servicesList.map((service) => {
                     const isSelected = inputValue.services.some((s) => s.id === service._id);
@@ -281,7 +281,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
               </div>
 
               {/* Message */}
-              <p className='flex uppercase font-semibold text-[16px] my-4'>Project Details <CgAsterisk color='red' /></p>
+              <p className='flex uppercase font-semibold my-4'>Project Details <CgAsterisk color='red' /></p>
               <textarea
                 placeholder='Tell us about your Project goals , timeline , and any specific requirements...'
                 name="description"
@@ -292,7 +292,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
               />
               {errors.description && <p className="text-red-500 text-xs mt-2">{errors.description}</p>}
 
-              <p className='flex uppercase text-[16px] font-semibold my-4'>Additional Details <CgAsterisk color='red' /></p>
+              <p className='flex uppercase font-semibold my-4'>Additional Details <CgAsterisk color='red' /></p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 border border-gray-300 rounded-[6px] bg-white mb-4">
 
                 {/* Budget */}
@@ -421,7 +421,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
               {errors.agreed && <p className="text-red-500 text-xs mt-2">{errors.agreed}</p>}
 
               {/* Button */}
-              <div className={`flex gap-2 lg:gap-4 mt-[4rem]`}>
+              <div className={`flex gap-2 lg:gap-4 mt-[7rem]`}>
                 <button
                   disabled={loading}
                   onMouseEnter={() => setIsHover(true)}
@@ -442,7 +442,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
           </div>
 
           <div className='absolute right-0 bottom-0'>
-            <Image src={BottomPerson} alt='Person Image' width={320} height={331} />
+            <Image src={BottomPerson} alt='Person Image' width={336} height={431} />
           </div>
         </div>
       </div>
