@@ -40,7 +40,7 @@ const SaveAndCancel = ({
 
   return (
     <div className={`${className} flex gap-2 lg:gap-4`}>
-      {/* <button
+      <button
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         onClick={handleClick}
@@ -63,7 +63,7 @@ const SaveAndCancel = ({
             className={`${isHover ? 'rotate-[360deg] transition-all duration-300 ease-out active:scale-95' : 'rotate-[310deg]'}`}
           />
         )}
-      </button> */}
+      </button>
       {/* <button
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
@@ -125,7 +125,7 @@ const SaveAndCancel = ({
           />
         )}
       </button> */}
-      <button className="demo-btn flex items-center gap-2 px-8 py-4 rounded-full text-[#FB9100] font-medium text-lg overflow-hidden group relative">
+      {/* <button className="demo-btn flex items-center gap-2 px-8 py-4 rounded-full text-[#FB9100] font-medium text-lg overflow-hidden group relative">
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
           viewBox="0 0 200 60"
@@ -145,7 +145,6 @@ const SaveAndCancel = ({
               <stop offset="100%" stopColor="rgba(255,255,255,0)" />
             </linearGradient>
           </defs>
-          {/* Base Border */}
           <rect
             x="2"
             y="2"
@@ -158,7 +157,6 @@ const SaveAndCancel = ({
             strokeWidth="4"
           />
 
-          {/* Moving Highlight */}
           <rect
             x="2"
             y="2"
@@ -166,15 +164,15 @@ const SaveAndCancel = ({
             height="56"
             rx="30"
             ry="30"
-            pathLength="1" // 👈 IMPORTANT
+            pathLength="1" 
             fill="none"
             stroke="#FFFFFF"
             strokeWidth="4"
             strokeLinecap="butt"
-            strokeDasharray="0.1 0.9" // 👈 10% highlight
+            strokeDasharray="0.1 0.9" 
             className="animate-border-draw"
             style={{
-              strokeDashoffset: -0.3, // 👈 start near top-right
+              strokeDashoffset: -0.3, 
               filter: "drop-shadow(0 0 6px rgba(255,255,255,0.8))",
             }}
           />
@@ -191,7 +189,7 @@ const SaveAndCancel = ({
             }`}
           />
         )}
-      </button>
+      </button> */}
       {is2ndButton && (
         <button
           onClick={handleClick2}

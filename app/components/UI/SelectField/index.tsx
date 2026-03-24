@@ -11,7 +11,7 @@ export interface SelectFieldProps {
   className?: string;
 }
 
-const labelClass = "flex text-[16px] text-black font-semibold mb-2 uppercase";
+const labelClass = "flex text-black font-semibold mb-2 uppercase";
 
 const SelectField = ({
   name,
@@ -24,13 +24,13 @@ const SelectField = ({
 }: any) => {
   return (
     <div>
-      {label && <label className={labelClass}>{label} <CgAsterisk color='red' /></label>
+      {label && <span className={labelClass}>{label} <CgAsterisk color='red' /></span>
       }
       <select
         name={name}
         value={value}
         onChange={handleChange}
-        className={`${className} w-full rounded-[0.5rem] text-xxs xl:text-xs bg-[#F8F8F8] px-4 py-3 font-normal text-black outline-none placeholder:text-[#A3A3A3] focus:border-[#000000] `}
+        className={`${className} w-full text-[15px] rounded-[0.5rem] bg-[#F8F8F8] px-4 py-3 font-normal text-black outline-none placeholder:text-[#A3A3A3] focus:border-[#000000] `}
         // className={`${className} w-full`}
       >
         {placeholder && (
