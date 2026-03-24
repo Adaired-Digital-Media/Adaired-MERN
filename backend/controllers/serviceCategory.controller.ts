@@ -4,6 +4,20 @@ import ServiceCategory from "../models/serviceCategory.model";
 /* ===================== CREATE ===================== */
 export const createServiceCategory = async (req: Request, res: Response) => {
   try {
+    const { name, slug } = req.body;
+
+    // ✅ Check duplicate by slug (recommended)
+    const existingCategory = await ServiceCategory.findOne({
+      $or: [{ slug }, { name }],
+    });
+
+    if (existingCategory) {
+      return res.status(400).json({
+        success: false,
+        message: "Service category already exists",
+      });
+    }
+
     const category = await ServiceCategory.create(req.body);
 
     return res.status(201).json({
