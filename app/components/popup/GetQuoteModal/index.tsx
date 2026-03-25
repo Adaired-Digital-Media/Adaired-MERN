@@ -1,27 +1,30 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import validators from '@/@core/utils/validators';
-import axios from 'axios';
-import Heading from '../../common/Heading';
-import BottomPerson from '../../../../public/assets/popup/bottom-person.png';
-
-import { COMMON_MESSAGES, ENQUIRY_MESSAGES } from '@core/constants/messages';
-
-import { BaseURL } from '@/app/baseUrl';
-import InputField from '../../UI/InputField';
-import SelectField from '../../UI/SelectField';
-import MessageField from '../../UI/MessageField/MessageField';
-
-import { IoClose } from 'react-icons/io5';
-import { IoIosArrowRoundForward } from 'react-icons/io';
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import validators from "@/@core/utils/validators";
+import axios from "axios";
+import Heading from "../../common/Heading";
+import BottomPerson from "../../../../public/assets/popup/bottom-person.png";
+import { COMMON_MESSAGES, ENQUIRY_MESSAGES } from "@core/constants/messages";
+import { BaseURL } from "@/app/baseUrl";
+import InputField from "../../UI/InputField";
+import SelectField from "../../UI/SelectField";
+import MessageField from "../../UI/MessageField/MessageField";
+import { IoClose } from "react-icons/io5";
+import { IoIosArrowRoundForward } from "react-icons/io";
 import { CgAsterisk } from "react-icons/cg";
 import { FaMagnifyingGlassChart } from "react-icons/fa6";
 import { FaRobot } from "react-icons/fa";
 import { MdEdit, MdShoppingCart } from "react-icons/md";
-import { FaHandshake, FaCode, FaLink, FaMobileScreenButton, FaRectangleAd } from "react-icons/fa6";
+import {
+  FaHandshake,
+  FaCode,
+  FaLink,
+  FaMobileScreenButton,
+  FaRectangleAd,
+} from "react-icons/fa6";
 import { GiCheckMark } from "react-icons/gi";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
@@ -33,58 +36,10 @@ interface GetEnquiryModalProps {
 
 const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
   const router = useRouter();
-
   const [isHover, setIsHover] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const [servicesList, setServicesList] = useState<any[]>([]);
-
-  const [file, setFile] = useState<File | null>(null);
-  const [fileUrl, setFileUrl] = useState('');
-  const [uploading, setUploading] = useState(false);
-
   const [errors, setErrors] = useState<any>({});
-
-  const handleFileUpload = async (e: any) => {
-    const selectedFile = e.target.files?.[0];
-    if (!selectedFile) return;
-
-    setUploading(true);
-
-    try {
-      const formData = new FormData();
-      formData.append('file', selectedFile);
-      formData.append('upload_preset', 'YOUR_UPLOAD_PRESET');
-
-      const res = await axios.post(
-        'https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/auto/upload',
-        formData
-      );
-
-      const url = res.data.secure_url;
-
-      setInputValue((prev) => ({
-        ...prev,
-        additionDetails: {
-          ...prev.additionDetails,
-          attachments: url,
-        },
-      }));
-
-      setFileUrl(url);
-
-      setErrors((prev: any) => ({
-        ...prev,
-        file: "",
-      }));
-
-    } catch (error) {
-      console.error('Cloudinary upload failed', error);
-    } finally {
-      setUploading(false);
-    }
-  };
-
   const fields = [
     {
       name: "name",
@@ -107,9 +62,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
       label: "Phone",
       required: true,
       validate: (value: string) =>
-        /^[0-9]{10}$/.test(value)
-          ? ""
-          : ENQUIRY_MESSAGES.PHONE_INVALID,
+        /^[0-9]{10}$/.test(value) ? "" : ENQUIRY_MESSAGES.PHONE_INVALID,
     },
     {
       name: "website",
@@ -123,21 +76,20 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
   ];
 
   const [inputValue, setInputValue] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    website: '',
+    name: "",
+    email: "",
+    phone: "",
+    website: "",
     services: [] as { id: string }[],
-    description: '',
+    description: "",
     additionDetails: {
-      budget: '',
-      source: '',
-      startFrom: '',
-      attachments: '',
+      budget: "",
+      source: "",
+      startFrom: "",
+      attachments: "file.pdf",
     },
     termsAndCondition: false,
   });
-  console.log(inputValue, "inputValue>>>");
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -145,15 +97,15 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
         const res = await axios.get(`${BaseURL}/serviceCategory`);
 
         const serviceOrderMap: Record<string, number> = {
-          "SEO": 1,
+          "Search Engine Optimization": 1,
           "Frontend and Backend Development": 2,
-          "E-Commerce": 3,
-          "Social Media Management": 4,
-          "Mobile App Development": 5,
-          "Pay Per Click": 6,
-          "Link Building": 7,
-          "Local SEO": 8,
-          "CMS": 9,
+          CMS: 3,
+          "E-Commerce": 4,
+          "Social Media Management": 5,
+          "Mobile App Development": 6,
+          "Pay Per Click": 7,
+          "Link Building": 8,
+          "Local SEO": 9,
           "AI SEO": 10,
         };
 
@@ -174,7 +126,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
   }, []);
 
   const serviceIcons: Record<string, React.ReactNode> = {
-    "SEO": <FaMagnifyingGlassChart size={14} />,
+    "Search Engine Optimization": <FaMagnifyingGlassChart size={14} />,
     "Frontend and Backend Development": <FaCode size={14} />,
     "E-Commerce": <MdShoppingCart size={14} />,
     "Social Media Management": <FaHandshake size={14} />,
@@ -182,40 +134,69 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
     "Pay Per Click": <FaRectangleAd size={14} />,
     "Link Building": <FaLink size={14} />,
     "Local SEO": <FaMapLocationDot size={14} />,
-    "CMS": <MdEdit size={14} />,
+    CMS: <MdEdit size={14} />,
     "AI SEO": <FaRobot size={14} />,
   };
 
   if (!isOpen) return null;
 
   const handleChange = (e: any) => {
-    const { name, value, files } = e.target;
+    const { name, value, files, type, checked } = e.target;
 
-    if (name === 'phone' && !/^\d*$/.test(value)) return;
+    if (name === "phone" && !/^\d*$/.test(value)) return;
 
-    if (name === 'file') {
-      setFile(files?.[0] || null);
-      return;
+    const fieldValue = type === "checkbox" ? checked : files ? files[0] : value;
+
+    // ✅ UPDATE STATE (nested + normal)
+    if (name.includes(".")) {
+      const [parent, child] = name.split(".");
+
+      setInputValue((prev: any) => ({
+        ...prev,
+        [parent]: {
+          ...prev[parent],
+          [child]: fieldValue,
+        },
+      }));
+    } else {
+      setInputValue((prev: any) => ({
+        ...prev,
+        [name]: fieldValue,
+      }));
     }
 
-    setInputValue((prev: any) => ({
+    // ✅ REAL-TIME VALIDATION (FOR ALL FIELDS)
+    let error = "";
+
+    // 🔥 SOURCE
+    if (name === "additionDetails.source") {
+      error = fieldValue ? "" : COMMON_MESSAGES.REQUIRED("Source");
+    }
+
+    // 🔥 START DATE
+    else if (name === "additionDetails.startFrom") {
+      error = fieldValue ? "" : COMMON_MESSAGES.REQUIRED("Start date");
+    }
+
+    // 🔥 BUDGET (if needed)
+    else if (name === "additionDetails.budget") {
+      error = fieldValue ? "" : COMMON_MESSAGES.REQUIRED("Budget");
+    }
+
+    // 🔥 description
+    else if (name === "description") {
+      error = fieldValue.length < 10 ? ENQUIRY_MESSAGES.DESCRIPTION_MIN : "";
+    }
+
+    // 🔥 other validators
+    else if ((validators as any)[name]) {
+      error = (validators as any)[name](fieldValue);
+    }
+
+    setErrors((prev: any) => ({
       ...prev,
-      [name]: value,
+      [name]: error, // ✅ FULL PATH KEY
     }));
-
-    if (name === "description") {
-      setErrors((prev: any) => ({
-        ...prev,
-        description: value ? "" : prev.description,
-      }));
-    }
-
-    if ((validators as any)[name]) {
-      setErrors((prev: any) => ({
-        ...prev,
-        [name]: (validators as any)[name](value),
-      }));
-    }
   };
 
   const toggleService = (id: string) => {
@@ -233,68 +214,57 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
       return {
         ...prev,
-        services: updatedServices
+        services: updatedServices,
       };
     });
   };
 
-  const handleAdditionalChange = (e: any) => {
-    const { name, value } = e.target;
-
-    setInputValue((prev) => ({
-      ...prev,
-      additionDetails: {
-        ...prev.additionDetails,
-        [name]: value,
-      },
-    }));
-
-    setErrors((prev: any) => ({
-      ...prev,
-      [name]: value ? "" : prev[name],
-    }));
-  };
-
   const validateForm = () => {
     const newErrors: any = {};
+
+    // ✅ validate normal fields
     fields.forEach((field) => {
       const value = (inputValue as any)[field.name];
 
       if (field.required && !value) {
-        newErrors[field.name] = COMMON_MESSAGES.REQUIRED("field.label");
+        newErrors[field.name] = field.validate(value);
       } else if (field.validate) {
-        newErrors["2field.name"] = field.validate(value);
-      } else {
-        newErrors["33"] = "";
+        newErrors[field.name] = field.validate(value);
       }
     });
 
-    newErrors.description = inputValue.description
-      ? ""
-      : ENQUIRY_MESSAGES.DESCRIPTION_MIN;
+    // ✅ description
+    newErrors["description"] =
+      inputValue.description.length < 10
+        ? ENQUIRY_MESSAGES.DESCRIPTION_MIN
+        : "";
 
-    newErrors.budget = inputValue.additionDetails.budget
+    // ✅ NESTED FIELDS (FIXED)
+    newErrors["additionDetails.budget"] = inputValue.additionDetails.budget
       ? ""
       : COMMON_MESSAGES.REQUIRED("Budget");
 
-    newErrors.source = inputValue.additionDetails.source
+    newErrors["additionDetails.source"] = inputValue.additionDetails.source
       ? ""
       : COMMON_MESSAGES.REQUIRED("Source");
 
-    newErrors.services = inputValue.services.length > 0
-      ? ""
-      : ENQUIRY_MESSAGES.SERVICES_REQUIRED;
-
-    newErrors.agreed = inputValue.termsAndCondition
-      ? ""
-      : ENQUIRY_MESSAGES.TERMS_REQUIRED;
-
-    newErrors.startFrom = inputValue.additionDetails.startFrom
+    newErrors["additionDetails.startFrom"] = inputValue.additionDetails
+      .startFrom
       ? ""
       : COMMON_MESSAGES.REQUIRED("Start date");
 
+    // ✅ services
+    newErrors["services"] =
+      inputValue.services.length > 0 ? "" : ENQUIRY_MESSAGES.SERVICES_REQUIRED;
+
+    // ✅ checkbox
+    newErrors["termsAndCondition"] = inputValue.termsAndCondition
+      ? ""
+      : ENQUIRY_MESSAGES.TERMS_REQUIRED;
+
     setErrors(newErrors);
-    return Object.values(newErrors).every((err) => err === '');
+
+    return Object.values(newErrors).every((err) => !err);
   };
 
   const handleClick = async () => {
@@ -307,14 +277,29 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
     setLoading(true);
 
     try {
-      console.log(inputValue, "FINAL PAYLOAD");
+      const res = await axios.post(`${BaseURL}/enquiry/send`, inputValue);
 
-      await axios.post(`${BaseURL}/enquiry/send`, inputValue);
-
-      router.push('/thankyou');
+      if (res.data?.success) {
+        router.push("/thankyou");
+        setInputValue({
+          name: "",
+          email: "",
+          phone: "",
+          website: "",
+          services: [] as { id: string }[],
+          description: "",
+          additionDetails: {
+            budget: "",
+            source: "",
+            startFrom: "",
+            attachments: "file.pdf",
+          },
+          termsAndCondition: false,
+        });
+      }
     } catch (error) {
       console.error(error);
-      alert('Failed to submit form. Please try again.');
+      alert("Failed to submit form. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -322,36 +307,43 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-40" onClick={onClose} />
-      <div className='relative rounded-3xl shadow-xl bg-white md:w-[95%] lg:w-[65%] z-50'>
-        <button onClick={onClose} className="absolute right-4 top-4 text-gray-500 hover:text-black cursor-pointer z-60">
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm z-40"
+        onClick={onClose}
+      />
+      <div className="relative rounded-3xl shadow-xl bg-white md:w-[95%] lg:w-[65%] z-50">
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 text-gray-500 hover:text-black cursor-pointer z-60"
+        >
           <IoClose size={22} />
         </button>
 
         <div className="max-h-[90vh] overflow-y-auto no-scrollbar">
           <div className="relative flex justify-center gap-3 px-[8rem] pt-[4rem] pb-[0.5rem]">
             <div className="w-full">
-
               <Heading
                 headingParts={[
-                  { text: 'Let’s Talk', color: '#000000', weight: 700 },
-                  { text: 'About Your Goals', color: '#FB9100', weight: 700 },
+                  { text: "Let’s Talk", color: "#000000", weight: 700 },
+                  { text: "About Your Goals", color: "#FB9100", weight: 700 },
                 ]}
                 isInCenter={true}
               />
 
               <p className="text-center text-[15px] font-medium text-[#323232]">
-                Find performance gaps limiting your website’s visibility and effectiveness.
+                Find performance gaps limiting your website’s visibility and
+                effectiveness.
               </p>
 
-              <div className='bg-[#F9F9F9] p-[4rem] rounded-3xl my-[4rem]'>
-
+              <div className="bg-[#F9F9F9] p-[4rem] rounded-3xl my-[4rem]">
                 {/* Inputs */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  {fields.map((field) => (
+                  {fields.map((field, idx: number) => (
                     <InputField
+                      key={idx}
                       label={field.label}
                       name={field.name}
+                      required={true}
                       value={(inputValue as any)[field.name]}
                       handleChange={handleChange}
                       placeholder={`Enter your ${field.label.toLowerCase()}...`}
@@ -363,40 +355,51 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
                 {/* Services */}
                 <div className="space-y-4 mb-8">
-                  <p className='flex text-[16px] uppercase font-semibold my-4'>
-                    Services Required <CgAsterisk color='red' />
+                  <p className="flex text-[16px] uppercase font-semibold my-4">
+                    Services Required <CgAsterisk color="red" />
                   </p>
 
                   <div className="flex flex-wrap gap-3">
-                    {servicesList.map((service) => {
-                      const isSelected = inputValue.services.some((s) => s.id === service._id);
-
+                    {servicesList.map((service, idx: number) => {
+                      const isSelected = inputValue.services.some(
+                        (s) => s.id === service._id,
+                      );
                       return (
                         <div
-                          key={service._id}
+                          key={idx + 1}
                           onClick={() => toggleService(service._id)}
                           className={`flex items-center justify-between gap-[3rem] px-4 py-2 rounded-[0.5rem] cursor-pointer border transition-all ${isSelected ? "bg-[#FB9100] text-white border-[#FB9100]" : "bg-white text-black border-gray-300"}`}
                         >
                           <div className="flex items-center gap-2">
                             {/* Icons */}
-                            {serviceIcons[service.name]}
-                            <p className={`text-[14px] ${isSelected ? 'text-white' : 'text-black'}`}>
-                              {service.name}
+                            {/* {serviceIcons[service?.name]} */}
+                            <p
+                              className={`text-[14px] ${isSelected ? "text-white" : "text-black"}`}
+                            >
+                              {service?.name}
                             </p>
                           </div>
 
-                          {isSelected ? <GiCheckMark size={12} /> : <GoPlus size={16} />}
+                          {isSelected ? (
+                            <GiCheckMark size={12} />
+                          ) : (
+                            <GoPlus size={16} />
+                          )}
                         </div>
                       );
                     })}
-                    {errors.services && <span className="text-red-500">{errors.services}</span>}
+                    {errors.services && (
+                      <span className="text-red-500">{errors.services}</span>
+                    )}
                   </div>
                 </div>
 
                 {/* Message */}
-                <p className='flex uppercase font-semibold text-[16px] my-4'>Project Details <CgAsterisk color='red' /></p>
+                <p className="flex uppercase font-semibold text-[16px] my-4">
+                  Project Details <CgAsterisk color="red" />
+                </p>
                 <MessageField
-                  placeholder='Tell us about your Project goals , timeline , and any specific requirements...'
+                  placeholder="Tell us about your Project goals , timeline , and any specific requirements..."
                   name="description"
                   value={inputValue.description}
                   handleChange={handleChange}
@@ -405,39 +408,40 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                   error={errors.description}
                 />
 
-                <p className='flex uppercase text-[16px] font-semibold my-4'>Additional Details <CgAsterisk color='red' /></p>
+                <p className="flex uppercase text-[16px] font-semibold my-4">
+                  Additional Details <CgAsterisk color="red" />
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 border border-gray-300 rounded-[0.5rem] bg-white mb-4">
-
                   {/* Budget */}
                   <div className="flex flex-col">
                     <SelectField
-                      label={'Select your budget range'}
-                      name="budget"
+                      label={"Select your budget range"}
+                      name="additionDetails.budget"
                       value={inputValue.additionDetails.budget}
-                      handleChange={handleAdditionalChange}
+                      handleChange={handleChange}
                       className="bg-white border border-gray-300 p-3 mb-4"
                       required
-                      error={errors.budget}
+                      error={errors["additionDetails.budget"]}
                       options={[
                         {
-                          label: 'Select Range',
-                          value: '',
+                          label: "Select Range",
+                          value: "",
                         },
                         {
-                          label: '10000',
-                          value: '10000'
+                          label: "10000",
+                          value: "10000",
                         },
                         {
-                          label: '0 - 10k',
-                          value: '0 - 10k',
+                          label: "0 - 10k",
+                          value: "0 - 10k",
                         },
                         {
-                          label: '10k - 50k',
-                          value: '10k - 50k',
+                          label: "10k - 50k",
+                          value: "10k - 50k",
                         },
                         {
-                          label: '50k+',
-                          value: '50k+',
+                          label: "50k+",
+                          value: "50k+",
                         },
                       ]}
                     />
@@ -446,32 +450,32 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                   {/* Source */}
                   <div className="flex flex-col">
                     <SelectField
-                      label={'How did you hear about us?'}
-                      name="source"
+                      label={"How did you hear about us?"}
+                      name="additionDetails.source"
                       value={inputValue.additionDetails.source}
-                      handleChange={handleAdditionalChange}
+                      handleChange={handleChange}
                       className="bg-white border border-gray-300 p-3 mb-4"
-                      error={errors.source}
+                      error={errors["additionDetails.source"]}
                       options={[
                         {
-                          label: 'How did you hear about us?',
-                          value: '',
+                          label: "How did you hear about us?",
+                          value: "",
                         },
                         {
-                          label: 'Google',
-                          value: 'google'
+                          label: "Google",
+                          value: "google",
                         },
                         {
-                          label: 'Social Media',
-                          value: 'social',
+                          label: "Social Media",
+                          value: "social",
                         },
                         {
-                          label: 'Friend / Referral',
-                          value: 'friend',
+                          label: "Friend / Referral",
+                          value: "friend",
                         },
                         {
-                          label: 'Ads',
-                          value: 'ads',
+                          label: "Ads",
+                          value: "ads",
                         },
                       ]}
                     />
@@ -479,24 +483,24 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
                   {/* Start Date */}
                   <InputField
-                    label={'When do you want to get started?'}
+                    label={"When do you want to get started?"}
                     type="date"
-                    name="startFrom"
+                    required={true}
+                    name="additionDetails.startFrom"
                     value={inputValue.additionDetails.startFrom}
-                    handleChange={handleAdditionalChange}
+                    handleChange={handleChange}
                     className="bg-white border border-gray-300 p-3 mb-4"
-                    error={errors.startFrom}
+                    error={errors["additionDetails.startFrom"]}
                   />
 
                   {/* File */}
                   <InputField
-                    label={'Attachments'}
+                    label={"Attachments"}
                     type="file"
-                    name="file"
-                    handleChange={handleFileUpload}
+                    name="additionDetails.file"
+                    handleChange={handleChange}
                     className="bg-white border border-gray-300 p-3 mb-4"
                   />
-
 
                   {/* Upload file design */}
                   {/* <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-xl">
@@ -513,11 +517,10 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                     Click to upload file
                   </span>
                 </div> */}
-
                 </div>
 
                 {/* Checkbox */}
-                <div className='flex items-center gap-2 mt-[3rem]'>
+                <div className="flex gap-2 mt-[3rem]">
                   <input
                     type="checkbox"
                     checked={inputValue.termsAndCondition}
@@ -532,10 +535,16 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                         agreed: "",
                       }));
                     }}
+                    className="mb-auto mt-1.5"
                   />
-                  <p className='text-[14px]'>I agree to the processing of personal data according to the Privacy Policy.</p>
+                  <p className="text-[14px] my-auto">
+                    I agree to the processing of personal data according to the
+                    Privacy Policy.
+                  </p>
                 </div>
-                {errors.agreed && <span className="text-red-500">{errors.agreed}</span>}
+                {errors.agreed && (
+                  <span className="text-red-500">{errors.agreed}</span>
+                )}
 
                 {/* Button */}
                 <div className={`flex gap-2 lg:gap-4 mt-[4rem]`}>
@@ -547,25 +556,20 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                     className={`px-[2rem] bg-black text-white flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[60px] py-[0.75rem] font-montserrat text-xxs font-medium transition-all duration-300 ease-out active:scale-95 xl:text-xs 1366:text-[14px] 1400:text-[18px] 1470:text-[18px] 1600:text-[18px] 1680:text-[18px] hover:bg-[#FB9100]
                     } `}
                   >
-                    <p>{loading ? 'Submitting...' : 'Get a Quote'}</p>
+                    <p>{loading ? "Submitting..." : "Get a Quote"}</p>
                     <IoIosArrowRoundForward
                       size={25}
-                      className={`${isHover ? 'rotate-[360deg] transition-all duration-300 ease-out active:scale-95' : 'rotate-[310deg]'}`}
+                      className={`${isHover ? "rotate-[360deg] transition-all duration-300 ease-out active:scale-95" : "rotate-[310deg]"}`}
                     />
                   </button>
                 </div>
-
               </div>
             </div>
 
-            {/* <div className='absolute right-0 bottom-0'>
-              <Image src={BottomPerson} alt='Person Image' width={320} height={331} />
-            </div> */}
-
-            <div className='absolute right-0 bottom-0'>
+            <div className="absolute right-0 bottom-0">
               <Image
                 src={BottomPerson}
-                alt='Person Image'
+                alt="Person Image"
                 className="w-full h-auto max-w-[clamp(180px,30vw,320px)]"
               />
             </div>
