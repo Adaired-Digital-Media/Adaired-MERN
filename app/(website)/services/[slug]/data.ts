@@ -727,6 +727,28 @@ import LinkedinImpIcon_4 from '../../../../public/assets/images/services/linkedi
 import LinkedinImpIcon_5 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_5.svg';
 import LinkedinImpIcon_6 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_6.svg';
 
+//Tiktok Ads Page Images
+import tiktokAdsServiceResultIcon from '../../../../public/assets/images/services/tiktokAds/tiktokAdsServiceResultIcon.svg';
+import tiktokAdsImp2Icon_1 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImp2Icon_1.svg';
+import tiktokAdsImp2Icon_2 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImp2Icon_2.svg';
+import tiktokAdsImp2Icon_3 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImp2Icon_3.svg';
+import tiktokAdsImp2Icon_4 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImp2Icon_4.svg';
+import tiktokAdsImpIcon_1 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImpIcon_1.svg';
+import tiktokAdsImpIcon_2 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImpIcon_2.svg';
+import tiktokAdsImpIcon_3 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImpIcon_3.svg';
+import tiktokAdsImpIcon_4 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImpIcon_4.svg';
+import tiktokAdsImpIcon_5 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImpIcon_5.svg';
+import tiktokAdsImpIcon_6 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsImpIcon_6.svg';
+
+import tiktokAdsOurProcessIcon_1 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsOurProcessIcon_1.svg';
+import tiktokAdsOurProcessIcon_2 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsOurProcessIcon_2.svg';
+import tiktokAdsOurProcessIcon_3 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsOurProcessIcon_3.svg';
+import tiktokAdsOurProcessIcon_4 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsOurProcessIcon_4.svg';
+import tiktokAdsOurProcessIcon_5 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsOurProcessIcon_5.svg';
+import tiktokAdsOurProcessIcon_6 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsOurProcessIcon_6.svg';
+import tiktokAdsOurProcessIcon_7 from '../../../../public/assets/images/services/tiktokAds/tiktokAdsOurProcessIcon_7.svg';
+
+
 export type SectionKey =
   | 'banner'
   | 'getsCredit'
@@ -24230,6 +24252,7 @@ export const SERVICES_DATA = {
         },
       ],
       isGap: true,
+      customGap: '16rem',
       breakIndex: 0,
       desc: [
         `Scale faster with a results-driven TikTok marketing agency. At Adaired Digital Media, we create, manage, and optimize high-converting campaigns that turn attention into real revenue.`,
@@ -24237,7 +24260,7 @@ export const SERVICES_DATA = {
       subheading: '',
       button: 'Grow My TikTok Account',
       width: 50,
-      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000300/adaired/services/google_ads_mgt/googleAdsBannerImg_wxjobl.png',
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774441774/adaired/services/tiktok_ads_agency/image_34_rvq2fl.png',
       imgWidth: '533',
       imgHight: '550',
     },
@@ -24246,7 +24269,7 @@ export const SERVICES_DATA = {
       isVisible: true,
       code: '02',
       breakIndex: 0,
-      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000301/adaired/services/google_ads_mgt/googleAdsKeyStatsImg_m79nlz.png',
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774441777/adaired/services/tiktok_ads_agency/Rectangle_10025_2_l2xkqh.png',
       headingParts: [
         {
           text: 'Powerful TikTok Stats',
@@ -24298,10 +24321,10 @@ export const SERVICES_DATA = {
       isVisible: true,
       isVariant: '04',
       breakIndex: 0,
-      customPadding: '4rem, 3rem',
+      customPadding: '4rem, 4rem',
       isRowReverse: false,
       width: 45,
-      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000299/adaired/services/google_ads_mgt/googleAdsWhatServiceImg_ki1nwj.png',
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774441774/adaired/services/tiktok_ads_agency/Illustration_1_q99ogm.png',
       imgWidth: '667',
       imgHight: '445',
       headingParts: [
@@ -24311,7 +24334,7 @@ export const SERVICES_DATA = {
           weight: '700',
         },
       ],
-      customPaddingRight: 0,
+      customPaddingRight: 8,
       bgColor: '#000000',
       textColor: '#FFFFFF',
       isGap: true,
@@ -24332,7 +24355,8 @@ export const SERVICES_DATA = {
     whatareservice2: {
       isVisible: true,
       isVariant: '04',
-      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774252320/adaired/services/wordpressDevelopment/whatareservice2_nl0ypz.png',
+      breakIndex: 6,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774441775/adaired/services/tiktok_ads_agency/Group_1000005897_lfzo0b.png',
       headingParts: [
         {
           text: 'Why TikTok Ads Are Essential for Business Growth',
@@ -24363,9 +24387,9 @@ export const SERVICES_DATA = {
 
     serviceResult: {
       isVisible: true,
-      breakIndex: 5,
+      breakIndex: 4,
       bgColor: true,
-      isInCenter: true,
+      isInCenter: false,
       textColor: '',
       headingParts: [
         {
@@ -24378,7 +24402,7 @@ export const SERVICES_DATA = {
       description: [
         `We leverage a variety of ad formats within our TikTok ad management strategy to match your business goals and maximize your campaign performance.`,
       ],
-      img: WhiteSeoServiceResultImg,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774441775/adaired/services/tiktok_ads_agency/Rectangle_10025_1_tboafs.png',
       list: [
         {
           img: whiteSeoResult_1,
@@ -24437,7 +24461,7 @@ export const SERVICES_DATA = {
       buttonName: 'Launch My Campaign',
       data: [
         {
-          icon: googleAdsImpIcon_1,
+          icon: tiktokAdsImpIcon_1,
           name: 'Strategic Campaign Planning',
           description: [
             `We don’t believe in one-size-fits-all campaigns. Our process begins with a deep dive into your business, offer, margins, and growth goals.`,
@@ -24448,7 +24472,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_2,
+          icon: tiktokAdsImpIcon_2,
           name: 'Advanced Audience Targeting',
           description: [
             `Successful TikTok advertising depends on reaching the right users at the right time.`,
@@ -24459,7 +24483,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_3,
+          icon: tiktokAdsImpIcon_3,
           name: 'High-Converting Creative Production',
           description: [
             `Creativity is the engine behind TikTok Ads' success. Our team develops platform-native video ads that are designed to stop the scroll within the first few seconds.`,
@@ -24470,7 +24494,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_4,
+          icon: tiktokAdsImpIcon_4,
           name: 'Creative Testing and Iteration Framework',
           description: [
             `Rather than relying on a few ad variations, we implement a structured testing system that allows us to quickly identify what works.`,
@@ -24481,7 +24505,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_5,
+          icon: tiktokAdsImpIcon_5,
           name: 'Conversion Tracking and Data Infrastructure',
           description: [
             `Accurate tracking is essential for making informed decisions.`,
@@ -24492,7 +24516,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_6,
+          icon: tiktokAdsImpIcon_6,
           name: 'Ongoing Performance Optimization',
           description: [
             `We monitor key metrics such as click-through rates, cost per acquisition, conversion rates, and return on ad spend.`,
@@ -24516,15 +24540,15 @@ export const SERVICES_DATA = {
           weight: '700',
         },
       ],
-      breakIndex: 3,
-      bgGradient: 'bg-[#FFFFFF]',
+      breakIndex: 4,
+      bgGradient: 'bg-gradient-to-b from-[#FFFFFF] to-[#FFF8F0]',
       span: '',
       description: [
         `Our TikTok Ads Management process is built on a structured, data-driven framework designed to deliver consistent, scalable results.`,
       ],
       services: [
         {
-          icon: googleAdsProcessIcon_1,
+          icon: tiktokAdsOurProcessIcon_1,
           title: 'Strategy and Audience Research',
           description: [
             `We begin by developing a deep understanding of your business, industry, and target audience. This involves analyzing your products or services, identifying your ideal customer profile, and studying competitor strategies within your niche.`,
@@ -24532,7 +24556,7 @@ export const SERVICES_DATA = {
           ],
         },
         {
-          icon: googleAdsProcessIcon_2,
+          icon: tiktokAdsOurProcessIcon_2,
           title: 'Campaign Setup',
           description: [
             `Once the strategy is defined, we move on to building your campaigns within TikTok Ads Manager, focusing on structure, accuracy, and scalability. We organize campaigns and ad groups based on funnel stages, define precise audience targeting parameters, and allocate budgets strategically to balance testing and performance.`,
@@ -24540,7 +24564,7 @@ export const SERVICES_DATA = {
           ],
         },
         {
-          icon: googleAdsProcessIcon_3,
+          icon: tiktokAdsOurProcessIcon_3,
           title: 'Creative Development',
           description: [
             `With the structure in place, we focus on developing high-performing video creatives tailored specifically for TikTok’s content environment. Our approach prioritizes capturing attention within the first few seconds through strong hooks, visually engaging elements, and relatable storytelling.`,
@@ -24548,7 +24572,7 @@ export const SERVICES_DATA = {
           ],
         },
         {
-          icon: googleAdsProcessIcon_4,
+          icon: tiktokAdsOurProcessIcon_4,
           title: 'Launch and Testing',
           description: [
             `After preparing your campaigns and creatives, we launch and begin collecting real-time performance data. This phase is focused on understanding how different audiences and creatives respond under live conditions.`,
@@ -24556,7 +24580,7 @@ export const SERVICES_DATA = {
           ],
         },
         {
-          icon: googleAdsProcessIcon_5,
+          icon: tiktokAdsOurProcessIcon_5,
           title: 'Scaling and Optimization',
           description: [
             `Once we identify high-performing campaigns, we shift our focus toward scaling results while maintaining efficiency. This involves gradually increasing budgets, expanding audience reach, and refining creatives to sustain performance.`,
@@ -24564,7 +24588,7 @@ export const SERVICES_DATA = {
           ],
         },
         {
-          icon: googleAdsProcessIcon_6,
+          icon: tiktokAdsOurProcessIcon_6,
           title: 'Performance Tracking and Reporting',
           description: [
             `Transparency and clarity are central to our process, which is why we provide detailed performance tracking and reporting throughout your campaigns. We consolidate key metrics such as impressions, engagement, conversions, and return on ad spend into clear, actionable insights.`,
@@ -24572,7 +24596,7 @@ export const SERVICES_DATA = {
           ],
         },
         {
-          icon: googleAdsProcessIcon_7,
+          icon: tiktokAdsOurProcessIcon_7,
           title: 'Continuous Creative Refresh and Innovation',
           description: [
             `TikTok is a fast-moving platform where trends and user behavior evolve quickly. To keep your campaigns effective, we continuously refresh creatives and introduce new concepts based on performance data and emerging trends.`,
@@ -24585,7 +24609,7 @@ export const SERVICES_DATA = {
     importantToBussiness2: {
       isVisible: true,
       isInCenter: false,
-      breakIndex: 2,
+      // breakIndex: 2,
       isVariant: '01',
       cardColor: '#F9F9F9',
       headingParts: [
@@ -24601,7 +24625,7 @@ export const SERVICES_DATA = {
       buttonName: '',
       data: [
         {
-          icon: googleAdsImpIcon_1,
+          icon: tiktokAdsImp2Icon_1,
           name: '',
           description: [
             `We specialize in TikTok advertising management and stay constantly updated with platform changes, trends, and best practices. This allows us to build campaigns that align with how TikTok actually works, maximizing reach, engagement, and conversions.`
@@ -24610,7 +24634,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_2,
+          icon: tiktokAdsImp2Icon_2,
           name: '',
           description: [
             `Our strategies are not based on guesswork. We use tested frameworks for campaign structure, creative testing, and scaling that have been refined through real campaign data. This ensures consistency in performance and a clear path to growth.`
@@ -24619,7 +24643,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_3,
+          icon: tiktokAdsImp2Icon_3,
           name: 'Data-Driven Optimization',
           description: [
             `Every decision we make is backed by data. From targeting adjustments to creative improvements, we rely on real performance insights to optimize campaigns and maximize return on investment.`
@@ -24628,7 +24652,7 @@ export const SERVICES_DATA = {
           btnColor: '#FB9100',
         },
         {
-          icon: googleAdsImpIcon_4,
+          icon: tiktokAdsImp2Icon_4,
           name: 'Creative-First Approach',
           description: [
             `On TikTok, creativity is the biggest driver of success, and we treat it as a priority. Our team focuses on producing engaging, native-style content that captures attention quickly and drives action, ensuring your ads stand out in a competitive feed.`
@@ -24642,12 +24666,12 @@ export const SERVICES_DATA = {
     adairedHelp: {
       isVisible: true,
       breakIndex: 2,
-      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000301/adaired/services/google_ads_mgt/googleAdsAdairedHelpImg_s0xawe.png',
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774441776/adaired/services/tiktok_ads_agency/Rectangle_10108_1_qtqcl4.png',
       isInCenter: false,
       textColor: '',
       isnNumberBg: false,
       numberBg: '',
-      bgColor: 'bg-[#FFF9F3]',
+      bgColor: 'bg-[#FFFDFA]',
       cardBg: '',
       headingParts: [
         {
@@ -24702,9 +24726,9 @@ export const SERVICES_DATA = {
       isVariant: '03',
       breakIndex: 3,
       bgImg: bgImgBuildLink,
-      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000299/adaired/services/google_ads_mgt/googleAdsBuildLinkImg_ffqoby.png',
-      imgWidth: '758',
-      imgHight: '531',
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774441775/adaired/services/tiktok_ads_agency/Social_media_news_and_tips_uzikt8.png',
+      imgWidth: '723',
+      imgHight: '483',
       headingParts: [
         {
           text: 'Make TikTok Your',
@@ -24717,11 +24741,11 @@ export const SERVICES_DATA = {
           weight: '700',
         },
       ],
-      customPadding: '3rem, 3rem',
+      customPadding: '4rem, 4rem',
       description: ``,
       textColor: 'white',
-      width: 40,
-      customGap: '10rem',
+      width: 45,
+      customGap: '14rem',
       isFirstParaBold: false,
       data: [
         {
