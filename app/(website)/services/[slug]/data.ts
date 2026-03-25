@@ -439,6 +439,7 @@ import icon4 from '../../../../public/assets/images/services/gmb/ourProcess/icon
 import icon5 from '../../../../public/assets/images/services/gmb/ourProcess/icon5.svg';
 import icon6 from '../../../../public/assets/images/services/gmb/ourProcess/icon6.svg';
 import icon7 from '../../../../public/assets/images/services/gmb/ourProcess/icon7.svg';
+import icon8 from '../../../../public/assets/images/services/gmb/ourProcess/icon8.png';
 
 import icon_1 from '../../../../public/assets/images/services/gmb/ImpToBusinessIcon/Icon1.svg';
 import icon_2 from '../../../../public/assets/images/services/gmb/ImpToBusinessIcon/Icon2.svg';
@@ -874,7 +875,7 @@ export const SERVICES_DATA = {
     importantToBussiness: {
       isVariant: '01',
       breakIndex: 7,
-      borderColor: 'border-[#323232]/10',
+      borderColor: '#323232',
       isVisible: true,
       isInCenter: true,
       cardColor: '#F9F9F9',
@@ -1096,25 +1097,27 @@ export const SERVICES_DATA = {
           icon: seo_resultIcon_1,
           name: 'Tailored SEO Strategies',
           description: [
-            `At Adaired, we offer tailored SEO strategies that match your business goals and objectives.`,
-            `With the help of our comprehensive approach, we uncover valuable insights to enhance your website's performance and drive strategic growth for your business.`,
+            `At Adaired Digital Media, we understand that no two businesses are the same. That’s why we develop fully customized SEO strategies tailored to your business goals, target audience, and industry landscape.`,
+            `Our SEO process starts with in-depth research, keyword analysis, competitor benchmarking, and website audits to identify strengths, gaps, and opportunities.`,
+            `We take a comprehensive approach that covers on-page optimization, technical SEO, content strategy, and link-building initiatives. From optimizing website structure to creating high-quality search-optimized content, we enhance your website’s performance.`,
           ],
         },
         {
           icon: seo_resultIcon_2,
           name: 'Transparent Reporting',
           description: [
-            `We believe in building long-term relationships with our clients.`,
-            `This is why we use advanced digital marketing tools such as Ahrefs, Yoast, BuzzSumo, Hootsuite, and more to create result-driven strategies, track real-time results, 
-            and drive long-term revenue for our clients.`,
+            `We believe that transparency is the foundation of strong and lasting client relationships. At Adaired, you are always informed about the performance of your SEO campaigns through detailed and easy-to-understand reports.`,
+            `This is why we use advanced digital marketing tools such as Ahrefs, Yoast, BuzzSumo, Hootsuite, and more to create result-driven strategies, track real-time results, and drive long-term revenue for our clients.`,
+            `Our search engine optimization strategy services are built on a structured, analytical approach that strengthens visibility, improves relevance, and supports long-term growth.`,
           ],
         },
         {
           icon: seo_resultIcon_3,
           name: 'Sustainable White-Hat Practices',
           description: [
-            `We work with a laser-sharp focus to generate organic traffic, conversions, and improve technical site health.`,
-            `Our SEO approach is deep-rooted in advanced keyword research, SEO audits, market gap analysis, and data-driven strategies to meet your goals.`,
+            `Delivering quality work to our clients has become our USP over the years. We work with a laser-sharp focus to generate organic traffic, conversions, and improve technical site health.`,
+            `Our approach to search engine optimization is deep-rooted in advanced keyword research, SEO audits, market gap analysis, and data-driven strategies to meet your goals.`,
+            `We address all the aspects of search engine optimization, right from on-page optimization to link building, ensuring that your digital presence is robust and sustainable. `,
           ],
         },
       ],
@@ -4913,7 +4916,8 @@ export const SERVICES_DATA = {
           icon: whiteImpIcon_4,
           name: 'Community Management',
           description: [
-            `Engagement is key to social media success. We monitor comments, messages, and interactions to foster meaningful audience relationships while maintaining your client’s brand tone.`,
+            `Engagement is key to social media success.`,
+            `We monitor comments, messages, and interactions to foster meaningful audience relationships while maintaining your client’s brand tone.`,
           ],
           button: 'Request a Consultation',
         },
@@ -4921,7 +4925,8 @@ export const SERVICES_DATA = {
           icon: whiteImpIcon_5,
           name: 'Performance Tracking & Optimization',
           description: [
-            `Using advanced white label social media management services, we track performance metrics, identify trends, and refine strategies to continuously improve campaign results.`,
+            `Using our social media management services, we track performance metrics, identify trends, and refine strategies to improve campaign results.`,
+            `We understand what truly resonates with your target market by monitoring KPIs such as engagement rates, reach, conversions, and user behavior.`
           ],
           button: 'Request a Consultation',
         },
@@ -5058,7 +5063,7 @@ export const SERVICES_DATA = {
           title: 'Publishing & Engagement',
           description: [
             `Performance tracking is essential for long-term success. With our white-label social media management approach, you receive branded monthly performance reports, engagement, reach, and growth metrics, audience behavior insights, and strategic recommendations for improvement.`,
-            `We continuously analyze results and refine content strategy to improve performance over time. This streamlined process allows agencies to deliver reliable results without operational strain.`,
+            `We continuously analyze results and refine content strategy to improve performance over time. This streamlined process allows agencies to deliver reliable results without strain.`,
           ],
         },
       ],
@@ -5085,8 +5090,7 @@ export const SERVICES_DATA = {
           img: '',
           name: 'Scalable Service Expansion',
           description: [
-            `Adding social media marketing to your offerings typically requires hiring strategists, designers, copywriters, and ad specialists.
-            A white label social media management model removes that barrier.`,
+            `Adding social media marketing to your offerings typically requires hiring strategists, designers, copywriters, and ad specialists.`,
             `You can immediately expand your service lineup and confidently pitch comprehensive social media marketing solutions to both new and existing clients, without building a full in-house team.`,
           ],
         },
@@ -5119,7 +5123,7 @@ export const SERVICES_DATA = {
           img: '',
           name: 'Access to Specialized Expertise',
           description: [
-            `Social media platforms constantly evolve, from algorithm updates to new ad formats and content trends. Partnering with Adaired, a white label social media marketing agency, gives your clients access to experienced professionals who stay current with industry changes.`,
+            `Social media platforms constantly evolve, from algorithm updates to new ad formats and content trends. Partnering with Adaired, a white label social media marketing agency, gives your clients access to professionals who stay current with industry changes.`,
             `This ensures campaigns are not only active but strategically aligned with best practices and performance data.`,
           ],
         },
@@ -5151,7 +5155,7 @@ export const SERVICES_DATA = {
           img: '',
           name: 'Profit Margin Flexibility',
           description: [
-            `As a white label social media reseller, we offer you control over pricing.`,
+            `As a white label social media reseller, we give you full control over your pricing, allowing you to set profit margins that align with your business goals.`,
             `This flexibility allows you to set margins that align with your business model while delivering competitive social media marketing services to clients.`,
           ],
         },
@@ -5220,9 +5224,7 @@ export const SERVICES_DATA = {
           name: '5. Brand Integrity & Confidentiality',
           description: [
             `As your white label social media reseller partner, we operate discreetly. 
-            Your brand remains the face of every deliverable, report, and strategic recommendation. Confidentiality and brand consistency are foundational to how we work.
-            Our goal is not to replace your agency but to empower it.`,
-            `By combining strategic execution, reliable systems, and experienced professionals, Adaired enables agencies to deliver high-quality white label social media management at scale without sacrificing control or credibility.`,
+            Your brand remains the face of every deliverable, report, and strategic recommendation. Confidentiality and brand consistency are foundational to how we work.`,`Our goal is not to replace your agency but to empower it.`,
           ],
         },
       ],
@@ -5714,10 +5716,10 @@ export const SERVICES_DATA = {
             Before making changes, we take a deep dive into your client’s website to understand what’s holding it back and where 
             the biggest opportunities lie.`,
             `Our audits cover technical health, on-page elements, keyword positioning, content quality, internal linking, 
-            competitor benchmarking, and more. We identify crawl errors, broken links, duplicate content issues, 
+            competitor benchmarking, etc. We identify crawl errors, broken links, duplicate content issues, 
             slow-loading pages, missing metadata, and structural weaknesses that may affect search visibility.`,
             `But we don’t just list problems; we provide prioritized action plans. 
-            This makes it easier for your agency to present strategy and next steps clearly to your clients.`,
+            This facilitates your agency to present next steps clearly to your clients.`,
           ],
           button: 'Request a Consultation',
         },
@@ -5741,8 +5743,7 @@ export const SERVICES_DATA = {
             `Even the best content won’t rank if the technical foundation is weak. 
             Technical SEO is the backbone of every successful campaign, and we treat it that way.`,
             `We analyze website architecture, URL structure, crawlability, indexing status, XML sitemaps, 
-            robots.txt files, site speed, mobile responsiveness, structured data, and overall site performance. 
-            We ensure search engines can easily crawl and understand the website.`,
+            robots.txt files, site speed, mobile responsiveness, structured data, and overall site performance.`,
             `By strengthening the technical base, we remove invisible barriers that may be limiting rankings and unlock the full potential of your client’s website.`,
           ],
           button: 'Request a Consultation',
@@ -5765,8 +5766,7 @@ export const SERVICES_DATA = {
           description: [
             `Search engines trust websites that other authoritative websites trust. That’s where strategic link building comes in.`,
             `We focus on acquiring relevant, high-quality backlinks from credible sources within the industry. 
-            Our approach avoids spammy tactics and focuses on long-term authority development. 
-            We prioritize contextual placements, niche relevance, and natural anchor strategies.`,
+            Our approach avoids spammy tactics and focuses on long-term authority development.`,
             `This structured backlink acquisition strengthens domain authority and improves ranking potential in a sustainable way.`,
           ],
           button: 'Request a Consultation',
@@ -6259,7 +6259,7 @@ export const SERVICES_DATA = {
           weight: '700',
         },
       ],
-      description: `Adaired Digital functions as your dedicated fulfillment team, allowing you to confidently offer premium digital marketing services without managing an in-house team.`,
+      description: `Adaired Digital functions as your dedicated fulfillment team offering premium digital marketing services without managing an in-house team.`,
       bgGradient: 'bg-gradient-to-b from-[#FFFFFF] via-[#fffcf8] to-[#FFF8F0]',
 
       services: [
@@ -6270,7 +6270,7 @@ export const SERVICES_DATA = {
             `The engagement starts with a structured discovery phase where we learn about your agency's service offerings, 
             client profiles, delivery expectations, and internal processes. 
             We describe the digital services that you intend to provide, such as SEO, paid media, content, social media, or a combination of the above.`,
-            `This alignment ensures that our delivery model fits seamlessly into your existing operations, 
+            `Our delivery model fits seamlessly into your existing operations, 
             allowing you to expand services without changing the way your agency operates or communicates with clients.`,
           ],
         },
@@ -6394,8 +6394,7 @@ export const SERVICES_DATA = {
           icon: whiteServicesIncluded_5,
           title: 'White-Label Web Design and Development',
           description: [
-            `Our white-label web design and development services assist agencies in developing business websites and marketing-oriented web experiences. 
-            We handle design, front-end and back-end development, CMS implementation, and deployment according to your project requirements.`,
+            `We handle design, front-end and back-end development, CMS implementation, and deployment according to your project requirements.`,
             `This service enables agencies to offer custom websites under their own brand while maintaining control over client communication, scope, 
             and timelines, all without having to manage in-house design or development teams.`,
           ],
@@ -8207,10 +8206,10 @@ export const SERVICES_DATA = {
           img: '',
           name: 'Access to Experienced PPC Specialists',
           description: [
-            `Paid advertising platforms like Google Ads, Microsoft Ads, and social media networks constantly evolve. Algorithm updates, bidding strategies, audience targeting advancements, and compliance changes require continuous adaptation.`,
+            `Paid advertising platforms like Google Ads, Microsoft Ads, and social media networks constantly evolve.`,
+            `Algorithm updates, bidding strategies, audience targeting advancements, and compliance changes require continuous adaptation.`,
             `White label advertising agencies dedicate their focus entirely to paid media management.`,
             `This specialization allows them to conduct advanced keyword and competitor research, build high-converting campaign structures, continuously test ad creatives and landing pages, optimize bidding strategies based on real-time data, and implement performance-maximizing automation tools.`,
-            `Instead of relying on one internal hire, agencies gain access to a team of specialists with diverse platform expertise.`,
           ],
         },
         {
@@ -8269,8 +8268,8 @@ export const SERVICES_DATA = {
           icon: stepwhitelabelpaidad1,
           title: 'Strategic Onboarding & Alignment',
           description: [
-            `Every successful white-label partnership begins with clarity and alignment. We take time to understand your agency’s positioning, service offerings, target industries, and client expectations.`,
-            `This ensures our execution reflects your brand voice and performance standards. By establishing communication workflows, reporting formats, and goal benchmarks upfront, we create a smooth and scalable operational structure that feels like a natural extension of your team.`,
+            `Every successful white-label partnership begins with clarity and alignment. We understand your agency’s positioning, service offerings, target industries, and client expectations.`,
+            `By establishing communication workflows, reporting formats, and goal benchmarks upfront, we create a smooth and scalable operational structure that feels like a natural extension of your team.`,
           ],
         },
         {
@@ -8758,16 +8757,14 @@ export const SERVICES_DATA = {
           description: [
             `Every successful link-building campaign begins with a solid strategy. At Adaired, we don’t build random links; we build links with purpose.`,
             `Based on this research, we develop a customized link acquisition roadmap tailored to your client’s goals. 
-            Whether the objective is ranking improvement, authority growth, or local SEO enhancement, our strategy aligns link placements with measurable outcomes.`,
-            `We also carefully plan anchor text distribution to maintain a natural backlink profile and reduce risk.`,
+            Whether the objective is ranking improvement, authority growth, or local SEO enhancement, our strategy aligns link placements with measurable outcomes. We also carefully plan anchor text distribution to maintain a natural backlink profile and reduce risk.`,
           ],
         },
         {
           icon: stepwhitelabellinkbuild2,
           title: 'Manual Outreach & Relationship Building',
           description: [
-            `Unlike low-quality providers that rely on automated systems or private blog networks (PBNs), we use 100% manual outreach.`,
-            `Our outreach specialists identify niche-relevant, authoritative websites, build genuine relationships with site owners and editors, 
+            `Unlike low-quality providers that rely on private blog networks, we use 100% manual outreach. Our outreach specialists identify niche-relevant, authoritative websites, build genuine relationships with site owners and editors, 
             pitch valuable content ideas aligned with publisher guidelines, and negotiate contextual link placements.`,
             `We prioritize websites that have real organic traffic, strong domain metrics, editorial standards, and relevance to your client’s industry.`,
           ],
@@ -8807,8 +8804,8 @@ export const SERVICES_DATA = {
           title: 'Ongoing Scaling & Optimization',
           description: [
             `White label link building is not a one-time effort. We monitor performance trends and refine strategy over time. 
-            As your client’s authority grows, we adjust the anchor text strategy, target higher authority placements, expand into additional relevant niches, and strengthen topical authority. 
-            This progressive scaling ensures continued ranking improvement and long-term SEO stability.`,
+            As your client’s authority grows, we adjust the anchor text strategy, target higher authority placements, expand into additional relevant niches, and strengthen topical authority.`,
+            `This progressive scaling ensures continued ranking improvement and long-term SEO stability.`,
           ],
         },
       ],
@@ -11595,19 +11592,16 @@ export const SERVICES_DATA = {
                 'Modern customers expect instant communication and personalized experiences. With a mobile app, we help businesses create a direct channel to their audience through:',
               list: [
                 {
-                  des: ['Custom iPhone and iPad app development'],
+                  des: ['Push notifications for real-time updates'],
                 },
                 {
-                  des: ['Swift-based app development'],
+                  des: ['Personalized offers based on user behavior'],
                 },
                 {
-                  des: ['UI/UX design aligned with Apple guidelines'],
+                  des: ['In-app messaging and support'],
                 },
                 {
-                  des: ['App Store submission & deployment support'],
-                },
-                {
-                  des: ['Ongoing maintenance and updates'],
+                  des: ['Loyalty programs and rewards'],
                 },
               ],
             },
@@ -12973,7 +12967,7 @@ export const SERVICES_DATA = {
           ],
         },
         {
-          icon: icon7,
+          icon: icon8,
           title: 'Performance Tracking and Reporting',
           description: [
             `Finally, we track key performance metrics such as profile views, phone calls, direction requests, and website clicks. Regular reports provide clear insights into how your optimized profile is generating leads and contributing to business growth.

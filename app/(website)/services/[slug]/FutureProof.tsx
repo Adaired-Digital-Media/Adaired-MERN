@@ -38,6 +38,7 @@ const FutureProof = ({handleClick}:any) => {
             name="Talk To an Expert!"
             isIcon={true}
             buttonWidth=""
+            isBgWhite={true}
             handleClick={handleClick}
           />
         </div>
