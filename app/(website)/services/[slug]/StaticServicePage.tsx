@@ -46,6 +46,7 @@ export type SectionKey =
   | 'needofservice2'
   | 'dataInTable'
   | 'importantToBussiness'
+  | 'importantToBussiness2'
   | 'benefitofAiSeo'
   | 'serviceResult'
   | 'notSeeingResult'
@@ -122,9 +123,12 @@ const sectionRenderer: Record<SectionKey, SectionRenderer> = {
 
   importantToBussiness: (serviceData) =>
     serviceData.importantToBussiness?.isVisible ? (
-      <ImportantToBussiness
-        importantToBussiness={serviceData.importantToBussiness}
-      />
+      <ImportantToBussiness importantToBussiness={serviceData.importantToBussiness} />
+    ) : null,
+
+  importantToBussiness2: (serviceData) =>
+    serviceData.importantToBussiness2?.isVisible ? (
+      <ImportantToBussiness importantToBussiness={serviceData.importantToBussiness2} />
     ) : null,
 
   benefitofAiSeo: (serviceData) =>
@@ -215,7 +219,7 @@ type StaticServicePageProps = {
   serviceData: (typeof SERVICES_DATA)[keyof typeof SERVICES_DATA];
 };
 const StaticServicePage = ({ serviceData }: StaticServicePageProps) => {
-  console.log(serviceData,"serviceData>>>>>>>>>>>>>")
+  console.log(serviceData, "serviceData>>>>>>>>>>>>>")
   if (!serviceData) {
     return <NotFound />;
   }

@@ -719,6 +719,14 @@ import metaAdsImpIcon_4 from '../../../../public/assets/images/services/metaAds/
 import metaAdsImpIcon_5 from '../../../../public/assets/images/services/metaAds/metaAdsImpIcon_5.svg';
 import metaAdsImpIcon_6 from '../../../../public/assets/images/services/metaAds/metaAdsImpIcon_6.svg';
 
+//Linkedin Marketing Agency Page Images
+import LinkedinImpIcon_1 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_1.svg';
+import LinkedinImpIcon_2 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_2.svg';
+import LinkedinImpIcon_3 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_3.svg';
+import LinkedinImpIcon_4 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_4.svg';
+import LinkedinImpIcon_5 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_5.svg';
+import LinkedinImpIcon_6 from '../../../../public/assets/images/services/linkedinMarketingAgency/LinkedinImpIcon_6.svg';
+
 export type SectionKey =
   | 'banner'
   | 'getsCredit'
@@ -730,6 +738,7 @@ export type SectionKey =
   | 'needofservice2'
   | 'dataInTable'
   | 'importantToBussiness'
+  | 'importantToBussiness2'
   | 'benefitofAiSeo'
   | 'serviceResult'
   | 'notSeeingResult'
@@ -23600,6 +23609,1909 @@ export const SERVICES_DATA = {
 
     notSeeingResult: {
       isVisible: false,
+    },
+  },
+  'linkedIn-marketing-agency': {
+    sectionsOrder: [
+      'banner',
+      'keyStats',
+      'whatareservice',
+      'adairedHelp',
+      'importantToBussiness',
+      'whatMkeDeferent',
+      'buildlinks',
+      'faqData',
+      'ourProcess',
+      'leadingTools',
+      'industriesWeServe',
+      'benefitofAiSeo',
+      'whatMissing',
+      'techStackMobile',
+      'dataInTable',
+      'whatareservice2',
+      'whatIncluded',
+      'needofservice',
+      'serviceResult',
+      'getsCredit',
+      'readyToStart',
+      'stopStruggling',
+      'leadingToolsForPerformence',
+      'notSeeingResult',
+      'getplan',
+    ] satisfies SectionKey[],
+    metaDetails: {
+      title: 'SEO Comapny India | ROI Driven SEO Services | SEO India',
+      description:
+        'Partner with a leading SEO company delivering proven strategies that grow organic traffic, improve search rankings, and generate measurable business results.',
+      alternates: {
+        canonical: '/services/linkedIn-marketing-agency',
+      },
+    },
+    banner: {
+      code: '02',
+      isCenter: false,
+      isVisible: true,
+      heading2: '#1 on Google Maps: Get Seen by Local Customers',
+      isAbsolute: false,
+      isStyleHeading: true,
+      span: '',
+      headingParts: [
+        {
+          text: 'Generate Strong B2B',
+          color: '#000000',
+          weight: '400',
+        },
+        {
+          text: 'Leads with Top LinkedIn Ads Agency',
+          color: '#FB9100',
+          weight: '700',
+        },
+      ],
+      isGap: true,
+      breakIndex: 0,
+      customPadding: '6rem , 4rem',
+      desc: [
+        `Stop wasting budget on raw ads and start generating qualified B2B leads on LinkedIn. At Adaired Digital Media, we help B2B companies generate high-quality, sales-ready leads through data-driven LinkedIn advertising​ strategies tailored to your audience and goals.`,
+      ],
+      subheading: '',
+      button: 'Get My LinkedIn Advertising​ Audit',
+      width: 55,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433995/adaired/services/linkedin_marketing_agency/Group_1000007426_fzbyfr.png',
+      imgWidth: '756',
+      imgHight: '644',
+    },
+
+    keyStats: {
+      isVisible: true,
+      code: '02',
+      breakIndex: 0,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433995/adaired/services/linkedin_marketing_agency/Rectangle_10025_h6bqgt.png',
+      headingParts: [
+        {
+          text: 'LinkedIn Advertising Statistics',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      bgColor: '#FB9100',
+      isImgBg: true,
+      isCard: false,
+      imgWidth: '594',
+      imgHeight: '668',
+      width: 40,
+      list: [
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `LinkedIn drives 80% of all B2B social media leads, making it the most powerful platform for business growth.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `4 out of 5 LinkedIn users influence business decisions, giving you direct access to key decision-makers.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `LinkedIn is 277% more effective for lead generation compared to Facebook and X.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `Campaigns on LinkedIn deliver 2x higher conversion rates than other social platforms.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `With over 65 million decision-makers, LinkedIn offers unmatched access to high-value B2B audiences.`,
+          ],
+        },
+      ],
+    },
+
+    whatareservice: {
+      isVisible: true,
+      isVariant: '04',
+      breakIndex: 0,
+      customPadding: '4rem, 4rem',
+      isRowReverse: false,
+      width:45,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433994/adaired/services/linkedin_marketing_agency/Group_1_cys3tq.png',
+      imgWidth: '681',
+      imgHight: '449',
+      headingParts: [
+        {
+          text: 'What is LinkedIn Ads Management?',
+          color: '#FFFFFF',
+          weight: '700',
+        },
+      ],
+      customPaddingRight: 8,
+      bgColor: '#000000',
+      textColor: '#FFFFFF',
+      isGap: true,
+      data: [
+        {
+          desctioption: `LinkedIn Ads Management is the strategic process of planning, creating, launching, and continuously optimizing paid advertising campaigns on LinkedIn to reach a highly targeted professional audience. It goes far beyond simply running ads; it’s about building a predictable system that generates qualified B2B leads, nurtures prospects, and drives measurable business growth.`,
+        },
+        {
+          desctioption: `At its core, it focuses on connecting your business with the right people, decision-makers, executives, and professionals, based on precise criteria such as job title, industry, company size, seniority, and even specific companies. This makes LinkedIn one of the most powerful platforms for B2B marketing, where quality matters far more than volume.`,
+        },
+      ],
+      button: '',
+    },
+
+    adairedHelp: {
+      isVisible: true,
+      // breakIndex: 2,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433999/adaired/services/linkedin_marketing_agency/Rectangle_10108_miyjq9.png',
+      isInCenter: false,
+      textColor: '',
+      isnNumberBg: false,
+      numberBg: '',
+      bgColor: 'bg-[#FFFCFA]',
+      cardBg: '',
+      headingParts: [
+        {
+          text: 'Why LinkedIn Ads Management Matters for B2B',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `On a platform like LinkedIn, where professionals actively engage with business content, a well-managed ad strategy by our expert LinkedIn Ad managers can directly impact your pipeline, not just your traffic.`,
+      ],
+      mainImage: whiteServicesAdairedHelpImg,
+      list: [
+        {
+          img: '',
+          name: 'Access to High-Intent Decision-Makers',
+          description: [
+            `LinkedIn gives you direct access to professionals who are actively involved in business decisions, from managers to C-level executives. With advanced targeting options like job title, industry, company size, and seniority.`,
+            `LinkedIn Advertising​ Management ensures your campaigns reach the people who actually have the authority and intent to take action, making every impression more valuable.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'Higher Quality Leads',
+          description: [
+            `In B2B marketing, not all leads are created equal. LinkedIn Ads Management focuses on attracting highly relevant prospects who are more likely to convert into customers.`,
+            `Instead of chasing large volumes of unqualified traffic, the strategy prioritizes precision targeting and tailored messaging to generate leads that truly matter for your business growth.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'Full-Funnel Growth Strategy',
+          description: [
+            `A successful LinkedIn Ads strategy goes beyond one-off campaigns. It supports the entire buyer journey, from building awareness with educational content to nurturing interest through case studies and finally converting prospects with targeted offers.`,
+            ` Proper management ensures each stage is connected, guiding potential customers smoothly toward conversion.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'Better ROI via Continuous Optimization',
+          description: [
+            `Running ads is only the beginning; real results come from ongoing optimization. LinkedIn Ads Management involves continually testing creatives, audiences, and bidding strategies to optimize performance over time.`,
+            `As a LinkedIn Ads agency, we do continuous refinement to help reduce costs, increase conversions, and maximize the return on your advertising investment.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'Data-Driven Decision Making',
+          description: [
+            `Every campaign generates valuable insights that can shape your marketing strategy. With proper tracking and analysis, LinkedIn Ads Management helps you understand what’s working and what isn’t.`,
+            `These insights allow you to make informed decisions, refine your approach, and scale campaigns with confidence.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'Competitive Advantage in B2B Markets',
+          description: [
+            `Many businesses struggle to fully leverage LinkedIn’s advertising potential. With a well-managed approach, you can stand out by reaching the right audience with the right message at the right time.`,
+            `This gives you a strong competitive edge, helping you capture attention, build authority, and win more business in your market.`,
+          ],
+        },
+      ],
+    },
+
+    importantToBussiness: {
+      isVisible: true,
+      isInCenter: false,
+      breakIndex: 3,
+      isVariant: '01',
+      cardColor: '#F9F9F9',
+      headingParts: [
+        {
+          text: 'LinkedIn Ads Management Services We Offer',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `By combining data-driven insights with proven marketing frameworks, we turn LinkedIn into a high-performing acquisition channel for your business.`,
+      ],
+      buttonName: 'Get My LinkedIn Advertising​ Audit',
+      data: [
+        {
+          icon: LinkedinImpIcon_1,
+          name: 'Campaign Strategy & Setup',
+          description: [
+            `A successful LinkedIn Ads campaign begins with a clear and well-defined strategy. We take the time to understand your business model, target audience, value proposition, and sales process before building your campaign structure. This includes defining your ideal customer profile (ICP), selecting the right campaign objectives, and mapping out a full-funnel approach.`,
+            `We then handle the complete technical setup inside LinkedIn Campaign Manager, campaign creation, budget allocation, bidding strategies, ad placements, and conversion tracking integration. Every element is carefully configured to ensure your campaigns are optimized for performance from the very beginning, reducing trial-and-error and accelerating results.`,
+          ],
+          button: 'Get My LinkedIn Advertising​ Audit',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: LinkedinImpIcon_2,
+          name: 'Audience Targeting',
+          description: [
+            `One of LinkedIn’s biggest strengths is its ability to target highly specific professional audiences, and we make the most of it. We go beyond basic targeting by building refined audience segments based on job titles, functions, industries, company size, seniority levels, skills, and even specific companies (account-based targeting).`,
+            `Our team continuously analyzes audience performance and refines targeting criteria to improve relevance and reduce wasted spend. Whether you’re targeting niche decision-makers or scaling to a broader professional audience, we ensure your ads are always reaching the people who matter most to your business.`,
+          ],
+          button: 'Get My LinkedIn Advertising​ Audit',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: LinkedinImpIcon_3,
+          name: 'Ad Creative & Copywriting',
+          description: [
+            `In a competitive B2B environment, your messaging and visuals need to instantly capture attention and communicate value. We develop high-performing ad creatives and copy tailored specifically for LinkedIn’s professional audience. This includes crafting compelling headlines, persuasive descriptions, and strong calls-to-action that encourage engagement.`,
+            `We also design and test multiple creative variations, such as single-image ads, carousel ads, and video ads, to identify what resonates best with your audience. Through continuous A/B testing, we refine messaging and visuals to improve click-through rates, engagement, and ultimately conversions.`,
+          ],
+          button: 'Get My LinkedIn Advertising​ Audit',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: LinkedinImpIcon_4,
+          name: 'Lead Gen Forms & Funnel Setup',
+          description: [
+            `Generating leads is only effective if the process is seamless and conversion-focused. We build and optimize LinkedIn Lead Gen Forms that are pre-filled with user data, making it easier for prospects to submit their information. This reduces friction and significantly increases conversion rates compared to traditional landing pages.`,
+            `In addition, we design and implement complete funnel systems that guide prospects from initial interaction to final conversion. This may include landing pages, thank-you pages, email follow-ups, and CRM integration to ensure leads are captured, nurtured, and handed over to your sales team efficiently.`,
+          ],
+          button: 'Get My LinkedIn Advertising​ Audit',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: LinkedinImpIcon_5,
+          name: 'Retargeting Campaigns',
+          description: [
+            `Most B2B buyers require multiple touchpoints before making a decision. That’s why retargeting plays a critical role in our strategy. We create customized retargeting campaigns to re-engage users who have previously interacted with your ads, visited your website, or shown interest in your content.`,
+            `By delivering personalized messages at different stages of the buyer journey, we help move prospects closer to conversion. Retargeting not only improves conversion rates but also maximizes the value of your existing traffic, ensuring no opportunity is left untapped.`,
+          ],
+          button: 'Get My LinkedIn Advertising​ Audit',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: LinkedinImpIcon_6,
+          name: 'Performance Tracking & Reporting',
+          description: [
+            `Data transparency and continuous improvement are at the core of our service. We set up advanced tracking systems, including LinkedIn Insight Tag and conversion tracking, to monitor every key action, from clicks and impressions to leads and conversions.`,
+            `You’ll receive detailed, easy-to-understand reports that highlight campaign performance, key metrics (such as cost per lead and ROI), and actionable insights. More importantly, we use this data to continuously optimize your campaigns, adjusting targeting, creatives, and bidding strategies to improve efficiency and scale results over time.`,
+          ],
+          button: 'Get My LinkedIn Advertising​ Audit',
+          btnColor: '#FB9100',
+        },
+      ],
+    },
+
+    whatMkeDeferent: {
+      isVisible: true,
+      isVariant: '01',
+      breakIndex: 5,
+      isInCenter: false,
+      bgColor: '#FFFBF5',
+      bgGradient: 'bg-[#FFFBF5]',
+      cardColor2: '#F9F9F9',
+      cardColor: '#FFF8EF',
+      cardImgBgColor2: '#F3F3F3',
+      cardImgBgColor: '#FFEDD7',
+      borderColor2: '#051B3C',
+      borderColor: '#F28F17',
+      headingParts: [
+        {
+          text: 'How Our LinkedIn Ads Management Works',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        'As a LinkedIn advertising agency,​ we follow a structured, data-driven process designed to transform LinkedIn into a consistent, high-performing B2B lead generation channel.',
+      ],
+      list: [
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433994/adaired/services/linkedin_marketing_agency/Group_1000007441_v6l0d7.png',
+          name: 'Strategy Foundation',
+          description: [
+            `Every successful campaign begins with a clear direction. We take a deep dive into your business model, target market, competitive landscape, and growth goals.`,
+            `We identify your ideal customer profile, segment your audience based on key professional attributes, and determine the best positioning for your offer. This ensures your campaigns are not based on assumptions but on insights that drive meaningful engagement.`
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433994/adaired/services/linkedin_marketing_agency/Group_2_q0rsk6.png',
+          name: 'Offer Architecture',
+          description: [
+            `A great campaign cannot succeed without a compelling offer. We refine your value proposition to ensure it resonates with your target audience and motivates action.`,
+            `At this stage, we also map out the entire funnel, from first interaction to final conversion, ensuring a clear, frictionless journey that guides prospects toward becoming qualified leads.`
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433993/adaired/services/linkedin_marketing_agency/Group_1000007443_hoe2vi.png',
+          name: 'Campaign Build',
+          description: [
+            `With a strategy in place, we move into precise campaign execution. We set up your campaigns inside LinkedIn Campaign Manager with carefully selected objectives, audience segments, bidding strategies, and budget allocation.`,
+            `In parallel, we optimize landing pages, lead generation forms, and tracking systems to ensure every click is captured and measured effectively. This step ensures your campaigns are ready for performance from day one.`
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433993/adaired/services/linkedin_marketing_agency/Group_1000006055_vafvie.png',
+          name: 'Creative Development',
+          description: [
+            `Your ads need to stand out in a professional, content-heavy environment. We develop high-quality creatives and persuasive copy tailored specifically for your audience.`,
+            `This includes multiple variations of headlines, visuals, messaging angles, and calls-to-action. Each variation is designed with a clear purpose: to capture attention, communicate value quickly, and encourage users to take the next step.`
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433993/adaired/services/linkedin_marketing_agency/Group_1000007444_aw8ycb.png',
+          name: 'Launch Phase',
+          description: [
+            `Once everything is in place, we launch your campaigns with a structured rollout plan. This phase focuses on controlled testing, where we analyze how different audiences, creatives, and messaging perform in real conditions.`,
+            `Rather than scaling too quickly, we prioritize learning. Early data helps us identify what works, what needs improvement, and where the biggest opportunities lie.`
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433993/adaired/services/linkedin_marketing_agency/Group_1000006050_ll6inn.png',
+          name: 'Optimization Engine',
+          description: [
+            `This is where real performance gains happen. We refine your campaigns based on data, not guesswork. This includes testing new creatives, adjusting audience targeting, optimizing bids, and improving overall campaign efficiency.`,
+            `Our goal is to reduce cost per lead, increase conversion rates, and ensure your campaigns deliver consistent, high-quality results over time. Optimization is not a one-time task; it is an ongoing process that drives long-term success.`
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433993/adaired/services/linkedin_marketing_agency/Group_1000006006_g2uhob.png',
+          name: 'Scale Growth',
+          description: [
+            `Once we identify winning campaigns, we scale them strategically to increase lead volume while maintaining performance. This may involve expanding audience segments, increasing budgets, or introducing new campaign variations.`,
+            `Alongside scaling, we provide clear, transparent reporting with actionable insights. You always know how your campaigns are performing, where your investment is going, and how we are driving growth.`
+          ],
+        },
+      ],
+    },
+
+    buildlinks: {
+      isVisible: true,
+      isCode01: true,
+      isVariant: '03',
+      breakIndex: 3,
+      bgImg: bgImgBuildLink,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774433993/adaired/services/linkedin_marketing_agency/Illustration_rkokaz.png',
+      imgWidth: '752',
+      imgHight: '501',
+      headingParts: [
+        {
+          text: 'Turn LinkedIn Into',
+          color: '#FFFFFF',
+          weight: '400',
+        },
+        {
+          text: 'Your Top Lead Channel!',
+          color: '#FFFFFF',
+          weight: '700',
+        },
+      ],
+      customPadding: '4rem, 4rem',
+      description: ``,
+      textColor: 'white',
+      width: 45,
+      customGap: '10rem',
+      isFirstParaBold: false,
+      data: [
+        {
+          desctioption: `Stop relying on inconsistent lead sources and start building a predictable B2B pipeline with a proven LinkedIn Ads services agency.`,
+        },
+        {
+          desctioption: `Whether you're looking to generate high-quality leads, book more demos, or scale your growth, we’ll help you get there with data-driven campaigns that deliver real results.`,
+        },
+      ],
+      button: 'Book a LinkedIn Ads Strategy Call',
+    },
+
+    faqData: {
+      isVisible: true,
+      subtitle: 'FAQ',
+      headingParts: [
+        {
+          text: 'Frequently Asked Questions',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: ``,
+      list: [
+        {
+          title: 'How much budget do I need for LinkedIn Ads?',
+          description: [
+            `The ideal budget depends on your industry, audience, and goals. However, most B2B campaigns require a minimum monthly ad spend to generate meaningful data and results. We help you allocate your budget strategically to maximize return on investment.`,
+          ],
+        },
+        {
+          title: 'How long does it take to see results?',
+          description: [
+            `Initial data and insights typically start coming in within the first few weeks after launch. Consistent, optimized results usually develop over 1–3 months as campaigns are tested and refined.`,
+          ],
+        },
+        {
+          title: 'What kind of businesses do you work with?',
+          description: [
+            `We primarily work with B2B companies, including SaaS, IT services, consultants, agencies, and professional service providers, looking to generate qualified leads through LinkedIn.`,
+          ],
+        },
+        {
+          title: 'Will I get guaranteed leads?',
+          description: [
+            `While no LinkedIn Ads agency can guarantee exact results, our proven process is designed to maximize lead quality and consistency. We focus on building a system that delivers sustainable growth over time.`,
+          ],
+        },
+        {
+          title: 'Do you create ad creatives and copy?',
+          description: [
+            `Yes, Adaired Digital, as your reliable LinkedIn Ads agency, handles the complete creative process, including ad visuals, copywriting, messaging angles, and testing multiple variations to identify what performs best.`,
+          ],
+        },
+        {
+          title: 'Do I need a landing page or website?',
+          description: [
+            `In most cases, yes. We can also use LinkedIn Lead Gen Forms for faster conversions. If needed, we guide you on optimizing or creating high-converting landing pages.`,
+          ],
+        },
+        {
+          title: 'How do you measure success?',
+          description: [
+            `At Adaired Digital Media, we track key performance metrics such as cost per lead, conversion rates, click-through rates, and overall ROI. Our focus is always on generating high-quality leads that contribute to your business growth.`,
+          ],
+        },
+        {
+          title: 'Do you offer ongoing management or just setup?',
+          description: [
+            `We provide complete end-to-end management, including strategy, setup, monitoring, optimization, and scaling. Our goal is to continuously improve performance and deliver long-term results.`,
+          ],
+        },
+      ],
+    },
+
+    ourProcess: {
+      isVisible: false,
+    },
+
+    benefitofAiSeo: {
+      isVisible: false,
+    },
+
+    whatMissing: {
+      isVisible: false,
+    },
+
+    leadingTools: {
+      isVisible: false,
+    },
+
+    industriesWeServe: {
+      isVisible: false,
+    },
+
+    techStackMobile: {
+      isVisible: false,
+
+    },
+
+    dataInTable: {
+      isVisible: false,
+    },
+
+    whatareservice2: {
+      isVisible: false,
+    },
+
+    whatIncluded: {
+      isVisible: false,
+    },
+
+    needofservice: {
+      isVisible: false,
+    },
+
+    serviceResult: {
+      isVisible: false,
+    },
+
+    getsCredit: {
+      isVisible: false,
+    },
+
+    getplan: {
+      isVisible: false,
+    },
+
+    stopStruggling: {
+      isVisible: false,
+    },
+
+    industryLeaders: {
+      isVisible: false,
+    },
+
+    leadingToolsForPerformence: {
+      isVisible: false,
+    },
+
+    notSeeingResult: {
+      isVisible: false,
+    },
+  },
+  'tiktok-ads-agency': {
+    sectionsOrder: [
+      'banner',
+      'keyStats',
+      'whatareservice',
+      'whatareservice2',
+      'serviceResult',
+      'importantToBussiness',
+      'ourProcess',
+      'importantToBussiness2',
+      'adairedHelp',
+      'buildlinks',
+      'faqData',
+      'leadingTools',
+      'industriesWeServe',
+      'whatMkeDeferent',
+      'benefitofAiSeo',
+      'whatMissing',
+      'techStackMobile',
+      'dataInTable',
+      'whatIncluded',
+      'needofservice',
+      'getsCredit',
+      'readyToStart',
+      'stopStruggling',
+      'leadingToolsForPerformence',
+      'notSeeingResult',
+      'getplan',
+    ] satisfies SectionKey[],
+    metaDetails: {
+      title: 'SEO Comapny India | ROI Driven SEO Services | SEO India',
+      description:
+        'Partner with a leading SEO company delivering proven strategies that grow organic traffic, improve search rankings, and generate measurable business results.',
+      alternates: {
+        canonical: '/services/tiktok-ads-agency',
+      },
+    },
+    banner: {
+      code: '02',
+      isCenter: false,
+      isVisible: true,
+      heading2: '',
+      isAbsolute: false,
+      isStyleHeading: true,
+      span: '',
+      headingParts: [
+        {
+          text: 'Expert TikTok Ads',
+          color: '#000000',
+          weight: '400',
+        },
+        {
+          text: 'Management to Help Your Brand Profit',
+          color: '#FB9100',
+          weight: '700',
+        },
+      ],
+      isGap: true,
+      breakIndex: 0,
+      desc: [
+        `Scale faster with a results-driven TikTok marketing agency. At Adaired Digital Media, we create, manage, and optimize high-converting campaigns that turn attention into real revenue.`,
+      ],
+      subheading: '',
+      button: 'Grow My TikTok Account',
+      width: 50,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000300/adaired/services/google_ads_mgt/googleAdsBannerImg_wxjobl.png',
+      imgWidth: '533',
+      imgHight: '550',
+    },
+
+    keyStats: {
+      isVisible: true,
+      code: '02',
+      breakIndex: 0,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000301/adaired/services/google_ads_mgt/googleAdsKeyStatsImg_m79nlz.png',
+      headingParts: [
+        {
+          text: 'Powerful TikTok Stats',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      bgColor: '#FB9100',
+      isImgBg: true,
+      isCard: false,
+      imgWidth: '594',
+      imgHeight: '690',
+      width: 40,
+      list: [
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `TikTok has already reached around 1.9 billion global users, making it one of the fastest-growing platforms for brands looking to scale audience reach.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `Users spend an average of 95 minutes per day on TikTok, giving brands unmatched attention compared to other social platforms.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `TikTok is now the 5th most popular app worldwide, with over 1.5 billion monthly active users engaging with content regularly.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `73% of users watch content recommended by the algorithm, creating massive opportunities for brands to go viral without an existing audience.`,
+          ],
+        },
+        {
+          icon: wearablesAppDevKeyStatsIcon,
+          desctioption: [
+            `Small businesses report up to an 88% increase in sales after marketing on TikTok, proving its real impact on revenue and growth.`,
+          ],
+        },
+      ],
+    },
+
+    whatareservice: {
+      isVisible: true,
+      isVariant: '04',
+      breakIndex: 0,
+      customPadding: '4rem, 3rem',
+      isRowReverse: false,
+      width: 45,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000299/adaired/services/google_ads_mgt/googleAdsWhatServiceImg_ki1nwj.png',
+      imgWidth: '667',
+      imgHight: '445',
+      headingParts: [
+        {
+          text: 'What is TikTok Ads Management?',
+          color: '#FFFFFF',
+          weight: '700',
+        },
+      ],
+      customPaddingRight: 0,
+      bgColor: '#000000',
+      textColor: '#FFFFFF',
+      isGap: true,
+      data: [
+        {
+          desctioption: `"TikTok Ads Management" refers to the strategic planning, execution, monitoring, and continuous optimization of paid advertising campaigns on TikTok to achieve specific business goals such as brand awareness, lead generation, or direct sales.`,
+        },
+        {
+          desctioption: `It goes far beyond simply launching ads; effective management involves deep audience research, creative testing, trend alignment, and data-driven decision-making to ensure your campaigns perform in a fast-moving, content-first environment.`,
+        },
+        {
+          desctioption: `An effective TikTok ads strategy focuses on engaging content to reach targeted audiences through TikTok Ads Manager, video creation, budget management, and ad scaling for ROI. It demands continuous optimization, performance analysis, creative testing, and real-time strategy adjustments to stay competitive and drive growth.`,
+        },
+      ],
+      button: '',
+    },
+
+    whatareservice2: {
+      isVisible: true,
+      isVariant: '04',
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774252320/adaired/services/wordpressDevelopment/whatareservice2_nl0ypz.png',
+      headingParts: [
+        {
+          text: 'Why TikTok Ads Are Essential for Business Growth',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      bgColor: '#FFFFFF',
+      textColor: '#000000',
+      customPadding: '3rem, 3rem',
+      width: 50,
+      imgWidth: '652',
+      imgHight: '568',
+      IsGap: false,
+      isRowReverse: true,
+      data: [
+        {
+          desctioption: `TikTok has rapidly become one of the most powerful advertising platforms for brands looking to capture attention and drive real results. Unlike traditional social media channels, TikTok is built around short-form, highly engaging content that keeps users scrolling for extended periods, giving your brand more opportunities to get noticed. With an algorithm that prioritizes content quality over follower count, even new or smaller businesses can achieve massive reach and visibility.`,
+        },
+        {
+          desctioption: `What makes TikTok truly unique is its ability to turn ordinary content into viral moments. Trends, sounds, and user behavior evolve quickly, creating opportunities for brands to connect with audiences in a more authentic and relatable way. This shift in buyer behavior means users are no longer just browsing; they are actively discovering products, engaging with brands, and making purchasing decisions directly within the platform.`,
+        },
+        {
+          desctioption: `For businesses aiming to scale, our TikTok marketing services offer the perfect mix of attention, engagement, and conversion potential. When leveraged correctly, it becomes more than just an advertising channel; it becomes a growth engine.`,
+        },
+      ],
+    },
+
+    serviceResult: {
+      isVisible: true,
+      breakIndex: 5,
+      bgColor: true,
+      isInCenter: true,
+      textColor: '',
+      headingParts: [
+        {
+          text: 'Types of TikTok Ads We Run',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      isVariant: '01',
+      description: [
+        `We leverage a variety of ad formats within our TikTok ad management strategy to match your business goals and maximize your campaign performance.`,
+      ],
+      img: WhiteSeoServiceResultImg,
+      list: [
+        {
+          img: whiteSeoResult_1,
+          name: 'In-Feed Ads',
+          description: [
+            `Native ads that appear seamlessly in users’ feeds are designed to blend in with organic content while driving clicks and conversions.`,
+          ],
+        },
+        {
+          img: whiteSeoResult_2,
+          name: 'Spark Ads',
+          description: [
+            `A powerful format that allows brands to boost organic posts or creator content, increasing trust and engagement.`,
+          ],
+        },
+        {
+          img: whiteSeoResult_3,
+          name: 'TikTok Shop Ads',
+          description: [
+            `Perfect for eCommerce brands, these ads enable direct product discovery and purchases within the TikTok platform.`,
+          ],
+        },
+        {
+          img: whiteSeoResult_4,
+          name: 'Lead Generation Ads',
+          description: [
+            `Optimized for capturing user information directly within TikTok, making it easy to generate high-quality leads.`,
+          ],
+        },
+        {
+          img: whiteSeoResult_4,
+          name: 'Retargeting Campaigns',
+          description: [
+            `We re-engage users who have already interacted with your brand, increasing conversion rates and maximizing your ad spend.`,
+          ],
+        },
+      ],
+    },
+
+    importantToBussiness: {
+      isVisible: true,
+      isInCenter: false,
+      breakIndex: 2,
+      isVariant: '01',
+      cardColor: '#F9F9F9',
+      headingParts: [
+        {
+          text: 'TikTok Ads Management Services We Offer!',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `Our TikTok Ads Management services are built for brands that want more than just traffic; they want predictable, scalable growth.`,
+      ],
+      buttonName: 'Launch My Campaign',
+      data: [
+        {
+          icon: googleAdsImpIcon_1,
+          name: 'Strategic Campaign Planning',
+          description: [
+            `We don’t believe in one-size-fits-all campaigns. Our process begins with a deep dive into your business, offer, margins, and growth goals.`,
+            `We analyze your competitors, identify market gaps, and craft a customized campaign roadmap designed to attract, engage, and convert your ideal audience.`,
+            `This ensures your campaigns are not only aligned with your objectives but also positioned to outperform competitors from day one.`
+          ],
+          button: 'Launch My Campaign',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_2,
+          name: 'Advanced Audience Targeting',
+          description: [
+            `Successful TikTok advertising depends on reaching the right users at the right time.`,
+            `To achieve this, we meticulously construct comprehensive audience segments that are informed by a variety of factors, including user behavior, individual interests, engagement trends, and key intent signals.`,
+            `As data comes in, we continuously refine these segments to improve efficiency, reduce wasted spend, and increase overall performance.`
+          ],
+          button: 'Launch My Campaign',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_3,
+          name: 'High-Converting Creative Production',
+          description: [
+            `Creativity is the engine behind TikTok Ads' success. Our team develops platform-native video ads that are designed to stop the scroll within the first few seconds.`,
+            `We focus on strong hooks, relatable storytelling, problem-solution frameworks, and clear calls-to-action.`,
+            `In addition, we align creatives with current trends, sounds, and formats to ensure they feel natural within the TikTok ecosystem, maximizing engagement and conversion potential.`
+          ],
+          button: 'Launch My Campaign',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_4,
+          name: 'Creative Testing and Iteration Framework',
+          description: [
+            `Rather than relying on a few ad variations, we implement a structured testing system that allows us to quickly identify what works.`,
+            `We test multiple hooks, angles, formats, and messaging styles simultaneously, using performance data to guide decisions.`,
+            `This iterative approach helps us discover winning creatives faster and scale them effectively while continuously introducing new variations to avoid fatigue.`
+          ],
+          button: 'Launch My Campaign',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_5,
+          name: 'Conversion Tracking and Data Infrastructure',
+          description: [
+            `Accurate tracking is essential for making informed decisions.`,
+            `We set up and optimize tracking systems, including TikTok Pixel and event tracking, to ensure every click, view, and conversion is properly recorded.`,
+            `This allows us to measure true performance, attribute results correctly, and optimize campaigns based on real data rather than assumptions.`
+          ],
+          button: 'Launch My Campaign',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_6,
+          name: 'Ongoing Performance Optimization',
+          description: [
+            `We monitor key metrics such as click-through rates, cost per acquisition, conversion rates, and return on ad spend.`,
+            `Based on these insights, we make real-time adjustments to targeting, creatives, bidding strategies, and budget allocation.`,
+            `This ensures your campaigns remain efficient, profitable, and scalable over time.`
+          ],
+          button: 'Launch My Campaign',
+          btnColor: '#FB9100',
+        },
+      ],
+    },
+
+    ourProcess: {
+      isVisible: true,
+      isInCenter: true,
+      subtitle: 'Our Process',
+      headingParts: [
+        {
+          text: 'How Our TikTok Ads Management Process Works',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      breakIndex: 3,
+      bgGradient: 'bg-[#FFFFFF]',
+      span: '',
+      description: [
+        `Our TikTok Ads Management process is built on a structured, data-driven framework designed to deliver consistent, scalable results.`,
+      ],
+      services: [
+        {
+          icon: googleAdsProcessIcon_1,
+          title: 'Strategy and Audience Research',
+          description: [
+            `We begin by developing a deep understanding of your business, industry, and target audience. This involves analyzing your products or services, identifying your ideal customer profile, and studying competitor strategies within your niche.`,
+            `By combining market research with audience insights, we uncover what motivates your potential customers, what type of content they engage with, and what drives their purchasing decisions. This foundational step ensures that every campaign we build is aligned with a clear, data-backed strategy rather than assumptions.`,
+          ],
+        },
+        {
+          icon: googleAdsProcessIcon_2,
+          title: 'Campaign Setup',
+          description: [
+            `Once the strategy is defined, we move on to building your campaigns within TikTok Ads Manager, focusing on structure, accuracy, and scalability. We organize campaigns and ad groups based on funnel stages, define precise audience targeting parameters, and allocate budgets strategically to balance testing and performance.`,
+            `At the same time, we implement tracking systems such as pixel integration and event tracking to ensure that every interaction and conversion is properly measured. This technical setup creates a strong foundation for reliable data and long-term campaign success.`,
+          ],
+        },
+        {
+          icon: googleAdsProcessIcon_3,
+          title: 'Creative Development',
+          description: [
+            `With the structure in place, we focus on developing high-performing video creatives tailored specifically for TikTok’s content environment. Our approach prioritizes capturing attention within the first few seconds through strong hooks, visually engaging elements, and relatable storytelling.`,
+            `We create multiple variations of each ad, experimenting with different messaging angles, formats, and styles to appeal to a wide range of users. Every piece of content is designed to feel native to the platform, ensuring it blends seamlessly into the user experience while still driving engagement and conversions.`,
+          ],
+        },
+        {
+          icon: googleAdsProcessIcon_4,
+          title: 'Launch and Testing',
+          description: [
+            `After preparing your campaigns and creatives, we launch and begin collecting real-time performance data. This phase is focused on understanding how different audiences and creatives respond under live conditions.`,
+            `We closely monitor key performance indicators such as engagement rates, click-through rates, and early conversion signals to identify trends and opportunities. By quickly analyzing this data, we can make informed decisions about which elements to optimize, scale, or replace.`,
+          ],
+        },
+        {
+          icon: googleAdsProcessIcon_5,
+          title: 'Scaling and Optimization',
+          description: [
+            `Once we identify high-performing campaigns, we shift our focus toward scaling results while maintaining efficiency. This involves gradually increasing budgets, expanding audience reach, and refining creatives to sustain performance.`,
+            `At the same time, we continuously optimize underperforming areas by testing new variations and adjusting targeting strategies. This ongoing process ensures that your campaigns continue to improve over time, delivering higher returns and supporting long-term business growth.`,
+          ],
+        },
+        {
+          icon: googleAdsProcessIcon_6,
+          title: 'Performance Tracking and Reporting',
+          description: [
+            `Transparency and clarity are central to our process, which is why we provide detailed performance tracking and reporting throughout your campaigns. We consolidate key metrics such as impressions, engagement, conversions, and return on ad spend into clear, actionable insights.`,
+            `Rather than just presenting data, we interpret what it means for your business and highlight opportunities for further growth. Regular reporting provides clarity on campaign performance and areas for improvement, allowing for informed decision-making.`,
+          ],
+        },
+        {
+          icon: googleAdsProcessIcon_7,
+          title: 'Continuous Creative Refresh and Innovation',
+          description: [
+            `TikTok is a fast-moving platform where trends and user behavior evolve quickly. To keep your campaigns effective, we continuously refresh creatives and introduce new concepts based on performance data and emerging trends.`,
+            `This includes testing new hooks, formats, storytelling styles, and content angles to prevent ad fatigue and maintain audience engagement. By staying ahead of platform trends and consistently innovating, we ensure your brand remains relevant, competitive, and capable of capturing attention in a crowded feed.`,
+          ],
+        },
+      ],
+    },
+
+    importantToBussiness2: {
+      isVisible: true,
+      isInCenter: false,
+      breakIndex: 2,
+      isVariant: '01',
+      cardColor: '#F9F9F9',
+      headingParts: [
+        {
+          text: 'Why Choose Adaired Digital As Your TikTok Ads Agency',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `Choosing the right TikTok Ads partner can be the difference between wasted ad spend and scalable growth. Our approach is built on expertise, proven systems, and a relentless focus on performance, ensuring your campaigns deliver real, measurable results.`,
+      ],
+      buttonName: '',
+      data: [
+        {
+          icon: googleAdsImpIcon_1,
+          name: '',
+          description: [
+            `We specialize in TikTok advertising management and stay constantly updated with platform changes, trends, and best practices. This allows us to build campaigns that align with how TikTok actually works, maximizing reach, engagement, and conversions.`
+          ],
+          button: '',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_2,
+          name: '',
+          description: [
+            `Our strategies are not based on guesswork. We use tested frameworks for campaign structure, creative testing, and scaling that have been refined through real campaign data. This ensures consistency in performance and a clear path to growth.`
+          ],
+          button: '',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_3,
+          name: 'Data-Driven Optimization',
+          description: [
+            `Every decision we make is backed by data. From targeting adjustments to creative improvements, we rely on real performance insights to optimize campaigns and maximize return on investment.`
+          ],
+          button: '',
+          btnColor: '#FB9100',
+        },
+        {
+          icon: googleAdsImpIcon_4,
+          name: 'Creative-First Approach',
+          description: [
+            `On TikTok, creativity is the biggest driver of success, and we treat it as a priority. Our team focuses on producing engaging, native-style content that captures attention quickly and drives action, ensuring your ads stand out in a competitive feed.`
+          ],
+          button: '',
+          btnColor: '#FB9100',
+        },
+      ],
+    },
+
+    adairedHelp: {
+      isVisible: true,
+      breakIndex: 2,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000301/adaired/services/google_ads_mgt/googleAdsAdairedHelpImg_s0xawe.png',
+      isInCenter: false,
+      textColor: '',
+      isnNumberBg: false,
+      numberBg: '',
+      bgColor: 'bg-[#FFF9F3]',
+      cardBg: '',
+      headingParts: [
+        {
+          text: 'How We Plan TikTok Ads Strategy for Your Business Type',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `TikTok is not a one-size-fits-all platform. The way you approach advertising depends heavily on your business model, audience behavior, and growth goals. That’s why we tailor every campaign strategy to your specific type of business, ensuring your ads resonate with the right audience and drive meaningful results.`,
+      ],
+      mainImage: whiteServicesAdairedHelpImg,
+      list: [
+        {
+          img: '',
+          name: 'eCommerce Brands',
+          description: [
+            `For eCommerce businesses, TikTok is one of the most powerful platforms for product discovery and impulse purchases. We create scroll-stopping product-focused creatives, leverage user-generated content styles, and build campaigns that move users quickly from awareness to purchase.`,
+            `By combining TikTok Shop integration, retargeting strategies, and conversion-focused messaging, we help you increase sales, improve return on ad spend, and scale your store efficiently.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'Local Businesses',
+          description: [
+            `TikTok is no longer just for global brands; it’s a powerful tool for local visibility and customer acquisition. We help local businesses reach nearby audiences through hyper-targeted campaigns, engaging content, and location-based strategies.`,
+            `Whether your goal is more foot traffic, bookings, or inquiries, we create campaigns that connect with your local community and drive real-world results.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'SaaS Companies',
+          description: [
+            `For SaaS brands, TikTok offers a unique opportunity to simplify complex products through engaging, easy-to-understand content. We focus on problem-solution messaging, product demonstrations, and educational creatives that clearly communicate your value.`,
+            `Combined with lead generation campaigns and retargeting funnels, this approach helps you attract qualified users, increase sign-ups, and lower your customer acquisition costs.`,
+          ],
+        },
+        {
+          img: '',
+          name: 'Coaches and Creators',
+          description: [
+            `Personal brands flourish on TikTok primarily because of the platform's emphasis on authentic and relatable content. We help coaches, consultants, and creators build authority, grow their audience, and convert followers into paying clients.`,
+            `Through storytelling, educational content, and trust-building creatives, we position you as an expert in your niche while driving leads for your programs, services, or digital products.`,
+          ],
+        },
+      ],
+    },
+
+    buildlinks: {
+      isVisible: true,
+      isCode01: true,
+      isVariant: '03',
+      breakIndex: 3,
+      bgImg: bgImgBuildLink,
+      img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774000299/adaired/services/google_ads_mgt/googleAdsBuildLinkImg_ffqoby.png',
+      imgWidth: '758',
+      imgHight: '531',
+      headingParts: [
+        {
+          text: 'Make TikTok Your',
+          color: '#FFFFFF',
+          weight: '400',
+        },
+        {
+          text: 'Top Growth Channel For Profit!',
+          color: '#FFFFFF',
+          weight: '700',
+        },
+      ],
+      customPadding: '3rem, 3rem',
+      description: ``,
+      textColor: 'white',
+      width: 40,
+      customGap: '10rem',
+      isFirstParaBold: false,
+      data: [
+        {
+          desctioption: `Looking to generate leads, increase sales, or grow your brand? Our TikTok Ads experts can help.`,
+        },
+        {
+          desctioption: `We focus on strategy, creativity, and data optimization to create effective campaigns that drive results.`,
+        },
+      ],
+      button: 'Book your free strategy call today!',
+    },
+
+    faqData: {
+      isVisible: true,
+      subtitle: 'FAQ',
+      headingParts: [
+        {
+          text: 'Frequently Asked Questions',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: ``,
+      list: [
+        {
+          title: 'How much budget do I need to start TikTok Ads?',
+          description: [
+            `We typically recommend starting with a minimum budget that allows for proper testing and data collection. This ensures we can identify winning creatives and optimize effectively.`,
+          ],
+        },
+        {
+          title: 'How long does it take to see results?',
+          description: [
+            `Most campaigns begin generating initial insights within the first few days, with meaningful performance improvements typically seen within 2–4 weeks as optimization progresses.`,
+          ],
+        },
+        {
+          title: 'Do you create the ad creatives as well?',
+          description: [
+            `Yes, we handle full creative production, including ideation, scripting, and video development tailored specifically for TikTok.`,
+          ],
+        },
+        {
+          title: 'Are TikTok Ads suitable for my business?',
+          description: [
+            `TikTok works for a wide range of industries, including eCommerce, SaaS, local businesses, and personal brands. The key is having the right strategy and creative approach.`,
+          ],
+        },
+        {
+          title: 'Can you manage TikTok Shop campaigns?',
+          description: [
+            `Absolutely. We help eCommerce brands leverage TikTok Shop to drive direct sales and improve conversion rates within the platform.`,
+          ],
+        },
+        {
+          title: 'What makes TikTok different from other ad platforms?',
+          description: [
+            `TikTok focuses heavily on content and engagement rather than just targeting, making creative quality the most important factor in campaign success.`,
+          ],
+        },
+        {
+          title: 'Will I get regular performance updates?',
+          description: [
+            `Yes, we provide transparent reporting and ongoing insights so you always know how your campaigns are performing.`,
+          ],
+        },
+        {
+          title: 'Do you offer customized strategies?',
+          description: [
+            `Every campaign we build is fully customized based on your business goals, audience, and market, ensuring the best possible results.`,
+          ],
+        },
+      ],
+    },
+
+    benefitofAiSeo: {
+      isVisible: false,
+      isVariant: '01',
+      isDecVarticle: true,
+      isInCenter: false,
+      breakIndex: 2,
+      activeDot: '#000000',
+      inactiveDot: '#9DA0A3',
+      bgColor: 'bg-[#FAFAFA]',
+      textColor: '#000000',
+      textBg: '#EEEEEE',
+      borderColor: '#00000014',
+      headingParts: [
+        {
+          text: 'Advanced Features Powering Our Wearable Applications',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `Our wearable applications are built with a deep understanding of device limitations, user behavior, and real-world usage scenarios.`,
+      ],
+      list: [
+        {
+          name: 'Real-Time Data Synchronization',
+          description: [
+            `We enable seamless, real-time data synchronization across wearable devices, mobile applications, and cloud platforms.`,
+            `This ensures that users always have access to the most accurate and up-to-date information, whether it’s health metrics, activity data, or system notifications. Our approach minimizes latency and guarantees smooth data flow, even in dynamic environments.`,
+          ],
+        },
+        {
+          name: 'Advanced Sensor Integration',
+          description: [
+            `Wearable devices rely heavily on sensors, and we ensure full utilization of these capabilities.`,
+            `Our applications integrate seamlessly with sensors such as heart rate monitors, accelerometers, gyroscopes, and motion detectors to deliver precise tracking and context-aware insights. This enables highly personalized and responsive user experiences.`,
+          ],
+        },
+        {
+          name: 'Voice & Gesture Controls',
+          description: [
+            `To overcome the limitations of small screens, we integrate voice commands and gesture-based controls that allow users to interact effortlessly with the application.`,
+            `This creates a more natural and efficient user experience, reducing dependency on manual input while improving accessibility and convenience.`,
+          ],
+        },
+        {
+          name: 'Smart Notifications Alerts',
+          description: [
+            `Our applications deliver intelligent, context-aware notifications that keep users informed without overwhelming them.`,
+            `By prioritizing relevance and timing, we ensure that users receive meaningful alerts that enhance engagement and usability while maintaining a clutter-free experience.`,
+          ],
+        },
+        {
+          name: 'Cross-Platform Compatibility',
+          description: [
+            `We develop wearable applications that function seamlessly across multiple platforms, including wearable devices, smartphones, and cloud systems.`,
+            `This ensures a unified and consistent user experience, allowing data and functionality to remain synchronized across the entire ecosystem.`,
+          ],
+        },
+        {
+          name: 'Secure Data Handling',
+          description: [
+            `Security is a critical component of wearable applications, especially when handling sensitive user data.`,
+            `We implement advanced encryption protocols, secure APIs, and best practices in data protection to ensure complete confidentiality, integrity, and compliance with modern standards.`,
+          ],
+        },
+        {
+          name: 'Data Analytics & Actionable Insights',
+          description: [
+            `Our wearable apps go beyond data collection by transforming raw information into meaningful insights.`,
+            `Through intuitive dashboards and real-time analytics, users can monitor performance, track progress, and make informed decisions based on accurate and actionable data.`,
+          ],
+        },
+        {
+          name: 'Offline Functionality & Data Sync',
+          description: [
+            `We design applications that continue to function even in low or no-connectivity scenarios.`,
+            `Data is securely stored on the device and automatically synchronized once connectivity is restored, ensuring uninterrupted performance and a seamless user experience.`,
+          ],
+        },
+        {
+          name: 'Battery-Optimized Performance',
+          description: [
+            `Given the limitations of wearable devices, we prioritize energy efficiency in every application we build.`,
+            `Our development approach focuses on minimizing battery consumption while maintaining high performance, ensuring longer usage time, and providing a smoother overall experience.`,
+          ],
+        },
+      ],
+    },
+
+    whatMissing: {
+      isVisible: false,
+      bgColor: '',
+      cardBg: '#FFF7ED',
+      cardBorderColor: '#FEDAAB',
+      isInCenter: false,
+      isVariant: '03',
+      button: '',
+      headingParts: [
+        {
+          text: 'Frameworks We Use for Cross-Platform App Development',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `We leverage modern, high-performance frameworks to build cross-platform apps that deliver native-like speed, functionality, and user experience.`,
+      ],
+      list: [
+        {
+          icon: crossPlatformWhatMissingIcon_1,
+          title: 'React Native',
+          description: [
+            `Build fast and scalable apps using a single codebase with a rich ecosystem and strong community support.`,
+          ],
+        },
+        {
+          icon: crossPlatformWhatMissingIcon_2,
+          title: 'Flutter',
+          description: [
+            `Create visually stunning and highly responsive apps with customizable UI components and smooth performance.`,
+          ],
+        },
+        {
+          icon: crossPlatformWhatMissingIcon_3,
+          title: 'Xamarin',
+          description: [
+            `Develop secure and robust applications with seamless integration into the Microsoft ecosystem.`,
+          ],
+        },
+        {
+          icon: crossPlatformWhatMissingIcon_4,
+          title: 'Kotlin',
+          description: [
+            `Share business logic across platforms while maintaining native UI for enhanced performance and flexibility.`,
+          ],
+        },
+        {
+          icon: crossPlatformWhatMissingIcon_5,
+          title: 'Ionic',
+          description: [
+            `Develop lightweight, cross-platform apps using web technologies like HTML, CSS, and JavaScript for rapid and cost-effective solutions.`,
+          ],
+        },
+        {
+          icon: crossPlatformWhatMissingIcon_6,
+          title: 'PhoneGap / Apache Cordova',
+          description: [
+            `Package web applications into mobile apps with access to native device features, making it a practical choice for quick deployments.`,
+          ],
+        },
+      ],
+    },
+
+    whatMkeDeferent: {
+      isVisible: false,
+      isVariant: '01',
+      breakIndex: 5,
+      isInCenter: false,
+      bgColor: false,
+      bgGradient: 'bg-[#FFFFFF]',
+      cardColor2: '#FFF8F0',
+      cardColor: '#FBFBFB',
+      cardImgBgColor2: '#FFF2DF',
+      cardImgBgColor: '#F3F3F3',
+      borderColor2: '#FB9100',
+      borderColor: '#000000',
+      headingParts: [
+        {
+          text: 'Why Pick Adaired Digital to Manage Your Social Media Accounts?',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        'At Adaired Digital Media, we’re more than just a social media service; we’re your strategic partner in growing your online presence.',
+        `Here’s why businesses trust us to manage their social media:`,
+      ],
+      list: [
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773821670/adaired/services/social_media_management/socialMediaMgtWhatMkDiffImg_1_tskaab.png',
+          name: 'Expertise & Experience',
+          description: [
+            `Our team consists of social media specialists, content creators, and strategists with proven experience across multiple industries. We understand platform trends, audience behavior, and what drives engagement and conversions.`,
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773821670/adaired/services/social_media_management/socialMediaMgtWhatMkDiffImg_2_zgzuwo.png',
+          name: 'Custom Strategies for Your Brand',
+          description: [
+            `We don’t use one-size-fits-all solutions. Every brand gets a tailored social media plan based on its unique goals, audience, and market. Your content, campaigns, and engagement are designed specifically to meet your objectives.`,
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773821669/adaired/services/social_media_management/socialMediaMgtWhatMkDiffImg_3_ku4940.png',
+          name: 'Data-Driven Approach',
+          description: [
+            `We measure everything. From engagement rates to conversions, we monitor metrics closely and optimize campaigns for maximum results. Decisions are guided by data, not guesswork.`,
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773821669/adaired/services/social_media_management/socialMediaMgtWhatMkDiffImg_4_rlpksv.png',
+          name: 'Consistent Branding & Quality Content',
+          description: [
+            `We maintain your brand voice, aesthetics, and messaging across all platforms. Our content is scroll-stopping, engaging, and strategically designed to strengthen your identity online.`,
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773821668/adaired/services/social_media_management/socialMediaMgtWhatMkDiffImg_5_hwiddr.png',
+          name: 'Community Engagement',
+          description: [
+            `We don’t just post content; we help you build meaningful connections. Through responsive community management and interactive content, we foster loyalty, trust, and long-term engagement.`,
+          ],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773821668/adaired/services/social_media_management/socialMediaMgtWhatMkDiffImg_6_hqvkgf.png',
+          name: 'Transparent Reporting & Communication',
+          description: [
+            `You’ll always know how your social media is performing. We provide detailed reports, insights, and recommendations so you’re fully informed about your growth and ROI.`,
+          ],
+        },
+      ],
+    },
+
+    leadingTools: {
+      isVisible: false,
+      breakIndex: 4,
+      headingParts: [
+        {
+          text: 'Technologies We Use for iOS Development',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `Our development team uses modern technologies and frameworks to create reliable and scalable iOS applications. By leveraging the latest tools in the Apple ecosystem, we ensure that every app delivers exceptional performance and user experience.`,
+        `Some of the technologies we commonly use include:`,
+      ],
+      isVariant: '03',
+      textColor: '',
+      bgImage: '',
+      bgColor: '',
+      list: [
+        {
+          img: iosAppDevLeadingToolsImg_1,
+          desc: 'Swift',
+        },
+        {
+          img: iosAppDevLeadingToolsImg_2,
+          desc: 'Objective-C',
+        },
+        {
+          img: iosAppDevLeadingToolsImg_3,
+          desc: 'Xcode',
+        },
+        {
+          img: iosAppDevLeadingToolsImg_4,
+          desc: 'SwiftUI and UIKit',
+        },
+        {
+          img: iosAppDevLeadingToolsImg_5,
+          desc: 'Firebase',
+        },
+        {
+          img: iosAppDevLeadingToolsImg_6,
+          desc: 'REST APIs',
+        },
+        {
+          img: iosAppDevLeadingToolsImg_7,
+          desc: 'Cloud platforms (AWS and Google Cloud)',
+        },
+      ],
+    },
+
+    industriesWeServe: {
+      isVisible: false,
+      code: '01',
+      bgColor: 'bg-[#FFFBF5]',
+      headingParts: [
+        {
+          text: 'Industries We Serve',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `Our iOS app development solutions support a wide variety of industries, enabling businesses to deliver innovative digital experiences to their customers.`,
+      ],
+      isCard: false,
+      bgImg: '',
+      gridCols: 3,
+      imgWidth: 520,
+      imgHeight: 467,
+      list: [
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749341/adaired/services/ios_app_development/iosAppDevIndustriesImg_1_gmywri.png',
+          btn: [`Fintech`],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749341/adaired/services/ios_app_development/iosAppDevIndustriesImg_2_r3qlub.png',
+          btn: [`Healthcare`],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749340/adaired/services/ios_app_development/iosAppDevIndustriesImg_3_m5hp7t.png',
+          btn: [`E-commerce`],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749341/adaired/services/ios_app_development/iosAppDevIndustriesImg_4_okdehb.png',
+          btn: [`Education`],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749341/adaired/services/ios_app_development/iosAppDevIndustriesImg_5_vctvmh.png',
+          btn: [`Travel and Hospitality`],
+        },
+        {
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749339/adaired/services/ios_app_development/iosAppDevIndustriesImg_6_rseu98.png',
+          btn: [`Fashion & Beauty`],
+        },
+      ],
+    },
+
+    techStackMobile: {
+      isVisible: false,
+      breakIndex: 4,
+      headingParts: [
+        {
+          text: 'Technologies We Use for iOS Development',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `Our development team uses modern technologies and frameworks to create reliable and scalable iOS applications. By leveraging the latest tools in the Apple ecosystem, we ensure that every app delivers exceptional performance and user experience.`,
+        `Some of the technologies we commonly use include:`,
+      ],
+      ContentDescription: '',
+      navItems: [''],
+      mobileNavItems: [''],
+      list: [
+        [
+          { image: customWebDevTechStackImg_1, desc: 'Swift' },
+          { image: customWebDevTechStackImg_2, desc: 'Objective-C' },
+          { image: customWebDevTechStackImg_3, desc: 'Xcode' },
+          { image: customWebDevTechStackImg_4, desc: 'SwiftUI and UIKit' },
+          { image: customWebDevTechStackImg_5, desc: 'Firebase' },
+          { image: customWebDevTechStackImg_5, desc: 'REST APIs' },
+          {
+            image: customWebDevTechStackImg_5,
+            desc: 'Cloud platforms (AWS and Google Cloud)',
+          },
+        ],
+      ],
+    },
+
+    dataInTable: {
+      isVisible: false,
+      isInCenter: true,
+      bgColor: '#FAFAFA',
+      trColor: 'bg-[#7259FF]',
+      rowColor: 'bg-[#7259FF]/10',
+      isVariant: '01',
+      headingParts: [
+        {
+          text: 'Custom Web Development vs Traditional Web Development',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: [
+        `Here is a clear comparison table showing the difference between Web Development and Custom Web Development:`,
+      ],
+      data: [
+        {
+          desctioption: `Aspect`,
+          list: [
+            {
+              description: [`Definition`],
+            },
+            {
+              description: [`Development Approach`],
+            },
+            {
+              description: [`Customization Level`],
+            },
+            {
+              description: [`Development Time`],
+            },
+            {
+              description: [`Cost`],
+            },
+            {
+              description: [`Flexibility`],
+            },
+            {
+              description: [`Integration`],
+            },
+            {
+              description: [`Best Use Case`],
+            },
+          ],
+        },
+        {
+          desctioption: `Web Development`,
+          list: [
+            {
+              description: [
+                `The general process of building websites or web applications using available tools, frameworks, or CMS platforms.`,
+              ],
+            },
+            {
+              description: [
+                `Often uses prebuilt templates, themes, or platforms.`,
+              ],
+            },
+            {
+              description: [
+                `Limited to the features and structure provided by the platform.`,
+              ],
+            },
+            {
+              description: [
+                `Faster because many components are already built.`,
+              ],
+            },
+            {
+              description: [
+                `Usually lower due to faster development and prebuilt solutions.`,
+              ],
+            },
+            {
+              description: [
+                `May face limitations as the website grows or requires new features.`,
+              ],
+            },
+            {
+              description: [
+                `Limited flexibility depending on the platform being used.`,
+              ],
+            },
+            {
+              description: [
+                `Basic integrations with common tools and plugins.`,
+              ],
+            },
+            {
+              description: [
+                `Ideal for simple websites, blogs, portfolios, or small business sites.`,
+              ],
+            },
+          ],
+        },
+        {
+          desctioption: `Custom Web Development`,
+          list: [
+            {
+              description: [
+                `The process of building a website or web application is specifically tailored to the unique needs of a business.`,
+              ],
+            },
+            {
+              description: [
+                `Built from scratch or heavily customized to meet specific requirements.`,
+              ],
+            },
+            {
+              description: [
+                `Fully customizable design, features, and functionality.`,
+              ],
+            },
+            {
+              description: [
+                `Takes more time due to planning, design, and development from the ground up.`,
+              ],
+            },
+            {
+              description: [
+                `Generally higher because of custom design and development work.`,
+              ],
+            },
+            {
+              description: [
+                `Designed to scale easily as the business grows and needs evolve.`,
+              ],
+            },
+            {
+              description: [
+                `Highly flexible and adaptable to changing business requirements.`,
+              ],
+            },
+            {
+              description: [
+                `Can integrate with complex systems such as CRM, ERP, APIs, and custom tools.`,
+              ],
+            },
+            {
+              description: [
+                `Best for complex platforms, SaaS products, enterprise systems, or unique business processes.`,
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    whatIncluded: {
+      isVisible: false,
+      isVariant: '02',
+      isInCenter: true,
+      headingParts: [
+        {
+          text: 'What’s Included in Our SEO Services',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      list: [
+        {
+          icon: seo_tool_3,
+          title: 'Keyword Research and Analysis',
+          description: [
+            `We start the process by conducting a comprehensive keyword research. It helps determine the search terms that users input in search engines when looking for related information, products, or services.`,
+            `Our effective SEO strategy consists of proper keyword research to match the content of the websites with what the users are actively searching for.`,
+          ],
+          button: 'Get Your Free SEO Audit',
+          btnColor: '#1A5A96',
+        },
+        {
+          icon: seo_tool_1,
+          title: 'On-Page SEO Optimization',
+          description: [
+            `Our focus on On-page SEO optimization is to improve search visibility. This involves optimization of page names, meta descriptions, headings, URLs, internal links, and content structure.`,
+            `On-page optimization helps search engines to understand the relevance of the pages while enhancing readability and user experience, making the content easy to access, arranged and in accordance with the targeted keywords.`,
+          ],
+          button: 'Get Your Free SEO Audit',
+          btnColor: '#1A5A96',
+        },
+        {
+          icon: seo_tool_2,
+          title: 'Technical SEO Improvements',
+          description: [
+            `In Technical SEO, we address the backend elements of a website that affect search engine crawling and indexing. This involves site speed improvement, mobile friendliness, HTTPS configuration, XML sitemaps, and crawl errors remedies.`,
+            `Technical optimization ensures search engines can efficiently access and understand the site effectively, and this is what is necessary to maintain the same ranking level.`,
+          ],
+          button: 'Get Your Free SEO Audit',
+          btnColor: '#1A5A96',
+        },
+        {
+          icon: seo_tool_4,
+          title: 'Content Optimization and Development',
+          description: [
+            `In content optimization, we improve existing content and create new, relevant content based on SEO insights. This is done to ensure that the content is informative, keyword-compatible, user and search engine friendly.`,
+            `High-quality content supports better engagement, increased page views, and stronger relevance signals, helping websites perform more effectively in search results.`,
+          ],
+          button: 'Get Your Free SEO Audit',
+          btnColor: '#1A5A96',
+        },
+        {
+          icon: seo_tool_5,
+          title: 'Link Building and Authority Development',
+          description: [
+            `In link building, we focus on earning high-quality backlinks from relevant and trustworthy websites. These links are indicators of credibility and authority to search engines.`,
+            ` Ethical link-building practices help strengthen a website’s domain authority over time,  improving its ability to rank competitively while maintaining compliance with search engine guidelines.`,
+          ],
+          button: 'Get Your Free SEO Audit',
+          btnColor: '#1A5A96',
+        },
+        {
+          icon: seo_tool_6,
+          title: 'SEO Monitoring and Reporting',
+          description: [
+            `We track keyword rankings, organic traffic, user behavior, and technical performance in SEO monitoring. Regular reporting gives an idea of what works and where it should be improved.`,
+            `The ongoing analysis helps refine SEO strategies, keeping up with the changes in the algorithms, and ensuring long-term effectiveness through data-driven optimization efforts.`,
+          ],
+          button: 'Get Your Free SEO Audit',
+          btnColor: '#1A5A96',
+        },
+      ],
+    },
+
+    needofservice: {
+      isVisible: false,
+      isVariant: '04',
+      isBgCornerImg: true,
+      headingParts: [
+        {
+          text: 'Key Benefits of Choosing Custom Web Development Services',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      data: [
+        {
+          desctioption: `White label SEO seeks to separate client ownership and service delivery. 
+          The agency remains the primary point of contact, but SEO fulfillment is handled externally.`,
+        },
+        {
+          desctioption: `Client acquisition, onboarding, and relationship management are handled entirely by the agency. 
+          The client receives SEO services directly from the agency they hired.`,
+        },
+        {
+          desctioption: `At Adaired, as a leading white-label SEO company, we do SEO execution, including research, optimization, 
+          and ongoing maintenance, which takes place quietly in the background. 
+          This allows agencies to provide SEO services without expanding their internal teams or infrastructure.`,
+        },
+        {
+          desctioption: `Furthermore, we ensure that all reporting, documentation, and performance updates are delivered using the agency's branding. 
+          Communication follows the agency's processes, ensuring continuity and brand integrity.`,
+        },
+      ],
+    },
+
+    getsCredit: {
+      isVisible: false,
+      code: '01',
+      headingParts: [
+        {
+          text: 'Key Benefits of Choosing Custom Web Development Services',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      isCard: false,
+      list: [
+        {
+          description: [`SEO audits & strategy`],
+        },
+        {
+          description: [`Ongoing optimization`],
+        },
+        {
+          description: [`100% brand-safe delivery`],
+        },
+        {
+          description: [`Rank tracking & white-label reporting`],
+        },
+      ],
+    },
+
+    getplan: {
+      isVisible: false,
+      isLabel: false,
+      subtitle: '',
+      bgImage:
+        'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774243689/adaired/services/seo/stop_struggle2_kbcs9x.png',
+      headingParts: [
+        {
+          text: 'Key Benefits of Choosing Custom Web Development Services',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: `Book a free consultation with one of our experts for a detailed audit of your backlink profile and a custom strategy to maximize your rankings and domain authority.`,
+    },
+
+    stopStruggling: {
+      isVisible: false,
+      isCenter: true,
+      subtitle: '',
+      headingParts: [
+        {
+          text: '',
+          color: '#FFFFFF',
+          weight: '700',
+        },
+      ],
+      description: [
+        `If your clients are asking for social media management and you don’t want to build a full in-house team, our white label social media reseller model can be a practical and profitable solution.
+      By working with Adaired, agencies can confidently offer social media marketing white label services while focusing on growth, sales, and client strategy.`,
+      ],
+      textColor: '',
+      button: '',
+      bgImg: whiteStruggleBg,
+      isHoverBgBlue: true,
+    },
+
+    industryLeaders: {
+      isVisible: false,
+      headingParts: [
+        {
+          text: 'Key Benefits of Choosing Custom Web Development Services',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description:
+        'The major companies around the world rely on us to give AI-guided recommendations, create brand awareness, build credibility, and drive impactful growth with precision.',
+      bgImage: leadingToolsImg,
+    },
+
+    leadingToolsForPerformence: {
+      isVisible: false,
+      headingParts: [
+        {
+          text: 'Key Benefits of Choosing Custom Web Development Services',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description:
+        'Our solutions are powered by top tools designed to enhance efficiency, elevate performance, and drive meaningful outcomes consistently.',
+      bgImage: '',
+    },
+
+    notSeeingResult: {
+      isVisible: false,
+      headingParts: [
+        {
+          text: 'Key Benefits of Choosing Custom Web Development Services',
+          color: '#000000',
+          weight: '700',
+        },
+      ],
+      description: '',
+      buttonName: '',
+      img: LocalNotSee,
+      bgImage: LocalNotSeeBg,
     },
   },
 };
