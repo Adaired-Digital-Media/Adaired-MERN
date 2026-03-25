@@ -1,20 +1,30 @@
 'use client';
 
-import { IoClose } from 'react-icons/io5';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import validators from '@/@core/utils/validators';
 import axios from 'axios';
 import Heading from '../../common/Heading';
-import { GiCheckMark } from "react-icons/gi";
-import { IoIosArrowRoundForward } from 'react-icons/io';
-import { GoPlus } from "react-icons/go";
-import { CgAsterisk } from "react-icons/cg";
 import BottomPerson from '../../../../public/assets/popup/bottom-person.png';
-import InputField from '../../UI/InputField';
+
+import { COMMON_MESSAGES, ENQUIRY_MESSAGES } from '@core/constants/messages';
+
 import { BaseURL } from '@/app/baseUrl';
+import InputField from '../../UI/InputField';
 import SelectField from '../../UI/SelectField';
+import MessageField from '../../UI/MessageField/MessageField';
+
+import { IoClose } from 'react-icons/io5';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import { CgAsterisk } from "react-icons/cg";
+import { FaMagnifyingGlassChart } from "react-icons/fa6";
+import { FaRobot } from "react-icons/fa";
+import { MdEdit, MdShoppingCart } from "react-icons/md";
+import { FaHandshake, FaCode, FaLink, FaMobileScreenButton, FaRectangleAd } from "react-icons/fa6";
+import { GiCheckMark } from "react-icons/gi";
+import { FaMapLocationDot } from "react-icons/fa6";
+import { GoPlus } from "react-icons/go";
 
 interface GetEnquiryModalProps {
   isOpen: boolean;
@@ -63,6 +73,11 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
       setFileUrl(url);
 
+      setErrors((prev: any) => ({
+        ...prev,
+        file: "",
+      }));
+
     } catch (error) {
       console.error('Cloudinary upload failed', error);
     } finally {
@@ -71,10 +86,40 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
   };
 
   const fields = [
-    { name: 'name', label: 'Name' },
-    { name: 'email', label: 'Email' },
-    { name: 'phone', label: 'Phone Number' },
-    { name: 'website', label: 'Website Url' },
+    {
+      name: "name",
+      label: "Name",
+      required: true,
+      validate: (value: string) =>
+        value.length < 2 ? ENQUIRY_MESSAGES.NAME_MIN : "",
+    },
+    {
+      name: "email",
+      label: "Email",
+      required: true,
+      validate: (value: string) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+          ? ""
+          : ENQUIRY_MESSAGES.EMAIL_INVALID,
+    },
+    {
+      name: "phone",
+      label: "Phone",
+      required: true,
+      validate: (value: string) =>
+        /^[0-9]{10}$/.test(value)
+          ? ""
+          : ENQUIRY_MESSAGES.PHONE_INVALID,
+    },
+    {
+      name: "website",
+      label: "Website",
+      required: true,
+      validate: (value: string) =>
+        value && !/^(https?:\/\/)?([\w\d-]+\.)+\w{2,}(\/.*)?$/.test(value)
+          ? ENQUIRY_MESSAGES.WEBSITE_INVALID
+          : "",
+    },
   ];
 
   const [inputValue, setInputValue] = useState({
@@ -94,30 +139,32 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
   });
   console.log(inputValue, "inputValue>>>");
 
-  const serviceOrder = [
-    "SEO",
-    "Frontend and Backend Development",
-    "E-Commerce",
-    "Social Media Management",
-    "Mobile App Development",
-    "Pay Per Click",
-    "Link Building",
-    "Local SEO",
-    "CMS",
-    "AI SEO",
-  ];
-
   useEffect(() => {
     const fetchServices = async () => {
       try {
-
         const res = await axios.get(`${BaseURL}/serviceCategory`);
-        // const sortedServices = res.data?.data.sort(
-        //   (a: any, b: any) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-        // );
-        // setServicesList(sortedServices);
 
-        setServicesList(res.data?.data || []);
+        const serviceOrderMap: Record<string, number> = {
+          "SEO": 1,
+          "Frontend and Backend Development": 2,
+          "E-Commerce": 3,
+          "Social Media Management": 4,
+          "Mobile App Development": 5,
+          "Pay Per Click": 6,
+          "Link Building": 7,
+          "Local SEO": 8,
+          "CMS": 9,
+          "AI SEO": 10,
+        };
+
+        const sortedServices = (res.data?.data || []).sort((a: any, b: any) => {
+          const orderA = serviceOrderMap[a.name] ?? 999;
+          const orderB = serviceOrderMap[b.name] ?? 999;
+
+          return orderA - orderB;
+        });
+
+        setServicesList(sortedServices);
       } catch (err) {
         console.error(err);
       }
@@ -125,6 +172,19 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
     fetchServices();
   }, []);
+
+  const serviceIcons: Record<string, React.ReactNode> = {
+    "SEO": <FaMagnifyingGlassChart size={14} />,
+    "Frontend and Backend Development": <FaCode size={14} />,
+    "E-Commerce": <MdShoppingCart size={14} />,
+    "Social Media Management": <FaHandshake size={14} />,
+    "Mobile App Development": <FaMobileScreenButton size={14} />,
+    "Pay Per Click": <FaRectangleAd size={14} />,
+    "Link Building": <FaLink size={14} />,
+    "Local SEO": <FaMapLocationDot size={14} />,
+    "CMS": <MdEdit size={14} />,
+    "AI SEO": <FaRobot size={14} />,
+  };
 
   if (!isOpen) return null;
 
@@ -143,6 +203,13 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
       [name]: value,
     }));
 
+    if (name === "description") {
+      setErrors((prev: any) => ({
+        ...prev,
+        description: value ? "" : prev.description,
+      }));
+    }
+
     if ((validators as any)[name]) {
       setErrors((prev: any) => ({
         ...prev,
@@ -155,11 +222,18 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
     setInputValue((prev) => {
       const exists = prev.services.find((s) => s.id === id);
 
+      const updatedServices = exists
+        ? prev.services.filter((s) => s.id !== id)
+        : [...prev.services, { id }];
+
+      setErrors((prevErr: any) => ({
+        ...prevErr,
+        services: updatedServices.length > 0 ? "" : prevErr.services,
+      }));
+
       return {
         ...prev,
-        services: exists
-          ? prev.services.filter((s) => s.id !== id)
-          : [...prev.services, { id }],
+        services: updatedServices
       };
     });
   };
@@ -174,18 +248,50 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
         [name]: value,
       },
     }));
+
+    setErrors((prev: any) => ({
+      ...prev,
+      [name]: value ? "" : prev[name],
+    }));
   };
 
   const validateForm = () => {
-    const newErrors: any = {
-      description: inputValue.description ? '' : 'Description is required',
-      budget: inputValue.additionDetails.budget ? '' : 'Select budget',
-      source: inputValue.additionDetails.source ? '' : 'Select source',
-      services: inputValue.services.length > 0 ? '' : 'Select at least one service',
-      agreed: inputValue.termsAndCondition ? '' : 'Accept terms',
-      startFrom: inputValue.additionDetails.startFrom ? '' : 'Select start date',
-      file: inputValue.additionDetails.attachments ? '' : 'Upload file',
-    };
+    const newErrors: any = {};
+    fields.forEach((field) => {
+      const value = (inputValue as any)[field.name];
+
+      if (field.required && !value) {
+        newErrors[field.name] = COMMON_MESSAGES.REQUIRED("field.label");
+      } else if (field.validate) {
+        newErrors["2field.name"] = field.validate(value);
+      } else {
+        newErrors["33"] = "";
+      }
+    });
+
+    newErrors.description = inputValue.description
+      ? ""
+      : ENQUIRY_MESSAGES.DESCRIPTION_MIN;
+
+    newErrors.budget = inputValue.additionDetails.budget
+      ? ""
+      : COMMON_MESSAGES.REQUIRED("Budget");
+
+    newErrors.source = inputValue.additionDetails.source
+      ? ""
+      : COMMON_MESSAGES.REQUIRED("Source");
+
+    newErrors.services = inputValue.services.length > 0
+      ? ""
+      : ENQUIRY_MESSAGES.SERVICES_REQUIRED;
+
+    newErrors.agreed = inputValue.termsAndCondition
+      ? ""
+      : ENQUIRY_MESSAGES.TERMS_REQUIRED;
+
+    newErrors.startFrom = inputValue.additionDetails.startFrom
+      ? ""
+      : COMMON_MESSAGES.REQUIRED("Start date");
 
     setErrors(newErrors);
     return Object.values(newErrors).every((err) => err === '');
@@ -216,178 +322,184 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-
-      <div className="relative z-50 rounded-3xl bg-white shadow-xl md:w-[95%] lg:w-[65%] max-h-[90vh] overflow-y-auto no-scrollbar">
-
-        <button onClick={onClose} className="absolute right-4 top-4 text-gray-500 hover:text-black">
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-40" onClick={onClose} />
+      <div className='relative rounded-3xl shadow-xl bg-white md:w-[95%] lg:w-[65%] z-50'>
+        <button onClick={onClose} className="absolute right-4 top-4 text-gray-500 hover:text-black cursor-pointer z-60">
           <IoClose size={22} />
         </button>
 
-        <div className="relative flex justify-center gap-3 px-[8rem] pt-[4rem] pb-[0.5rem] -z-10">
-          <div className="w-full">
+        <div className="max-h-[90vh] overflow-y-auto no-scrollbar">
+          <div className="relative flex justify-center gap-3 px-[8rem] pt-[4rem] pb-[0.5rem]">
+            <div className="w-full">
 
-            <Heading
-              headingParts={[
-                { text: 'Let’s Talk', color: '#000000', weight: 700 },
-                { text: 'About Your Goals', color: '#FB9100', weight: 700 },
-              ]}
-              isInCenter={true}
-            />
-
-            <p className="text-center text-[15px] font-medium text-[#323232]">
-              Find performance gaps limiting your website’s visibility and effectiveness.
-            </p>
-
-            <div className='bg-[#F9F9F9] p-[4rem] rounded-3xl my-[4rem]'>
-
-              {/* Inputs */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                {fields.map((field) => (
-                  <InputField
-                    label={field.label}
-                    name={field.name}
-                    value={(inputValue as any)[field.name]}
-                    handleChange={handleChange}
-                    placeholder={`Enter your ${field.label.toLowerCase()}...`}
-                    className="bg-white border border-gray-300 p-3 mb-2 rounded-[6px]"
-                    error={errors[field.name]}
-                  />
-                ))}
-              </div>
-
-              {/* Services */}
-              <div className="space-y-4 mb-8">
-                <p className='flex text-[16px] uppercase font-semibold my-4'>Services Required <CgAsterisk color='red' /></p>
-                <div className="flex flex-wrap gap-3">
-                  {servicesList.map((service) => {
-                    const isSelected = inputValue.services.some((s) => s.id === service._id);
-                    return (
-                      <div
-                        key={service._id}
-                        onClick={() => toggleService(service._id)}
-                        className={`flex items-center justify-between gap-[3rem] px-4 py-2 rounded-[6px] cursor-pointer border transition-all
-                          ${isSelected ? "bg-[#FB9100] text-white border-[#FB9100]" : "bg-white text-black border-gray-300"}`}
-                      >
-                        <p className={`text-[14px] ${isSelected ? 'text-white' : 'text-black'}`}>
-                          {service.name}
-                        </p>
-                        {isSelected ? <GiCheckMark size={16} /> : <GoPlus size={16} />}
-                      </div>
-                    );
-                  })}
-                  {errors.services && <p className="text-red-500 text-xs mt-2">{errors.services}</p>}
-                </div>
-              </div>
-
-              {/* Message */}
-              <p className='flex uppercase font-semibold text-[16px] my-4'>Project Details <CgAsterisk color='red' /></p>
-              <textarea
-                placeholder='Tell us about your Project goals , timeline , and any specific requirements...'
-                name="description"
-                value={inputValue.description}
-                onChange={handleChange}
-                rows={6}
-                className="bg-white border border-gray-300 w-full rounded-[6px] p-4 mb-4"
+              <Heading
+                headingParts={[
+                  { text: 'Let’s Talk', color: '#000000', weight: 700 },
+                  { text: 'About Your Goals', color: '#FB9100', weight: 700 },
+                ]}
+                isInCenter={true}
               />
-              {errors.description && <p className="text-red-500 text-xs mt-2">{errors.description}</p>}
 
-              <p className='flex uppercase text-[16px] font-semibold my-4'>Additional Details <CgAsterisk color='red' /></p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 border border-gray-300 rounded-[6px] bg-white mb-4">
+              <p className="text-center text-[15px] font-medium text-[#323232]">
+                Find performance gaps limiting your website’s visibility and effectiveness.
+              </p>
 
-                {/* Budget */}
-                <div className="flex flex-col">
-                  <SelectField
-                    label={'Select your budget range'}
-                    name="budget"
-                    value={inputValue.additionDetails.budget}
-                    handleChange={handleAdditionalChange}
-                    className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
-                    required
-                    options={[
-                      {
-                        label: 'Select Range',
-                        value: '',
-                      },
-                      {
-                        label: '10000',
-                        value: '10000'
-                      },
-                      {
-                        label: '0 - 10k',
-                        value: '0 - 10k',
-                      },
-                      {
-                        label: '10k - 50k',
-                        value: '10k - 50k',
-                      },
-                      {
-                        label: '50k+',
-                        value: '50k+',
-                      },
-                    ]}
-                  />
-                  {errors.budget && <p className="text-red-500 text-xs">{errors.budget}</p>}
+              <div className='bg-[#F9F9F9] p-[4rem] rounded-3xl my-[4rem]'>
+
+                {/* Inputs */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  {fields.map((field) => (
+                    <InputField
+                      label={field.label}
+                      name={field.name}
+                      value={(inputValue as any)[field.name]}
+                      handleChange={handleChange}
+                      placeholder={`Enter your ${field.label.toLowerCase()}...`}
+                      className="bg-white border border-gray-300 p-3 mb-4"
+                      error={errors[field.name]}
+                    />
+                  ))}
                 </div>
 
-                {/* Source */}
-                <div className="flex flex-col">
-                  <SelectField
-                    label={'How did you hear about us?'}
-                    name="source"
-                    value={inputValue.additionDetails.source}
-                    handleChange={handleAdditionalChange}
-                    className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
-                    options={[
-                      {
-                        label: 'How did you hear about us?',
-                        value: '',
-                      },
-                      {
-                        label: 'Google',
-                        value: 'google'
-                      },
-                      {
-                        label: 'Social Media',
-                        value: 'social',
-                      },
-                      {
-                        label: 'Friend / Referral',
-                        value: 'friend',
-                      },
-                      {
-                        label: 'Ads',
-                        value: 'ads',
-                      },
-                    ]}
-                  />
-                  {errors.source && <p className="text-red-500 text-xs">{errors.source}</p>}
+                {/* Services */}
+                <div className="space-y-4 mb-8">
+                  <p className='flex text-[16px] uppercase font-semibold my-4'>
+                    Services Required <CgAsterisk color='red' />
+                  </p>
+
+                  <div className="flex flex-wrap gap-3">
+                    {servicesList.map((service) => {
+                      const isSelected = inputValue.services.some((s) => s.id === service._id);
+
+                      return (
+                        <div
+                          key={service._id}
+                          onClick={() => toggleService(service._id)}
+                          className={`flex items-center justify-between gap-[3rem] px-4 py-2 rounded-[0.5rem] cursor-pointer border transition-all ${isSelected ? "bg-[#FB9100] text-white border-[#FB9100]" : "bg-white text-black border-gray-300"}`}
+                        >
+                          <div className="flex items-center gap-2">
+                            {/* Icons */}
+                            {serviceIcons[service.name]}
+                            <p className={`text-[14px] ${isSelected ? 'text-white' : 'text-black'}`}>
+                              {service.name}
+                            </p>
+                          </div>
+
+                          {isSelected ? <GiCheckMark size={12} /> : <GoPlus size={16} />}
+                        </div>
+                      );
+                    })}
+                    {errors.services && <span className="text-red-500">{errors.services}</span>}
+                  </div>
                 </div>
 
-                {/* Start Date */}
-                <InputField
-                  label={'When do you want to get started?'}
-                  type="date"
-                  name="startFrom"
-                  value={inputValue.additionDetails.startFrom}
-                  handleChange={handleAdditionalChange}
-                  className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
-                  error={errors.startFrom}
+                {/* Message */}
+                <p className='flex uppercase font-semibold text-[16px] my-4'>Project Details <CgAsterisk color='red' /></p>
+                <MessageField
+                  placeholder='Tell us about your Project goals , timeline , and any specific requirements...'
+                  name="description"
+                  value={inputValue.description}
+                  handleChange={handleChange}
+                  rows={8}
+                  className="bg-white border border-gray-300 w-full p-4 mb-4"
+                  error={errors.description}
                 />
 
-                {/* File */}
-                <InputField
-                  label={'Attachments'}
-                  type="file"
-                  name="file"
-                  handleChange={handleFileUpload}
-                  className="bg-white border border-gray-300 p-3 mb-2 rounded-xl"
-                  error={errors.file}
-                />
+                <p className='flex uppercase text-[16px] font-semibold my-4'>Additional Details <CgAsterisk color='red' /></p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6 border border-gray-300 rounded-[0.5rem] bg-white mb-4">
+
+                  {/* Budget */}
+                  <div className="flex flex-col">
+                    <SelectField
+                      label={'Select your budget range'}
+                      name="budget"
+                      value={inputValue.additionDetails.budget}
+                      handleChange={handleAdditionalChange}
+                      className="bg-white border border-gray-300 p-3 mb-4"
+                      required
+                      error={errors.budget}
+                      options={[
+                        {
+                          label: 'Select Range',
+                          value: '',
+                        },
+                        {
+                          label: '10000',
+                          value: '10000'
+                        },
+                        {
+                          label: '0 - 10k',
+                          value: '0 - 10k',
+                        },
+                        {
+                          label: '10k - 50k',
+                          value: '10k - 50k',
+                        },
+                        {
+                          label: '50k+',
+                          value: '50k+',
+                        },
+                      ]}
+                    />
+                  </div>
+
+                  {/* Source */}
+                  <div className="flex flex-col">
+                    <SelectField
+                      label={'How did you hear about us?'}
+                      name="source"
+                      value={inputValue.additionDetails.source}
+                      handleChange={handleAdditionalChange}
+                      className="bg-white border border-gray-300 p-3 mb-4"
+                      error={errors.source}
+                      options={[
+                        {
+                          label: 'How did you hear about us?',
+                          value: '',
+                        },
+                        {
+                          label: 'Google',
+                          value: 'google'
+                        },
+                        {
+                          label: 'Social Media',
+                          value: 'social',
+                        },
+                        {
+                          label: 'Friend / Referral',
+                          value: 'friend',
+                        },
+                        {
+                          label: 'Ads',
+                          value: 'ads',
+                        },
+                      ]}
+                    />
+                  </div>
+
+                  {/* Start Date */}
+                  <InputField
+                    label={'When do you want to get started?'}
+                    type="date"
+                    name="startFrom"
+                    value={inputValue.additionDetails.startFrom}
+                    handleChange={handleAdditionalChange}
+                    className="bg-white border border-gray-300 p-3 mb-4"
+                    error={errors.startFrom}
+                  />
+
+                  {/* File */}
+                  <InputField
+                    label={'Attachments'}
+                    type="file"
+                    name="file"
+                    handleChange={handleFileUpload}
+                    className="bg-white border border-gray-300 p-3 mb-4"
+                  />
 
 
-                {/* Upload file design */}
-                {/* <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-xl">
+                  {/* Upload file design */}
+                  {/* <div className="flex items-center gap-2 bg-white border border-gray-300 p-3 rounded-xl">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none" viewBox="0 0 24 24"
@@ -402,47 +514,61 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                   </span>
                 </div> */}
 
-              </div>
+                </div>
 
-              {/* Checkbox */}
-              <div className='flex items-center gap-2 mt-[3rem]'>
-                <input
-                  type="checkbox"
-                  checked={inputValue.termsAndCondition}
-                  onChange={() =>
-                    setInputValue((prev) => ({
-                      ...prev,
-                      termsAndCondition: !prev.termsAndCondition,
-                    }))
-                  }
-                />
-                <p className='text-[14px]'>I agree to the processing of personal data according to the Privacy Policy.</p>
-              </div>
-              {errors.agreed && <p className="text-red-500 text-xs mt-2">{errors.agreed}</p>}
+                {/* Checkbox */}
+                <div className='flex items-center gap-2 mt-[3rem]'>
+                  <input
+                    type="checkbox"
+                    checked={inputValue.termsAndCondition}
+                    onChange={() => {
+                      setInputValue((prev) => ({
+                        ...prev,
+                        termsAndCondition: !prev.termsAndCondition,
+                      }));
 
-              {/* Button */}
-              <div className={`flex gap-2 lg:gap-4 mt-[4rem]`}>
-                <button
-                  disabled={loading}
-                  onMouseEnter={() => setIsHover(true)}
-                  onMouseLeave={() => setIsHover(false)}
-                  onClick={handleClick}
-                  className={`px-[2rem] bg-black text-white flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[60px] py-[0.75rem] font-montserrat text-xxs font-medium transition-all duration-300 ease-out active:scale-95 xl:text-xs 1366:text-[14px] 1400:text-[18px] 1470:text-[18px] 1600:text-[18px] 1680:text-[18px] hover:bg-[#FB9100]
-                    } `}
-                >
-                  {loading ? 'Submitting...' : 'Get a Quote'}
-                  <IoIosArrowRoundForward
-                    size={25}
-                    className={`${isHover ? 'rotate-[360deg] transition-all duration-300 ease-out active:scale-95' : 'rotate-[310deg]'}`}
+                      setErrors((prev: any) => ({
+                        ...prev,
+                        agreed: "",
+                      }));
+                    }}
                   />
-                </button>
+                  <p className='text-[14px]'>I agree to the processing of personal data according to the Privacy Policy.</p>
+                </div>
+                {errors.agreed && <span className="text-red-500">{errors.agreed}</span>}
+
+                {/* Button */}
+                <div className={`flex gap-2 lg:gap-4 mt-[4rem]`}>
+                  <button
+                    disabled={loading}
+                    onMouseEnter={() => setIsHover(true)}
+                    onMouseLeave={() => setIsHover(false)}
+                    onClick={handleClick}
+                    className={`px-[2rem] bg-black text-white flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[60px] py-[0.75rem] font-montserrat text-xxs font-medium transition-all duration-300 ease-out active:scale-95 xl:text-xs 1366:text-[14px] 1400:text-[18px] 1470:text-[18px] 1600:text-[18px] 1680:text-[18px] hover:bg-[#FB9100]
+                    } `}
+                  >
+                    <p>{loading ? 'Submitting...' : 'Get a Quote'}</p>
+                    <IoIosArrowRoundForward
+                      size={25}
+                      className={`${isHover ? 'rotate-[360deg] transition-all duration-300 ease-out active:scale-95' : 'rotate-[310deg]'}`}
+                    />
+                  </button>
+                </div>
+
               </div>
-
             </div>
-          </div>
 
-          <div className='absolute right-0 bottom-0'>
-            <Image src={BottomPerson} alt='Person Image' width={320} height={331} />
+            {/* <div className='absolute right-0 bottom-0'>
+              <Image src={BottomPerson} alt='Person Image' width={320} height={331} />
+            </div> */}
+
+            <div className='absolute right-0 bottom-0'>
+              <Image
+                src={BottomPerson}
+                alt='Person Image'
+                className="w-full h-auto max-w-[clamp(180px,30vw,320px)]"
+              />
+            </div>
           </div>
         </div>
       </div>

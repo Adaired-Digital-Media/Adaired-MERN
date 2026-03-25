@@ -44,7 +44,7 @@ const InputField = ({
         placeholder={`${placeholder} ${required ? '*' : ''}`}
       />
       {error && (
-        <span className="absolute left-0 top-[4.2rem] py-2 z-20 w-fit  text-[12px] text-red-500">
+        <span className="absolute left-0 top-[4.5rem] py-2 z-20 w-fit text-[12px] text-red-500">
           {error}
         </span>
       )}
