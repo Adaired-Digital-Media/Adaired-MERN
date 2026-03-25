@@ -1,25 +1,25 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import MaxWidthWrapper from '@/app/components/MaxWidthWrapper';
-import Image from 'next/image';
-import hero_banner from '../../../public/assets/images/home/hero_banner-bg.png';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
-import SaveAndCancel from '@/app/components/common/SaveAndCancel';
-import { useRouter } from 'next/navigation';
+"use client";
+import React, { useEffect, useState } from "react";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import Image from "next/image";
+import hero_banner from "../../../public/assets/images/home/hero_banner-bg.png";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
+import SaveAndCancel from "@/app/components/common/SaveAndCancel";
+import { useRouter } from "next/navigation";
 
-import CountUp from '../../components/CountUp';
-import { ABOUT_DATA } from './aboutData';
-import GetQuoteModal from '../../components/popup/GetQuoteModal';
+import CountUp from "../../components/CountUp";
+import { ABOUT_DATA } from "./aboutData";
+import GetQuoteModal from "../../components/popup/GetQuoteModal";
 
 const AboutBanner = ({ banner }: any) => {
   const [open, setOpen] = useState(false);
 
   const router = useRouter();
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.3);
-  const images = ['img1', 'img2', 'img3', 'img4'] as const;
+  const images = ["img1", "img2", "img3", "img4"] as const;
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const [active, setActive] = useState<null | 'img3' | 'img2' | 'img1'>(null);
+  const [active, setActive] = useState<null | "img3" | "img2" | "img1">(null);
 
   const [hover, setHover] = useState(null);
 
@@ -51,7 +51,7 @@ const AboutBanner = ({ banner }: any) => {
           <div>
             <div className="relative z-10 block justify-center pb-[6rem] pt-[9rem] lg:flex">
               <div
-                className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[60%] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}
+                className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[60%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
               >
                 <div
                   className={`'grid lg:gap-[10rem]'} grid-cols-1 lg:grid-cols-2`}
@@ -111,14 +111,14 @@ const AboutBanner = ({ banner }: any) => {
                   style={{
                     transitionDelay: `${idx * 280}ms`,
                   }}
-                  className={`rounded-3xl border-r-[1px] border-r-[#00000026]/10 p-[1.8rem] transition-all duration-700 last:border-r-0 lg:p-[1rem] xl:px-[1.75rem] xl:py-[1.5rem] 1360:p-[1rem] 1400:p-[1rem] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${
+                  className={`rounded-3xl border-b border-b-[#00000026] lg:border-b-0 lg:border-r lg:border-r-[#00000026] last:border-r-0 p-[1.8rem] transition-all duration-700 last:border-r-0 lg:p-[1rem] xl:px-[1.75rem] xl:py-[1.5rem] 1360:p-[1rem] 1400:p-[1rem] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} ${
                     isHovered
-                      ? 'bg-gradient-to-br from-[#FB9100] to-[#000000]'
-                      : ''
+                      ? "bg-gradient-to-br from-[#FB9100] to-[#000000]"
+                      : ""
                   } `}
                 >
                   <div
-                    className={`text-center text-xl font-semibold transition-colors duration-300 3xl:text-[50px] ${isHovered ? 'text-white' : 'text-black'} `}
+                    className={`text-center text-xl font-semibold transition-colors duration-300 3xl:text-[50px] ${isHovered ? "text-white" : "text-black"} `}
                   >
                     {record.suffix1}
                     <CountUp end={record.number} />
@@ -126,7 +126,7 @@ const AboutBanner = ({ banner }: any) => {
                   </div>
 
                   <p
-                    className={`py-[0.5rem] text-center font-bold transition-colors duration-300 xl:pb-[1rem] xl:pt-[1.25rem] ${isHovered && 'text-white'} `}
+                    className={`py-[0.5rem] text-center font-bold transition-colors duration-300 xl:pb-[1rem] xl:pt-[1.25rem] ${isHovered && "text-white"} `}
                   >
                     {record.name}
                   </p>

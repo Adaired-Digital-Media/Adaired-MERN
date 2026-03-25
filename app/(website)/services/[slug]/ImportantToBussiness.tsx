@@ -26,7 +26,6 @@ const ImportantToBussiness = ({ importantToBussiness }: any) => {
             <div
               className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"} `}
             >
-              <p>hello</p>
               <Heading
                 isDecVarticle
                 isInCenter={importantToBussiness?.isInCenter}
@@ -44,11 +43,13 @@ const ImportantToBussiness = ({ importantToBussiness }: any) => {
                 return (
                   <div
                     key={idx}
-                    className={`relative my-[1rem] rounded-[1rem] border border-[${importantToBussiness?.borderColor}]/10 bg-[${importantToBussiness?.cardColor || "#FFFFFF"}] p-[2rem] px-[2rem] ${item?.button ? "pb-[4rem]" : "pb-[2rem]"} pt-[2rem] transition-all duration-700 lg:my-0 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`relative my-[1rem] rounded-[1rem] bg-[${importantToBussiness?.cardColor || "#FFFFFF"}] p-[2rem] px-[2rem] ${item?.button ? "pb-[4rem]" : "pb-[2rem]"} pt-[2rem] transition-all duration-700 lg:my-0 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                     style={{
-                      transitionDelay: `${idx * 280}ms`, // 👈 stagger here
+                      transitionDelay: `${idx * 280}ms`,
+                        border: `1px solid ${importantToBussiness?.borderColor || "#000000"}1D`
                     }}
                   >
+                    
                     <div className="relative flex items-center">
                       <div className="absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0">
                         <Image

@@ -73,13 +73,13 @@ const TechStackMobile = ({ techStackMobile }: any) => {
                 </div>
 
                 <div className='flex items-center justify-center'>
-                    <div className={`w-fit px-4 lg:px-0 mb-[2rem] lg:mb-[3rem] mt-[2rem] flex overflow-hidden justify-start lg:justify-center gap-[1rem] lg:rounded-full lg:border lg:border-[#3051B3C]/17 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}>
+                    <div className={`w-fit px-4 lg:px-0 mb-[2rem] lg:mb-[3rem] mt-[2rem] flex overflow-hidden justify-start lg:justify-center gap-[1rem] lg:rounded-full lg:border lg:border-[#000000]/5 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}>
                         {techStackMobile?.navItems?.map((item: any, idx: number) => (
                             <p
                                 key={idx}
                                 ref={(el) => { tabRefs.current[idx] = el }}
                                 onClick={() => setIsActiveTab(idx)}
-                                className={`my-auto cursor-pointer rounded-full border border-[#3051B3C]/17 lg:border-none px-[2.3rem] py-[0.5rem] lg:py-[0.8rem] whitespace-nowrap transition-all duration-300 ease-in-out ${isActiveTab === idx
+                                className={`my-auto cursor-pointer rounded-full border border-[#000000  ]/5 lg:border-none px-[2.3rem] py-[0.5rem] lg:py-[0.8rem] whitespace-nowrap transition-all duration-300 ease-in-out ${isActiveTab === idx
                                     ? "bg-[#FB9100] lg:scale-105"
                                     : "hover:bg-[#FB9100] group"
                                     }`}
@@ -109,7 +109,7 @@ const TechStackMobile = ({ techStackMobile }: any) => {
                     {techStackMobile?.list?.[isActiveTab]?.map((cards: any, index: number) => (
                         <div
                             key={index}
-                            className="snap-center min-w-[99%] lg:min-w-0 px-[1rem] py-[2rem] border rounded-[2rem] flex flex-col gap-[2rem] items-center justify-between"
+                            className="snap-center min-w-[99%] lg:min-w-0 px-[1rem] py-[2rem] border border-[#000000]/5 rounded-[2rem] flex flex-col gap-[2rem] items-center justify-between"
                         >
                             <div className="h-[88px] flex items-center justify-center">
                                 <Image
