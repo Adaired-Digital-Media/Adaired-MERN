@@ -311,7 +311,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
         className="absolute inset-0 bg-black/50 backdrop-blur-sm z-40"
         onClick={onClose}
       />
-      <div className="relative rounded-3xl shadow-xl bg-white md:w-[95%] lg:w-[65%] z-50">
+      <div className="relative rounded-3xl shadow-xl bg-white h-full lg:h-fit md:w-[95%] lg:w-[65%] z-50 overflow-hidden">
         <button
           onClick={onClose}
           className="absolute right-4 top-4 text-gray-500 hover:text-black cursor-pointer z-60"
@@ -319,8 +319,8 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
           <IoClose size={22} />
         </button>
 
-        <div className="max-h-[90vh] overflow-y-auto no-scrollbar">
-          <div className="relative flex justify-center gap-3 px-[8rem] pt-[4rem] pb-[0.5rem]">
+        <div className="max-h-full lg:max-h-[90vh] overflow-y-auto no-scrollbar">
+          <div className="relative flex justify-center gap-3 px-[1rem] md:px-[2.5rem] lg:px-[8rem] pt-[4rem] pb-[0.5rem]">
             <div className="w-full">
               <Heading
                 headingParts={[
@@ -335,7 +335,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                 effectiveness.
               </p>
 
-              <div className="bg-[#F9F9F9] p-[4rem] rounded-3xl my-[4rem]">
+              <div className="bg-[#F9F9F9] py-[2rem] px-[1rem] md:p-[3rem] lg:p-[4rem] rounded-3xl my-[2rem] md:my-[3rem] lg:my-[4rem]">
                 {/* Inputs */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   {fields.map((field, idx: number) => (
@@ -374,7 +374,7 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
                             {/* Icons */}
                             {/* {serviceIcons[service?.name]} */}
                             <p
-                              className={`text-[14px] ${isSelected ? "text-white" : "text-black"}`}
+                              className={`text-[14px] text-left  ${isSelected ? "text-white" : "text-black"}`}
                             >
                               {service?.name}
                             </p>
@@ -566,11 +566,11 @@ const GetEnquiryModal = ({ isOpen, onClose }: GetEnquiryModalProps) => {
               </div>
             </div>
 
-            <div className="absolute right-0 bottom-0">
+            <div className="absolute right-0 bottom-0 hidden lg:block">
               <Image
                 src={BottomPerson}
                 alt="Person Image"
-                className="w-full h-auto max-w-[clamp(180px,30vw,320px)]"
+                className="w-full h-auto min-w-[clamp(180px,30vw,320px)]"
               />
             </div>
           </div>
