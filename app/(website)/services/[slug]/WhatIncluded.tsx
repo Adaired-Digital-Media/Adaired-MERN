@@ -32,7 +32,7 @@ const WhatIncluded = ({ whatIncluded }: any) => {
                   {whatIncluded?.list?.map((card: any, index: number) => (
                     <div
                       key={index}
-                      className={`relative rounded-2xl border bg-[#F3F3F3] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                      className={`relative rounded-2xl border border-[${whatIncluded?.borderColor || "#000000"}]/10 bg-[#F3F3F3] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                       style={{
                         transitionDelay: isVisible ? '0ms' : `${index * 280}ms`,
                       }}
@@ -88,7 +88,7 @@ const WhatIncluded = ({ whatIncluded }: any) => {
                   {whatIncluded?.list?.map((card: any, index: number) => (
                     <div
                       key={index}
-                      className={`relative rounded-2xl border bg-[#FAFAFA] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                      className={`relative rounded-2xl border border-[${whatIncluded?.borderColor || "#000000"}]/10 bg-[#FAFAFA] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                       style={{
                         transitionDelay: isVisible ? '0ms' : `${index * 280}ms`,
                       }}

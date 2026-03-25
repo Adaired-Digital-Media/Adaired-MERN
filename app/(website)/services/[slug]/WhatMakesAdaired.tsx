@@ -40,8 +40,8 @@ const WhatMakesAdaired = ({ whatMkeDeferent }: any) => {
                     ? whatMkeDeferent?.cardColor
                     : `${whatMkeDeferent?.cardColor2}`,
                   borderColor: isSum
-                    ? `${whatMkeDeferent?.borderColor}1A`
-                    : `${whatMkeDeferent?.borderColor2}1A`,
+                    ? `${whatMkeDeferent?.borderColor || "#ffffff"}1A`
+                    : `${whatMkeDeferent?.borderColor2 || "#ffffff"}1A`,
                 }}
                 className={`mt-[2rem] flex flex-col justify-between gap-10 rounded-[20px] border p-[2rem] transition-all duration-700 lg:flex-row lg:gap-0 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} `}
               >
