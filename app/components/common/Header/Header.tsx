@@ -1237,7 +1237,7 @@ const Header = () => {
             />
           </div>
         </div>
-        <GetQuoteModal isOpen={!open} onClose={() => setOpen(false)} />
+        <GetQuoteModal isOpen={open} onClose={() => setOpen(false)} />
       </MaxWidthWrapper>
 
       {show && (

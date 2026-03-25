@@ -357,15 +357,11 @@ const KeyStats = ({ keyStats }: any) => {
                     style={{
                       transitionDelay: `${idx * 280}ms`,
                     }}
-                    className={`rounded-3xl border-r-[1px] border-r-[#00000026]/10 p-[1.8rem] transition-all duration-700 last:border-r-0 lg:p-[1rem] xl:px-[1.75rem] xl:py-[1.5rem] 1360:p-[1rem] 1400:p-[1rem] ${
+                    className={`rounded-3xl border-b border-b-[#00000026] lg:border-b-0 lg:border-r lg:border-r-[#00000026] last:border-r-0  p-[1.8rem] transition-all duration-700 last:border-r-0 lg:p-[1rem] xl:px-[1.75rem] xl:py-[1.5rem] 1360:p-[1rem] 1400:p-[1rem] ${
                       isVisible
                         ? "translate-y-0 opacity-100"
                         : "translate-y-10 opacity-0"
-                    } ${
-                      isHovered
-                        ? "bg-gradient-to-br from-[#FB9100] to-[#000000]"
-                        : ""
-                    }`}
+                    } ${isHovered ? "bg-gradient-to-br from-[#FB9100] to-[#000000]" : ""}`}
                   >
                     <h2
                       className={`F28F17 mx-auto w-fit rounded-xl border border-[#F28F17]/10 bg-[#FFEACD] px-3 py-1 font-normal text-[#FB9100] lg:mx-0 ${
