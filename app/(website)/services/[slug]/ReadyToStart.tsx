@@ -47,7 +47,7 @@ const ReadyToStart = ({ handleClick, className }: any) => {
             </div>
             <div className="flex justify-center pt-[1.5rem]">
               <SaveAndCancel
-                name="Get Your Free Marketing Audit"
+                name="Book My Free Audit"
                 isBgWhite={true}
                 isHoverBgBlue={true}
                 isIcon={true}

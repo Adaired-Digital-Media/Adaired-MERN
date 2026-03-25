@@ -159,7 +159,7 @@ const LeadingTools = ({ leadingTools }: any) => {
               {duplicatedList.map((item: any, idx: number) => (
                 <div
                   key={idx}
-                  className="flex min-w-[65vw] flex-col items-center justify-between gap-[2rem] rounded-[1.5rem] border px-[1rem] py-[2rem] sm:min-w-[55vw] md:min-w-[35vw] lg:min-w-[270px] bg-white"
+                  className="flex min-w-[65vw] flex-col items-center justify-between gap-[2rem] rounded-[1.5rem] border border-[#000000]/5 px-[1rem] py-[2rem] sm:min-w-[55vw] md:min-w-[35vw] lg:min-w-[270px] bg-white"
                 >
                   <div className="relative flex h-[45px] w-[180px] items-center justify-center md:h-[65px] md:w-[190px] lg:h-[70px] lg:w-[202px]">
                     <Image

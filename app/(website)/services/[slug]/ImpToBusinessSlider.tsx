@@ -79,6 +79,7 @@ export default function ImpToBusinessSlider({
                             {/* Description */}
                             <div className="flex-grow">
                                 {item?.description?.map((dec: any, index: number) => {
+                                    
                                     if (typeof dec === 'string') {
                                         return (
                                             <p key={index} className="py-3">

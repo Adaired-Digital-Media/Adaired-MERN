@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
 import GetQuoteModal from '@/app/components/popup/GetQuoteModal';
+import CldImage from '@/app/components/UI/CldImage';
 
 const NotSeeingResults = ({ notSeeingResult }: any) => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
@@ -42,7 +43,25 @@ const NotSeeingResults = ({ notSeeingResult }: any) => {
           ref={ref}
           className={`flex justify-center justify-items-center pt-2 lg:justify-end lg:justify-items-end ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'}`}
         >
-          <Image src={notSeeingResult?.img} alt="img" />
+          {/* <Image 
+          src={notSeeingResult?.img} 
+          alt="img" /> */}
+
+          {typeof notSeeingResult?.img === 'string' ? (
+                <CldImage
+                  src={notSeeingResult?.img}
+                  alt={notSeeingResult?.name}
+                  width={notSeeingResult?.imgWidth}
+                  height={notSeeingResult?.imgHight}
+                  className="h-full w-full object-contain"
+                />
+              ) : (
+                <Image
+                  src={notSeeingResult?.img}
+                  alt={notSeeingResult?.name}
+                  className="h-full w-full object-contain"
+                />
+              )}
         </div>
         <GetQuoteModal isOpen={open} onClose={() => setOpen(false)} />
       </MaxWidthWrapper>

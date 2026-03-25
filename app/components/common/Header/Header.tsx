@@ -638,7 +638,7 @@
 
 "use client";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import logo from "../../../../public/Layer_1.svg";
 import MaxWidthWrapper from "../../MaxWidthWrapper";
 import { routes } from "@/@core/config/routes";
@@ -658,10 +658,8 @@ import contactus from "../../../../public/assets/header/Group 1000006721.svg";
 import { TbMailFilled } from "react-icons/tb";
 import { IoCall } from "react-icons/io5";
 import { RiWhatsappFill } from "react-icons/ri";
-import GetEnquiryModal from "../../popup/GetEnquiryModal";
+import GetQuoteModal from "../../popup/GetQuoteModal";
 import ReactCountryFlag from "react-country-flag";
-
-import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Header = () => {
   const router = useRouter();
@@ -730,11 +728,10 @@ const Header = () => {
                     {/* ===================== MAIN MENU ===================== */}
                     <Link
                       href={menu.href}
-                      className={`font-Outfit flex items-center rounded-full px-5 py-2 transition ${
-                        isActive || isHover
-                          ? "bg-[#FB9100] text-white"
-                          : "text-black"
-                      }`}
+                      className={`font-Outfit flex items-center rounded-full px-5 py-2 transition ${isActive || isHover
+                        ? "bg-[#FB9100] text-white"
+                        : "text-black"
+                        }`}
                     >
                       <p>{menu.label}</p>
                       {menu.subItems && <MdKeyboardArrowDown size={18} />}
@@ -743,21 +740,19 @@ const Header = () => {
                     {/* ===================== MEGA MENU ===================== */}
                     {menu.subItems && (
                       <div
-                        className={`absolute left-0 right-0 top-[76%] z-50 transition-all duration-300 ease-out ${
-                          isHover
-                            ? "pointer-events-auto translate-y-0 opacity-100"
-                            : "pointer-events-none -translate-y-3 opacity-0"
-                        }`}
+                        className={`absolute left-0 right-0 top-[76%] z-50 transition-all duration-300 ease-out ${isHover
+                          ? "pointer-events-auto translate-y-0 opacity-100"
+                          : "pointer-events-none -translate-y-3 opacity-0"
+                          }`}
                       >
                         {/* ===================== RESOURCES / WHITE LABEL ===================== */}
                         {menu.label === "Resources" ||
-                        menu.label === "For Agencies" ? (
+                          menu.label === "For Agencies" ? (
                           <div
-                            className={`${
-                              menu.label === "For Agencies"
-                                ? "ml-[33%]"
-                                : "ml-[52%]"
-                            } mx-auto w-fit rounded-xl bg-white p-4 shadow-lg`}
+                            className={`${menu.label === "For Agencies"
+                              ? "ml-[33%]"
+                              : "ml-[52%]"
+                              } mx-auto w-fit rounded-xl bg-white p-4 shadow-lg`}
                           >
                             <ul className="space-y-2">
                               {menu.subItems.map((item: any, i: number) => {
@@ -768,11 +763,10 @@ const Header = () => {
                                     <Link
                                       href={item.href}
                                       onClick={handleMenuClose}
-                                      className={`group font-Outfit flex items-center gap-2 transition ${
-                                        isItemActive
-                                          ? "text-[#FB9100]"
-                                          : "text-gray-600 hover:text-[#FB9100]"
-                                      }`}
+                                      className={`group font-Outfit flex items-center gap-2 transition ${isItemActive
+                                        ? "text-[#FB9100]"
+                                        : "text-gray-600 hover:text-[#FB9100]"
+                                        }`}
                                     >
                                       {item.name}
                                       <MdArrowOutward
@@ -806,12 +800,11 @@ const Header = () => {
                                             onMouseLeave={() =>
                                               setActiveMenuTab(null)
                                             }
-                                            className={`relative rounded-[1rem] border-r border-[#000000]/15 px-[1rem] ${
-                                              activeMenuTab === index ||
+                                            className={`relative rounded-[1rem] border-r border-[#000000]/15 px-[1rem] ${activeMenuTab === index ||
                                               isCardActive(sub)
-                                                ? "bg-"
-                                                : ""
-                                            }`}
+                                              ? "bg-"
+                                              : ""
+                                              }`}
                                           >
                                             <span>
                                               <Image
@@ -836,11 +829,10 @@ const Header = () => {
                                               </p>
 
                                               <GoArrowUpRight
-                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${
-                                                  pathname === sub?.href
-                                                    ? "opacity-100"
-                                                    : "opacity-0 group-hover:opacity-100"
-                                                }`}
+                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${pathname === sub?.href
+                                                  ? "opacity-100"
+                                                  : "opacity-0 group-hover:opacity-100"
+                                                  }`}
                                               />
                                             </Link>
                                             <div className="space-y-0.5">
@@ -865,11 +857,10 @@ const Header = () => {
                                                       </span>
 
                                                       <GoArrowUpRight
-                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${
-                                                          isActive
-                                                            ? "opacity-100"
-                                                            : "opacity-0 group-hover:opacity-100"
-                                                        }`}
+                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${isActive
+                                                          ? "opacity-100"
+                                                          : "opacity-0 group-hover:opacity-100"
+                                                          }`}
                                                       />
                                                     </Link>
                                                   );
@@ -896,12 +887,11 @@ const Header = () => {
                                             onMouseLeave={() =>
                                               setActiveMenuTab(null)
                                             }
-                                            className={`relative my-[0.65rem] rounded-[1rem] border-r border-[#000000]/15 px-[1rem] ${
-                                              activeMenuTab === index ||
+                                            className={`relative my-[0.65rem] rounded-[1rem] border-r border-[#000000]/15 px-[1rem] ${activeMenuTab === index ||
                                               isCardActive(sub)
-                                                ? "bg-"
-                                                : ""
-                                            }`}
+                                              ? "bg-"
+                                              : ""
+                                              }`}
                                           >
                                             <span>
                                               <Image
@@ -925,11 +915,10 @@ const Header = () => {
                                               </p>
 
                                               <GoArrowUpRight
-                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${
-                                                  pathname === sub?.href
-                                                    ? "opacity-100"
-                                                    : "opacity-0 group-hover:opacity-100"
-                                                }`}
+                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${pathname === sub?.href
+                                                  ? "opacity-100"
+                                                  : "opacity-0 group-hover:opacity-100"
+                                                  }`}
                                               />
                                             </Link>
                                             <div className="space-y-0.5">
@@ -955,11 +944,10 @@ const Header = () => {
                                                       </span>
 
                                                       <GoArrowUpRight
-                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${
-                                                          isActive
-                                                            ? "opacity-100"
-                                                            : "opacity-0 group-hover:opacity-100"
-                                                        }`}
+                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${isActive
+                                                          ? "opacity-100"
+                                                          : "opacity-0 group-hover:opacity-100"
+                                                          }`}
                                                       />
                                                     </Link>
                                                   );
@@ -1010,11 +998,10 @@ const Header = () => {
                                               </p>
 
                                               <GoArrowUpRight
-                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${
-                                                  pathname === sub?.href
-                                                    ? "opacity-100"
-                                                    : "opacity-0 group-hover:opacity-100"
-                                                }`}
+                                                className={`transition-all duration-200 ${pathname === sub?.href && "font-bold text-[#FB9100]"} ${pathname === sub?.href
+                                                  ? "opacity-100"
+                                                  : "opacity-0 group-hover:opacity-100"
+                                                  }`}
                                               />
                                             </Link>
                                             <div className="space-y-0.5">
@@ -1040,11 +1027,10 @@ const Header = () => {
                                                       </span>
 
                                                       <GoArrowUpRight
-                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${
-                                                          isActive
-                                                            ? "opacity-100"
-                                                            : "opacity-0 group-hover:opacity-100"
-                                                        }`}
+                                                        className={`transition-all duration-200 ${isActive && "font-bold text-[#FB9100]"} ${isActive
+                                                          ? "opacity-100"
+                                                          : "opacity-0 group-hover:opacity-100"
+                                                          }`}
                                                       />
                                                     </Link>
                                                   );
@@ -1165,7 +1151,9 @@ const Header = () => {
 
                           <p className="text-sm text-gray-500 mt-1">
                             (If we don't pick up,{" "}
-                            <span className="underline cursor-pointer hover:text-[#1C5B98]">
+                            <span
+                              onClick={() => setOpen(true)}
+                              className="underline cursor-pointer hover:text-[#1C5B98]">
                               drop enquiry
                             </span>
                             .)
@@ -1249,7 +1237,7 @@ const Header = () => {
             />
           </div>
         </div>
-        <GetEnquiryModal isOpen={open} onClose={() => setOpen(false)} />
+        <GetQuoteModal isOpen={open} onClose={() => setOpen(false)} />
       </MaxWidthWrapper>
 
       {show && (
