@@ -1,21 +1,22 @@
 "use client";
-import { AboutSectionData } from '@/@core/data/website/Homepage';
-import React from 'react';
-import MaxWidthWrapper from '../MaxWidthWrapper';
-import Heading from '../common/Heading';
-import Image from 'next/image';
-import img from '../../../public/assets/images/home/aboutus.png';
-import teamimg from '../../../public/assets/team/1st.jpg';
-import teamimg_2 from '../../../public/assets/team/2nd.jpg';
-import teamimg_3 from '../../../public/assets/team/3rd.jpg';
-import about_graph from '../../../public/assets/images/home/about_graph.png';
-import Mask from '../../../public/assets/images/home/Mask group.png';
-import check from '../../../public/assets/icons/blue_check.png';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
+import { AboutSectionData } from "@/@core/data/website/Homepage";
+import React from "react";
+import MaxWidthWrapper from "../MaxWidthWrapper";
+import Heading from "../common/Heading";
+import Image from "next/image";
+import img from "../../../public/assets/images/home/aboutus.png";
+import teamimg from "../../../public/assets/team/1st.jpg";
+import teamimg_2 from "../../../public/assets/team/2nd.jpg";
+import teamimg_3 from "../../../public/assets/team/3rd.jpg";
+import about_graph from "../../../public/assets/images/home/about_graph.png";
+import Mask from "../../../public/assets/images/home/Mask group.png";
+import check from "../../../public/assets/icons/blue_check.png";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
 
 const About = () => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
-  const { subTitle, headingParts, points, description, cursive } = AboutSectionData;
+  const { subTitle, headingParts, points, description, cursive } =
+    AboutSectionData;
 
   return (
     <section className="">
@@ -29,8 +30,8 @@ const About = () => {
             ref={ref}
             className={`w-[100%] transition-all duration-700 lg:w-[45%] ${
               isVisible
-                ? 'translate-x-0 opacity-100'
-                : '-translate-x-16 opacity-0'
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-16 opacity-0"
             }`}
           >
             {/* LG */}
@@ -64,7 +65,7 @@ const About = () => {
           <div className="relative mx-auto hidden w-full justify-center lg:w-[50%]">
             {/* CENTER IMAGE */}
             <div
-              className={`relative mx-[1.5rem] my-[2.5rem] aspect-[615/685] w-[clamp(14rem,65vw,45.063rem)] overflow-hidden transition-all duration-1000 lg:mx-[3.5rem] lg:my-[2.5rem] lg:w-[clamp(14rem,55vw,39.063rem)] ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-16 opacity-0'} `}
+              className={`relative mx-[1.5rem] my-[2.5rem] aspect-[615/685] w-[clamp(14rem,65vw,45.063rem)] overflow-hidden transition-all duration-1000 lg:mx-[3.5rem] lg:my-[2.5rem] lg:w-[clamp(14rem,55vw,39.063rem)] ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"} `}
             >
               <Image
                 src={img}
@@ -103,7 +104,7 @@ const About = () => {
 
             {/* ABOUT GRAPH – BOTTOM RIGHT */}
             <div
-              className={`absolute bottom-[clamp(0rem,0vw,0rem)] right-[clamp(-1rem,-4vw,0rem)] aspect-[276/215] w-[clamp(8rem,22vw,25.25rem)] transition-all delay-300 duration-700 lg:w-[clamp(8rem,18vw,17.25rem)] ${isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'} `}
+              className={`absolute bottom-[clamp(0rem,0vw,0rem)] right-[clamp(-1rem,-4vw,0rem)] aspect-[276/215] w-[clamp(8rem,22vw,25.25rem)] transition-all delay-300 duration-700 lg:w-[clamp(8rem,18vw,17.25rem)] ${isVisible ? "scale-100 opacity-100" : "scale-75 opacity-0"} `}
             >
               <Image
                 src={about_graph}
@@ -117,7 +118,7 @@ const About = () => {
 
           {/* Content Section */}
           <div
-            className={`flex-1 p-2 text-left transition-all delay-200 duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'} `}
+            className={`flex-1 p-2 text-left transition-all delay-200 duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"} `}
           >
             {/* Points Section */}
             <Heading
@@ -136,7 +137,7 @@ const About = () => {
               {points.map((point, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col items-center gap-4 transition-all duration-700 lg:flex-row lg:items-start ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} `}
+                  className={`flex flex-col items-center gap-4 transition-all duration-700 lg:flex-row lg:items-start ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} `}
                   style={{ transitionDelay: `${index * 120}ms` }}
                 >
                   {/* ICON */}
@@ -152,9 +153,9 @@ const About = () => {
 
                   {/* CONTENT */}
                   <div>
-                    <h3 className="text-center text-xs font-bold lg:text-left">
+                    <p className="text-center font-bold lg:text-left">
                       {point.title}
-                    </h3>
+                    </p>
                     <p className="mt-1 text-center font-montserrat lg:text-left">
                       {point.description}
                     </p>
