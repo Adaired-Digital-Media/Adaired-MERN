@@ -1,12 +1,12 @@
-'use client';
-import React, { useState } from 'react';
-import { MdOutlineArrowOutward } from 'react-icons/md';
-import MaxWidthWrapper from '@/app/components/MaxWidthWrapper';
-import Heading from '@/app/components/common/Heading';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
-import Image from 'next/image';
-import FutureProof from './FutureProof';
-import GetQuoteModal from '@/app/components/popup/GetQuoteModal';
+"use client";
+import React, { useState } from "react";
+import { MdOutlineArrowOutward } from "react-icons/md";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import Heading from "@/app/components/common/Heading";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
+import Image from "next/image";
+import FutureProof from "./FutureProof";
+import GetQuoteModal from "@/app/components/popup/GetQuoteModal";
 
 const WhatIncluded = ({ whatIncluded }: any) => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0);
@@ -16,10 +16,10 @@ const WhatIncluded = ({ whatIncluded }: any) => {
     <section ref={ref} className="py-[3rem] lg:py-[4rem]">
       <MaxWidthWrapper>
         <div
-          className={`transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+          className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
         >
           <div>
-            {whatIncluded?.isVariant === '01' && (
+            {whatIncluded?.isVariant === "01" && (
               <div>
                 <Heading
                   breakIndex={whatIncluded?.breakIndex}
@@ -32,9 +32,9 @@ const WhatIncluded = ({ whatIncluded }: any) => {
                   {whatIncluded?.list?.map((card: any, index: number) => (
                     <div
                       key={index}
-                      className={`relative rounded-2xl border border-[${whatIncluded?.borderColor || "#000000"}]/10 bg-[#F3F3F3] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                      className={`relative rounded-2xl border border-[${whatIncluded?.borderColor || "#000000"}]/10 bg-[#F3F3F3] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                       style={{
-                        transitionDelay: isVisible ? '0ms' : `${index * 280}ms`,
+                        transitionDelay: isVisible ? "0ms" : `${index * 280}ms`,
                       }}
                     >
                       <div className="">
@@ -55,7 +55,7 @@ const WhatIncluded = ({ whatIncluded }: any) => {
                               <p key={index} className="leading-relaxed">
                                 {desc}
                               </p>
-                            )
+                            ),
                           )}
                         </div>
 
@@ -76,7 +76,7 @@ const WhatIncluded = ({ whatIncluded }: any) => {
                 </div>
               </div>
             )}
-            {whatIncluded?.isVariant === '02' && (
+            {whatIncluded?.isVariant === "02" && (
               <div>
                 <Heading
                   breakIndex={5}
@@ -88,9 +88,9 @@ const WhatIncluded = ({ whatIncluded }: any) => {
                   {whatIncluded?.list?.map((card: any, index: number) => (
                     <div
                       key={index}
-                      className={`relative rounded-2xl border border-[${whatIncluded?.borderColor || "#000000"}]/10 bg-[#FAFAFA] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                      className={`relative rounded-2xl border border-[${whatIncluded?.borderColor || "#000000"}]/10 bg-[#FAFAFA] px-[2rem] pb-[5rem] pt-[2rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                       style={{
-                        transitionDelay: isVisible ? '0ms' : `${index * 280}ms`,
+                        transitionDelay: isVisible ? "0ms" : `${index * 280}ms`,
                       }}
                     >
                       <div className="">
@@ -111,12 +111,12 @@ const WhatIncluded = ({ whatIncluded }: any) => {
                               <p key={index} className="leading-relaxed">
                                 {desc}
                               </p>
-                            )
+                            ),
                           )}
                         </div>
                         <p
                           onClick={() => setOpen(!open)}
-                          className={`${index === 0 && 'text-[#00769D]'} ${index === 1 && 'text-[#5E8E3E]'} ${index === 2 && 'text-[#D84861]'} ${index === 3 && 'text-[#7D79FD]'} absolute bottom-[2rem] left-[0rem] flex w-full cursor-pointer items-center justify-center gap-2 lg:left-[2rem] lg:w-fit lg:justify-start`}
+                          className={`${index === 0 && "text-[#00769D]"} ${index === 1 && "text-[#5E8E3E]"} ${index === 2 && "text-[#D84861]"} ${index === 3 && "text-[#7D79FD]"} absolute bottom-[2rem] left-[0rem] flex w-full cursor-pointer items-center justify-center gap-2 lg:left-[2rem] lg:w-fit lg:justify-start`}
                         >
                           <span className="text-[18px]">
                             {/* {'Get Your Free AI SEO Audit'} */}
