@@ -4870,7 +4870,7 @@ export const SERVICES_DATA = {
       cardBorder: '',
       isVariant: '01',
       bgColor: '#F5F5F5',
-      borderColor: 'border-[#FB9100]/20',
+      borderColor: '#FB9100',
       isVisible: true,
       headingParts: [
         {
@@ -7795,7 +7795,7 @@ export const SERVICES_DATA = {
       ],
       bgColor: '#000000',
       textColor: '#FFFFFF',
-      // customPadding:"3rem, 3rem",
+      customPadding:"3rem, 3rem",
       width: 50,
       imgWidth: '595',
       imgHight: '525',
@@ -13380,7 +13380,7 @@ export const SERVICES_DATA = {
       isBgColor: false,
       img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774251960/adaired/services/gmb%2Bwebsite/gmbWebsiteServiceResultImg_bx46j3.png',
       isRocket: true,
-      imgHight: '560',
+      imgHight: '560px',
       cardColor: '#F3F3F3',
       list: [
         {
@@ -20232,7 +20232,7 @@ export const SERVICES_DATA = {
       isVariant: '01',
       isCardVisible: false,
       cardColor: '#FFFDF9',
-      borderColor: '#FFF9EF',
+      // borderColor: '#FFF9EF',
       isLaunchCard: true,
       headingParts: [
         {
