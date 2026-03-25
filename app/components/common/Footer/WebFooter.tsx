@@ -1,14 +1,15 @@
-import MaxWidthWrapper from '../../layout/MaxWidthWrapper';
-import Link from 'next/link';
-import Image from 'next/image';
-import { cn } from '@core/utils/class-names';
-import FooterTop from './FooterTop';
-import footer_brand_logo from '../../../../public/assets/brand_logo.png';
-import footer_bg from '../../../../public/assets/footer_img.png';
-import arrow_white from '../../../../public/assets/icons/arrow_white.png';
-import InputField from '../../UI/InputField';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import MaxWidthWrapper from "../../layout/MaxWidthWrapper";
+import Link from "next/link";
+import Image from "next/image";
+import { cn } from "@core/utils/class-names";
+import FooterTop from "./FooterTop";
+import footer_brand_logo from "../../../../public/assets/brand_logo.png";
+import footer_bg from "../../../../public/assets/footer_img.png";
+import arrow_white from "../../../../public/assets/icons/arrow_white.png";
+import InputField from "../../UI/InputField";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Icons } from "../../UI/Icons";
 // import dynamic from "next/dynamic";
 
 // const NewsLetter = dynamic(() => import("@/forms/NewsLetter"), {
@@ -18,7 +19,7 @@ import { useRouter } from 'next/navigation';
 
 const WebFooter = () => {
   const router = useRouter();
-  const [inputVal, setInputVal] = useState({ email: '' });
+  const [inputVal, setInputVal] = useState({ email: "" });
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setInputVal({ ...inputVal, [name]: value });
@@ -29,7 +30,7 @@ const WebFooter = () => {
       <footer className="relative py-12 text-white">
         {/* Background Image */}
         <Image
-          onClick={() => router.push('/')}
+          onClick={() => router.push("/")}
           src={footer_bg}
           alt="Footer background"
           fill
@@ -39,7 +40,7 @@ const WebFooter = () => {
         <MaxWidthWrapper className="px-4">
           <div
             className={cn(
-              `flex flex-wrap items-center justify-between gap-y-2 py-6 lg:flex-nowrap lg:gap-5`
+              `flex flex-wrap items-center justify-between gap-y-2 py-6 lg:flex-nowrap lg:gap-5`,
             )}
           >
             <FooterTop />
@@ -59,42 +60,42 @@ const WebFooter = () => {
               <p className="mt-6 text-left text-[#FFFFFF]">
                 AdAired Digital Media is a digital marketing company located in
                 Mohali. We are a team of marketing and design experts who are
-                committed to your online growth.{' '}
+                committed to your online growth.{" "}
               </p>
               <div className="mt-6 hidden lg:block">
                 <div className="mt-4 flex gap-2">
                   <Link
-                    href={process.env.NEXT_PUBLIC_FACEBOOK_URL || '/'}
+                    href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "/"}
                     className="group/fb hover:bg-theme-orange rounded-full bg-white p-2"
                   >
-                    {/* <Icons.Facebook className="text-[#1B5A96] group-hover/fb:text-[#FB9100]" /> */}
+                    <Icons.Facebook className="text-[#1B5A96] group-hover/fb:text-[#FB9100]" />
                     <span className="sr-only">
                       Visit Adaired Digital &apos; s Facebook page
                     </span>
                   </Link>
                   <Link
-                    href={process.env.NEXT_PUBLIC_TWITTER_URL || '/'}
+                    href={process.env.NEXT_PUBLIC_TWITTER_URL || "/"}
                     className="group/x hover:bg-theme-orange rounded-full bg-white p-2"
                   >
-                    {/* <Icons.Twitter className="text-[#1B5A96] group-hover/x:text-[#FB9100]" /> */}
+                    <Icons.Twitter className="text-[#1B5A96] group-hover/x:text-[#FB9100]" />
                     <span className="sr-only">
                       Visit Adaired Digital &apos; s Facebook page
                     </span>
                   </Link>
                   <Link
-                    href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || '/'}
+                    href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "/"}
                     className="group/insta hover:bg-theme-orange rounded-full bg-white p-2"
                   >
-                    {/* <Icons.Instagram className="text-[#1B5A96] group-hover/insta:text-[#FB9100]" /> */}
+                    <Icons.Instagram className="text-[#1B5A96] group-hover/insta:text-[#FB9100]" />
                     <span className="sr-only">
                       Visit Adaired Digital &apos; s Facebook page
                     </span>
                   </Link>
                   <Link
-                    href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '/'}
+                    href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "/"}
                     className="group/in hover:bg-theme-orange rounded-full bg-white p-2"
                   >
-                    {/* <Icons.LinkedIn className="text-[#1B5A96] group-hover/in:text-[#FB9100]" /> */}
+                    <Icons.LinkedIn className="text-[#1B5A96] group-hover/in:text-[#FB9100]" />
                     <span className="sr-only">
                       Visit Adaired Digital &apos; s Facebook page
                     </span>
@@ -109,36 +110,36 @@ const WebFooter = () => {
               </h3>
               <ul
                 className={cn(
-                  `font hover:[&>li]:text-theme-orange mt-6 space-y-2 text-xs transition-colors duration-200`
+                  `font hover:[&>li]:text-theme-orange mt-6 space-y-2 text-xs transition-colors duration-200`,
                 )}
               >
                 <li>
-                  <Link href="/" className="">
+                  <Link href="/" className="text-[15px]">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="">
+                  <Link href="/about-us" className="text-[15px]">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="">
+                  <Link href="/blog" className="text-[15px]">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/case-studies" className="">
+                  <Link href="/case-studies" className="text-[15px]">
                     Case Studies
                   </Link>
                 </li>
                 <li>
-                  <Link href="/career" className="">
+                  <Link href="/career" className="text-[15px]">
                     Career
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="">
+                  <Link href="/contact" className="text-[15px]">
                     Contact Us
                   </Link>
                 </li>
@@ -151,13 +152,13 @@ const WebFooter = () => {
               </h3>
               <ul
                 className={cn(
-                  `font hover:[&>li]:text-theme-orange mt-6 space-y-2 text-xs transition-colors duration-200`
+                  `font hover:[&>li]:text-theme-orange mt-6 space-y-2 text-xs transition-colors duration-200`,
                 )}
               >
                 <li>
                   <Link
                     href="/services/web-designing-and-development"
-                    className=""
+                    className="text-[15px]"
                   >
                     Website Designing & Development
                   </Link>
@@ -165,7 +166,7 @@ const WebFooter = () => {
                 <li>
                   <Link
                     href="/services/search-engine-optimization"
-                    className=""
+                    className="text-[15px]"
                   >
                     Search Engine Optimization (SEO)
                   </Link>
@@ -173,7 +174,7 @@ const WebFooter = () => {
                 <li>
                   <Link
                     href="/services/digital-marketing-company-usa"
-                    className=""
+                    className="text-[15px]"
                   >
                     Digital Marketing Services USA
                   </Link>
@@ -181,20 +182,23 @@ const WebFooter = () => {
                 <li>
                   <Link
                     href="/services/digital-marketing-company-india"
-                    className=""
+                    className="text-[15px]"
                   >
                     Digital Marketing Company India
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/seo-company-usa" className="">
+                  <Link
+                    href="/services/seo-company-usa"
+                    className="text-[15px]"
+                  >
                     SEO Services USA
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/services/web-development-company-usa"
-                    className=""
+                    className="text-[15px]"
                   >
                     Web Development Company USA
                   </Link>
@@ -214,7 +218,7 @@ const WebFooter = () => {
               <div className="relative mt-4">
                 <InputField
                   className="w-full !rounded-full bg-white text-[15px] font-[300]"
-                  name={'email'}
+                  name={"email"}
                   value={inputVal.email}
                   placeholder="Email Address"
                   handleChange={handleChange}
@@ -235,8 +239,8 @@ const WebFooter = () => {
               </h3>
               <div className="mt-4 flex gap-2">
                 <Link
-                  href={process.env.NEXT_PUBLIC_FACEBOOK_URL || '/'}
-                  className="rounded-full bg-white p-2" 
+                  href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "/"}
+                  className="rounded-full bg-white p-2"
                 >
                   {/* <Icons.Facebook className="text-[#1B5A96]" /> */}
                   <span className="sr-only">
@@ -244,7 +248,7 @@ const WebFooter = () => {
                   </span>
                 </Link>
                 <Link
-                  href={process.env.NEXT_PUBLIC_TWITTER_URL || '/'}
+                  href={process.env.NEXT_PUBLIC_TWITTER_URL || "/"}
                   className="rounded-full bg-white p-2"
                 >
                   {/* <Icons.Twitter className="text-[#1B5A96]" /> */}
@@ -253,7 +257,7 @@ const WebFooter = () => {
                   </span>
                 </Link>
                 <Link
-                  href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || '/'}
+                  href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "/"}
                   className="rounded-full bg-white p-2"
                 >
                   {/* <Icons.Instagram className="text-[#1B5A96]" /> */}
@@ -262,7 +266,7 @@ const WebFooter = () => {
                   </span>
                 </Link>
                 <Link
-                  href={process.env.NEXT_PUBLIC_LINKEDIN_URL || '/'}
+                  href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "/"}
                   className="rounded-full bg-white p-2"
                 >
                   {/* <Icons.LinkedIn className="text-[#1B5A96]" /> */}
