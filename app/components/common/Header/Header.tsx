@@ -1212,9 +1212,9 @@ const Header = () => {
 
               <div className="z-50 my-auto hidden gap-2 lg:flex">
                 <SaveAndCancel
-                  isBorder={true}
+                  // isBorder={true}
                   handleClick={() => router.push("/contact")}
-                  isBgWhite={true}
+                  // isBgWhite={true}
                   buttonWidth={"!w-[10rem]"}
                   name={"Book A Demo"}
                   isIcon={true}
