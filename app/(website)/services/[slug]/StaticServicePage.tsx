@@ -219,7 +219,6 @@ type StaticServicePageProps = {
   serviceData: (typeof SERVICES_DATA)[keyof typeof SERVICES_DATA];
 };
 const StaticServicePage = ({ serviceData }: StaticServicePageProps) => {
-  console.log(serviceData, "serviceData>>>>>>>>>>>>>")
   if (!serviceData) {
     return <NotFound />;
   }

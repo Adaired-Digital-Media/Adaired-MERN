@@ -43,7 +43,7 @@ const WhatMakesAdaired = ({ whatMkeDeferent }: any) => {
                     ? `${whatMkeDeferent?.borderColor || "#ffffff"}1A`
                     : `${whatMkeDeferent?.borderColor2 || "#ffffff"}1A`,
                 }}
-                className={`mt-[2rem] flex flex-col justify-between gap-10 rounded-[20px] border p-[2rem] transition-all duration-700 lg:flex-row lg:gap-0 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} `}
+                className={`mt-[2rem] flex flex-col justify-between gap-10 rounded-[20px] border p-[1rem] lg:p-[2rem] transition-all duration-700 lg:flex-row lg:gap-0 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} `}
               >
                 <div className="order-2 my-auto w-[100%] lg:order-1 lg:w-[50%]">
                   <h3>{item?.name}</h3>
@@ -58,7 +58,7 @@ const WhatMakesAdaired = ({ whatMkeDeferent }: any) => {
                   </div>
                 </div>
                 <div
-                  className={`order-1 flex w-[100%] justify-center justify-items-center rounded-[20px] p-8 lg:order-2 lg:w-[40%]`}
+                  className={`order-1 flex w-[100%] justify-center justify-items-center rounded-[20px] p-6 lg:p-8 lg:order-2 lg:w-[40%]`}
                   style={{
                     backgroundColor: isSum
                       ? whatMkeDeferent?.cardImgBgColor
