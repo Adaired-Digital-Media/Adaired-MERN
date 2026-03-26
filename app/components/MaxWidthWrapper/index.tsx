@@ -40,7 +40,7 @@
 // };
 
 // export default MaxWidthWrapper;
-
+"use client"
 import { cn } from "@core/utils/class-names";
 import React, { useEffect, useState } from "react";
 
