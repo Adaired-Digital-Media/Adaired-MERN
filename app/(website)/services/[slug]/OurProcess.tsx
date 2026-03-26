@@ -168,7 +168,7 @@ const OurProcess = ({ ourProcess }: any) => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -40 }}
                   transition={{ duration: 0.25 }}
-                  className="rounded-[20px] border border-[#FB9100]/20 bg-white p-10"
+                  className="rounded-[20px] border border-[#FB9100]/20 bg-white p-6 lg:p-10"
                 >
                   <h3 className="mb-4 text-[18px] font-semibold uppercase text-[#FB9100]">
                     Step {activeTab + 1}: {ourProcess.services[activeTab].title}

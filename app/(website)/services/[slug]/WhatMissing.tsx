@@ -33,11 +33,8 @@ const WhatMissing = ({ whatMissing }: any) => {
                 <div
                   key={index}
                   className={`relative rounded-2xl border border-[#000000]/15 bg-[#FFFFFF] p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                  // style={{
-                  //     transitionDelay: `${index * 280}ms`, // 👈 stagger here
-                  // }}
                   style={{
-                    transitionDelay: isVisible ? '0ms' : `${index * 280}ms`,
+                      transitionDelay: `${index * 280}ms`, // 👈 stagger here
                   }}
                 >
                   {/* <div className="flex items-center justify-center mb-10 lg:justify-start lg:justify-items-start">
@@ -83,16 +80,13 @@ const WhatMissing = ({ whatMissing }: any) => {
               isDecVarticle={!whatMissing?.isInCenter}
             />
 
-            <div className="grid grid-cols-1 gap-6 p-[3rem] lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 p-[1rem] lg:p-[3rem] lg:grid-cols-4">
               {whatMissing?.list?.map((card: any, index: number) => (
                 <div
                   key={index}
-                  className={`relative rounded-2xl border border-[#000000]/15 bg-[#FFFFFF] p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                  // style={{
-                  //     transitionDelay: `${index * 280}ms`, // 👈 stagger here
-                  // }}
+                  className={`relative rounded-2xl border border-[#000000]/15 bg-[#FFFFFF] p-[1.5rem] lg:p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                   style={{
-                    transitionDelay: isVisible ? '0ms' : `${index * 280}ms`,
+                      transitionDelay: `${index * 280}ms`, // 👈 stagger here
                   }}
                 >
                   {/* <div className="flex items-center justify-center mb-10 lg:justify-start lg:justify-items-start">
@@ -116,7 +110,7 @@ const WhatMissing = ({ whatMissing }: any) => {
                   <h3 className="py-[1rem]">{card.title}</h3>
                   <div className="space-y-4">
                     {card.description.map((text: string, i: number) => (
-                      <p key={i} className="text-left leading-relaxed">
+                      <p key={i} className="text-center lg:text-left leading-relaxed">
                         {text}
                       </p>
                     ))}

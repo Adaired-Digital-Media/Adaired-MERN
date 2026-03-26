@@ -1,34 +1,36 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import MaxWidthWrapper from '@/app/components/MaxWidthWrapper';
-import Image from 'next/image';
-import banner_img_4 from '../../../../public/assets/bannerImg/Group 1000006024.svg';
-import banner_img_2 from '../../../../public/assets/bannerImg/Group 1000006023.svg';
-import banner_img_3 from '../../../../public/assets/bannerImg/Group 1000006022.svg';
-import banner_img_1 from '../../../../public/assets/bannerImg/Group 1000006025.svg';
-import GetQuoteModal from '@/app/components/popup/GetQuoteModal';
-import hero_banner from '../../../../public/assets/images/home/hero_banner-bg.png';
-import google_rate from '../../../../public/google_rate.svg';
-import google_review from '../../../../public/image 54.png';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
-import SaveAndCancel from '@/app/components/common/SaveAndCancel';
-import { useRouter } from 'next/navigation';
-import star from '../../../../public/assets/icons/star.png';
-import CldImage from '@/app/components/UI/CldImage';
-
+"use client";
+import React, { useEffect, useState } from "react";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import Image from "next/image";
+import banner_img_4 from "../../../../public/assets/bannerImg/Group 1000006024.svg";
+import banner_img_2 from "../../../../public/assets/bannerImg/Group 1000006023.svg";
+import banner_img_3 from "../../../../public/assets/bannerImg/Group 1000006022.svg";
+import banner_img_1 from "../../../../public/assets/bannerImg/Group 1000006025.svg";
+import GetQuoteModal from "@/app/components/popup/GetQuoteModal";
+import hero_banner from "../../../../public/assets/images/home/hero_banner-bg.png";
+import google_rate from "../../../../public/google_rate.svg";
+import google_review from "../../../../public/image 54.png";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
+import SaveAndCancel from "@/app/components/common/SaveAndCancel";
+import { useRouter } from "next/navigation";
+import star from "../../../../public/assets/icons/star.png";
+import CldImage from "@/app/components/UI/CldImage";
+import useResponsivePadding from "@/@core/hooks/useResponsivePadding";
 const Banner = ({ banner }: any) => {
   const router = useRouter();
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.3);
-  const images = ['img1', 'img2', 'img3', 'img4'] as const;
+  const images = ["img1", "img2", "img3", "img4"] as const;
   const [activeIndex, setActiveIndex] = useState(0);
-  const [pt, pb] = (banner?.customPadding || '6rem,6rem').split(',');
-
+  const [pt, pb] = (banner?.customPadding || "6rem,6rem").split(",");
+  const { paddingTop, paddingBottom } = useResponsivePadding(
+    banner?.customPadding,
+  );
   const [open, setOpen] = useState(false);
 
-  const [active, setActive] = useState<null | 'img3' | 'img2' | 'img1'>(null);
+  const [active, setActive] = useState<null | "img3" | "img2" | "img1">(null);
 
-  const safeTitle = banner?.heading ?? '';
-  const words = safeTitle.split(' ');
+  const safeTitle = banner?.heading ?? "";
+  const words = safeTitle.split(" ");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,8 +44,8 @@ const Banner = ({ banner }: any) => {
     images[activeIndex] === name;
 
   console.log(
-    banner?.customPadding?.split(',')[1],
-    "banner?.customPadding?.split(',')[0]"
+    banner?.customPadding?.split(",")[1],
+    "banner?.customPadding?.split(',')[0]",
   );
   return (
     <div
@@ -65,7 +67,7 @@ const Banner = ({ banner }: any) => {
         {banner?.isCenter ? (
           <div className="relative z-10 block justify-center pb-[6rem] pt-[9rem] lg:flex">
             <div
-              className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[60%] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}
+              className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[60%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
             >
               <div
                 className={`'grid lg:gap-[10rem]'} grid-cols-1 lg:grid-cols-2`}
@@ -110,10 +112,10 @@ const Banner = ({ banner }: any) => {
           </div>
         ) : (
           <div>
-            {banner?.code === '01' && (
+            {banner?.code === "01" && (
               <div className="relative z-10 block justify-between py-[6rem] lg:flex">
                 <div
-                  className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[45%] xl:w-[45%] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}
+                  className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[45%] xl:w-[45%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
                 >
                   <div
                     className={`'grid lg:gap-[10rem]'} grid-cols-1 lg:grid-cols-2`}
@@ -190,8 +192,8 @@ const Banner = ({ banner }: any) => {
                 <div
                   className={`relative my-auto w-[100%] pt-[6rem] transition-all delay-200 duration-1000 lg:w-[50%] lg:pt-0 ${
                     isVisible
-                      ? 'translate-x-0 opacity-100'
-                      : 'translate-x-16 opacity-0'
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-16 opacity-0"
                   }`}
                 >
                   <div className="my-auto h-full space-y-4">
@@ -203,11 +205,11 @@ const Banner = ({ banner }: any) => {
                           height={388}
                           alt=""
                           className={`aspect-[563/388] w-[clamp(18rem,35vw,35.5rem)] transition-opacity transition-transform duration-700 ease-in-out md:w-[clamp(18rem,55vw,55.5rem)] lg:w-[clamp(18rem,35vw,35.5rem)] ${
-                            active === 'img1'
-                              ? 'z-40 opacity-100'
+                            active === "img1"
+                              ? "z-40 opacity-100"
                               : active
-                                ? 'opacity-40'
-                                : 'opacity-100'
+                                ? "opacity-40"
+                                : "opacity-100"
                           }`}
                         />
 
@@ -217,9 +219,9 @@ const Banner = ({ banner }: any) => {
                           height={186}
                           alt=""
                           className={`absolute left-[-10%] top-[15%] aspect-[220/143] w-[clamp(8rem,13vw,13.75rem)] transition-opacity transition-transform duration-700 ease-in-out md:w-[clamp(8rem,23vw,23.75rem)] lg:w-[clamp(8rem,13vw,13.75rem)] ${
-                            isActive('img4')
-                              ? 'left-1/2 top-1/2 z-40 translate-x-[105%] translate-y-[40%] scale-105 opacity-100'
-                              : 'z-10 translate-x-0 translate-y-0 scale-100'
+                            isActive("img4")
+                              ? "left-1/2 top-1/2 z-40 translate-x-[105%] translate-y-[40%] scale-105 opacity-100"
+                              : "z-10 translate-x-0 translate-y-0 scale-100"
                           }`}
                         />
 
@@ -229,9 +231,9 @@ const Banner = ({ banner }: any) => {
                           height={186}
                           alt=""
                           className={`absolute bottom-[-15%] right-[10%] aspect-[220/143] w-[clamp(8rem,13vw,13.75rem)] transition-opacity transition-transform duration-700 ease-in-out md:bottom-[-10%] md:right-[10%] md:w-[clamp(8rem,23vw,23.75rem)] lg:bottom-[-14%] lg:right-[10%] lg:w-[clamp(8rem,13vw,13.75rem)] ${
-                            isActive('img3')
-                              ? 'left-1/2 top-1/2 z-40 -translate-x-[50%] -translate-y-[50%] scale-105 opacity-100 md:-translate-y-[65%] lg:-translate-y-[50%]'
-                              : 'z-10'
+                            isActive("img3")
+                              ? "left-1/2 top-1/2 z-40 -translate-x-[50%] -translate-y-[50%] scale-105 opacity-100 md:-translate-y-[65%] lg:-translate-y-[50%]"
+                              : "z-10"
                           }`}
                         />
                         <Image
@@ -240,9 +242,9 @@ const Banner = ({ banner }: any) => {
                           height={186}
                           alt=""
                           className={`absolute right-[-10%] top-[-15%] aspect-[220/143] w-[clamp(8rem,13vw,13.75rem)] transition-opacity transition-transform duration-700 ease-in-out md:top-[-15%] md:w-[clamp(8rem,23vw,23.75rem)] lg:top-[-12%] lg:w-[clamp(8rem,13vw,13.75rem)] ${
-                            isActive('img2')
-                              ? 'left-1/2 top-1/2 z-40 -translate-x-[50%] translate-y-[115%] scale-105'
-                              : 'z-10 translate-x-0 translate-y-0 scale-100'
+                            isActive("img2")
+                              ? "left-1/2 top-1/2 z-40 -translate-x-[50%] translate-y-[115%] scale-105"
+                              : "z-10 translate-x-0 translate-y-0 scale-100"
                           }`}
                         />
                       </div>
@@ -251,19 +253,24 @@ const Banner = ({ banner }: any) => {
                 </div>
               </div>
             )}
-            {banner?.code === '02' && (
+            {banner?.code === "02" && (
               <div
                 className={`relative z-10 block justify-between gap-[3rem] lg:flex`}
+                // style={{
+                //   gap: banner?.customGap || "4rem",
+                //   paddingTop: banner?.customPadding?.split(",")[0] || "6rem",
+                //   paddingBottom: banner?.customPadding?.split(",")[1] || "6rem",
+                // }}
                 style={{
-                  gap: banner?.customGap || '4rem',
-                  paddingTop: banner?.customPadding?.split(',')[0] || '6rem',
-                  paddingBottom: banner?.customPadding?.split(',')[1] || '6rem',
+                  gap: banner?.customGap || "4rem",
+                  paddingTop,
+                  paddingBottom,
                 }}
               >
                 <div
-                  className={`my-auto w-[100%] space-y-5 transition-all duration-1000 lg:w-[50%] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}
+                  className={`my-auto w-[100%] space-y-5 transition-all duration-1000 lg:w-[50%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
                   style={{
-                    paddingBottom: banner?.customPadding?.split(',')[0],
+                    paddingBottom: banner?.customPadding?.split(",")[0],
                   }}
                 >
                   <div
@@ -289,11 +296,11 @@ const Banner = ({ banner }: any) => {
                           <h1 className="text-center capitalize lg:text-left">
                             {banner?.headingParts
                               ?.flatMap((part: any) =>
-                                part.text.split(' ').map((word: string) => ({
+                                part.text.split(" ").map((word: string) => ({
                                   word,
                                   color: part.color,
                                   weight: part.weight,
-                                }))
+                                })),
                               )
                               .map((item: any, i: number) => (
                                 <span
@@ -304,7 +311,7 @@ const Banner = ({ banner }: any) => {
                                   }}
                                   className="text-[clamp(1.8rem,3vw,3.75rem)] leading-[clamp(2.5rem,3.65vw,4.65rem)]"
                                 >
-                                  {item.word}{' '}
+                                  {item.word}{" "}
                                   {banner?.breakIndex === i + 1 && (
                                     <br className="hidden md:block" />
                                   )}
@@ -318,12 +325,12 @@ const Banner = ({ banner }: any) => {
                                 {banner?.headingParts
                                   ?.flatMap((part: any) =>
                                     part.text
-                                      .split(' ')
+                                      .split(" ")
                                       .map((word: string) => ({
                                         word,
                                         color: part.color,
                                         weight: part.weight,
-                                      }))
+                                      })),
                                   )
                                   .map((item: any, i: number) => (
                                     <span
@@ -334,7 +341,7 @@ const Banner = ({ banner }: any) => {
                                       }}
                                       className="text-[clamp(1.8rem,3vw,3.75rem)] leading-[clamp(2.5rem,3.65vw,4.65rem)]"
                                     >
-                                      {item.word}{' '}
+                                      {item.word}{" "}
                                       {banner?.breakIndex === i + 1 && (
                                         <br className="hidden md:block" />
                                       )}
@@ -342,7 +349,7 @@ const Banner = ({ banner }: any) => {
                                   ))}
                               </h1>
                               <h1
-                                className={`text-center capitalize text-[${banner?.heading2Color || '#000000'}] lg:text-left`}
+                                className={`text-center capitalize text-[${banner?.heading2Color || "#000000"}] lg:text-left`}
                               >
                                 {banner?.heading2}
                               </h1>
@@ -391,32 +398,32 @@ const Banner = ({ banner }: any) => {
                   </div>
                 </div>
                 <div
-                  className={`ml-auto w-full lg:w-[${`${100 - banner?.width}%` || '50%'}] pt-[4rem] transition-all delay-200 duration-1000 lg:h-[var(--img-h)] ${
+                  className={`ml-auto w-full lg:w-[${`${100 - banner?.width}%` || "50%"}] pt-[2rem] lg:pt-[4rem] transition-all delay-200 duration-1000 lg:h-[var(--img-h)] ${
                     isVisible
-                      ? 'translate-x-0 opacity-100'
-                      : 'translate-x-16 opacity-0'
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-16 opacity-0"
                   } lg:pt-0`}
                   style={
                     {
-                      '--img-w': banner?.imgWidth,
-                      '--img-h': banner?.imgHight,
+                      "--img-w": banner?.imgWidth,
+                      "--img-h": banner?.imgHight,
                     } as React.CSSProperties
                   }
                 >
-                  {typeof banner?.img === 'string' ? (
+                  {typeof banner?.img === "string" ? (
                     <CldImage
                       src={banner?.img}
                       alt={banner?.name}
-                      width={banner?.imgWidth || '800'}
-                      height={banner?.imgHight || '600'}
+                      width={banner?.imgWidth || "800"}
+                      height={banner?.imgHight || "600"}
                       className="h-full w-full object-contain"
                     />
                   ) : (
                     <Image
                       src={banner?.img}
                       alt={banner?.name}
-                      width={banner?.imgWidth || '800'}
-                      height={banner?.imgHight || '600'}
+                      width={banner?.imgWidth || "800"}
+                      height={banner?.imgHight || "600"}
                       className="h-full w-full object-contain"
                     />
                   )}

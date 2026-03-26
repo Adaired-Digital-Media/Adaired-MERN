@@ -543,8 +543,8 @@ export const ServiceSectionData = {
         {
           icon: SEO_3,
           image: E_Comerce_SEO,
-          label: "eCommerce SEO",
-          title: "eCommerce SEO",
+          label: "E-Commerce SEO",
+          title: "E-Commerce SEO",
           description: `Our eCommerce SEO solutions focus on scaling organic growth for online stores of all sizes. We combine product-level keyword research, structured data, site architecture optimization, and performance SEO to improve rankings, attract purchase-ready shoppers, and maximize lifetime value.`,
           link: "/services/ecommerce-seo-agency",
         },
@@ -794,8 +794,8 @@ export const ServiceSectionData = {
         {
           icon: amazon,
           image: web_3,
-          label: "eCommerce Development",
-          title: "eCommerce Development",
+          label: "E-Commerce Development",
+          title: "E-Commerce Development",
           description: `Transform your online business with our eCommerce Web Development services. We create responsive, secure, and user-friendly websites tailored to your brand, optimized for performance and conversions. From product catalogs to payment gateways, our solutions drive sales, enhance customer experience, and help your business thrive in the digital marketplace.`,
           link: "/services/ecommerce-development-company",
         },
@@ -888,8 +888,8 @@ export const ServiceSectionData = {
         {
           icon: Content_Marketing_Icon_4,
           image: Content_Marketing_4,
-          label: "eCommerce Content",
-          title: "eCommerce Content",
+          label: "E-Commerce Content",
+          title: "E-Commerce Content",
           description: `We develop compelling eCommerce content that drives visibility and conversions. From product descriptions and category pages to buying guides, our content is optimized for search, user intent, and sales, helping shoppers make confident purchasing decisions.`,
           link: "/services/expert-content-solutions",
         },

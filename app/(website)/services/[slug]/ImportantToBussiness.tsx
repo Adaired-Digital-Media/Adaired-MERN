@@ -64,7 +64,7 @@ const ImportantToBussiness = ({ importantToBussiness }: any) => {
                         className={`ml-auto text-[6rem]`}
                         style={{ color: "#F1F1F1" }}
                       > */}
-                      <h1 className="ml-auto text-[6rem] text-[#F1F1F1]">
+                      <h1 className="ml-auto text-[4rem] lg:text-[6rem] text-[#F1F1F1]">
                         0{idx + 1}
                       </h1>
                     </div>

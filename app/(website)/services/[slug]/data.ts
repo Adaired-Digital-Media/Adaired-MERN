@@ -540,7 +540,7 @@ import shopifyDevImpIcon_4 from '../../../../public/assets/images/services/shopi
 import shopifyDevImpIcon_5 from '../../../../public/assets/images/services/shopifyDevelopment/shopifyDevImpIcon_5.png';
 import shopifyDevImpIcon_6 from '../../../../public/assets/images/services/shopifyDevelopment/shopifyDevImpIcon_6.png';
 
-// eCommerce Development Service Page Images
+// E-Commerce Development Service Page Images
 import ECommerceKeyStatsImg from '../../../../public/assets/images/services/eCommerceDevelopment/KeyStatsIcon.svg';
 // import ecommerceDEV_whatareserviceImg from '../../../../public/assets/images/services/eCommerceDevelopment/ecommerceDEV_whatareserviceImg.png';
 
@@ -3424,7 +3424,7 @@ export const SERVICES_DATA = {
 
         {
           icon: WhatIncluded3,
-          title: 'eCommerce Development',
+          title: 'E-Commerce Development',
           description: [
             `Our 360 eCommerce solutions are all-inclusive and applicable to businesses of any size and sector. Our website development experts create eCommerce online websites that are intuitive, user-friendly, and designed to align with your brand name and profitability.`,
             `We develop custom experiences using recent technologies and the best practices in the industry and enhance customer engagement, conversion, and business expansion.`,
@@ -16889,7 +16889,7 @@ export const SERVICES_DATA = {
       img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773382974/adaired/services/eCommerceDevelopment/Group_1000007437_jdfbav.png',
       headingParts: [
         {
-          text: 'What is eCommerce Development?',
+          text: 'What is E-Commerce Development?',
           color: '#FFFFFF',
           weight: '700',
         },
@@ -16906,7 +16906,7 @@ export const SERVICES_DATA = {
       textColor: '#FFFFFF',
       data: [
         {
-          desctioption: `eCommerce Development refers to the process of designing, building, and maintaining online platforms that allow businesses to sell products or services over the internet. It involves creating a fully functional digital storefront where customers can browse products, add items to a cart, make secure payments, and manage orders seamlessly.`,
+          desctioption: `E-Commerce Development refers to the process of designing, building, and maintaining online platforms that allow businesses to sell products or services over the internet. It involves creating a fully functional digital storefront where customers can browse products, add items to a cart, make secure payments, and manage orders seamlessly.`,
         },
         {
           desctioption: `This eCommerce web development process includes several components, such as user-friendly website design, product catalog management, secure payment gateway integration, shopping cart functionality, inventory management, order processing systems, and scalable eCommerce software development solutions. A well-developed eCommerce platform also focuses on performance, mobile responsiveness, security, and scalability to ensure a smooth shopping experience for users across devices.`,
@@ -17005,7 +17005,7 @@ export const SERVICES_DATA = {
       isLaunchCard: false,
       headingParts: [
         {
-          text: 'Explore Our Comprehensive eCommerce Development Services',
+          text: 'Explore Our Comprehensive E-Commerce Development Services',
           color: '#000000',
           weight: '700',
         },
@@ -17120,7 +17120,7 @@ export const SERVICES_DATA = {
       cardBg: '',
       headingParts: [
         {
-          text: 'Top Benefits of Professional eCommerce Development',
+          text: 'Top Benefits of Professional E-Commerce Development',
           color: '#000000',
           weight: '700',
         },
@@ -17310,7 +17310,7 @@ export const SERVICES_DATA = {
       borderColor2: '#F28F17',
       headingParts: [
         {
-          text: 'Why Choose Adaired Digital as Your eCommerce Development Company',
+          text: 'Why Choose Adaired Digital as Your E-Commerce Development Company',
           color: '#000000',
           weight: '700',
         },

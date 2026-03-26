@@ -242,7 +242,7 @@ const WebFooter = () => {
                   href={process.env.NEXT_PUBLIC_FACEBOOK_URL || "/"}
                   className="rounded-full bg-white p-2"
                 >
-                  {/* <Icons.Facebook className="text-[#1B5A96]" /> */}
+                  <Icons.Facebook className="text-[#1B5A96]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
@@ -251,7 +251,7 @@ const WebFooter = () => {
                   href={process.env.NEXT_PUBLIC_TWITTER_URL || "/"}
                   className="rounded-full bg-white p-2"
                 >
-                  {/* <Icons.Twitter className="text-[#1B5A96]" /> */}
+                  <Icons.Twitter className="text-[#1B5A96]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
@@ -260,7 +260,7 @@ const WebFooter = () => {
                   href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "/"}
                   className="rounded-full bg-white p-2"
                 >
-                  {/* <Icons.Instagram className="text-[#1B5A96]" /> */}
+                  <Icons.Instagram className="text-[#1B5A96]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
@@ -269,7 +269,7 @@ const WebFooter = () => {
                   href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "/"}
                   className="rounded-full bg-white p-2"
                 >
-                  {/* <Icons.LinkedIn className="text-[#1B5A96]" /> */}
+                  <Icons.LinkedIn className="text-[#1B5A96]" />
                   <span className="sr-only">
                     Visit Adaired Digital &apos; s Facebook page
                   </span>
