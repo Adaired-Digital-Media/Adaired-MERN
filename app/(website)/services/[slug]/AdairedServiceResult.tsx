@@ -38,7 +38,11 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-[6rem] pt-[3rem] lg:flex-row">
+            {/* <div className="flex flex-col justify-between gap-[6rem] pt-[3rem] lg:flex-row"> */}
+            <div
+              className={`flex flex-col gap-[3rem] lg:gap-[6rem] ${aiseoResult?.isRowReverse ? 'lg:flex-row-reverse py-[4rem]' : 'lg:flex-row py-[4rem]'
+                }`}
+            >
               <div
                 ref={ref}
                 className={`relative w-full rounded-[20px] transition-all duration-1000 lg:w-[42%] ${isVisible
