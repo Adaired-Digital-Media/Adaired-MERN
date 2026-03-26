@@ -331,6 +331,10 @@ import whiteLinkBuildingImpIcon_6 from '../../../../public/assets/images/service
 import saasSeoBuildLinkBg from '../../../../public/assets/saasSeo/saasSeoBuildLinkBg.png';
 
 import saasSeoMissing_1 from '../../../../public/assets/saasSeo/saasSeoMissing_1.png';
+import saasSeoWhhatMissing_1 from '../../../../public/assets/saasSeo/saasSeoWhhatMissing_1.png';
+import saasSeoWhhatMissing_2 from '../../../../public/assets/saasSeo/saasSeoWhhatMissing_2.png';
+import saasSeoWhhatMissing_3 from '../../../../public/assets/saasSeo/saasSeoWhhatMissing_3.png';
+import saasSeoWhhatMissing_4 from '../../../../public/assets/saasSeo/saasSeoWhhatMissing_4.png';
 
 import saasSeoImpIcon_1 from '../../../../public/assets/saasSeo/saasSeoImpIcon_1.png';
 import saasSeoImpIcon_2 from '../../../../public/assets/saasSeo/saasSeoImpIcon_2.png';
@@ -9380,28 +9384,28 @@ export const SERVICES_DATA = {
       description: [`The data is clear: SEO is not optional for SaaS growth.`],
       list: [
         {
-          icon: saasSeoMissing_1,
+          icon: saasSeoWhhatMissing_1,
           title: '',
           description: [
             `Research shows that 66% of B2B SaaS buyers rely on search engines to evaluate and compare solutions before making a purchase decision. (Statista)`,
           ],
         },
         {
-          icon: saasSeoMissing_1,
+          icon: saasSeoWhhatMissing_2,
           title: '',
           description: [
             `SEO not only improves SaaS rankings in SERPs but also increases visibility in emerging AI-powered search features and overviews, expanding brand exposure. (Forbes)`,
           ],
         },
         {
-          icon: saasSeoMissing_1,
+          icon: saasSeoWhhatMissing_3,
           title: '',
           description: [
             `Data reveals that 70% of SaaS companies believe SEO generates stronger long-term sales results compared to PPC advertising. (Databox)`,
           ],
         },
         {
-          icon: saasSeoMissing_1,
+          icon: saasSeoWhhatMissing_4,
           title: '',
           description: [
             `Organic search contributes 14.3% of total leads for SaaS businesses, making SEO one of the most consistent acquisition channels. (Sixth City Marketing)`,
@@ -11976,11 +11980,11 @@ export const SERVICES_DATA = {
           bgImg: LaunchMobileAppCardImage,
           imgWidth: '424',
           imgHeight: '413',
+          clampWidth: 'w-[clamp(12rem,25vw,26rem)]',
           heading: 'Launch Your Next',
           heading1: [`Mobile App with`, `Experts`],
           description: [
-            `Custom Android and iOS apps built to`,
-            `scale with your business.`,
+            `Custom Android and iOS apps built to scale with your business.`,
           ],
           buttonName: 'Ask a Developer',
         },
@@ -20357,15 +20361,17 @@ export const SERVICES_DATA = {
       ],
       card: [
         {
+          code: '01',
           img: ImpToBusinessCradImg,
           bgImg: LaunchAppCardImg,
+          breakIndex: 3,
           imgWidth: '336',
           imgHeight: '434',
+          clampWidth: 'w-[clamp(9rem,20vw,21rem)]',
           heading: 'Don’t Let Your Great',
           heading1: [`App Idea Stay `, `on Paper`],
           description: [
             `Build, launch, and scale with expert Android developers.`,
-            ``,
           ],
           buttonName: 'Build with Us',
         },

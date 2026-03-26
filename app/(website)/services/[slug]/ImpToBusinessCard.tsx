@@ -55,7 +55,7 @@ const ImpToBusinessCard = ({ handleClick, idx, isVisible, cardData }: any) => {
           ))}
         </div>
 
-        <div className="flex justify-center lg:justify-start pt-[2rem]">
+        <div className="flex justify-center lg:justify-start lg:pt-[2rem]">
           <SaveAndCancel
             name={cardData?.buttonName}
             isIcon={true}

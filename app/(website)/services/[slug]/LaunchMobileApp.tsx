@@ -26,12 +26,13 @@ const LaunchMobileApp = ({ handleClick, idx, isVisible, cardData }: any) => {
                 width={cardData?.imgWidth}
                 height={cardData?.imgHeight}
                 priority
-                className="absolute w-[clamp(12rem,25vw,26rem)] bottom-0 right-0 pointer-events-none rounded-2xl"
+                className={`absolute ${cardData?.clampWidth} ${cardData?.code === '01' ? 'lg:mr-[1rem]' : ''} bottom-0 right-0 pointer-events-none rounded-2xl`}
             />
             <div
                 className='absolute w-full p-[2rem] md:p-[4rem] lg:p-[3rem] h-full'
             >
-                <h1 className="text-center text-white lg:text-left font-light">
+                <h1 
+                className="text-center text-white lg:text-left font-light">
                     {cardData?.heading}
                 </h1>
 
@@ -46,12 +47,12 @@ const LaunchMobileApp = ({ handleClick, idx, isVisible, cardData }: any) => {
                 {cardData?.description?.map((desc: any, i: number) => (
                     <p
                         key={i}
-                        className="pt-[1rem] lg:pt-[2rem] text-white font-semibold text-center lg:text-left">
+                        className="py-[2rem] text-white font-semibold text-center lg:text-left">
                         {desc}
                     </p>
                 ))}
 
-                <div className="absolute pt-[2rem] sm:px-[7rem] sm:p-[3rem] md:p-[4rem] lg:px-0">
+                <div className="absolute lg:pt-0 pt-[2rem] sm:px-[7rem] sm:p-[3rem] md:p-[4rem] lg:px-0">
                     <SaveAndCancel
                         name={cardData?.buttonName}
                         isIcon={true}
