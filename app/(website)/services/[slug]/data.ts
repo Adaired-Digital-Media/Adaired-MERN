@@ -13761,7 +13761,7 @@ export const SERVICES_DATA = {
     whatareservice: {
       isVisible: true,
       isVariant: '04',
-      breakIndex: 6,
+      // breakIndex: 6,
       img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774251965/adaired/services/gmb%2Bwebsite/gmbWebsiteWhatAreService_irxz8q.png',
       headingParts: [
         {
