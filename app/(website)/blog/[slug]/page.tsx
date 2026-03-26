@@ -14,7 +14,7 @@ import Image from "next/image";
 import { transformDate } from "@/@core/hooks/transformDate";
 import { Metadata } from "next";
 
-/* ------------------ HELPERS ------------------ */
+/* ------------------ HELPERSww ------------------ */
 
 function splitHtmlAtFirstH2(html: string) {
   if (!html) return { introHtml: "", bodyHtml: "" };
