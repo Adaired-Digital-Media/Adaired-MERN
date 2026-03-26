@@ -24,11 +24,10 @@ const LeadingTools = ({ leadingTools }: any) => {
   return (
     <div
       ref={ref}
-      className={`overflow-hidden bg-cover ${leadingTools?.bgColor} ${
-        leadingTools?.isGapTop
+      className={`overflow-hidden bg-cover ${leadingTools?.bgColor} ${leadingTools?.isGapTop
           ? "pb-[3rem] lg:pb-[4rem]"
           : "pb-[3rem] pt-[2rem] lg:pb-[4rem] lg:pt-[2.5rem]"
-      } `}
+        } `}
       style={{
         backgroundImage: `url(${leadingTools?.bgImage.src})`,
       }}
@@ -93,9 +92,8 @@ const LeadingTools = ({ leadingTools }: any) => {
                 {row1Duplicated.map((client, idx) => (
                   <div
                     key={`r1-${idx}`}
-                    className={`group relative flex-shrink-0 transition-all duration-700 ${
-                      isVisible ? "scale-100 opacity-100" : "scale-75 opacity-0"
-                    }`}
+                    className={`group relative flex-shrink-0 transition-all duration-700 ${isVisible ? "scale-100 opacity-100" : "scale-75 opacity-0"
+                      }`}
                     style={{ transitionDelay: `${idx * 60}ms` }}
                   >
                     <Image
@@ -115,9 +113,8 @@ const LeadingTools = ({ leadingTools }: any) => {
                 {row2Duplicated.map((client, idx) => (
                   <div
                     key={`r2-${idx}`}
-                    className={`group relative flex-shrink-0 transition-all duration-700 ${
-                      isVisible ? "scale-100 opacity-100" : "scale-75 opacity-0"
-                    }`}
+                    className={`group relative flex-shrink-0 transition-all duration-700 ${isVisible ? "scale-100 opacity-100" : "scale-75 opacity-0"
+                      }`}
                     style={{ transitionDelay: `${idx * 60}ms` }}
                   >
                     <Image
@@ -175,6 +172,7 @@ const LeadingTools = ({ leadingTools }: any) => {
               ))}
             </div>
           </div>
+          <p className="text-center pt-[2rem]">{leadingTools?.desc}</p>
         </div>
       )}
     </div>

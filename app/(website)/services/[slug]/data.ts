@@ -18675,35 +18675,35 @@ export const SERVICES_DATA = {
       ],
       list: [
         {
-          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749342/adaired/services/ios_app_development/iosAppDevWhatMkDiffImg_1_tpiyob.png',
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774510282/adaired/services/ios_app_development/Group_1000007101_sved8w.png',
           name: 'Experienced Development Team',
           description: [
             `Our developers bring years of experience building iOS applications across multiple industries. This experience allows us to deliver reliable solutions that meet both technical and business requirements.`,
           ],
         },
         {
-          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749341/adaired/services/ios_app_development/iosAppDevWhatMkDiffImg_2_jg8qis.png',
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774510282/adaired/services/ios_app_development/Group_1000007309_tgteaa.png',
           name: 'Client-Focused Approach',
           description: [
             `We prioritize collaboration and transparency throughout the development process. By maintaining open communication, we ensure that every project aligns with the client’s vision and expectations.`,
           ],
         },
         {
-          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749341/adaired/services/ios_app_development/iosAppDevWhatMkDiffImg_3_vvklaq.png',
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774510282/adaired/services/ios_app_development/Group_1000007355_piwvr3.png',
           name: 'Scalable and Secure Applications',
           description: [
             `Security and scalability are built into every solution we develop. Our applications are designed to handle increasing user traffic while protecting sensitive data through advanced security practices.`,
           ],
         },
         {
-          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773750392/adaired/services/ios_app_development/iosAppDevWhatMkDiffImg_4.png',
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774510282/adaired/services/ios_app_development/Group_1000007109_epvozp.png',
           name: 'Agile Development Methodology',
           description: [
             `Our agile approach allows us to adapt quickly to changing requirements while maintaining efficient development cycles. This flexibility ensures faster delivery without compromising quality.`,
           ],
         },
         {
-          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1773749341/adaired/services/ios_app_development/iosAppDevWhatMkDiffImg_5_lecxdb.png',
+          img: 'https://res.cloudinary.com/dsksxpsdh/image/upload/v1774510282/adaired/services/ios_app_development/Group_1000007358_o9b906.png',
           name: 'Long-Term Partnership',
           description: [
             `We view every project as the beginning of a long-term partnership. Our team provides continuous support and strategic guidance to help businesses grow and evolve their digital products.`,
@@ -18761,6 +18761,7 @@ export const SERVICES_DATA = {
           desc: 'AWS Cloud',
         },
       ],
+      desc: `These technologies allow us to build applications that are robust, future-ready, and capable of supporting complex business requirements.`,
     },
 
     industriesWeServe: {
@@ -18831,7 +18832,7 @@ export const SERVICES_DATA = {
           weight: '700',
         },
       ],
-      customPadding: '4rem, 0rem',
+      customPadding: '3rem, 3rem',
       customPaddingRight: 4,
       customGap: '8rem',
       description: ``,
