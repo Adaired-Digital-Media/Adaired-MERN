@@ -219,18 +219,18 @@ const Service = () => {
                   ref={(el) => {
                     sectionRefs.current[idx] = el;
                   }}
-                  className="block gap-[2rem] rounded-xl border-[1px] border-[#00000033]/20 bg-white p-8"
+                  className="block gap-[2rem] rounded-xl border-[1px] border-[#00000033]/20 bg-white p-4 lg:p-8"
                 >
                   <div className="gap-2 lg:flex">
                     {/* LEFT CONTENT */}
                     <div className="relative w-[100%] lg:w-[50%] xl:w-[55%]">
                       <div className="overflow-hidden rounded-xl">
-                        <div className="animate-slideUpFade h-[18rem] overflow-hidden rounded-2xl">
+                        <div className="animate-slideUpFade w-full min-h-[12rem] lg:h-[18rem] overflow-hidden rounded-2xl">
                           <Image
                             src={image ?? service.img}
                             fill
                             alt={service.title}
-                            className="cursor-pointer rounded-[20px] object-cover"
+                            className="cursor-pointer rounded-[20px] object-fill lg:object-cover"
                             priority
                             onClick={() => router.push(link ?? service.link)}
                           />
@@ -263,7 +263,7 @@ const Service = () => {
                                 unoptimized
                                 className="ani my-auto h-[25px] w-[25px] md:h-[30px] md:w-[30px]"
                               />
-                              <p className="absolute bottom-5 left-16 right-4 text-left font-poppins !font-bold lg:bottom-4 lg:left-4">
+                              <p className="lg:absolute bottom-5 left-16 right-4 text-left font-poppins !font-bold lg:bottom-4 lg:left-4">
                                 {item?.label}
                               </p>
                             </div>

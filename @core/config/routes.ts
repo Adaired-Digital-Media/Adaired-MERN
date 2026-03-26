@@ -150,7 +150,7 @@ export const routes: {
               href: "/services/saas-seo-agency",
             },
             {
-              name: "ECommerce SEO",
+              name: "E-Commerce SEO",
               href: "/services/ecommerce-seo-agency",
             },
           ],
@@ -276,7 +276,7 @@ export const routes: {
               href: "/services/shopify-development-company",
             },
             {
-              name: "ECommerce Development",
+              name: "E-Commerce Development",
               href: "/services/ecommerce-development-company",
             },
             {
@@ -326,7 +326,7 @@ export const routes: {
               href: "#",
             },
             {
-              name: "ECommerce Content",
+              name: "E-Commerce Content",
               href: "#",
             },
           ],

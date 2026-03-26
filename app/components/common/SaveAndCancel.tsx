@@ -44,23 +44,23 @@ const SaveAndCancel = ({
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         onClick={handleClick}
-        className={`px-[2rem] ${isBold && "font-semibold"} ${isBorder ? 'border-[1px] border-black' : 'border-[1px] border-transparent'} ${isHover && 'border-[1px] border-transparent'} flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[60px] py-[0.75rem] font-montserrat text-[18px] font-medium transition-all duration-300 ease-out active:scale-95  ${
+        className={`px-[2rem] ${isBold && "font-semibold"} ${isBorder ? "border-[1px] border-black" : "border-[1px] border-transparent"} ${isHover && "border-[1px] border-transparent"} flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[60px] py-[0.75rem] font-montserrat text-[15px] lg:text-[18px] font-medium transition-all duration-300 ease-out active:scale-95  ${
           isBgWhite
             ? isHover
               ? isHoverBgBlue
-                ? 'border border-[#1A5A96] bg-[#1A5A96] text-white'
-                : 'border border-[#FB9100] bg-[#FB9100] text-white'
-              : 'border border-[#FFFFFF] bg-white text-[#111111]'
+                ? "border border-[#1A5A96] bg-[#1A5A96] text-white"
+                : "border border-[#FB9100] bg-[#FB9100] text-white"
+              : "border border-[#FFFFFF] bg-white text-[#111111]"
             : isHover
-              ? 'bg-[#D17900] text-white'
-              : 'bg-[#FB9100] text-white'
+              ? "bg-[#D17900] text-white"
+              : "bg-[#FB9100] text-white"
         } `}
       >
         {name}
         {isIcon && (
           <IoIosArrowRoundForward
             size={25}
-            className={`${isHover ? 'rotate-[360deg] transition-all duration-300 ease-out active:scale-95' : 'rotate-[310deg]'}`}
+            className={`${isHover ? "rotate-[360deg] transition-all duration-300 ease-out active:scale-95" : "rotate-[310deg]"}`}
           />
         )}
       </button>
@@ -193,7 +193,7 @@ const SaveAndCancel = ({
       {is2ndButton && (
         <button
           onClick={handleClick2}
-          className={`${widthClass} group flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[60px] py-[0.75rem] font-montserrat text-[18px] font-medium transition-all duration-300 ease-out active:scale-95 ${buttonWidth} ${
+          className={`${widthClass} group flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-[60px] py-[0.75rem] font-montserrat  text-[14px] lg:text-[18px] font-medium transition-all duration-300 ease-out active:scale-95 ${buttonWidth} ${
             is2BgWhite
               ? "border border-[#111111] bg-white text-[#111111] hover:bg-[#1A5A96] hover:text-white"
               : "bg-[#FB9100] text-white hover:bg-[#1A5A96]"
