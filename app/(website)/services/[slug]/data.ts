@@ -3625,7 +3625,7 @@ export const SERVICES_DATA = {
       description: [
         `We are a creative, technology-driven, user-centered design solution that enables brands to grow through scalable digital solutions.`,
       ],
-      bgGradient: "bg-gradient-to-b from-[#FFF8F0] via-[#FFF9F2] to-[#FFFFFF]",
+      bgGradient: "linear-gradient(to bottom, #FFF8F0, #FFFCF9)",
 
       services: [
         {
