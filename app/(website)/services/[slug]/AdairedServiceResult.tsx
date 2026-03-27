@@ -1,11 +1,11 @@
-'use client';
-import Heading from '@/app/components/common/Heading';
-import MaxWidthWrapper from '@/app/components/MaxWidthWrapper';
-import React, { useState } from 'react';
-import Image from 'next/image';
-import rocket from '../../../../public/assets/icons/rocket.svg';
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
+"use client";
+import Heading from "@/app/components/common/Heading";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import React, { useState } from "react";
+import Image from "next/image";
+import rocket from "../../../../public/assets/icons/rocket.svg";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
 
 const AdairedServiceResult = ({ aiseoResult }: any) => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
@@ -13,18 +13,21 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
 
   return (
     <div>
-      {aiseoResult?.isVariant === '01' && (
+      {aiseoResult?.isVariant === "01" && (
         <div
           className={`py-[3rem] lg:py-[4rem]`}
-          style={{ backgroundColor: aiseoResult.bgColor || '#FFFFFF' }}
+          style={{
+            backgroundColor: aiseoResult.bgColor,
+            background: aiseoResult.bgColor,
+          }}
         >
           <MaxWidthWrapper>
             <div
-              className={`transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'} `}
+              className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"} `}
             >
               <div className="block gap-[6rem] lg:flex">
                 <div
-                  className={`${aiseoResult?.description?.length > 0 ? 'w-[100%]' : 'flex w-[100%] items-center justify-center'}`}
+                  className={`${aiseoResult?.description?.length > 0 ? "w-[100%]" : "flex w-[100%] items-center justify-center"}`}
                 >
                   <Heading
                     breakIndex={aiseoResult?.breakIndex}
@@ -40,17 +43,21 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
 
             {/* <div className="flex flex-col justify-between gap-[6rem] pt-[3rem] lg:flex-row"> */}
             <div
-              className={`flex flex-col gap-[3rem] lg:gap-[6rem] ${aiseoResult?.isRowReverse ? 'lg:flex-row-reverse py-[4rem]' : 'lg:flex-row py-[4rem]'
-                }`}
+              className={`flex flex-col gap-[3rem] lg:gap-[6rem] ${
+                aiseoResult?.isRowReverse
+                  ? "lg:flex-row-reverse py-[4rem]"
+                  : "lg:flex-row py-[4rem]"
+              }`}
             >
               <div
                 ref={ref}
-                className={`relative w-full rounded-[20px] transition-all duration-1000 lg:w-[42%] ${isVisible
-                  ? 'translate-x-0 opacity-100'
-                  : '-translate-x-16 opacity-0'
-                  }`}
+                className={`relative w-full rounded-[20px] transition-all duration-1000 lg:w-[42%] ${
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-16 opacity-0"
+                }`}
                 style={{
-                  height: aiseoResult?.imgHight || '480px',
+                  height: aiseoResult?.imgHight || "480px",
                 }}
               >
                 {/* Main image */}
@@ -80,8 +87,8 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
                 {aiseoResult?.list?.map((item: any, index: number) => {
                   const isActive = index === activeIndex;
                   const iconColor = isActive
-                    ? aiseoResult.titleColor || '#000000'
-                    : '#000000';
+                    ? aiseoResult.titleColor || "#000000"
+                    : "#000000";
                   const Icon = item.icon;
 
                   return (
@@ -89,13 +96,14 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
                       key={index}
                       onClick={() => setActiveIndex(isActive ? null : index)}
                       onMouseEnter={() => setActiveIndex(index)}
-                      className={`cursor-pointer rounded-[20px] border p-[1.5rem] transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive
-                        ? 'border-[#FB9100]/20 bg-[#F3F3F3]'
-                        : 'border-[#00000014] bg-[#F3F3F3]'
-                        }`}
+                      className={`cursor-pointer rounded-[20px] border p-[1.5rem] transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} ${
+                        isActive
+                          ? "border-[#FB9100]/20 bg-[#F3F3F3]"
+                          : "border-[#00000014] bg-[#F3F3F3]"
+                      }`}
                       style={{
                         transitionDelay: `${index * 280}ms`, // 👈 stagger here
-                        backgroundColor: aiseoResult.cardColor || '#FFFFFF',
+                        backgroundColor: aiseoResult.cardColor || "#FFFFFF",
                       }}
                     >
                       {/* HEADER */}
@@ -114,17 +122,18 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
                           )}
 
                           <p
-                            className={`font-bold ${isActive ? 'hover:text-[var(--hover-color)]' : ''
-                              }`}
-                          // style={
-                          //   {
-                          //     '--hover-color':
-                          //       aiseoResult.titleColor || '#000000',
-                          //     color: isActive
-                          //       ? aiseoResult.titleColor || '#000000'
-                          //       : '#000000',
-                          //   } as React.CSSProperties
-                          // }
+                            className={`font-bold ${
+                              isActive ? "hover:text-[var(--hover-color)]" : ""
+                            }`}
+                            // style={
+                            //   {
+                            //     '--hover-color':
+                            //       aiseoResult.titleColor || '#000000',
+                            //     color: isActive
+                            //       ? aiseoResult.titleColor || '#000000'
+                            //       : '#000000',
+                            //   } as React.CSSProperties
+                            // }
                           >
                             {item?.name}
                           </p>
@@ -148,10 +157,11 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
 
                       {/* BODY */}
                       <div
-                        className={`ease-in-ou grid overflow-hidden transition-[grid-template-rows,opacity,margin] duration-700 ${isActive
-                          ? 'mt-3 grid-rows-[1fr] opacity-100'
-                          : 'grid-rows-[0fr] opacity-0'
-                          }`}
+                        className={`ease-in-ou grid overflow-hidden transition-[grid-template-rows,opacity,margin] duration-700 ${
+                          isActive
+                            ? "mt-3 grid-rows-[1fr] opacity-100"
+                            : "grid-rows-[0fr] opacity-0"
+                        }`}
                       >
                         <div className="overflow-hidden">
                           {item?.description?.map((desc: string, i: number) => (
