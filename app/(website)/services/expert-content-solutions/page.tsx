@@ -281,20 +281,20 @@ const expertContentSolutions = () => {
 
             {/* ================= CONTACT US ================= */}
             <section className='py-12 lg:py-16'>
-                <MaxWidthWrapper>
-                    <div className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 md:gap-20`}>
-                        <div className={`flex justify-center rounded-2xl`}>
+                <MaxWidthWrapper className="flex flex-col gap-14 lg:flex-row">
+                    <div className="flex-1 lg:w-1/2">
+                        <div className="relative h-[360px] sm:h-[720px] lg:h-full w-full">
                             <Image
                                 src={contactSectionImg}
-                                alt="Contact Image"
-                                height={635}
-                                width={635}
-                                quality={100}
+                                fill
+                                alt="About Image"
+                                className="rounded-3xl border-[#e3e3e3] object-cover p-1"
                             />
                         </div>
-                        <div className={`h-full w-full md:pr-5`}>
-                            <ContactForm />
-                        </div>
+                    </div>
+
+                    <div className="flex-1 lg:w-1/2">
+                        <ContactForm />
                     </div>
                 </MaxWidthWrapper>
             </section>

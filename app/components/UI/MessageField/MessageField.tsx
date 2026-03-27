@@ -1,4 +1,5 @@
 import React from 'react';
+import { CgAsterisk } from "react-icons/cg";
 
 export interface MessageFieldProps {
   name: string;
@@ -7,8 +8,12 @@ export interface MessageFieldProps {
   placeholder?: string;
   className?: string;
   rows?: number;
+  label?: string;
   error?: string;
+  required?: boolean;
 }
+
+const labelClass = "flex text-black font-semibold mb-2 uppercase";
 
 const MessageField = ({
   name,
@@ -17,10 +22,17 @@ const MessageField = ({
   placeholder,
   className,
   rows,
+  label,
   error,
+  required,
 }: MessageFieldProps) => {
   return (
     <div className='relative'>
+      {label && (
+        <span className={labelClass}>
+          {label} {required && <CgAsterisk color="red" />}
+        </span>
+      )}
       <textarea
         name={name}
         value={value}

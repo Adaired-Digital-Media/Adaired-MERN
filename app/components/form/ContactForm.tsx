@@ -104,7 +104,7 @@ const ContactForm = () => {
             Let’s Start Your Success Journey
           </h3> */}
           <p className="pt-3 text-left text-[16px] text-[#666666]">
-          {/* <p className="pt-3 text-left text-[14px] text-[#666666]"> */}
+            {/* <p className="pt-3 text-left text-[14px] text-[#666666]"> */}
             Fill out the form, and let’s turn your business goals into reality.
           </p>
         </div>
@@ -118,7 +118,8 @@ const ContactForm = () => {
       </div>
       <div className="space-y-4">
         <InputField
-          className="my-4"
+          label='Name'
+          className=""
           name="name"
           value={inputValue.name}
           handleChange={handleChange}
@@ -128,6 +129,7 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <InputField
+            label='Email'
             name="email"
             value={inputValue.email}
             handleChange={handleChange}
@@ -135,7 +137,9 @@ const ContactForm = () => {
             required={true}
             error={errors.email}
           />
+
           <PhoneInputField
+            label='Phone'
             name="phone"
             maxLength={10}
             value={inputValue.phone}
@@ -143,11 +147,12 @@ const ContactForm = () => {
             placeholder="Phone No"
             required={true}
             error={errors.phone}
+            className='py-4'
           />
         </div>
 
         <SelectField
-          
+          label='Services'
           name="service"
           value={inputValue.service}
           handleChange={handleChange}
@@ -178,11 +183,12 @@ const ContactForm = () => {
         />
 
         <MessageField
+          label='Message'
           name="message"
           value={inputValue.message}
           handleChange={handleChange}
           placeholder="Message"
-          className="my-2"
+          className=""
         />
       </div>
 

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CountryList from "country-list-with-dial-code-and-flag";
 import Flag from "../Flag";
 import { MdArrowDropDown } from "react-icons/md";
+import { CgAsterisk } from "react-icons/cg";
 
 interface InputFieldProps {
   name: string;
@@ -13,8 +14,11 @@ interface InputFieldProps {
   className?: string;
   maxLength?: number;
   error?: string;
+  label?: string;
   required?: boolean;
 }
+
+const labelClass = "flex text-black font-semibold mb-2 uppercase";
 
 const PhoneInputField = ({
   name,
@@ -24,6 +28,7 @@ const PhoneInputField = ({
   className,
   maxLength,
   error,
+  label,
   required,
 }: InputFieldProps) => {
   const countries = CountryList.getAll();
@@ -34,8 +39,14 @@ const PhoneInputField = ({
 
   return (
     <div className="relative">
+      {label && (
+        <span className={labelClass}>
+          {label} {required && <CgAsterisk color="red" />}
+        </span>
+      )}
+
       {/* Flag dropdown */}
-      <div className="absolute left-0 top-0">
+      <div className="absolute left-0 top-6.5">
         <div className="relative">
           <div
             onClick={() => setOpen(!open)}
