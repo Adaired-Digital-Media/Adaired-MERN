@@ -5,6 +5,7 @@ import { PiEyeBold } from 'react-icons/pi';
 import { useRouter } from 'next/navigation';
 import useBreakpointCharLimit from '@/@core/hooks/useBreakpointCharLimit';
 import { IoArrowForwardSharp } from 'react-icons/io5';
+import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
 import { transformDate } from '@/@core/hooks/transformDate';
 
 // Type definitions
@@ -39,6 +40,20 @@ const BlogWithPagination: FC<IProps> = ({ data }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
+
+
+  const totalPages = Math.ceil(data.length / blogsPerPage);
+  const maxVisiblePages = 5;
+
+  const startPage = Math.max(
+    Math.min(
+      currentPage - Math.floor(maxVisiblePages / 2),
+      totalPages - maxVisiblePages + 1
+    ),
+    1
+  );
+
+  const endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
 
   return (
     <div className="relative">
@@ -99,7 +114,7 @@ const BlogWithPagination: FC<IProps> = ({ data }) => {
         ))}
       </div>
       {data.length > blogsPerPage && (
-        <div className="absolute bottom-[-6.5rem] flex w-[100%] justify-center">
+        <div className="absolute bottom-[-7.5rem] flex w-[100%] justify-center">
           {/* <Pagination
             total={data.length}
             current={currentPage}
@@ -109,6 +124,66 @@ const BlogWithPagination: FC<IProps> = ({ data }) => {
             prevIcon="Previous"
             rounded="md"
           /> */}
+
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="px-2 py-2 disabled:opacity-50"
+          >
+            <IoChevronBack size={20} />
+          </button>
+
+          {/* {startPage > 1 && <span className="text-2xl">…</span>} */}
+
+          {/* {Array.from(
+                { length: Math.ceil(data.length / blogsPerPage) },
+                (_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentPage(i + 1)}
+                    className={`px-2 py-2 ${currentPage === i + 1
+                      ? 'bg-[#1A5A96] text-white'
+                      : 'bg-white text-black'
+                      }`}
+                  >
+                    {i + 1}
+                  </button>
+                )
+              )} */}
+
+          {Array.from(
+            { length: endPage - startPage + 1 },
+            (_, i) => {
+              const pageNumber = startPage + i;
+
+              return (
+                <button
+                  key={pageNumber}
+                  onClick={() => setCurrentPage(pageNumber)}
+                  className={`w-8 h-8 px-2 rounded-full mt-0.5 ${currentPage === pageNumber
+                    ? 'bg-[#1A5A96] text-white'
+                    : 'bg-white text-black'
+                    }`}
+                >
+                  {pageNumber}
+                </button>
+              );
+            }
+          )}
+
+          {/* {endPage < totalPages && <span className="text-2xl">…</span>} */}
+
+          <button
+            onClick={() =>
+              setCurrentPage((prev) =>
+                Math.min(prev + 1, Math.ceil(data.length / blogsPerPage))
+              )
+            }
+            disabled={currentPage === Math.ceil(data.length / blogsPerPage)}
+            className="px-2 py-2 disabled:opacity-50"
+          >
+            <IoChevronForward size={20} />
+          </button>
         </div>
       )}
     </div>

@@ -78,7 +78,7 @@ const Blog = async () => {
             <div className="sticky top-24">
               <PopularPosts initialData={data.data.slice(0, 5)} />
             </div>
-          </aside> */}  
+          </aside> */} 
         </div>
       </MaxWidthWrapper>
     </>
