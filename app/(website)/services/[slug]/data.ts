@@ -3366,7 +3366,7 @@ export const SERVICES_DATA = {
         {
           name: 'Builds Trust and Credibility',
           description: [
-            `A Good website design is associated with the credibility and professionalism of a business. 
+            `A good website design is associated with the credibility and professionalism of a business. 
             Features such as fast loading speeds, secure connections, consistent performance, and clear messaging reassure users that the company is reliable, established, and customer-focused.`,
           ],
         },
