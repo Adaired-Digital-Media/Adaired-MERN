@@ -961,7 +961,7 @@ export const SERVICES_DATA = {
       ],
       description:
         "Our process is designed to increase both website traffic and revenue through a structured, data-driven strategy.",
-      bgGradient: "bg-gradient-to-b from-[#ffffff] to-[#FFF9F2]",
+      bgGradient: "linear-gradient(to bottom, #FFFFFF, #FFF8EF)",
       services: [
         {
           icon: step1,
@@ -1031,7 +1031,7 @@ export const SERVICES_DATA = {
         },
       ],
       bgImage: "",
-      bgColor: "#FFF9F1",
+      bgColor: "linear-gradient(to bottom, #FFF8F0, #FFFCF9)",
       titleColor: "#FB9100",
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774243269/adaired/services/seo/Struggling_slosmx.png",
       imgHight: "585px",
@@ -1718,7 +1718,7 @@ export const SERVICES_DATA = {
       breakIndex: 6,
       activeDot: "#F28F17",
       inactiveDot: "#FFEACD",
-      bgColor: "bg-gradient-to-b from-[#FFF8F0] via-[#FFF8F0] to-[#FFFFFF]",
+      bgColor: "bg-gradient-to-b from-[#FFF8F0] via-[#FFF8F0] to-[#FFFCF9]",
       textColor: "#FB9100",
       textBg: "#FFE6C380",
       borderColor: "#FB910040",
@@ -2146,7 +2146,7 @@ export const SERVICES_DATA = {
       ],
       span: "",
       description: `We leverage AI-driven SEO, analytics, and conversion strategies to enhance brand presence, boost search performance, and drive business growth.`,
-      bgGradient: "bg-gradient-to-b from-[#fafafa] via-[#fafafa] to-[#fafafa]",
+      bgGradient: "#FAFAFA",
 
       services: [
         {
@@ -2925,7 +2925,7 @@ export const SERVICES_DATA = {
       ],
       span: "",
       description: `We use a strategic link-building framework to build lasting authority and sustainable SEO performance.`,
-      bgGradient: "bg-gradient-to-b from-[#fffcf9] via-[#FFF9F2] to-[#FFF9F2]",
+      bgGradient: "linear-gradient(to bottom, #FFF8F0, #FFFDF9)",
       services: [
         {
           icon: steplinkbuild1,
@@ -3900,7 +3900,7 @@ export const SERVICES_DATA = {
         },
       ],
       width: 55,
-      bgColor: "#000000",
+      bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
       imgWidth: "608",
       imgHight: "634",
@@ -3942,7 +3942,7 @@ export const SERVICES_DATA = {
       description: [
         `Local search optimization is necessary when the company is aimed at local consumers. It assists you attract ready-to-convert traffic, gain local visibility and stay ahead of competitors.`,
       ],
-      bgColor: "#FFFAF4",
+      bgColor: "linear-gradient(to bottom, #FFFFFF, #FFF8F0)",
       isRocket: true,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774246924/adaired/services/local_seo/localServiceResultImg_yzvage.png",
       imgHight: "660px",
@@ -4220,7 +4220,7 @@ export const SERVICES_DATA = {
       ],
       span: "",
       description: `We follow a strategic Local SEO process designed to improve your visibility in local search results and drive qualified leads.`,
-      bgGradient: "bg-gradient-to-b from-[#ffffff] to-[#fff8f0]",
+      bgGradient: "linear-gradient(to bottom, #FFFFFF, #FFF8F0)",
 
       services: [
         {
@@ -4966,7 +4966,7 @@ export const SERVICES_DATA = {
       ],
       span: "",
       description: `A structured process ensures consistency and measurable results. Our white-label social media management approach includes:`,
-      bgGradient: "bg-gradient-to-b from-[#fffcf9] via-[#FFF9F2] to-[#FFF9F2]",
+      bgGradient: "linear-gradient(to bottom, #FFFFFF, #FFF8F0)",
       services: [
         {
           icon: stepwhitelabelsocialmedia1,
@@ -5117,7 +5117,7 @@ export const SERVICES_DATA = {
       breakIndex: 5,
       isInCenter: false,
       bgGradient: "",
-      bgColor: "#FFFCF9",
+      bgColor: "linear-gradient(to bottom, #FFFCF9, #FFFFFF)",
       cardColor2: "#F9F9F9",
       cardColor: "#FFF8EF",
       cardImgBgColor2: "#F3F3F3",
@@ -5646,7 +5646,7 @@ export const SERVICES_DATA = {
       isVisible: true,
       bgColor: "",
       cardColor: "",
-      borderColor: "border-[#FB9100]/20",
+      borderColor: "#FB9100",
       headingParts: [
         {
           text: "What Will Our White Label SEO Services Cover?",
@@ -5740,7 +5740,7 @@ export const SERVICES_DATA = {
       isVisible: true,
       breakIndex: 3,
       // bgcolor: 'bg-gradient-to-b from-[#FFF8F0] to-[#FFFFFF]',
-      bgColor: "#FFF9F2",
+      bgColor: "linear-gradient(to bottom, #FFF8F0, #FFFCF9)",
       isInCenter: false,
       textColor: "",
       headingParts: [
@@ -6211,7 +6211,7 @@ export const SERVICES_DATA = {
         },
       ],
       description: `Adaired Digital functions as your dedicated fulfillment team offering premium digital marketing services without managing an in-house team.`,
-      bgGradient: "bg-gradient-to-b from-[#FFFFFF] via-[#fffcf8] to-[#FFF8F0]",
+      bgGradient: "linear-gradient(to bottom, #FFFFFF, #FFF8F0)",
 
       services: [
         {
@@ -6374,7 +6374,7 @@ export const SERVICES_DATA = {
       isInCenter: false,
       cardBg: "#FFF8F0",
       breakIndex: 3,
-      bgColor: "#FFFCF8",
+      bgColor: "linear-gradient(to bottom, #FFFCF9, #FFFFFF)",
       headingParts: [
         {
           text: `Work with Adaired's Agency-First White-Label Model`,
@@ -6985,7 +6985,7 @@ export const SERVICES_DATA = {
       description: [
         `Unlike traditional advertising, PPC ensures you only pay when a user actively engages with your ad. Here’s how the entire system works:`,
       ],
-      bgGradient: "bg-gradient-to-b from-[#FFF8F0] via-[#FFF9F2] to-[#FFFFFF]",
+      bgGradient: "linear-gradient(to bottom, #FFF8F0, #FFFBF7)",
 
       services: [
         {
@@ -7746,7 +7746,7 @@ export const SERVICES_DATA = {
       ],
       bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
-      customPadding: "3rem, 3rem",
+      customPadding: "1rem, 0rem",
       width: 50,
       imgWidth: "595",
       imgHight: "525",
@@ -8118,7 +8118,7 @@ export const SERVICES_DATA = {
       breakIndex: 2,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774248949/adaired/services/white_label_paid_ads/whitePaidAdsAdairedHelpImg_spowks.png",
       isInCenter: false,
-      bgColor: "#FFFCF9",
+      bgColor: "linear-gradient(to bottom, #FFFCF9, #FFFFFF)",
       cardBg: "#FFF8F0",
       headingParts: [
         {
@@ -8212,7 +8212,8 @@ export const SERVICES_DATA = {
       description: [
         `We operate behind the scenes, allowing you to scale services without increasing internal workload or overhead.`,
       ],
-      // bgGradient: 'bg-gradient-to-b from-[#fffcf9] via-[#FFF9F2] to-[#FFF9F2]',
+      bgGradient: '#FAFAFA',
+      isMask: true,
 
       services: [
         {
@@ -8699,7 +8700,7 @@ export const SERVICES_DATA = {
       description: [
         `At Adaired, our best white label SEO link-building services are built to be seamless, scalable, and completely brandable.`,
       ],
-      // bgGradient: 'bg-gradient-to-b from-[#fffcf9] via-[#FFF9F2] to-[#FFF9F2]',
+      bgGradient: '#FAFAFA',
 
       services: [
         {
@@ -9261,7 +9262,7 @@ export const SERVICES_DATA = {
           weight: "700",
         },
       ],
-      bgColor: "#051C40",
+      bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
       width: 60,
       isRowReverse: true,
@@ -9441,7 +9442,7 @@ export const SERVICES_DATA = {
       description: [
         `We don’t guess. We build structured, revenue-aligned SEO systems designed specifically for SaaS growth.`,
       ],
-      bgGradient: "bg-gradient-to-b from-[#ffffff] via-[#FFF9F2] to-[#FFF8f0]",
+      bgGradient: "linear-gradient(to bottom, #FFFFFF, #FFF8F0, #FFF8F0)",
 
       services: [
         {
@@ -10033,7 +10034,7 @@ export const SERVICES_DATA = {
       ],
       customPaddingRight: 2,
       customGap: "8rem",
-      bgColor: "#000000",
+      bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
       customPadding: "2rem, 2rem",
       width: 50,
@@ -10107,7 +10108,7 @@ export const SERVICES_DATA = {
       breakIndex: 0,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774250709/adaired/services/generative_engine_optimization/geoAiSeoAdairedHelpImg_ccmypb.png",
       isInCenter: true,
-      bgColor: "bg-[#FFFBF5]",
+      bgColor: "#FFFBF5",
       cardBg: "",
       headingParts: [
         {
@@ -10273,10 +10274,9 @@ export const SERVICES_DATA = {
         },
       ],
       breakIndex: 3,
-      bgGradient: "bg-gradient-to-b from-[#ffffff] via-[#FFF9F2] to-[#FFF8f0]",
+      bgGradient: "linear-gradient(to bottom, #FFFFFF, #FFF8F0, #FFF8F0)",
       description: [
-        `At Adaired Digital Media, we ensure your brand is relevant, optimized, and positioned as a trusted authority in generative search systems.
-`,
+        `At Adaired Digital Media, we ensure your brand is relevant, optimized, and positioned as a trusted authority in generative search systems.`,
       ],
       services: [
         {
@@ -10815,7 +10815,7 @@ export const SERVICES_DATA = {
       customPaddingRight: 2,
       customPadding: "3rem, 3rem",
       customGap: "6rem",
-      bgColor: "#000000",
+      bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
       width: 50,
       isGap: true,
@@ -10849,7 +10849,7 @@ export const SERVICES_DATA = {
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774250921/adaired/services/aeo_service/AeoServiceAdairedHelpImg_uiaamd.png",
       isInCenter: false,
       breakIndex: 5,
-      bgColor: "bg-gradient-to-b from-[#FFFFFF] to-[#FFFBF5]",
+      bgColor: "linear-gradient(to bottom, #FFFFFF, #FFFBF5, #FFFBF5)",
       cardBg: "#FFF8F0",
       headingParts: [
         {
@@ -11511,7 +11511,7 @@ export const SERVICES_DATA = {
       breakIndex: 4,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774251073/adaired/services/mobile_app_dev/mobileAppDevAdairedHelpImg_vjzqme.png",
       isInCenter: false,
-      bgColor: "bg-gradient-to-b from-[#FFFFFF] to-[#FFF8F0]",
+      bgColor: "linear-gradient(to bottom, #FFFFFF, #FFF8F0)",
       cardBg: "",
       headingParts: [
         {
@@ -11923,7 +11923,7 @@ export const SERVICES_DATA = {
       description: [
         `We follow a structured, agile-driven approach to deliver high-performance mobile applications that align with your business goals.`,
       ],
-      bgGradient: "bg-gradient-to-b from-[#FFF8F0] to-[#FFFFFF]",
+      bgGradient: "linear-gradient(to bottom, #FFF8F0, #FFFCF8)",
 
       services: [
         {
@@ -12157,7 +12157,7 @@ export const SERVICES_DATA = {
       isCode01: true,
       isVariant: "03",
       breakIndex: 4,
-      bgImg: saasSeoBuildLinkBg,
+      bgImg: bgImgBuildLink,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774251079/adaired/services/mobile_app_dev/mobileAppDevBuildLinkImg_tepele.png",
       imgWidth: "885",
       imgHight: "590",
@@ -12573,7 +12573,7 @@ export const SERVICES_DATA = {
       customPaddingRight: 2,
       customPadding: "3rem, 3rem",
       customGap: "4rem",
-      bgColor: "#000000",
+      bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
       width: 60,
       isGap: true,
@@ -12594,7 +12594,7 @@ export const SERVICES_DATA = {
           weight: "700",
         },
       ],
-      bgColor: "#fffbf5",
+      bgColor: "linear-gradient(to bottom, #FFFFFF, #FFFBF5, #FFFBF5)",
       textColor: "#000000",
       paddingY: "4rem",
       width: 50,
@@ -12750,7 +12750,7 @@ export const SERVICES_DATA = {
       breakIndex: 5,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774251452/adaired/services/gmb_only/AdairedHelpGmb_wxal6l.png",
       isInCenter: false,
-      bgColor: "bg-gradient-to-b from-[#FFFEFB] to-[#FFF7EB]",
+      bgColor: "linear-gradient(to bottom, #FFFEFB, #FFF7EB)",
       cardBg: "",
       headingParts: [
         {
@@ -13618,7 +13618,7 @@ export const SERVICES_DATA = {
         },
       ],
       breakIndex: 4,
-      bgGradient: "bg-[#FFFCF7]",
+      bgGradient: "#FFFCF7",
       description: [
         `Our structured approach ensures that every aspect of your local presence is strategically optimized.`,
       ],
@@ -13724,7 +13724,7 @@ export const SERVICES_DATA = {
       breakIndex: 4,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774252005/adaired/services/gmb%2Bwebsite/Rectangle_10108_hzcsrr.png",
       isInCenter: false,
-      bgColor: "bg-[#FCFCFC]",
+      bgColor: "#FCFCFC",
       cardBg: "",
       headingParts: [
         {
@@ -13779,7 +13779,7 @@ export const SERVICES_DATA = {
       isCode01: true,
       isVariant: "03",
       breakIndex: 4,
-      bgImg: saasSeoBuildLinkBg,
+      bgImg: bgImgBuildLink,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774251929/adaired/services/gmb%2Bwebsite/gmbWebsiteSeoBuildLinkImg_mspqar.png",
       imgWidth: "836",
       imgHight: "599",
@@ -14771,7 +14771,7 @@ export const SERVICES_DATA = {
           weight: "700",
         },
       ],
-      bgColor: "#000000",
+      bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
       customPadding: "3rem, 3rem",
       width: 60,
@@ -14884,7 +14884,7 @@ export const SERVICES_DATA = {
       description: [
         `Here’s how Adaired Digital's end-to-end LLM SEO solutions helps your brand thrive in the age of AI:`,
       ],
-      bgGradient: "bg-gradient-to-b from-[#fffbf6] to-[#fffbf6]",
+      bgGradient: "#FFFBF6",
       services: [
         {
           icon: ourProcessIcon1,
@@ -15037,7 +15037,7 @@ export const SERVICES_DATA = {
       breakIndex: 4,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1773297269/adaired/services/llm_service/AdairedHelp_xhgkuw.png",
       isInCenter: false,
-      bgColor: "bg-gradient-to-b from-[#FFFBF5]/60 to-[#FFFBF5]/60",
+      bgColor: "#FFFDF9",
       cardBg: "",
       headingParts: [
         {
@@ -15123,7 +15123,7 @@ export const SERVICES_DATA = {
       isCode01: true,
       isVariant: "03",
       breakIndex: 4,
-      bgImg: saasSeoBuildLinkBg,
+      bgImg: bgImgBuildLink,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1773297265/adaired/services/llm_service/BuildLink_jenexd.png",
       imgWidth: "879",
       imgHight: "493",
@@ -16035,7 +16035,7 @@ export const SERVICES_DATA = {
       customPaddingRight: 4,
       customPadding: "2rem, 2rem",
       customGap: "8rem",
-      bgColor: "#000000",
+      bgColor: "linear-gradient(to bottom, #000000, #051C40)",
       textColor: "#FFFFFF",
       imgWidth: "780",
       imgHight: "571",
@@ -16066,7 +16066,7 @@ export const SERVICES_DATA = {
       textColor: "#FB9100",
       isnNumberBg: false,
       numberBg: "#FDE6C6",
-      bgColor: "bg-gradient-to-b from-[#fff9f2] via-[#ffffff] to-[#fff9f2]",
+      bgColor: "linear-gradient(to bottom, #FFF9F1, #FFFFFF, #FFFAF5)",
       cardBg: "",
       headingParts: [
         {
@@ -18498,7 +18498,7 @@ export const SERVICES_DATA = {
         },
       ],
       breakIndex: 4,
-      bgGradient: "bg-gradient-to-b from-[#FFF8F0] to-[#FFFFFF]",
+      bgGradient: "linear-gradient(to bottom, #FFF8F0, #FFFCF8)",
       span: "",
       description: [
         `Our process is structured to deliver high-quality applications while maintaining transparency and collaboration throughout the project lifecycle.`,
@@ -19682,7 +19682,7 @@ export const SERVICES_DATA = {
         },
       ],
       breakIndex: 4,
-      bgGradient: "bg-[#FAFAFA]",
+      bgGradient: "#FAFAFA",
       span: "",
       description: [
         `Our social media management process is designed to give your brand a strong, consistent, and engaging online presence.`,
@@ -20305,7 +20305,7 @@ export const SERVICES_DATA = {
         },
       ],
       breakIndex: 5,
-      bgGradient: "bg-[#F9F9F9]/70",
+      bgGradient: "#FBFBFB",
       span: "",
       description: [
         `At Adaired Digital Media, we follow a structured and agile development approach to deliver high-quality Android applications.`,
@@ -20807,7 +20807,7 @@ export const SERVICES_DATA = {
       textColor: "",
       isnNumberBg: false,
       numberBg: "",
-      bgColor: "bg-[#FFFDF9]",
+      bgColor: "#FFFDF9",
       cardBg: "#FFFAF4",
       headingParts: [
         {
@@ -21250,7 +21250,7 @@ export const SERVICES_DATA = {
       textColor: "",
       isnNumberBg: false,
       numberBg: "",
-      bgColor: "bg-[#FFF9F3]",
+      bgColor: "linear-gradient(to bottom, #FFFFFF, #FFF8F0)",
       cardBg: "",
       headingParts: [
         {
@@ -21948,7 +21948,7 @@ export const SERVICES_DATA = {
       textColor: "",
       isnNumberBg: false,
       numberBg: "",
-      bgColor: "bg-[#FFF9F3]",
+      bgColor: "linear-gradient(to bottom, #FFF8F0, #FFFAF4)",
       cardBg: "",
       headingParts: [
         {
@@ -23197,7 +23197,7 @@ export const SERVICES_DATA = {
       textColor: "",
       isnNumberBg: false,
       numberBg: "",
-      bgColor: "bg-[#FFFCF9]",
+      bgColor: "linear-gradient(to bottom, #FFFCF9, #FFFFFF, #FFFCF9)",
       cardBg: "",
       headingParts: [
         {
@@ -23716,7 +23716,7 @@ export const SERVICES_DATA = {
       textColor: "",
       isnNumberBg: false,
       numberBg: "",
-      bgColor: "bg-[#FFFCFA]",
+      bgColor: "linear-gradient(to bottom, #FFFCF9, #FFFFFF, #FFFCF9)",
       cardBg: "",
       headingParts: [
         {
@@ -24464,7 +24464,7 @@ export const SERVICES_DATA = {
         },
       ],
       breakIndex: 4,
-      bgGradient: "bg-gradient-to-b from-[#FFFFFF] to-[#FFF8F0]",
+      bgGradient: "linear-gradient(to bottom, #FFFFFF, #FFF8F0)",
       span: "",
       description: [
         `Our TikTok Ads Management process is built on a structured, data-driven framework designed to deliver consistent, scalable results.`,
@@ -24594,7 +24594,7 @@ export const SERVICES_DATA = {
       textColor: "",
       isnNumberBg: false,
       numberBg: "",
-      bgColor: "bg-[#FFFDFA]",
+      bgColor: "linear-gradient(to bottom, #FFFCF9, #FFFFFF, #FFFCF9)",
       cardBg: "",
       headingParts: [
         {
