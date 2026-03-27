@@ -10,7 +10,7 @@ const AdairedHelp = ({ adairedHelp }: any) => {
 
   return (
     <div
-      className={`py-[3rem] lg:py-[4rem]`}
+      className={`py-12 lg:py-16`}
       style={{
         backgroundColor: adairedHelp?.bgColor,
         background: adairedHelp?.bgColor,
@@ -31,12 +31,12 @@ const AdairedHelp = ({ adairedHelp }: any) => {
         </div>
 
         {/* IMPORTANT: relative wrapper */}
-        <div className="relative flex flex-col items-start gap-[5rem] pt-[3rem] lg:flex-row">
+        <div className="relative flex flex-col items-start gap-20 pt-12 lg:flex-row">
           {/* LEFT IMAGE – STICKY */}
-          <div className="top-[16rem] w-full lg:sticky lg:w-[40%]">
+          <div className="top-64 w-full lg:sticky lg:w-[40%]">
             <div
               ref={ref}
-              className={`group relative h-[22rem] w-full rounded-[20px] transition-all duration-1000 sm:h-[26rem] md:h-[31rem] lg:h-[35rem] ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"}`}
+              className={`group relative h-88 w-full rounded-[20px] transition-all duration-1000 sm:h-104 md:h-124 lg:h-140 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"}`}
             >
               <Image
                 src={adairedHelp?.img}
@@ -49,24 +49,19 @@ const AdairedHelp = ({ adairedHelp }: any) => {
           </div>
 
           {/* RIGHT CONTENT – SCROLLS */}
-          <div className="flex w-full flex-col gap-[1rem] lg:w-[55%]">
+          <div className="flex w-full flex-col gap-4 lg:w-[55%]">
             {adairedHelp?.list?.map((item: any, index: number) => (
               <div
                 key={index}
-                className={`flex flex-col items-center rounded-[20px] bg-[${adairedHelp?.cardBg || "#FFFFFF"}] p-[1.5rem] transition-all duration-700 lg:items-start ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                className={`flex flex-col items-center rounded-[20px] bg-[${adairedHelp?.cardBg || "#FFFFFF"}] p-6 transition-all duration-700 lg:items-start ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                 style={{
                   transitionDelay: `${index * 280}ms`,
                   border: `1px solid ${adairedHelp?.cardBorderColor || "#FEE3BF"}`,
                 }}
               >
-                {/* <Image src={item?.img} width={40} height={40} alt="icon" /> */}
                 {item?.img ? (
                   <Image src={item.img} width={40} height={40} alt="icon" />
                 ) : (
-                  // <div className={`text-[50px] font-semibold text-[${adairedHelp?.textColor || '#FB9100'}]  ${adairedHelp?.isnNumberBg ? `px-4 rounded-[0.7rem] bg-[${adairedHelp?.numberBg}]/50` : 'bg-[#FFFFFF]'}`}>
-                  //   {String(index + 1).padStart(2, '0')}
-                  // </div>
-
                   <div
                     className={`text-[50px] font-semibold ${adairedHelp?.isnNumberBg ? "px-4 rounded-[0.8rem]" : ""}`}
                     style={{
@@ -79,16 +74,9 @@ const AdairedHelp = ({ adairedHelp }: any) => {
                     {String(index + 1).padStart(2, "0")}
                   </div>
                 )}
-                {/* <p className="pt-[1.5rem] font-bold">{item?.name}</p> */}
-                <h3 className="pt-[1.5rem]">{item?.name}</h3>
+                <h3 className="pt-6">{item?.name}</h3>
 
                 <div className="pt-2">
-                  {/* {item?.description?.map((desc: string, i: number) => (
-                    <p key={i} className="my-3">
-                      {desc}
-                    </p>
-                  ))} */}
-
                   {item?.description?.map((dec: any, index: number) => {
                     if (typeof dec === "string") {
                       return (
@@ -102,7 +90,7 @@ const AdairedHelp = ({ adairedHelp }: any) => {
                       return (
                         <div key={index} className="py-3">
                           {dec?.desctioption && (
-                            <p className="pb-[1rem]">{dec.desctioption}</p>
+                            <p className="pb-4">{dec.desctioption}</p>
                           )}
 
                           {dec?.list && (
@@ -127,7 +115,6 @@ const AdairedHelp = ({ adairedHelp }: any) => {
                         </div>
                       );
                     }
-
                     return null;
                   })}
                 </div>

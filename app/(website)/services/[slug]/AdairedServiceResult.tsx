@@ -15,7 +15,7 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
     <div>
       {aiseoResult?.isVariant === "01" && (
         <div
-          className={`py-[3rem] lg:py-[4rem]`}
+          className={`py-48 lg:py-64`}
           style={{
             backgroundColor: aiseoResult.bgColor,
             background: aiseoResult.bgColor,
@@ -25,9 +25,9 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
             <div
               className={`transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"} `}
             >
-              <div className="block gap-[6rem] lg:flex">
+              <div className="block gap-24 lg:flex">
                 <div
-                  className={`${aiseoResult?.description?.length > 0 ? "w-[100%]" : "flex w-[100%] items-center justify-center"}`}
+                  className={`${aiseoResult?.description?.length > 0 ? "w-full" : "flex w-full items-center justify-center"}`}
                 >
                   <Heading
                     breakIndex={aiseoResult?.breakIndex}
@@ -41,12 +41,11 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
               </div>
             </div>
 
-            {/* <div className="flex flex-col justify-between gap-[6rem] pt-[3rem] lg:flex-row"> */}
             <div
-              className={`flex flex-col gap-[3rem] lg:gap-[6rem] ${
+              className={`flex flex-col gap-12 lg:gap-24 ${
                 aiseoResult?.isRowReverse
-                  ? "lg:flex-row-reverse py-[4rem]"
-                  : "lg:flex-row py-[4rem]"
+                  ? "lg:flex-row-reverse py-16"
+                  : "lg:flex-row py-16"
               }`}
             >
               <div
@@ -70,7 +69,7 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
                 />
 
                 {aiseoResult?.isRocket && (
-                  <div className="absolute left-[-1rem] top-[-1rem] h-[75px] w-[70px] sm:h-[95px] sm:w-[90px] lg:h-[123px] lg:w-[115px]">
+                  <div className="absolute -left-4 -top-4 h-18.75 w-17.5 sm:h-23.75 sm:w-22.5] lg:h-30.75 lg:w-28.75">
                     {/* Rocket wrapper */}
                     <Image
                       src={rocket}
@@ -96,7 +95,7 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
                       key={index}
                       onClick={() => setActiveIndex(isActive ? null : index)}
                       onMouseEnter={() => setActiveIndex(index)}
-                      className={`cursor-pointer rounded-[20px] border p-[1.5rem] transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} ${
+                      className={`cursor-pointer rounded-[20px] border p-6 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"} ${
                         isActive
                           ? "border-[#FB9100]/20 bg-[#F3F3F3]"
                           : "border-[#00000014] bg-[#F3F3F3]"
@@ -123,7 +122,7 @@ const AdairedServiceResult = ({ aiseoResult }: any) => {
 
                           <p
                             className={`font-bold ${
-                              isActive ? "hover:text-[var(--hover-color)]" : ""
+                              isActive ? "hover:text-(--hover-color)" : ""
                             }`}
                             // style={
                             //   {

@@ -113,15 +113,15 @@ const Banner = ({ banner }: any) => {
         ) : (
           <div>
             {banner?.code === "01" && (
-              <div className="relative z-10 block justify-between py-[6rem] lg:flex">
+              <div className="relative z-10 block justify-between py-24 lg:flex">
                 <div
-                  className={`w-[100%] space-y-5 transition-all duration-1000 lg:w-[45%] xl:w-[45%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
+                  className={`w-full space-y-5 transition-all duration-1000 lg:w-[45%] xl:w-[45%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
                 >
                   <div
                     className={`'grid lg:gap-[10rem]'} grid-cols-1 lg:grid-cols-2`}
                   >
                     <div className="md:flex` block justify-center justify-items-center gap-3 lg:justify-start lg:justify-items-start">
-                      <div className="mt-[0.8rem] !w-[100%] md:mt-[8px] lg:mt-[0.5rem]">
+                      <div className="mt-[0.8rem] w-full md:mt-2 lg:mt-2">
                         <h1 className="text-center capitalize lg:text-left">
                           {banner?.heading}
                         </h1>
@@ -130,7 +130,7 @@ const Banner = ({ banner }: any) => {
                         </h1>
                       </div>
                     </div>
-                    <div className={`pt-[1rem]`}>
+                    <div className={`pt-4`}>
                       {banner?.span && (
                         <p className="pt-4 text-center font-montserrat font-bold lg:text-left">
                           {banner?.span}
@@ -141,7 +141,7 @@ const Banner = ({ banner }: any) => {
                         {banner?.desc}
                       </p>
                       {banner?.subheading && (
-                        <h3 className="text-[22px] font-[600] leading-[32px]">
+                        <h3 className="text-[22px] font-semibold leading-8">
                           {banner?.subheading}
                         </h3>
                       )}
@@ -151,13 +151,10 @@ const Banner = ({ banner }: any) => {
                     <SaveAndCancel
                       name={banner?.button}
                       isIcon={true}
-                      // handleClick={() => router.push('/contact')}
                       handleClick={() => setOpen(!open)}
-                      // className="w-[18rem] lg:w-[14rem]"
-                      // className={`w-[${banner?.width}] lg:w-[${banner?.widthLg}]`}
                     />
                   </div>
-                  <div className="flex justify-center gap-3 pt-[2rem] lg:justify-start">
+                  <div className="flex justify-center gap-3 pt-4 lg:justify-start">
                     <a
                       href="https://www.google.com/partners/agency?id=7775339798"
                       target="_blank"
@@ -172,7 +169,7 @@ const Banner = ({ banner }: any) => {
                       />
                     </a>
 
-                    <div className="mx-2 my-auto h-[3.5rem] w-0.5 bg-[#000000]/20"></div>
+                    <div className="mx-2 my-auto h-14 w-0.5 bg-[#000000]/20"></div>
 
                     <a
                       href="https://www.upwork.com/agencies/1064740584575918080/"
@@ -190,14 +187,14 @@ const Banner = ({ banner }: any) => {
                   </div>
                 </div>
                 <div
-                  className={`relative my-auto w-[100%] pt-[6rem] transition-all delay-200 duration-1000 lg:w-[50%] lg:pt-0 ${
+                  className={`relative my-auto w-full pt-24 transition-all delay-200 duration-1000 lg:w-[50%] lg:pt-0 ${
                     isVisible
                       ? "translate-x-0 opacity-100"
                       : "translate-x-16 opacity-0"
                   }`}
                 >
                   <div className="my-auto h-full space-y-4">
-                    <div className="flex w-[100%] justify-center">
+                    <div className="flex w-full justify-center">
                       <div className="relative flex justify-end">
                         <Image
                           src={banner_img_1}
@@ -255,12 +252,7 @@ const Banner = ({ banner }: any) => {
             )}
             {banner?.code === "02" && (
               <div
-                className={`relative z-10 block justify-between gap-[3rem] lg:flex`}
-                // style={{
-                //   gap: banner?.customGap || "4rem",
-                //   paddingTop: banner?.customPadding?.split(",")[0] || "6rem",
-                //   paddingBottom: banner?.customPadding?.split(",")[1] || "6rem",
-                // }}
+                className={`relative z-10 block justify-between gap-12 lg:flex`}
                 style={{
                   gap: banner?.customGap || "4rem",
                   paddingTop,
@@ -268,7 +260,7 @@ const Banner = ({ banner }: any) => {
                 }}
               >
                 <div
-                  className={`my-auto w-[100%] space-y-5 transition-all duration-1000 lg:w-[50%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
+                  className={`my-auto w-full space-y-5 transition-all duration-1000 lg:w-[50%] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
                   style={{
                     paddingBottom: banner?.customPadding?.split(",")[0],
                   }}
@@ -277,9 +269,9 @@ const Banner = ({ banner }: any) => {
                     className={`'grid lg:gap-[10rem]'} grid-cols-1 lg:grid-cols-2`}
                   >
                     <div className="md:flex` block justify-center justify-items-center gap-3 lg:justify-start lg:justify-items-start">
-                      <div className="mt-[0.8rem] !w-[100%] md:mt-[8px] lg:mt-[0.5rem]">
+                      <div className="mt-[0.8rem] w-full md:mt-2 lg:mt-2">
                         {banner?.subtitle && (
-                          <div className="mx-auto flex w-fit gap-3 rounded-full border-[0.71px] border-[#000000]/20 px-[1rem] py-[0.25rem] lg:mx-0 lg:mr-auto">
+                          <div className="mx-auto flex w-fit gap-3 rounded-full border-[0.71px] border-[#000000]/20 px-4 py-1 lg:mx-0 lg:mr-auto">
                             <Image
                               src={star}
                               width={18}
@@ -320,7 +312,7 @@ const Banner = ({ banner }: any) => {
                           </h1>
                         ) : (
                           <div className="md:flex` block justify-center justify-items-center gap-3 lg:justify-start lg:justify-items-start">
-                            <div className="mt-[0.8rem] !w-[100%] md:mt-[8px] lg:mt-[0.5rem]">
+                            <div className="mt-[0.8rem] w-full md:mt-2 lg:mt-2">
                               <h1 className="text-center capitalize lg:text-left">
                                 {banner?.headingParts
                                   ?.flatMap((part: any) =>
@@ -360,11 +352,11 @@ const Banner = ({ banner }: any) => {
                     </div>
                     <div className={`$ 'pt-[1rem]'}`}>
                       {banner?.span && (
-                        <p className="pt-[2rem] text-center font-montserrat font-bold lg:text-left">
+                        <p className="pt-8 text-center font-montserrat font-bold lg:text-left">
                           {banner?.span}
                         </p>
                       )}
-                      <div className="py-[1rem] text-center lg:text-left">
+                      <div className="py-4 text-center lg:text-left">
                         {Array.isArray(banner?.desc) &&
                         banner?.desc.length > 0 ? (
                           banner.desc.map((item: any, index: number) => (
@@ -382,7 +374,7 @@ const Banner = ({ banner }: any) => {
                         )}
                       </div>
                       {banner?.subheading && (
-                        <h3 className="pb-2 text-[22px] font-[600] leading-[32px]">
+                        <h3 className="pb-2 text-[22px] font-semibold leading-8">
                           {banner?.subheading}
                         </h3>
                       )}
@@ -392,13 +384,12 @@ const Banner = ({ banner }: any) => {
                     <SaveAndCancel
                       name={banner?.button}
                       isIcon={true}
-                      // handleClick={() => router.push('/contact')}
                       handleClick={() => setOpen(!open)}
                     />
                   </div>
                 </div>
                 <div
-                  className={`ml-auto w-full lg:w-[${`${100 - banner?.width}%` || "50%"}] pt-[2rem] lg:pt-[4rem] transition-all delay-200 duration-1000 lg:h-[var(--img-h)] ${
+                  className={`ml-auto w-full lg:w-[${`${100 - banner?.width}%` || "50%"}] pt-8 lg:pt-16 transition-all delay-200 duration-1000 lg:h-[var(--img-h)] ${
                     isVisible
                       ? "translate-x-0 opacity-100"
                       : "translate-x-16 opacity-0"
