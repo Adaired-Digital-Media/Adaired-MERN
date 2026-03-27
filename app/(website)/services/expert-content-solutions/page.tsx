@@ -10,6 +10,8 @@ import SaveAndCancel from '@/app/components/common/SaveAndCancel';
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BiSolidPhoneCall } from "react-icons/bi";
 
+import contactSectionImg from '../../../../public/assets/images/expertContentSolutions/contactSectionImg.webp';
+
 
 const expertContentSolutions = () => {
     return (
@@ -282,15 +284,15 @@ const expertContentSolutions = () => {
                 <MaxWidthWrapper>
                     <div className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 md:gap-20`}>
                         <div className={`flex justify-center rounded-2xl`}>
-                            <CldImage
-                                src="contactSection_3EsHL.png"
+                            <Image
+                                src={contactSectionImg}
                                 alt="Contact Image"
                                 height={635}
                                 width={635}
                                 quality={100}
                             />
                         </div>
-                        <div className={`h-full w-full opt-md:pr-5`}>
+                        <div className={`h-full w-full md:pr-5`}>
                             <ContactForm />
                         </div>
                     </div>
