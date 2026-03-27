@@ -331,7 +331,7 @@ const Banner = () => {
           <div className="my-auto h-full space-y-4">
             <div className="flex w-[100%] justify-center">
               <div className="relative flex justify-end">
-                <div>
+                <div className="h-[45rem]">
                   <video
                     autoPlay
                     loop
@@ -340,7 +340,7 @@ const Banner = () => {
                     className="h-full rounded-2xl w-full"
                   >
                     <source
-                      src="/assets/videos/Graph animation_4.mp4"
+                      src="/assets/videos/Businesses Before Partnering with Adaired (2).mp4"
                       type="video/mp4"
                     />
                   </video>
