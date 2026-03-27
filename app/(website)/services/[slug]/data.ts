@@ -14364,7 +14364,7 @@ export const SERVICES_DATA = {
       breakIndex: 5,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1774252302/adaired/services/wordpressDevelopment/adairedHelp_bxwtmr.png",
       isInCenter: true,
-      bgColor: "bg-gradient-to-b from-[#FFF8F0] to-[#FFFCF8]",
+      bgColor: "linear-gradient(to bottom, #FFF8F0, #FFFFFF)",
       cardBg: "",
       headingParts: [
         {
@@ -15503,7 +15503,7 @@ export const SERVICES_DATA = {
       textColor: "#000000",
       isnNumberBg: true,
       numberBg: "#FDE6C6",
-      bgColor: "bg-gradient-to-b from-[#FFF8F0] to-[#FFFCF8]",
+      bgColor: "linear-gradient(to bottom, #FFF8F0, #FFFCF9)",
       cardBg: "",
       headingParts: [
         {
@@ -17030,7 +17030,7 @@ export const SERVICES_DATA = {
       breakIndex: 3,
       img: "https://res.cloudinary.com/dsksxpsdh/image/upload/v1773382976/adaired/services/eCommerceDevelopment/Rectangle_10034_b0wm2z.png",
       isInCenter: false,
-      bgColor: "bg-gradient-to-b from-[#fff8f0] via-[#fffaf4] to-[#fffcf8]",
+      bgColor: "linear-gradient(to bottom, #FFF8F0, #FFFCF9)",
       cardBg: "",
       headingParts: [
         {
@@ -17159,7 +17159,7 @@ export const SERVICES_DATA = {
     serviceResult: {
       isVisible: true,
       breakIndex: 1,
-      bgColor: "#FFFBF5",
+      bgColor: "#FFFDF9",
       isVariant: "01",
       isInCenter: false,
       textColor: "",
@@ -17863,7 +17863,7 @@ export const SERVICES_DATA = {
         },
       ],
       breakIndex: 4,
-      bgGradient: "bg-gradient-to-b from-[#FFF8F0] to-[#FFFFFF]",
+      bgGradient: "linear-gradient(to bottom, #FFF8F0, #FFFCF9)",
       span: "",
       description: [
         `Our development process follows a structured approach that allows us to transform ideas into fully functional, scalable digital platforms.`,
