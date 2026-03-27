@@ -7,9 +7,7 @@ import Experienced from "../../../public/assets/icons/Experienced_1.svg";
 import Dedicated from "../../../public/assets/icons/Dedicated_1.svg";
 import customer from "../../../public/assets/icons/customer.svg";
 import goal from "../../../public/assets/icons/goal.png";
-import Web_Design from "../../../public/assets/images/service/Web Design & Development.png";
 import Digital_Creative from "../../../public/assets/images/service/New/PayPerClick.svg";
-import seo2 from "../../../public/assets/icons/service/seo_Img.png";
 
 //seo images & icons
 import SEO from "../../../public/assets/images/service/New/SEO.svg";
@@ -18,7 +16,6 @@ import SAAS_SEO from "../../../public/assets/images/service/New/SaaS SEO (1).svg
 import LOCAL_SEO from "../../../public/assets/images/service/New/Local SEO (1).svg";
 import LOCAL_SEO_1 from "../../../public/assets/images/service/New/Local organic SEO.svg";
 import LOCAL_SEO_2 from "../../../public/assets/images/service/New/Citation Building.svg";
-import LOCAL_SEO_3 from "../../../public/assets/images/service/New/Local Link Building.svg";
 import LLM_SEO from "../../../public/assets/images/service/New/LLMO.svg";
 import GEO_SEO from "../../../public/assets/images/service/New/GEO.svg";
 import AEO_SEO from "../../../public/assets/images/service/New/AEO.svg";
@@ -26,7 +23,6 @@ import E_Comerce_SEO from "../../../public/assets/images/service/New/eCommerce S
 import SEO_1 from "../../../public/assets/icons/service/seo.png";
 import SEO_2 from "../../../public/assets/icons/service/ai_seo.png";
 import SEO_3 from "../../../public/assets/icons/service/local-seo.svg";
-import SEO_4 from "../../../public/assets/icons/service/E commerce seo.svg";
 
 //linkbuilding images & icons
 import Link_Building from "../../../public/assets/images/service/New/Link Building.svg";
@@ -57,13 +53,6 @@ import SMM_3 from "../../../public/assets/images/service/New/Reel editing.svg";
 import SMM_4 from "../../../public/assets/images/service/New/Creatives.svg";
 import SMM_Icon_1 from "../../../public/assets/icons/service/social-media-management.svg";
 import SMM_Icon_2 from "../../../public/assets/icons/service/Social_Media_Marketing.svg";
-import SMM_Icon_3 from "../../../public/assets/icons/service/Niche edits.svg";
-import SMM_Icon_4 from "../../../public/assets/icons/service/press-release 1.svg";
-
-import GBP_1 from "../../../public/assets/images/service/GBP_1.png";
-import GBP_2 from "../../../public/assets/images/service/GBP_3.png";
-import GBP_3 from "../../../public/assets/images/service/GBP_2.png";
-import GBP_4 from "../../../public/assets/images/service/GBP_4.png";
 
 import Ad_1 from "../../../public/assets/images/service/New/GoogleAds.svg";
 import Ad_2 from "../../../public/assets/images/service/New/Meta Ads.svg";
@@ -73,10 +62,6 @@ import Ad_5 from "../../../public/assets/images/service/New/Tiktok ads.svg";
 
 //Content Writing & Marketing
 import Content from "../../../public/assets/images/service/New/Contentwriting.svg";
-import content_marketing_1 from "../../../public/assets/images/service/New/Contentwriting.svg";
-import content_marketing_2 from "../../../public/assets/images/service/New/Contentwriting.svg";
-import content_marketing_3 from "../../../public/assets/images/service/New/Contentwriting.svg";
-import content_marketing_4 from "../../../public/assets/images/service/New/Contentwriting.svg";
 
 import web_dev from "../../../public/assets/images/service/New/Web design and development (1).svg";
 import web_1 from "../../../public/assets/images/service/New/WordPress Development.svg";
@@ -84,11 +69,6 @@ import web_2 from "../../../public/assets/images/service/New/Shopify Development
 import web_3 from "../../../public/assets/images/service/New/ECOMMERCE DEVELOPMENT-27 1.svg";
 import web_4 from "../../../public/assets/images/service/New/Custom Web Development.svg";
 
-import White_SEO_1 from "../../../public/assets/images/service/White_SEO_1.png";
-import White_SEO_2 from "../../../public/assets/images/service/White_SEO_2.png";
-import White_SEO_3 from "../../../public/assets/images/service/White_SEO_3.png";
-import White_SEO_4 from "../../../public/assets/images/service/White_SEO_4.png";
-import White_Label_Services from "../../../public/assets/images/service/White_Label_Services.png";
 import App_1 from "../../../public/assets/images/service/New/iOS Development.svg";
 import App_2 from "../../../public/assets/images/service/New/Android App Development.svg";
 import App_3 from "../../../public/assets/images/service/New/Cross-Platform.svg";
@@ -99,13 +79,10 @@ import app_1 from "../../../public/assets/icons/service/app_1.png";
 import app_2 from "../../../public/assets/icons/service/app_2.png";
 import app_3 from "../../../public/assets/icons/service/app_3.png";
 import app_4 from "../../../public/assets/icons/service/app_4.png";
-import seo from "../../../public/assets/icons/service/seo.png";
-import content from "../../../public/assets/icons/service/content.png";
-import smm from "../../../public/assets/icons/service/smm.png";
+
 import Insta_Ads from "../../../public/assets/icons/service/Insta_Ads.png";
 import GBPSetup from "../../../public/assets/icons/service/GBPSetup.png";
-import FakeGBPReporting from "../../../public/assets/icons/service/FakeGBPReporting.png";
-import FakeGoogleReviewReporting from "../../../public/assets/icons/service/FakeGoogleReviewReporting.png";
+
 import GBPManagement from "../../../public/assets/icons/service/GBPManagement.png";
 import GoogleAds from "../../../public/assets/icons/service/GoogleAds.png";
 import html from "../../../public/assets/icons/service/html.png";
@@ -114,7 +91,6 @@ import shoppyfy from "../../../public/assets/icons/service/shoppyfy.png";
 import TikTokAds from "../../../public/assets/icons/service/TikTokAds.png";
 import LinkedInAds from "../../../public/assets/icons/service/LinkedInAds.png";
 
-import google_business from "../../../public/assets/images/service/google_business.png";
 import App_development from "../../../public/assets/images/service/New/Mobile App Development.svg";
 import WhiteLabelFacebookAds from "../../../public/assets/icons/service/WhiteLabelFacebookAds.png";
 import WhiteLabelSEO from "../../../public/assets/icons/service/WhiteLabelSEO.png";

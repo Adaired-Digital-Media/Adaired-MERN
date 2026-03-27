@@ -2,7 +2,9 @@ import aboutBannerImg from "../../../public/assets/images/about/aboutBannerImg.p
 
 import aboutStruggleBg from "../../../public/assets/images/about/aboutStruggleBg.png";
 
-import localServiceResultImg from "../../../public/assets/localseo/localServiceResultImg.png";
+// import localServiceResultImg from "../../../public/assets/localseo/localServiceResultImg.png";
+import localServiceResultImg from "../../../public/assets/images/about/aboutStruggleBg.png";
+
 import localServiceResultIcon from "../../../public/assets/localseo/localServiceResultIcon.png";
 
 import howItStartedImg_1 from "../../../public/assets/images/about/howItStartedImg_1.png";

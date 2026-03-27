@@ -103,16 +103,16 @@ import seo_resultIcon_1 from "../../../../public/assets/seo/seo_resultIcon_1.svg
 import seo_resultIcon_2 from "../../../../public/assets/seo/seo_resultIcon_2.svg";
 import seo_resultIcon_3 from "../../../../public/assets/seo/seo_resultIcon_3.svg";
 
-import adairedHelp_icon_1 from "../../../../public/assets/adairedHelp/help_icon_1.svg";
-import adairedHelp_icon_2 from "../../../../public/assets/adairedHelp/help_icon_2.svg";
-import adairedHelp_icon_3 from "../../../../public/assets/adairedHelp/help_icon_3.svg";
-import adairedHelp_icon_4 from "../../../../public/assets/adairedHelp/help_icon_4.svg";
-import adairedHelp_icon_5 from "../../../../public/assets/adairedHelp/help_icon_5.svg";
-import adairedHelp_icon_6 from "../../../../public/assets/adairedHelp/help_icon_6.svg";
-import adairedHelp_icon_7 from "../../../../public/assets/adairedHelp/help_icon_7.svg";
-import adairedHelp_icon_8 from "../../../../public/assets/adairedHelp/help_icon_8.svg";
-import adairedHelp_icon_9 from "../../../../public/assets/adairedHelp/help_icon_9.svg";
-import adairedHelp_icon_10 from "../../../../public/assets/adairedHelp/help_icon_10.svg";
+import adairedHelp_icon_1 from "../../../../public/assets/images/services/seo/help_icon_1.svg";
+import adairedHelp_icon_2 from "../../../../public/assets/images/services/seo/help_icon_2.svg";
+import adairedHelp_icon_3 from "../../../../public/assets/images/services/seo/help_icon_3.svg";
+import adairedHelp_icon_4 from "../../../../public/assets/images/services/seo/help_icon_4.svg";
+import adairedHelp_icon_5 from "../../../../public/assets/images/services/seo/help_icon_5.svg";
+import adairedHelp_icon_6 from "../../../../public/assets/images/services/seo/help_icon_6.svg";
+import adairedHelp_icon_7 from "../../../../public/assets/images/services/seo/help_icon_7.svg";
+import adairedHelp_icon_8 from "../../../../public/assets/images/services/seo/help_icon_8.svg";
+import adairedHelp_icon_9 from "../../../../public/assets/images/services/seo/help_icon_9.svg";
+import adairedHelp_icon_10 from "../../../../public/assets/images/services/seo/help_icon_9.svg";
 
 import missing_1 from "../../../../public/assets/images/missing_1.png";
 import missing_2 from "../../../../public/assets/images/missing_2.png";
