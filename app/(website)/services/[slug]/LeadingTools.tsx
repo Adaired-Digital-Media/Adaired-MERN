@@ -88,7 +88,7 @@ const LeadingTools = ({ leadingTools }: any) => {
             </div>
 
             <div className="relative mt-4 sm:mt-6">
-              <div className="flex w-max animate-marquee gap-2 sm:gap-3 lg:gap-[2rem]">
+              <div className="flex w-max animate-marquee gap-[1rem] sm:gap-3 lg:gap-[2rem]">
                 {row1Duplicated.map((client, idx) => (
                   <div
                     key={`r1-${idx}`}
@@ -108,8 +108,8 @@ const LeadingTools = ({ leadingTools }: any) => {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="flex w-max animate-marquee gap-2 [animation-direction:reverse] sm:gap-3 lg:gap-[2rem]">
+            <div className="relative mt-4 sm:mt-6">
+              <div className="flex w-max animate-marquee gap-2 [animation-direction:reverse] gap-[1rem] sm:gap-3 lg:gap-[2rem]">
                 {row2Duplicated.map((client, idx) => (
                   <div
                     key={`r2-${idx}`}
