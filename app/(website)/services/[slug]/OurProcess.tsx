@@ -1,11 +1,11 @@
-'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import MaxWidthWrapper from '@/app/components/MaxWidthWrapper';
-import Heading from '@/app/components/common/Heading';
-import Image from 'next/image';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
-import SocialMediaCheck from '../../../../public/assets/images/PPCimg/arrowOrange.png';
-import { motion, AnimatePresence } from 'framer-motion';
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import Heading from "@/app/components/common/Heading";
+import Image from "next/image";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
+import SocialMediaCheck from "../../../../public/assets/images/PPCimg/arrowOrange.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const OurProcess = ({ ourProcess }: any) => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.3);
@@ -26,24 +26,31 @@ const OurProcess = ({ ourProcess }: any) => {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section
       ref={ref}
       id="services"
-      className={`${ourProcess?.bgGradient || 'bg-[#f9f9f9]/80'} relative bg-fixed py-[3rem] lg:py-[4rem]`}
+      // className={`${ourProcess?.bgGradient || "bg-[#f9f9f9]/80"} relative bg-fixed py-[3rem] lg:py-[4rem]`}
+      className={` relative bg-fixed py-[3rem] lg:py-[4rem]`}
+      style={{
+        backgroundColor: ourProcess?.bgGradient,
+        background: ourProcess?.bgGradient,
+      }}
     >
       <MaxWidthWrapper>
         {/* ================= HEADING ================= */}
 
         <div className="sticky top-[5rem] z-20 mb-[3rem] lg:top-[10rem]">
-          <div className={`mx-auto w-full lg:w-[80%] transition-all duration-700 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div
+            className={`mx-auto w-full lg:w-[80%] transition-all duration-700 ease-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          >
             <Heading
               isLabel={true}
-              subTitle={'Our Process'}
+              subTitle={"Our Process"}
               breakIndex={ourProcess?.breakIndex}
               headingParts={ourProcess?.headingParts}
               description={ourProcess?.description}
@@ -54,13 +61,15 @@ const OurProcess = ({ ourProcess }: any) => {
           </div>
 
           <div
-            className={`grid grid-cols-1 gap-[4rem] lg:grid-cols-5 ${!ourProcess?.isInCenter && 'mt-[2rem]'}`}
+            className={`grid grid-cols-1 gap-[4rem] lg:grid-cols-5 ${!ourProcess?.isInCenter && "mt-[2rem]"}`}
           >
-            <div className={`col-span-2 hidden h-fit items-center justify-center md:flex transform transition-all delay-200 duration-1000 ${
-                  isVisible
-                    ? 'translate-x-0 opacity-100'
-                    : '-translate-x-16 opacity-0'
-                }`}>
+            <div
+              className={`col-span-2 hidden h-fit items-center justify-center md:flex transform transition-all delay-200 duration-1000 ${
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-16 opacity-0"
+              }`}
+            >
               <div className="relative h-[520px] w-[520px]">
                 <svg width="520" height="520" viewBox="0 0 520 520">
                   {ourProcess.services.map((service: any, idx: number) => {
@@ -103,7 +112,7 @@ const OurProcess = ({ ourProcess }: any) => {
                             A ${capRadius} ${capRadius} 0 0 0 ${sx} ${sy}
                             Z
                          `}
-                        fill={activeTab === idx ? '#FB9100' : '#FBEBD5'}
+                        fill={activeTab === idx ? "#FB9100" : "#FBEBD5"}
                         stroke="#FFFFFF"
                         onClick={() => setActiveTab(idx)}
                         className="cursor-pointer transition-all duration-500"
@@ -136,7 +145,7 @@ const OurProcess = ({ ourProcess }: any) => {
                       style={{
                         left: x,
                         top: y,
-                        transform: 'translate(-50%, -50%)',
+                        transform: "translate(-50%, -50%)",
                       }}
                     >
                       <Image
@@ -147,8 +156,8 @@ const OurProcess = ({ ourProcess }: any) => {
                         onClick={() => setActiveTab(idx)}
                         className={
                           activeTab === idx
-                            ? 'brightness-0 invert'
-                            : 'opacity-100'
+                            ? "brightness-0 invert"
+                            : "opacity-100"
                         }
                       />
                     </div>
@@ -156,11 +165,13 @@ const OurProcess = ({ ourProcess }: any) => {
                 })}
               </div>
             </div>
-            <div className={`col-span-3 my-auto flex h-fit w-full items-center justify-center transform transition-all delay-200 duration-1000 ${
-                  isVisible
-                    ? 'translate-x-0 opacity-100'
-                    : 'translate-x-16 opacity-0'
-                }`}>
+            <div
+              className={`col-span-3 my-auto flex h-fit w-full items-center justify-center transform transition-all delay-200 duration-1000 ${
+                isVisible
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-16 opacity-0"
+              }`}
+            >
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -176,7 +187,7 @@ const OurProcess = ({ ourProcess }: any) => {
 
                   {ourProcess.services[activeTab].description.map(
                     (item: any, i: number) => {
-                      if (typeof item === 'string') {
+                      if (typeof item === "string") {
                         return (
                           <p key={i} className="my-2 text-gray-700">
                             {item}
@@ -206,7 +217,7 @@ const OurProcess = ({ ourProcess }: any) => {
                       }
 
                       return null;
-                    }
+                    },
                   )}
                 </motion.div>
               </AnimatePresence>

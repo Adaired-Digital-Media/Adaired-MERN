@@ -1,11 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
-import MaxWidthWrapper from '@/app/components/MaxWidthWrapper';
-import Heading from '@/app/components/common/Heading';
-import { useInViewOnce } from '@/@core/hooks/useInViewOnce';
-import Image from 'next/image';
-import SaveAndCancel from '@/app/components/common/SaveAndCancel';
-import GetQuoteModal from '@/app/components/popup/GetQuoteModal';
+import React from "react";
+import { useState } from "react";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import Heading from "@/app/components/common/Heading";
+import { useInViewOnce } from "@/@core/hooks/useInViewOnce";
+import Image from "next/image";
+import SaveAndCancel from "@/app/components/common/SaveAndCancel";
+import GetQuoteModal from "@/app/components/popup/GetQuoteModal";
 
 const WhatMissing = ({ whatMissing }: any) => {
   const { ref, isVisible } = useInViewOnce<HTMLDivElement>(0.2);
@@ -15,9 +15,12 @@ const WhatMissing = ({ whatMissing }: any) => {
     <section
       ref={ref}
       className={`py-[3rem] lg:py-[4rem]`}
-      style={{ backgroundColor: whatMissing?.bgColor || '#FFFFFF' }}
+      style={{
+        backgroundColor: whatMissing?.bgColor,
+        background: whatMissing?.bgColor,
+      }}
     >
-      {whatMissing?.isVariant === '01' && (
+      {whatMissing?.isVariant === "01" && (
         <MaxWidthWrapper>
           <div className={``}>
             <Heading
@@ -32,9 +35,9 @@ const WhatMissing = ({ whatMissing }: any) => {
               {whatMissing?.list?.map((card: any, index: number) => (
                 <div
                   key={index}
-                  className={`relative rounded-2xl border border-[#000000]/15 bg-[#FFFFFF] p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                  className={`relative rounded-2xl border border-[#000000]/15 bg-[#FFFFFF] p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   style={{
-                      transitionDelay: `${index * 280}ms`, // 👈 stagger here
+                    transitionDelay: `${index * 280}ms`, // 👈 stagger here
                   }}
                 >
                   {/* <div className="flex items-center justify-center mb-10 lg:justify-start lg:justify-items-start">
@@ -70,7 +73,7 @@ const WhatMissing = ({ whatMissing }: any) => {
         </MaxWidthWrapper>
       )}
 
-      {whatMissing?.isVariant === '02' && (
+      {whatMissing?.isVariant === "02" && (
         <MaxWidthWrapper>
           <div className={``}>
             <Heading
@@ -84,9 +87,9 @@ const WhatMissing = ({ whatMissing }: any) => {
               {whatMissing?.list?.map((card: any, index: number) => (
                 <div
                   key={index}
-                  className={`relative rounded-2xl border border-[#000000]/15 bg-[#FFFFFF] p-[1.5rem] lg:p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                  className={`relative rounded-2xl border border-[#000000]/15 bg-[#FFFFFF] p-[1.5rem] lg:p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   style={{
-                      transitionDelay: `${index * 280}ms`, // 👈 stagger here
+                    transitionDelay: `${index * 280}ms`, // 👈 stagger here
                   }}
                 >
                   {/* <div className="flex items-center justify-center mb-10 lg:justify-start lg:justify-items-start">
@@ -110,7 +113,10 @@ const WhatMissing = ({ whatMissing }: any) => {
                   <h3 className="py-[1rem]">{card.title}</h3>
                   <div className="space-y-4">
                     {card.description.map((text: string, i: number) => (
-                      <p key={i} className="text-center lg:text-left leading-relaxed">
+                      <p
+                        key={i}
+                        className="text-center lg:text-left leading-relaxed"
+                      >
                         {text}
                       </p>
                     ))}
@@ -142,7 +148,7 @@ const WhatMissing = ({ whatMissing }: any) => {
         </MaxWidthWrapper>
       )}
 
-      {whatMissing?.isVariant === '03' && (
+      {whatMissing?.isVariant === "03" && (
         <MaxWidthWrapper>
           <div className={``}>
             <Heading
@@ -157,9 +163,9 @@ const WhatMissing = ({ whatMissing }: any) => {
               {whatMissing?.list?.map((card: any, index: number) => (
                 <div
                   key={index}
-                  className={`relative rounded-2xl p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                  className={`relative rounded-2xl p-[2.5rem] transition-all duration-1000 ease-in-out hover:-translate-y-2 hover:shadow-xl hover:duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                   style={{
-                    transitionDelay: isVisible ? '0ms' : `${index * 280}ms`,
+                    transitionDelay: isVisible ? "0ms" : `${index * 280}ms`,
                     backgroundColor: whatMissing?.cardBg,
                     border: `1px solid ${whatMissing?.cardBorderColor}`,
                   }}
