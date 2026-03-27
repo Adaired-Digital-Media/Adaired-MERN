@@ -571,7 +571,7 @@ const Header = () => {
                   handleClick={() => router.push("/schedule-appointment")}
                   // isBgWhite={true}
                   buttonWidth={"!w-[10rem]"}
-                  name={"Book A Demo"}
+                  name={"Book A Call"}
                   isIcon={true}
                 />
               </div>
