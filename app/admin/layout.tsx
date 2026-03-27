@@ -58,9 +58,9 @@ export default function AdminLayout({
                 <Link
                   key={idx}
                   href={menu.path}
-                  className={`block rounded-md hover:bg-blue-100 transition active:scale-95 
+                  className={`block rounded-md hover:bg-blue-100 transition active:scale-95 mb-2
                     ${isOpen ? "py-3 px-3" : "py-3 flex justify-center"}
-                    ${isActive ? "bg-blue-900 text-white" : "hover:bg-blue-100"
+                    ${isActive ? "bg-blue-900 text-white hover:bg-blue-900" : "hover:bg-blue-100"
                     }`}
                 >
                   <div

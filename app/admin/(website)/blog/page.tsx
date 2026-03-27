@@ -86,8 +86,8 @@ const Page = () => {
   return (
     <div className="px-6 pb-6">
       <Heading
-        subTitle={"Blog"}
-        title={"Blog List"}
+        headingParts={[{ text: 'Blog List', color: "#000000", weight: 700 }]}
+        subTitle={'Blog'}
       />
 
       <div className="flex justify-between items-center mb-6">

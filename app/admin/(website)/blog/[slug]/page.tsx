@@ -202,6 +202,7 @@ const CreateBlog = ({ refresh }: any) => {
       <div className="grid grid-cols-4 gap-6">
         <div className="col-span-3 space-y-4">
           <InputField
+            label="Title"
             name="postTitle"
             placeholder="Enter Heading"
             value={inputVal.postTitle}
@@ -211,6 +212,7 @@ const CreateBlog = ({ refresh }: any) => {
 
           <div className="grid grid-cols-2 gap-4">
             <InputField
+              label="Slug"
               name="slug"
               placeholder="Enter Slug"
               value={inputVal.slug}
@@ -219,6 +221,7 @@ const CreateBlog = ({ refresh }: any) => {
             />
 
             <SelectField
+              label="Category"
               name="category"
               value={inputVal.category}
               handleChange={handleChange}
@@ -245,6 +248,7 @@ const CreateBlog = ({ refresh }: any) => {
 
         <div className="grid grid-cols-2 gap-4">
           <InputField
+            label="SEO Title"
             name="seo.metaTitle"
             placeholder="Enter SEO Title"
             value={inputVal.seo.metaTitle}
@@ -253,6 +257,7 @@ const CreateBlog = ({ refresh }: any) => {
           />
 
           <InputField
+            label="Keyword"
             name="seo.keywords"
             placeholder="Enter Keywords"
             value={inputVal.seo.keywords}
@@ -262,6 +267,7 @@ const CreateBlog = ({ refresh }: any) => {
         </div>
 
         <InputField
+          label="Focus Keyword"
           name="seo.focusKeyword"
           placeholder="Enter Focus Keyword"
           value={inputVal.seo.focusKeyword}
@@ -270,6 +276,7 @@ const CreateBlog = ({ refresh }: any) => {
         />
 
         <InputField
+          label="Description"
           name="seo.metaDescription"
           placeholder="Enter Description"
           value={inputVal.seo.metaDescription}

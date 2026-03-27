@@ -46,7 +46,8 @@ const InputField = ({
         onChange={handleChange}
         maxLength={maxLength}
         className={`${className} w-full text-[15px] rounded-[0.5rem] bg-[#F8F8F8] px-4 py-3 font-normal text-[#000000] outline-none placeholder:text-[#323232B2] focus:border-[#000000]`}
-        placeholder={`${placeholder} ${required ? "*" : ""}`}
+        // placeholder={`${placeholder} ${required ? "*" : ""}`}
+        placeholder={`${placeholder}`}
       />
       {error && (
         <span className="absolute left-0 top-[4.5rem] py-2 z-20 w-fit text-[12px] text-red-500">

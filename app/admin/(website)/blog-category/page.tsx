@@ -102,7 +102,10 @@ const Page = () => {
 
   return (
     <div className="px-6 pb-6">
-      <Heading title={"Blog Category"} />
+      <Heading
+        headingParts={[{ text: 'Blog Category', color: "#000000", weight: 700 }]}
+      />
+
       <div className="flex justify-between items-center mb-6">
         <div className="rounded-full w-1/4 border flex items-center">
           <input
@@ -209,9 +212,8 @@ const Page = () => {
 
       {/* RIGHT DRAWER */}
       <div
-        className={`fixed top-0 right-0 h-full w-105 bg-white shadow-xl z-50 transform transition-transform duration-300 ${
-          openModal ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-105 bg-white shadow-xl z-50 transform transition-transform duration-300 ${openModal ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="p-6">
           <h4 className="text-xl font-semibold mb-6">
