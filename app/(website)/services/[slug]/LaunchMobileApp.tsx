@@ -47,7 +47,7 @@ const LaunchMobileApp = ({ handleClick, idx, isVisible, cardData }: any) => {
                 {cardData?.description?.map((desc: any, i: number) => (
                     <p
                         key={i}
-                        className="py-[2rem] text-white font-semibold text-center lg:text-left">
+                        className={`${cardData?.code === '01' ? 'lg:mr-[14rem]' : ''} py-[2rem] text-white font-semibold text-center lg:text-left`}>
                         {desc}
                     </p>
                 ))}
