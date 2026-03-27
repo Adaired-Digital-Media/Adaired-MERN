@@ -24,8 +24,8 @@ const BookAConsultation = ({ buildlinks }: any) => {
             backgroundRepeat: "no-repeat",
             paddingTop: buildlinks?.customPadding?.split(",")[0] || "6rem",
             paddingBottom: buildlinks?.customPadding?.split(",")[1] || "6rem",
-            backgroundColor: buildlinks?.bgColor,
-            background: buildlinks?.bgColor,
+            // backgroundColor: buildlinks?.bgColor ?? buildlinks?.bgColor,
+            // background: buildlinks?.bgColor ?? buildlinks?.bgColor,
           }}
         >
           <MaxWidthWrapper
